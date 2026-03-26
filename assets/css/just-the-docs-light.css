@@ -7719,6 +7719,48 @@ h6 {
 .main-content-wrap .table-wrapper table tr:hover td {
   background-color: #404040;
 }
+.main-content-wrap .rouge-code .k {
+  color: #d97706;
+  font-weight: 600;
+}
+.main-content-wrap .rouge-code .nf {
+  color: #2563eb;
+}
+.main-content-wrap .rouge-code .s {
+  color: #059669;
+}
+.main-content-wrap .rouge-code .c {
+  color: #6b7280;
+  font-style: italic;
+}
+.main-content-wrap .rouge-code .nb {
+  color: #7c3aed;
+}
+.main-content-wrap .rouge-code .mi {
+  color: #dc2626;
+}
+.main-content-wrap .rouge-code .o {
+  color: #374151;
+}
+.main-content-wrap .highlight code .k {
+  color: #d97706;
+}
+.main-content-wrap .highlight code .nf {
+  color: #2563eb;
+}
+.main-content-wrap .highlight code .s {
+  color: #059669;
+}
+.main-content-wrap .highlight code .c {
+  color: #6b7280;
+  font-style: italic;
+}
+.main-content-wrap .highlight code .nb {
+  color: #7c3aed;
+}
+.main-content-wrap .highlight code .o {
+  color: #dc2626;
+}
 .main-content-wrap .feature-block {
   background: #e9e3d8;
   border-radius: 16px;
@@ -7853,6 +7895,7 @@ h6 {
   color: #f77ef1;
 }
 
+.bg-pink-000,
 .label-pink-000:not(g) {
   background-color: #f77ef1;
 }
@@ -7861,6 +7904,7 @@ h6 {
   color: #f967f1;
 }
 
+.bg-pink-100,
 .label-pink-100:not(g) {
   background-color: #f967f1;
 }
@@ -7869,6 +7913,7 @@ h6 {
   color: #e94ee1;
 }
 
+.bg-pink-200,
 .label-pink-200:not(g) {
   background-color: #e94ee1;
 }
@@ -7877,6 +7922,7 @@ h6 {
   color: #dd2cd4;
 }
 
+.bg-pink-300,
 .label-pink-300:not(g) {
   background-color: #dd2cd4;
 }
@@ -7886,6 +7932,7 @@ h6 {
   color: #ffedd5;
 }
 
+.bg-orange-000,
 .label-orange-000:not(g) {
   background-color: #ffedd5;
 }
@@ -7895,6 +7942,7 @@ h6 {
   color: #fdba74;
 }
 
+.bg-orange-100,
 .label-orange-100:not(g) {
   background-color: #fdba74;
 }
@@ -7904,6 +7952,7 @@ h6 {
   color: #fb923c;
 }
 
+.bg-orange-200,
 .label-orange-200:not(g) {
   background-color: #fb923c;
 }
@@ -7913,6 +7962,7 @@ h6 {
   color: #f97316;
 }
 
+.bg-orange-300,
 .label-orange-300:not(g) {
   background-color: #f97316;
 }
@@ -7921,6 +7971,7 @@ h6 {
   color: #fde4e2;
 }
 
+.bg-fk-red-000,
 .label-fk-red-000:not(g) {
   background-color: #fde4e2;
 }
@@ -7929,6 +7980,7 @@ h6 {
   color: #f5a29c;
 }
 
+.bg-fk-red-100,
 .label-fk-red-100:not(g) {
   background-color: #f5a29c;
 }
@@ -7937,6 +7989,7 @@ h6 {
   color: #e46b63;
 }
 
+.bg-fk-red-200,
 .label-fk-red-200:not(g) {
   background-color: #e46b63;
 }
@@ -7945,6 +7998,7 @@ h6 {
   color: #d14d41;
 }
 
+.bg-fk-red-300,
 .label-fk-red-300:not(g) {
   background-color: #d14d41;
 }
@@ -7953,6 +8007,7 @@ h6 {
   color: #fbe8d9;
 }
 
+.bg-fk-orange-000,
 .label-fk-orange-000:not(g) {
   background-color: #fbe8d9;
 }
@@ -7961,6 +8016,7 @@ h6 {
   color: #efb78a;
 }
 
+.bg-fk-orange-100,
 .label-fk-orange-100:not(g) {
   background-color: #efb78a;
 }
@@ -7969,6 +8025,7 @@ h6 {
   color: #e08c4f;
 }
 
+.bg-fk-orange-200,
 .label-fk-orange-200:not(g) {
   background-color: #e08c4f;
 }
@@ -7977,6 +8034,7 @@ h6 {
   color: #e08c4f;
 }
 
+.bg-fk-orange-300,
 .label-fk-orange-300:not(g) {
   background-color: #e08c4f;
 }
@@ -7985,6 +8043,7 @@ h6 {
   color: #f9edc9;
 }
 
+.bg-fk-yellow-000,
 .label-fk-yellow-000:not(g) {
   background-color: #f9edc9;
 }
@@ -7993,6 +8052,7 @@ h6 {
   color: #e6cd6f;
 }
 
+.bg-fk-yellow-100,
 .label-fk-yellow-100:not(g) {
   background-color: #e6cd6f;
 }
@@ -8001,6 +8061,7 @@ h6 {
   color: #d7b93e;
 }
 
+.bg-fk-yellow-200,
 .label-fk-yellow-200:not(g) {
   background-color: #d7b93e;
 }
@@ -8009,6 +8070,7 @@ h6 {
   color: #d0a215;
 }
 
+.bg-fk-yellow-300,
 .label-fk-yellow-300:not(g) {
   background-color: #d0a215;
 }
@@ -8017,6 +8079,7 @@ h6 {
   color: #e7edd6;
 }
 
+.bg-fk-green-000,
 .label-fk-green-000:not(g) {
   background-color: #e7edd6;
 }
@@ -8025,6 +8088,7 @@ h6 {
   color: #b8c47a;
 }
 
+.bg-fk-green-100,
 .label-fk-green-100:not(g) {
   background-color: #b8c47a;
 }
@@ -8033,6 +8097,7 @@ h6 {
   color: #9eaf52;
 }
 
+.bg-fk-green-200,
 .label-fk-green-200:not(g) {
   background-color: #9eaf52;
 }
@@ -8041,6 +8106,7 @@ h6 {
   color: #879a39;
 }
 
+.bg-fk-green-300,
 .label-fk-green-300:not(g) {
   background-color: #879a39;
 }
@@ -8049,6 +8115,7 @@ h6 {
   color: #d9efec;
 }
 
+.bg-fk-cyan-000,
 .label-fk-cyan-000:not(g) {
   background-color: #d9efec;
 }
@@ -8057,6 +8124,7 @@ h6 {
   color: #7fc9c2;
 }
 
+.bg-fk-cyan-100,
 .label-fk-cyan-100:not(g) {
   background-color: #7fc9c2;
 }
@@ -8065,6 +8133,7 @@ h6 {
   color: #56b3a9;
 }
 
+.bg-fk-cyan-200,
 .label-fk-cyan-200:not(g) {
   background-color: #56b3a9;
 }
@@ -8073,6 +8142,7 @@ h6 {
   color: #3aa99f;
 }
 
+.bg-fk-cyan-300,
 .label-fk-cyan-300:not(g) {
   background-color: #3aa99f;
 }
@@ -8081,6 +8151,7 @@ h6 {
   color: #dde9f2;
 }
 
+.bg-fk-blue-000,
 .label-fk-blue-000:not(g) {
   background-color: #dde9f2;
 }
@@ -8089,6 +8160,7 @@ h6 {
   color: #8fb6d4;
 }
 
+.bg-fk-blue-100,
 .label-fk-blue-100:not(g) {
   background-color: #8fb6d4;
 }
@@ -8097,6 +8169,7 @@ h6 {
   color: #5f95c2;
 }
 
+.bg-fk-blue-200,
 .label-fk-blue-200:not(g) {
   background-color: #5f95c2;
 }
@@ -8105,6 +8178,7 @@ h6 {
   color: #4385be;
 }
 
+.bg-fk-blue-300,
 .label-fk-blue-300:not(g) {
   background-color: #4385be;
 }
@@ -8113,6 +8187,7 @@ h6 {
   color: #e8e5f2;
 }
 
+.bg-fk-purple-000,
 .label-fk-purple-000:not(g) {
   background-color: #e8e5f2;
 }
@@ -8121,6 +8196,7 @@ h6 {
   color: #b4add9;
 }
 
+.bg-fk-purple-100,
 .label-fk-purple-100:not(g) {
   background-color: #b4add9;
 }
@@ -8129,6 +8205,7 @@ h6 {
   color: #9a90cf;
 }
 
+.bg-fk-purple-200,
 .label-fk-purple-200:not(g) {
   background-color: #9a90cf;
 }
@@ -8137,6 +8214,7 @@ h6 {
   color: #8b7ec8;
 }
 
+.bg-fk-purple-300,
 .label-fk-purple-300:not(g) {
   background-color: #8b7ec8;
 }
@@ -8145,6 +8223,7 @@ h6 {
   color: #f3e0ea;
 }
 
+.bg-fk-magenta-000,
 .label-fk-magenta-000:not(g) {
   background-color: #f3e0ea;
 }
@@ -8153,6 +8232,7 @@ h6 {
   color: #d88ab3;
 }
 
+.bg-fk-magenta-100,
 .label-fk-magenta-100:not(g) {
   background-color: #d88ab3;
 }
@@ -8161,6 +8241,7 @@ h6 {
   color: #cf6aa0;
 }
 
+.bg-fk-magenta-200,
 .label-fk-magenta-200:not(g) {
   background-color: #cf6aa0;
 }
@@ -8169,6 +8250,7 @@ h6 {
   color: #ce5d97;
 }
 
+.bg-fk-magenta-300,
 .label-fk-magenta-300:not(g) {
   background-color: #ce5d97;
 }
