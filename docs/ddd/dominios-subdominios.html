@@ -1,0 +1,1456 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > ul > li:nth-child(1) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > ul > li:nth-child(1) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNPEB50SX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'G-MNPEB50SX', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Gestão Domínios e Subdomínios | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Gestão Domínios e Subdomínios" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
+<meta property="og:description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
+<link rel="canonical" href="/docs/ddd/dominios-subdominios.html" />
+<meta property="og:url" content="/docs/ddd/dominios-subdominios.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Gestão Domínios e Subdomínios" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional.","headline":"Gestão Domínios e Subdomínios","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/bpstrat-logo-horizontal.svg"}},"url":"/docs/ddd/dominios-subdominios.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Modern Data Orchestration</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup dos Workflows</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Run Backfill</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Gestão Domínios e Subdomínios</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4-model.html" class="nav-list-link">C4 Model</a></li><li class="nav-list-item"><a href="/docs/metodologia/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">O Dicionário Ubíquo</a></li><li class="nav-list-item"><a href="/docs/metodologia/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban System</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/ddd/">DDD</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Gestão Domínios e Subdomínios</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="teoria-e-gestão-de-domínios-e-subdomínios">
+  
+  
+    <a href="#teoria-e-gestão-de-domínios-e-subdomínios" class="anchor-heading" aria-labelledby="teoria-e-gestão-de-domínios-e-subdomínios"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Teoria e Gestão de Domínios e Subdomínios
+  
+  
+</h1>
+    
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#ddd-e-gestão-de-subdomínios" id="markdown-toc-ddd-e-gestão-de-subdomínios">DDD e Gestão de Subdomínios</a>    <ol>
+      <li><a href="#o-que-é-ddd" id="markdown-toc-o-que-é-ddd">O que é DDD</a></li>
+      <li><a href="#conceito-de-domínio" id="markdown-toc-conceito-de-domínio">Conceito de Domínio</a></li>
+      <li><a href="#subdomínios" id="markdown-toc-subdomínios">Subdomínios</a>        <ol>
+          <li><a href="#tipos-de-subdomínios" id="markdown-toc-tipos-de-subdomínios">Tipos de Subdomínios</a>            <ol>
+              <li><a href="#core-principal" id="markdown-toc-core-principal">Core (Principal)</a></li>
+              <li><a href="#supporting-apoio" id="markdown-toc-supporting-apoio">Supporting (Apoio)</a></li>
+              <li><a href="#generic-genérico" id="markdown-toc-generic-genérico">Generic (Genérico)</a></li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li><a href="#lógica-de-negócio" id="markdown-toc-lógica-de-negócio">Lógica de Negócio</a></li>
+      <li><a href="#perspectiva-estratégica" id="markdown-toc-perspectiva-estratégica">Perspectiva Estratégica</a></li>
+      <li><a href="#build-vs-buy" id="markdown-toc-build-vs-buy">Build vs Buy</a></li>
+      <li><a href="#exemplos-de-subdomínios-genéricos" id="markdown-toc-exemplos-de-subdomínios-genéricos">Exemplos de Subdomínios Genéricos</a></li>
+      <li><a href="#exemplos-de-subdomínios-de-apoio" id="markdown-toc-exemplos-de-subdomínios-de-apoio">Exemplos de Subdomínios de Apoio</a></li>
+      <li><a href="#exemplo-de-domínios-e-subdomínios" id="markdown-toc-exemplo-de-domínios-e-subdomínios">Exemplo de Domínios e Subdomínios</a>        <ol>
+          <li><a href="#sistema-hospitalar-escala-1-10" id="markdown-toc-sistema-hospitalar-escala-1-10">Sistema Hospitalar (Escala 1-10)</a></li>
+          <li><a href="#40-subdomínios-genéricos-escala-1-10" id="markdown-toc-40-subdomínios-genéricos-escala-1-10">40 Subdomínios Genéricos (Escala 1-10)</a></li>
+          <li><a href="#40-subdomínios-de-suporte-escala-1-10" id="markdown-toc-40-subdomínios-de-suporte-escala-1-10">40 Subdomínios de Suporte (Escala 1-10)</a></li>
+        </ol>
+      </li>
+      <li><a href="#referências" id="markdown-toc-referências">Referências</a>        <ol>
+          <li><a href="#livros" id="markdown-toc-livros">Livros</a></li>
+          <li><a href="#autores-e-influências" id="markdown-toc-autores-e-influências">Autores e influências</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol><hr />
+<h1 id="ddd-e-gestão-de-subdomínios">
+  
+  
+    <a href="#ddd-e-gestão-de-subdomínios" class="anchor-heading" aria-labelledby="ddd-e-gestão-de-subdomínios"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> DDD e Gestão de Subdomínios
+  
+  
+</h1>
+    
+
+<p class="fs-5 fw-300">Uma visão prática de como <strong>Domain-Driven Design (DDD)</strong> se conecta com decisões de arquitetura e estratégia de produto.</p>
+
+<p>DDD não é apenas modelagem técnica.</p>
+
+<p>É uma ferramenta para:</p>
+
+<ul>
+  <li>priorizar investimentos</li>
+  <li>guiar arquitetura</li>
+  <li>alinhar tecnologia com negócio</li>
+</ul>
+
+<blockquote class="important">
+  <p>O valor real está em responder:  <strong>Onde devemos investir engenharia?</strong></p>
+</blockquote><hr />
+<h2 class="text-orange-200" id="o-que-é-ddd">
+  
+  
+    <a href="#o-que-é-ddd" class="anchor-heading" aria-labelledby="o-que-é-ddd"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> O que é DDD
+  
+  
+</h2>
+    
+
+<p><strong>Domain-Driven Design (DDD)</strong> é uma abordagem de desenvolvimento de software que coloca o <strong>domínio de negócio no centro das decisões técnicas</strong>.</p>
+
+<ul>
+  <li>Foco na resolução de problemas reais do negócio</li>
+  <li>Modelagem baseada em linguagem compartilhada (Ubiquitous Language)</li>
+  <li>Colaboração entre técnicos e especialistas do domínio</li>
+</ul>
+
+<p><img src="/assets/6ff2ab2f3f7c7f91b1e156b6ff2fa32f_MD5.jpg" alt="" class="rounded" /></p>
+
+<p class="label label-purple">Referência principal</p>
+
+<ul>
+  <li><em>Domain-Driven Design</em> — Eric Evans (2003)</li>
+</ul><hr />
+<h2 class="text-orange-200" id="conceito-de-domínio">
+  
+  
+    <a href="#conceito-de-domínio" class="anchor-heading" aria-labelledby="conceito-de-domínio"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Conceito de Domínio
+  
+  
+</h2>
+    
+
+<p>Um <strong>domínio</strong> é o problema central que a empresa resolve.</p>
+
+<p>Exemplos:</p>
+<ul>
+  <li>Spotify → acesso à música</li>
+  <li>Uber → mobilidade urbana</li>
+  <li>Banco → gestão financeira</li>
+</ul><hr />
+<h2 id="subdomínios">
+  
+  
+    <a href="#subdomínios" class="anchor-heading" aria-labelledby="subdomínios"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Subdomínios
+  
+  
+</h2>
+    
+
+<p>Um domínio é dividido em <strong>subdomínios</strong>, que representam partes menores do problema.</p>
+
+<p>Eles permitem:</p>
+<ul>
+  <li>decomposição do sistema</li>
+  <li>priorização de investimento</li>
+  <li>decisões arquiteturais</li>
+</ul><hr />
+<h3 id="tipos-de-subdomínios">
+  
+  
+    <a href="#tipos-de-subdomínios" class="anchor-heading" aria-labelledby="tipos-de-subdomínios"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tipos de Subdomínios
+  
+  
+</h3>
+    
+<h4 id="core-principal">
+  
+  
+    <a href="#core-principal" class="anchor-heading" aria-labelledby="core-principal"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Core (Principal)
+  
+  
+</h4>
+    
+
+<ul>
+  <li>Diferencial competitivo</li>
+  <li>Alta complexidade</li>
+  <li>Lógica única</li>
+</ul>
+
+<p>Exemplos:</p>
+<ul>
+  <li>Motor de recomendação</li>
+  <li>Precificação dinâmica</li>
+  <li>Algoritmos proprietários</li>
+</ul>
+
+<p><strong>Estratégia:</strong></p>
+<ul>
+  <li>Desenvolver internamente</li>
+  <li>Investir em P&amp;D</li>
+</ul><hr />
+<h4 id="supporting-apoio">
+  
+  
+    <a href="#supporting-apoio" class="anchor-heading" aria-labelledby="supporting-apoio"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Supporting (Apoio)
+  
+  
+</h4>
+    
+
+<ul>
+  <li>Suporta o Core</li>
+  <li>Alguma customização</li>
+  <li>Não gera vantagem direta</li>
+</ul>
+
+<p>Exemplos:</p>
+<ul>
+  <li>Painel administrativo</li>
+  <li>Workflow interno</li>
+  <li>Relatórios operacionais</li>
+</ul>
+
+<p><strong>Estratégia:</strong></p>
+<ul>
+  <li>Construção simplificada</li>
+  <li>Foco em produtividade</li>
+</ul><hr />
+<h4 id="generic-genérico">
+  
+  
+    <a href="#generic-genérico" class="anchor-heading" aria-labelledby="generic-genérico"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Generic (Genérico)
+  
+  
+</h4>
+    
+
+<ul>
+  <li>Problemas comuns a qualquer sistema</li>
+  <li>Baixa diferenciação</li>
+</ul>
+
+<p>Exemplos:</p>
+<ul>
+  <li>Autenticação</li>
+  <li>Pagamentos</li>
+  <li>Envio de e-mail</li>
+</ul>
+
+<p><strong>Estratégia:</strong></p>
+<ul>
+  <li>Comprar (SaaS)</li>
+  <li>Usar soluções prontas</li>
+</ul><hr />
+<h2 id="lógica-de-negócio">
+  
+  
+    <a href="#lógica-de-negócio" class="anchor-heading" aria-labelledby="lógica-de-negócio"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Lógica de Negócio
+  
+  
+</h2>
+    
+
+<p>A lógica de negócio define:</p>
+
+<ul>
+  <li>Entidades (ex: Usuário, Pedido, Sessão)</li>
+  <li>Regras (ex: validação, cálculo, restrições)</li>
+</ul>
+
+<p>Ela deve estar concentrada principalmente no:</p>
+
+<ul>
+  <li>Core Domain</li>
+</ul><hr />
+<h2 id="perspectiva-estratégica">
+  
+  
+    <a href="#perspectiva-estratégica" class="anchor-heading" aria-labelledby="perspectiva-estratégica"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Perspectiva Estratégica
+  
+  
+</h2>
+    
+
+<p>DDD moderno conecta arquitetura com estratégia:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Diferenciação</th>
+      <th>Ação recomendada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Core</td>
+      <td>Alta</td>
+      <td>Construir</td>
+    </tr>
+    <tr>
+      <td>Supporting</td>
+      <td>Média</td>
+      <td>Customizar</td>
+    </tr>
+    <tr>
+      <td>Generic</td>
+      <td>Baixa</td>
+      <td>Comprar</td>
+    </tr>
+  </tbody>
+</table></div><hr />
+<h2 id="build-vs-buy">
+  
+  
+    <a href="#build-vs-buy" class="anchor-heading" aria-labelledby="build-vs-buy"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Build vs Buy
+  
+  
+</h2>
+    
+
+<p><strong>Build vs Buy</strong> é o dilema estratégico de decidir entre <strong>desenvolver</strong> uma solução internamente ou <strong>adquirir</strong> um produto pronto no mercado.</p>
+
+<ul>
+  <li>
+    <p><strong>Build (Construir):</strong> Foco em personalização total e propriedade intelectual. Exige tempo, desenvolvedores qualificados e manutenção contínua de longo prazo. Ideal para o “core business” (o diferencial da empresa).</p>
+  </li>
+  <li>
+    <p><strong>Buy (Comprar/Adotar):</strong> Foco em velocidade e eficiência. Utiliza soluções prontas (SaaS, bibliotecas) para reduzir o <em>time-to-market</em>. Ideal para funções periféricas ou infraestrutura (como o Keycloak).</p>
+  </li>
+</ul>
+
+<p class="highlight">O objetivo é equilibrar custo, controle e velocidade para entregar valor ao cliente sem “reinventar a roda” desnecessariamente.</p>
+
+<p class="label label-fk-orange-300">Core</p>
+
+<p>Oferece vantagem competitiva, Lógica complexa e única, difícil de replicar.</p>
+
+<p class="label label-fk-red-300">Supporting</p>
+
+<p>Não oferece vantagem competitiva direta, mas suporta o Core.  Requer solução customizada, pois é adaptado ao domínio principal, mas a lógica deve ser simples.</p>
+
+<p class="label label-blue">Generic (Genérico)</p>
+
+<p>Problemas resolvidos da mesma forma por todas as empresas. Deve-se comprar ou adotar soluções prontas.</p>
+
+<p><img src="/assets/22178cffef8b67140d25f9eeeed1d662_MD5.jpg" alt="" /></p>
+
+<dl>
+  <dt>Build</dt>
+  <dd>Combinação de código customizado e bibliotecas open source que a equipe deve projetar, manter e escalar.</dd>
+  <dt>Buy</dt>
+  <dd>Compra de um serviço definido que agrega valor imediato, onde a manutenção e escalabilidade são geralmente do fornecedor.</dd>
+</dl>
+
+<p>Se adotamos por exemplo o Keycloak que é uma ferramenta de código aberto que transita entre o “Build” (você precisa hospedar, configurar e manter) e o “Buy” (no sentido de ser uma solução pronta que você “adquire” em vez de escrever lógica de autenticação do zero).</p><hr />
+<h2 id="exemplos-de-subdomínios-genéricos">
+  
+  
+    <a href="#exemplos-de-subdomínios-genéricos" class="anchor-heading" aria-labelledby="exemplos-de-subdomínios-genéricos"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Exemplos de Subdomínios Genéricos
+  
+  
+</h2>
+    
+
+<ul>
+  <li>Autenticação (Auth0, Keycloak)</li>
+  <li>Pagamentos (Stripe, Adyen)</li>
+  <li>Notificações (Firebase)</li>
+  <li>Armazenamento (S3, GCS)</li>
+  <li>Observabilidade (Datadog, Prometheus)</li>
+</ul><hr />
+<h2 id="exemplos-de-subdomínios-de-apoio">
+  
+  
+    <a href="#exemplos-de-subdomínios-de-apoio" class="anchor-heading" aria-labelledby="exemplos-de-subdomínios-de-apoio"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Exemplos de Subdomínios de Apoio
+  
+  
+</h2>
+    
+
+<ul>
+  <li>Dashboard administrativo</li>
+  <li>Sistema de comentários</li>
+  <li>Gestão de usuários interna</li>
+  <li>Workflow de aprovação</li>
+</ul><hr />
+<h2 id="exemplo-de-domínios-e-subdomínios">
+  
+  
+    <a href="#exemplo-de-domínios-e-subdomínios" class="anchor-heading" aria-labelledby="exemplo-de-domínios-e-subdomínios"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Exemplo de Domínios e Subdomínios
+  
+  
+</h2>
+    
+<h3 id="sistema-hospitalar-escala-1-10">
+  
+  
+    <a href="#sistema-hospitalar-escala-1-10" class="anchor-heading" aria-labelledby="sistema-hospitalar-escala-1-10"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Sistema Hospitalar (Escala 1-10)
+  
+  
+</h3>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Subdomínio</th>
+      <th>Complexidade</th>
+      <th>Diferenciação</th>
+      <th>Categoria</th>
+      <th>Ação Estratégica</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. IA de Apoio ao Diagnóstico</strong></td>
+      <td>10</td>
+      <td><strong>10</strong></td>
+      <td><strong class="label label-fk-orange-300">Core</strong></td>
+      <td>P&amp;D Interno (Patente)</td>
+    </tr>
+    <tr>
+      <td><strong>2. Medicina de Precisão (Genômica)</strong></td>
+      <td>10</td>
+      <td><strong>9</strong></td>
+      <td><strong class="label label-fk-orange-300">Core</strong></td>
+      <td>Parceria Científica</td>
+    </tr>
+    <tr>
+      <td><strong>3. Triagem Digital e Fluxo de Urgência</strong></td>
+      <td>7</td>
+      <td><strong>8</strong></td>
+      <td><strong class="label label-fk-orange-300">Core</strong></td>
+      <td>Desenvolvimento Customizado</td>
+    </tr>
+    <tr>
+      <td><strong>4. Gestão de Desfecho Clínico</strong></td>
+      <td>8</td>
+      <td><strong>8</strong></td>
+      <td><strong class="label label-fk-orange-300">Core</strong></td>
+      <td>Foco em Ciência de Dados</td>
+    </tr>
+    <tr>
+      <td><strong>5. Monitoramento IoT (UTI Conectada)</strong></td>
+      <td>8</td>
+      <td><strong>7</strong></td>
+      <td><strong class="label label-fk-orange-300">Core</strong></td>
+      <td>Integração de Hardware</td>
+    </tr>
+    <tr>
+      <td><strong>6. Prontuário Eletrônico (PEP)</strong></td>
+      <td>9</td>
+      <td><strong>6</strong></td>
+      <td><strong class="label label-fk-orange-300">Core</strong></td>
+      <td>Customização Pesada</td>
+    </tr>
+    <tr>
+      <td><strong>7. Escalonamento Médico Inteligente</strong></td>
+      <td>6</td>
+      <td><strong>5</strong></td>
+      <td><strong class="label label-fk-red-300">Supporting</strong></td>
+      <td>Algoritmo sob medida</td>
+    </tr>
+    <tr>
+      <td><strong>8. Gestão de Leitos e Altas</strong></td>
+      <td>5</td>
+      <td><strong>5</strong></td>
+      <td><strong class="label label-fk-red-300">Supporting</strong></td>
+      <td>Otimização de Processo</td>
+    </tr>
+    <tr>
+      <td><strong>9. Portal de Telemedicina</strong></td>
+      <td>4</td>
+      <td><strong>4</strong></td>
+      <td><strong class="label label-fk-red-300">Supporting</strong></td>
+      <td>Integrar SDKs de Mercado</td>
+    </tr>
+    <tr>
+      <td><strong>10. Controle de Infecção (CCIH)</strong></td>
+      <td>7</td>
+      <td><strong>4</strong></td>
+      <td><strong class="label label-fk-red-300">Supporting</strong></td>
+      <td>Regras de Negócio Internas</td>
+    </tr>
+    <tr>
+      <td><strong>11. Faturamento TISS/TUSS</strong></td>
+      <td>9</td>
+      <td><strong>2</strong></td>
+      <td><strong class="label label-blue label label-blue">Generic</strong></td>
+      <td>Comprar (Software Especializado)</td>
+    </tr>
+    <tr>
+      <td><strong>12. Agendamento Multicanal</strong></td>
+      <td>4</td>
+      <td><strong>2</strong></td>
+      <td><strong class="label label-blue">Generic</strong></td>
+      <td>Usar SaaS (White-label)</td>
+    </tr>
+    <tr>
+      <td><strong>13. Farmácia e Estoque Central</strong></td>
+      <td>5</td>
+      <td><strong>2</strong></td>
+      <td><strong class="label label-blue">Generic</strong></td>
+      <td>Módulo de ERP Padrão</td>
+    </tr>
+    <tr>
+      <td><strong>14. Compras e Suprimentos</strong></td>
+      <td>5</td>
+      <td><strong>1</strong></td>
+      <td><strong class="label label-blue">Generic</strong></td>
+      <td>ERP de Mercado</td>
+    </tr>
+    <tr>
+      <td><strong>15. Autenticação e Segurança (LGPD)</strong></td>
+      <td>6</td>
+      <td><strong>1</strong></td>
+      <td><strong class="label label-blue">Generic</strong></td>
+      <td>Usar Provedor de Identidade</td>
+    </tr>
+    <tr>
+      <td><strong>16. Folha de Pagamento</strong></td>
+      <td>4</td>
+      <td><strong>1</strong></td>
+      <td><strong class="label label-blue">Generic</strong></td>
+      <td>Outsourcing / ERP</td>
+    </tr>
+    <tr>
+      <td><strong>17. Manutenção de Equipamentos</strong></td>
+      <td>3</td>
+      <td><strong>1</strong></td>
+      <td><strong class="label label-blue">Generic</strong></td>
+      <td>Software de Asset Mgmt</td>
+    </tr>
+    <tr>
+      <td><strong>18. Hotelaria e Limpeza</strong></td>
+      <td>2</td>
+      <td><strong>1</strong></td>
+      <td><strong class="label label-blue">Generic</strong></td>
+      <td>Terceirizar Software</td>
+    </tr>
+    <tr>
+      <td><strong>19. Pesquisa de Satisfação</strong></td>
+      <td>2</td>
+      <td><strong>1</strong></td>
+      <td><strong class="label label-blue">Generic</strong></td>
+      <td>Ferramenta Gratuita/SaaS</td>
+    </tr>
+    <tr>
+      <td><strong>20. Contabilidade e Fiscal</strong></td>
+      <td>6</td>
+      <td><strong>1</strong></td>
+      <td><strong class="label label-blue">Generic</strong></td>
+      <td>Software Padrão</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="40-subdomínios-genéricos-escala-1-10">
+  
+  
+    <a href="#40-subdomínios-genéricos-escala-1-10" class="anchor-heading" aria-labelledby="40-subdomínios-genéricos-escala-1-10"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 40 Subdomínios Genéricos (Escala 1-10)
+  
+  
+</h3>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th><strong>Item de Infraestrutura / Negócio</strong></th>
+      <th><strong>Complexidade</strong></th>
+      <th><strong>Diferenciação</strong></th>
+      <th><strong>Ação Recomendada</strong></th>
+      <th><strong>Exemplo de Solução</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Autenticação (Login/Logout)</strong></td>
+      <td>6</td>
+      <td>1</td>
+      <td>Comprar / SaaS</td>
+      <td>Auth0, Keycloak, Firebase</td>
+    </tr>
+    <tr>
+      <td><strong>2. Autorização (RBAC/Permissões)</strong></td>
+      <td>5</td>
+      <td>2</td>
+      <td>Usar Biblioteca</td>
+      <td>Casbin, Permit.io</td>
+    </tr>
+    <tr>
+      <td><strong>3. Observabilidade (Logs/Tracing)</strong></td>
+      <td>7</td>
+      <td>1</td>
+      <td>Comprar / SaaS</td>
+      <td>Datadog, New Relic, ELK</td>
+    </tr>
+    <tr>
+      <td><strong>4. Monitoramento de Métricas</strong></td>
+      <td>6</td>
+      <td>1</td>
+      <td>Usar Open Source</td>
+      <td>Prometheus + Grafana</td>
+    </tr>
+    <tr>
+      <td><strong>5. Envio de E-mail Transacional</strong></td>
+      <td>3</td>
+      <td>1</td>
+      <td>SaaS</td>
+      <td>SendGrid, AWS SES, Postmark</td>
+    </tr>
+    <tr>
+      <td><strong>6. Notificações Push</strong></td>
+      <td>4</td>
+      <td>1</td>
+      <td>SaaS</td>
+      <td>Firebase Cloud Messaging (FCM)</td>
+    </tr>
+    <tr>
+      <td><strong>7. Gateway de Pagamento</strong></td>
+      <td>7</td>
+      <td>2</td>
+      <td>Integração API</td>
+      <td>Stripe, Adyen, Iugu</td>
+    </tr>
+    <tr>
+      <td><strong>8. Faturamento (Subscription/Tax)</strong></td>
+      <td>8</td>
+      <td>1</td>
+      <td>SaaS</td>
+      <td>Chargebee, Stripe Billing</td>
+    </tr>
+    <tr>
+      <td><strong>9. Armazenamento de Arquivos</strong></td>
+      <td>4</td>
+      <td>1</td>
+      <td>Infraestrutura Cloud</td>
+      <td>AWS S3, Google Cloud Storage</td>
+    </tr>
+    <tr>
+      <td><strong>10. CDN (Entrega de Conteúdo)</strong></td>
+      <td>5</td>
+      <td>1</td>
+      <td>Configuração Cloud</td>
+      <td>Cloudflare, Akamai</td>
+    </tr>
+    <tr>
+      <td><strong>11. Mensageria / Filas</strong></td>
+      <td>6</td>
+      <td>1</td>
+      <td>PaaS / Middleware</td>
+      <td>RabbitMQ, Kafka, AWS SQS</td>
+    </tr>
+    <tr>
+      <td><strong>12. Backup e Disaster Recovery</strong></td>
+      <td>8</td>
+      <td>1</td>
+      <td>Automação Cloud</td>
+      <td>AWS Backup</td>
+    </tr>
+    <tr>
+      <td><strong>13. Gestão de API (Gateway)</strong></td>
+      <td>6</td>
+      <td>1</td>
+      <td>Solução Pronta</td>
+      <td>Kong, Apigee, Tyk</td>
+    </tr>
+    <tr>
+      <td><strong>14. Busca (Full-text Search)</strong></td>
+      <td>7</td>
+      <td>2</td>
+      <td>Usar Motor Pronto</td>
+      <td>Elasticsearch, Algolia</td>
+    </tr>
+    <tr>
+      <td><strong>15. Agendamento de Tarefas (Cron)</strong></td>
+      <td>3</td>
+      <td>1</td>
+      <td>Lib / Framework</td>
+      <td>Hangfire, Quartz.net</td>
+    </tr>
+    <tr>
+      <td><strong>16. Tradução e Localização (i18n)</strong></td>
+      <td>2</td>
+      <td>1</td>
+      <td>Lib Padrão</td>
+      <td>i18next, Lokalise</td>
+    </tr>
+    <tr>
+      <td><strong>17. Documentação de API</strong></td>
+      <td>2</td>
+      <td>1</td>
+      <td>Gerador Automático</td>
+      <td>Swagger (OpenAPI)</td>
+    </tr>
+    <tr>
+      <td><strong>18. Verificação de Identidade (KYC)</strong></td>
+      <td>8</td>
+      <td>2</td>
+      <td>SaaS Especializado</td>
+      <td>Unico, Onfido</td>
+    </tr>
+    <tr>
+      <td><strong>19. Chat / Mensagens em Tempo Real</strong></td>
+      <td>7</td>
+      <td>2</td>
+      <td>SDK / SaaS</td>
+      <td>Sendbird, Stream Chat</td>
+    </tr>
+    <tr>
+      <td><strong>20. Gerenciamento de Consentimento (LGPD)</strong></td>
+      <td>4</td>
+      <td>1</td>
+      <td>SaaS</td>
+      <td>OneTrust, Cookiebot</td>
+    </tr>
+    <tr>
+      <td><strong>21. Auditoria de Dados (Trail Logs)</strong></td>
+      <td>4</td>
+      <td>1</td>
+      <td>Biblioteca</td>
+      <td>Envers, Audit.NET</td>
+    </tr>
+    <tr>
+      <td><strong>22. Relatórios de BI / Analytics</strong></td>
+      <td>6</td>
+      <td>2</td>
+      <td>Ferramenta de BI</td>
+      <td>PowerBI, Metabase, Looker</td>
+    </tr>
+    <tr>
+      <td><strong>23. Gestão de Segredos (Vault)</strong></td>
+      <td>6</td>
+      <td>1</td>
+      <td>Solução de Segurança</td>
+      <td>HashiCorp Vault, AWS Secrets</td>
+    </tr>
+    <tr>
+      <td><strong>24. Conversão de Documentos (PDF/Img)</strong></td>
+      <td>3</td>
+      <td>1</td>
+      <td>Lib de Terceiros</td>
+      <td>Puppeteer, IronPDF</td>
+    </tr>
+    <tr>
+      <td><strong>25. Mapas e Geocodificação</strong></td>
+      <td>5</td>
+      <td>2</td>
+      <td>API</td>
+      <td>Google Maps, Mapbox</td>
+    </tr>
+    <tr>
+      <td><strong>26. Testes A/B e Feature Flags</strong></td>
+      <td>4</td>
+      <td>2</td>
+      <td>SaaS</td>
+      <td>LaunchDarkly, Flagsmith</td>
+    </tr>
+    <tr>
+      <td><strong>27. Help Desk / Chat de Suporte</strong></td>
+      <td>2</td>
+      <td>1</td>
+      <td>SaaS</td>
+      <td>Zendesk, Intercom</td>
+    </tr>
+    <tr>
+      <td><strong>28. Gerenciamento de Usuários (IAM)</strong></td>
+      <td>6</td>
+      <td>1</td>
+      <td>SaaS</td>
+      <td>Okta, Azure AD</td>
+    </tr>
+    <tr>
+      <td><strong>29. Exportação de Dados (CSV/XLS)</strong></td>
+      <td>3</td>
+      <td>1</td>
+      <td>Lib Padrão</td>
+      <td>SheetJS, Pandas</td>
+    </tr>
+    <tr>
+      <td><strong>30. Prevenção de Fraude (Anti-fraud)</strong></td>
+      <td>8</td>
+      <td>2</td>
+      <td>SaaS Especializado</td>
+      <td>Konduto, ClearSale</td>
+    </tr>
+    <tr>
+      <td><strong>31. Assinatura Eletrônica</strong></td>
+      <td>3</td>
+      <td>1</td>
+      <td>API</td>
+      <td>DocuSign, Clicksign</td>
+    </tr>
+    <tr>
+      <td><strong>32. Redimensionamento de Imagem</strong></td>
+      <td>4</td>
+      <td>1</td>
+      <td>SaaS / Serverless</td>
+      <td>Cloudinary, Imgix</td>
+    </tr>
+    <tr>
+      <td><strong>33. Cache (In-memory)</strong></td>
+      <td>5</td>
+      <td>1</td>
+      <td>Middleware</td>
+      <td>Redis, Memcached</td>
+    </tr>
+    <tr>
+      <td><strong>34. Validação de Endereço (CEP)</strong></td>
+      <td>2</td>
+      <td>1</td>
+      <td>API</td>
+      <td>ViaCEP, Postmon</td>
+    </tr>
+    <tr>
+      <td><strong>35. Pesquisas e NPS</strong></td>
+      <td>2</td>
+      <td>1</td>
+      <td>SaaS</td>
+      <td>Hotjar, SurveyMonkey</td>
+    </tr>
+    <tr>
+      <td><strong>36. Webhook Management</strong></td>
+      <td>5</td>
+      <td>1</td>
+      <td>Solução Pronta</td>
+      <td>Svix, Hookdeck</td>
+    </tr>
+    <tr>
+      <td><strong>37. Single Sign-On (SSO Social)</strong></td>
+      <td>4</td>
+      <td>1</td>
+      <td>SaaS</td>
+      <td>NextAuth.js, Clerk</td>
+    </tr>
+    <tr>
+      <td><strong>38. Gerenciamento de DNS</strong></td>
+      <td>3</td>
+      <td>1</td>
+      <td>Infraestrutura</td>
+      <td>Route53, GoDaddy</td>
+    </tr>
+    <tr>
+      <td><strong>39. Análise de Performance (APM)</strong></td>
+      <td>7</td>
+      <td>1</td>
+      <td>SaaS</td>
+      <td>Sentry, AppDynamics</td>
+    </tr>
+    <tr>
+      <td><strong>40. Shortener (Encurtador de Link)</strong></td>
+      <td>2</td>
+      <td>1</td>
+      <td>Lib / SaaS</td>
+      <td>Bitly, Dub.co</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="40-subdomínios-de-suporte-escala-1-10">
+  
+  
+    <a href="#40-subdomínios-de-suporte-escala-1-10" class="anchor-heading" aria-labelledby="40-subdomínios-de-suporte-escala-1-10"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 40 Subdomínios de Suporte (Escala 1-10)
+  
+  
+</h3>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th><strong>Subdomínio de Apoio</strong></th>
+      <th><strong>Complexidade</strong></th>
+      <th><strong>Diferenciação</strong></th>
+      <th><strong>Por que é Suporte?</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Gestão de Agenda Interna</strong></td>
+      <td>4</td>
+      <td>4</td>
+      <td>Organiza o tempo, mas não é o serviço final.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Painel de Controle (Admin)</strong></td>
+      <td>5</td>
+      <td>3</td>
+      <td>Ferramenta para equipe interna operar o sistema.</td>
+    </tr>
+    <tr>
+      <td><strong>3. Cadastro de Fornecedores</strong></td>
+      <td>3</td>
+      <td>2</td>
+      <td>Necessário para o ERP, mas sem lógica única.</td>
+    </tr>
+    <tr>
+      <td><strong>4. Sistema de Comentários</strong></td>
+      <td>3</td>
+      <td>3</td>
+      <td>Engajamento que suporta o conteúdo principal.</td>
+    </tr>
+    <tr>
+      <td><strong>5. Favoritos / Listas de Desejos</strong></td>
+      <td>2</td>
+      <td>3</td>
+      <td>Auxilia a conversão no Core.</td>
+    </tr>
+    <tr>
+      <td><strong>6. Workflow de Aprovação</strong></td>
+      <td>5</td>
+      <td>5</td>
+      <td>Regras internas específicas de hierarquia.</td>
+    </tr>
+    <tr>
+      <td><strong>7. Gerenciador de Templates</strong></td>
+      <td>4</td>
+      <td>2</td>
+      <td>Facilita a criação de documentos/e-mails.</td>
+    </tr>
+    <tr>
+      <td><strong>8. Histórico de Alterações (Timeline)</strong></td>
+      <td>3</td>
+      <td>4</td>
+      <td>Suporta auditoria e visualização de dados.</td>
+    </tr>
+    <tr>
+      <td><strong>9. Dashboard de Metas Equipe</strong></td>
+      <td>4</td>
+      <td>4</td>
+      <td>Motivação interna, não impacta o cliente.</td>
+    </tr>
+    <tr>
+      <td><strong>10. Controle de Acesso Físico</strong></td>
+      <td>3</td>
+      <td>2</td>
+      <td>Segurança predial integrada ao sistema.</td>
+    </tr>
+    <tr>
+      <td><strong>11. Gestão de Inventário Simples</strong></td>
+      <td>5</td>
+      <td>4</td>
+      <td>Apoia a operação (ex: estoque de papel).</td>
+    </tr>
+    <tr>
+      <td><strong>12. Portal de Autoatendimento</strong></td>
+      <td>4</td>
+      <td>5</td>
+      <td>Reduz carga do suporte humano.</td>
+    </tr>
+    <tr>
+      <td><strong>13. Gerador de Relatórios Custom</strong></td>
+      <td>6</td>
+      <td>5</td>
+      <td>Extração de dados para tomada de decisão.</td>
+    </tr>
+    <tr>
+      <td><strong>14. Cadastro de Catálogo</strong></td>
+      <td>4</td>
+      <td>3</td>
+      <td>Organização de itens/serviços oferecidos.</td>
+    </tr>
+    <tr>
+      <td><strong>15. Sistema de FAQ Dinâmico</strong></td>
+      <td>2</td>
+      <td>2</td>
+      <td>Apoia o sucesso do cliente.</td>
+    </tr>
+    <tr>
+      <td><strong>16. Checklists de Procedimento</strong></td>
+      <td>3</td>
+      <td>5</td>
+      <td>Garante que o processo Core seja seguido.</td>
+    </tr>
+    <tr>
+      <td><strong>17. Gestão de Contatos (CRM Lite)</strong></td>
+      <td>4</td>
+      <td>4</td>
+      <td>Apoia a área comercial/atendimento.</td>
+    </tr>
+    <tr>
+      <td><strong>18. Calculadora de Impostos Local</strong></td>
+      <td>5</td>
+      <td>3</td>
+      <td>Regras específicas que mudam por região.</td>
+    </tr>
+    <tr>
+      <td><strong>19. Mural de Avisos Internos</strong></td>
+      <td>2</td>
+      <td>1</td>
+      <td>Comunicação básica entre funcionários.</td>
+    </tr>
+    <tr>
+      <td><strong>20. Upload e Processamento de Docs</strong></td>
+      <td>5</td>
+      <td>4</td>
+      <td>Preparação de dados para o Core.</td>
+    </tr>
+    <tr>
+      <td><strong>21. Categorização/Tags de Dados</strong></td>
+      <td>3</td>
+      <td>3</td>
+      <td>Organiza a busca do sistema.</td>
+    </tr>
+    <tr>
+      <td><strong>22. Gestão de Filas de Atendimento</strong></td>
+      <td>4</td>
+      <td>5</td>
+      <td>Melhora a experiência, mas não é o produto.</td>
+    </tr>
+    <tr>
+      <td><strong>23. Logística de Entrega Interna</strong></td>
+      <td>5</td>
+      <td>4</td>
+      <td>Movimentação de materiais entre prédios.</td>
+    </tr>
+    <tr>
+      <td><strong>24. Validação de Regras de Negócio</strong></td>
+      <td>6</td>
+      <td>5</td>
+      <td>“Guarda-costas” da integridade do Core.</td>
+    </tr>
+    <tr>
+      <td><strong>25. Exportação para Contabilidade</strong></td>
+      <td>4</td>
+      <td>2</td>
+      <td>Ponte entre o sistema e o setor financeiro.</td>
+    </tr>
+    <tr>
+      <td><strong>26. Pesquisa de Clima Organizacional</strong></td>
+      <td>2</td>
+      <td>1</td>
+      <td>Apoio ao RH integrado ao sistema.</td>
+    </tr>
+    <tr>
+      <td><strong>27. Importação de Dados Legados</strong></td>
+      <td>6</td>
+      <td>2</td>
+      <td>Esforço único para migração de clientes.</td>
+    </tr>
+    <tr>
+      <td><strong>28. Gerenciador de Banners/Promos</strong></td>
+      <td>3</td>
+      <td>4</td>
+      <td>Apoia o marketing no front-end.</td>
+    </tr>
+    <tr>
+      <td><strong>29. Sistema de Ranks/Badges</strong></td>
+      <td>4</td>
+      <td>5</td>
+      <td>Gamificação simples para engajamento.</td>
+    </tr>
+    <tr>
+      <td><strong>30. Tradutor de Termos Técnicos</strong></td>
+      <td>3</td>
+      <td>3</td>
+      <td>Glossário para usuários do sistema.</td>
+    </tr>
+    <tr>
+      <td><strong>31. Gestão de Equipas/Squads</strong></td>
+      <td>3</td>
+      <td>3</td>
+      <td>Define quem trabalha em qual projeto.</td>
+    </tr>
+    <tr>
+      <td><strong>32. Integração com Calendários</strong></td>
+      <td>4</td>
+      <td>3</td>
+      <td>Sincroniza dados com Google/Outlook.</td>
+    </tr>
+    <tr>
+      <td><strong>33. Central de Notificações</strong></td>
+      <td>4</td>
+      <td>4</td>
+      <td>Agrega avisos para o usuário não se perder.</td>
+    </tr>
+    <tr>
+      <td><strong>34. Backup de Configurações</strong></td>
+      <td>3</td>
+      <td>2</td>
+      <td>Guarda preferências do usuário.</td>
+    </tr>
+    <tr>
+      <td><strong>35. Verificador de Duplicidade</strong></td>
+      <td>4</td>
+      <td>4</td>
+      <td>Limpeza de base de dados.</td>
+    </tr>
+    <tr>
+      <td><strong>36. Workflow de Onboarding</strong></td>
+      <td>5</td>
+      <td>5</td>
+      <td>Tutorial de primeiro uso do sistema.</td>
+    </tr>
+    <tr>
+      <td><strong>37. Gestão de Cupons de Desconto</strong></td>
+      <td>4</td>
+      <td>4</td>
+      <td>Ativação de gatilhos de venda.</td>
+    </tr>
+    <tr>
+      <td><strong>38. Reserva de Salas/Equipamentos</strong></td>
+      <td>2</td>
+      <td>2</td>
+      <td>Organização de ativos internos.</td>
+    </tr>
+    <tr>
+      <td><strong>39. Controle de Versão de Documentos</strong></td>
+      <td>5</td>
+      <td>4</td>
+      <td>Evita perda de dados em edição coletiva.</td>
+    </tr>
+    <tr>
+      <td><strong>40. Dashboard de Saúde do Sistema</strong></td>
+      <td>4</td>
+      <td>3</td>
+      <td>Visão gerencial sobre estabilidade.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="referências">
+  
+  
+    <a href="#referências" class="anchor-heading" aria-labelledby="referências"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Referências
+  
+  
+</h2>
+    
+<h3 id="livros">
+  
+  
+    <a href="#livros" class="anchor-heading" aria-labelledby="livros"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Livros
+  
+  
+</h3>
+    
+
+<ul>
+  <li>Eric Evans — <em>Domain-Driven Design</em></li>
+  <li>Vaughn Vernon — <em>Implementing Domain-Driven Design</em></li>
+  <li>Vlad Khononov — <em>Learning Domain-Driven Design</em></li>
+</ul>
+<h3 id="autores-e-influências">
+  
+  
+    <a href="#autores-e-influências" class="anchor-heading" aria-labelledby="autores-e-influências"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Autores e influências
+  
+  
+</h3>
+    
+
+<ul>
+  <li>Martin Fowler — arquitetura de software</li>
+  <li>Sam Newman — microservices</li>
+  <li>Alberto Brandolini — Event Storming</li>
+</ul>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+  <p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.</p>
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+
+
+
+<script type="module">
+  
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.13.0/dist/mermaid.esm.min.mjs';
+  
+
+  var config = {
+};
+;
+  mermaid.initialize(config);
+  mermaid.run({
+    querySelector: '.language-mermaid',
+  });
+</script>
+
+
+
+  
+</body>
+</html>
+
