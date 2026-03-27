@@ -15,9 +15,10 @@
   
 
     .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
     
-    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(1)) > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(3)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
       background-image: none;
     }
 
@@ -26,18 +27,20 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(1) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > ul > li:nth-child(3) > a {
       font-weight: 600;
       text-decoration: none;
     }
     .site-nav > ul.nav-category-list > li > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(1) > button svg {
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > ul > li:nth-child(3) > button svg {
       transform: rotate(-90deg);
     }
     .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
       display: block;
     }
   </style>
@@ -71,20 +74,20 @@
 
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Tags | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<title>O Dicionário Ubíquo | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Tags" />
+<meta property="og:title" content="O Dicionário Ubíquo" />
 <meta property="og:locale" content="pt_BR" />
 <meta name="description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
 <meta property="og:description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
-<link rel="canonical" href="/post/tags.html" />
-<meta property="og:url" content="/post/tags.html" />
+<link rel="canonical" href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" />
+<meta property="og:url" content="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" />
 <meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Tags" />
+<meta property="twitter:title" content="O Dicionário Ubíquo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional.","headline":"Tags","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/bpstrat-logo-horizontal.svg"}},"url":"/post/tags.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional.","headline":"O Dicionário Ubíquo","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/bpstrat-logo-horizontal.svg"}},"url":"/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -262,8 +265,9 @@
     <div class="main-content-wrap">
       <nav aria-label="Breadcrumb" class="breadcrumb-nav">
   <ol class="breadcrumb-nav-list">
-    <li class="breadcrumb-nav-list-item"><a href="/post/">Posts</a></li>
-    <li class="breadcrumb-nav-list-item"><span>Tags</span></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/ddd/">DDD</a></li>
+    <li class="breadcrumb-nav-list-item"><span>O Dicionário Ubíquo</span></li>
   </ol>
 </nav>
 
@@ -271,106 +275,149 @@
       <div id="main-content" class="main-content">
         <main>
           
-            <h1 id="tags">
+            <h1 class="no_toc" id="o-dicionário-ubíquo-eliminando-a-ambiguidade">
   
   
-    <a href="#tags" class="anchor-heading" aria-labelledby="tags"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tags
+    <a href="#o-dicionário-ubíquo-eliminando-a-ambiguidade" class="anchor-heading" aria-labelledby="o-dicionário-ubíquo-eliminando-a-ambiguidade"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> O Dicionário Ubíquo: Eliminando a Ambiguidade
   
   
 </h1>
     
-<h2 id="agents">
+<h2 class="no_toc text-delta" id="índice">
   
   
-    <a href="#agents" class="anchor-heading" aria-labelledby="agents"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Agents
-  
-  
-</h2>
-    
-
-<p><a id="agents"></a></p>
-
-<ul>
-  <li><a href="/post/rag-md/">Explorando o Potencial da Tecnologia RAG (Retrieval-Augmented Generation) em Modelos de Linguagem</a></li>
-</ul>
-<h2 id="arquitetura">
-  
-  
-    <a href="#arquitetura" class="anchor-heading" aria-labelledby="arquitetura"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Arquitetura
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
   
   
 </h2>
     
 
-<p><a id="arquitetura"></a></p>
+<ol id="markdown-toc">
+  <li><a href="#principais-características-e-benefícios" id="markdown-toc-principais-características-e-benefícios">Principais Características e Benefícios</a></li>
+  <li><a href="#como-é-criado-e-mantido" id="markdown-toc-como-é-criado-e-mantido">Como é Criado e Mantido?</a></li>
+  <li><a href="#exemplo-prático-e-commerce-de-seguros" id="markdown-toc-exemplo-prático-e-commerce-de-seguros">Exemplo Prático: E-commerce de Seguros</a></li>
+</ol>
 
-<ul>
-  <li><a href="/post/cognitive-architecture-md/">Arquitetura Cognitiva - A Nova Onda em Aplicações Corporativas</a></li>
-</ul>
-<h2 id="ia">
+<p><img src="/assets/778c20920959a526ebf72c20644ef884_MD5.jpg" alt="" class="rounded" /></p>
+
+<p>O <strong>Dicionário Ubíquo</strong> é a base do <strong>Design Orientado a Domínio</strong> (DDD - Domain-Driven Design), atuando como a ponte que une o mundo do negócio e o mundo da tecnologia para criar um software que resolve problemas reais de forma eficaz e compreensível.</p>
+
+<p>Ele é uma linguagem comum, rigorosa e compartilhada, desenvolvida colaborativamente por todos os envolvidos em um projeto de software: desenvolvedores, especialistas do domínio (usuários, analistas de negócio, stakeholders) e gerentes de produto.</p>
+
+<p>O objetivo principal é eliminar ambiguidades e garantir que todos tenham um entendimento unificado dos conceitos do negócio. Essa linguagem não é apenas falada em reuniões, mas é usada em <strong>todos os artefatos do projeto</strong>.</p>
+<h3 id="principais-características-e-benefícios">
   
   
-    <a href="#ia" class="anchor-heading" aria-labelledby="ia"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Ia
+    <a href="#principais-características-e-benefícios" class="anchor-heading" aria-labelledby="principais-características-e-benefícios"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Principais Características e Benefícios
   
   
-</h2>
+</h3>
     
 
-<p><a id="ia"></a></p>
+<ol>
+  <li>
+    <p>Elimina a Ambiguidade: Em muitos projetos, a equipe de negócios usa uma terminologia e a equipe de desenvolvimento usa outra (muitas vezes mais técnica), exigindo uma “tradução” constante. O Dicionário Ubíquo cria uma única fonte de verdade para os termos do domínio, evitando mal-entendidos.</p>
 
-<ul>
-  <li>
-    <p><a href="/post/adeus-%C3%A0-frustra%C3%A7%C3%A3o-como-a-intelig%C3%AAncia-artificial-est%C3%A1-revolucionando-a-produtividade-no-trabalho/">Adeus à Frustração: Como a Inteligência Artificial Está Revolucionando a Produtividade no Trabalho</a></p>
+    <ol>
+      <li>Exemplo: O termo “Cliente” pode significar coisas diferentes para os departamentos de Vendas, Marketing e Suporte. O Dicionário Ubíquo força a equipe a definir precisamente o que “Cliente” significa no contexto do software que está sendo construído.</li>
+    </ol>
   </li>
   <li>
-    <p><a href="/post/cognitive-architecture-md/">Arquitetura Cognitiva - A Nova Onda em Aplicações Corporativas</a></p>
+    <p>Conecta o Código ao Negócio: A característica mais poderosa do Dicionário Ubíquo é que ele é usado diretamente no código-fonte. Nomes de classes, métodos, variáveis, módulos e bancos de dados devem refletir a linguagem do negócio.</p>
+
+    <ol>
+      <li>
+        <p>Isso torna o código mais expressivo e fácil de entender por novos desenvolvedores e até mesmo por analistas de negócio com alguma noção técnica. O código passa a ser um reflexo fiel do modelo de negócio.</p>
+      </li>
+      <li>
+        <p>Em vez de: <em>class CustMgr { void processOrder(data) }</em></p>
+      </li>
+      <li>
+        <p>Usa-se: <em>class Cliente { void RealizarPedido(Pedido pedido) }</em></p>
+      </li>
+    </ol>
   </li>
   <li>
-    <p><a href="/post/rag-md/">Explorando o Potencial da Tecnologia RAG (Retrieval-Augmented Generation) em Modelos de Linguagem</a></p>
+    <p>Facilita a Comunicação: Quando todos falam a mesma língua, a comunicação se torna mais fluida e eficiente. As conversas entre desenvolvedores e especialistas do domínio são mais ricas e focadas em resolver problemas de negócio, não em decifrar jargões.</p>
   </li>
   <li>
-    <p><a href="/post/longer-context/">Entendendo a Técnica de Longer Contexts em Modelos de Linguagem de Grande Escala (LLMs)</a></p>
+    <p>Evolução Contínua: O Dicionário Ubíquo não é estático. Ele evolui à medida que o entendimento do domínio pela equipe se aprofunda. Novas descobertas sobre o negócio levam a refinamentos na linguagem, que por sua vez são refletidos no código.</p>
   </li>
-</ul>
-<h2 id="notícias">
+</ol>
+<h3 id="como-é-criado-e-mantido">
   
   
-    <a href="#notícias" class="anchor-heading" aria-labelledby="notícias"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Notícias
+    <a href="#como-é-criado-e-mantido" class="anchor-heading" aria-labelledby="como-é-criado-e-mantido"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Como é Criado e Mantido?
   
   
-</h2>
+</h3>
     
 
-<p><a id="notícias"></a></p>
-
 <ul>
-  <li><a href="/post/bp-strat-impulsiona-180-startups-do-nordeste-em-programa-de-acelera%C3%A7%C3%A3o-do-sebrae-em-parceria-com-a/">BP STRAT impulsiona 180 startups do Nordeste em programa de aceleração do SEBRAE, em parceria com a MOA Ventures</a></li>
+  <li>
+    <p>Colaboração Intensa: Ele nasce de sessões de brainstorming, workshops e conversas contínuas entre desenvolvedores e especialistas do domínio.</p>
+  </li>
+  <li>
+    <p>Ouvir Ativamente: Os desenvolvedores devem prestar muita atenção aos termos que os especialistas usam para descrever os processos e as regras de negócio.</p>
+  </li>
+  <li>
+    <p>Questionar e Esclarecer: É crucial questionar termos vagos ou ambíuos até que um consenso seja alcançado.</p>
+  </li>
+  <li>
+    <p>Documentação (Leve): Pode ser útil manter um glossário em uma wiki ou em um documento compartilhado, mas o local principal onde o Dicionário Ubíquo deve “viver” é nas conversas e, principalmente, no código.</p>
+  </li>
 </ul>
-<h2 id="produtividade">
+<h3 id="exemplo-prático-e-commerce-de-seguros">
   
   
-    <a href="#produtividade" class="anchor-heading" aria-labelledby="produtividade"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Produtividade
+    <a href="#exemplo-prático-e-commerce-de-seguros" class="anchor-heading" aria-labelledby="exemplo-prático-e-commerce-de-seguros"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Exemplo Prático: E-commerce de Seguros
   
   
-</h2>
+</h3>
     
 
-<p><a id="produtividade"></a></p>
+<p>Imagine uma equipe construindo um portal de seguros.</p>
 
 <ul>
   <li>
-    <p><a href="/post/o-que-%C3%A9-um-procedimento-operacional-padr%C3%A3o-pop-e-por-que-consider%C3%A1-los-em-projetos-de-tecnologia/">O Que É Um Procedimento Operacional Padrão Pop E Por Que Considerá Los Em Projetos De Tecnologia</a></p>
+    <p>Termo Vago: ”Apólice”</p>
   </li>
   <li>
-    <p><a href="/post/o-custo-invis%C3%ADvel-da-lentid%C3%A3o/">O Custo Invisível da Lentidão</a></p>
+    <p>Conversa Colaborativa:</p>
+
+    <ul>
+      <li>
+        <p>Analista de Negócio: ”O cliente compra uma apólice e depois a gente emite.”</p>
+      </li>
+      <li>
+        <p>Desenvolvedor: ”Ok, mas o que é ‘comprar’ versus ‘emitir’? São a mesma coisa? O que acontece entre um e outro?”</p>
+      </li>
+      <li>
+        <p>Analista de Negócio: ”Não. Primeiro, o cliente solicita uma cotação. Se ele aceitar, a proposta é gerada. A proposta passa por uma análise de risco. Se for aprovada, aí sim a apólice é emitida e entra em vigor.”</p>
+      </li>
+    </ul>
   </li>
   <li>
-    <p><a href="/post/a-qualidade-como-acelerador/">A Qualidade como Acelerador</a></p>
-  </li>
-  <li>
-    <p><a href="/post/a-velocidade-como-vantagem-competitiva/">A Velocidade como Vantagem Competitiva</a></p>
+    <p>Termos Resultantes para o Dicionário Ubíquo:</p>
+
+    <ul>
+      <li>
+        <p>Cotação: Uma estimativa de preço para uma cobertura, sem compromisso.</p>
+      </li>
+      <li>
+        <p>Proposta: Uma solicitação formal de seguro feita pelo cliente com base em uma cotação aceita.</p>
+      </li>
+      <li>
+        <p>Análise de Risco: O processo de avaliação de uma Proposta.</p>
+      </li>
+      <li>
+        <p>Apólice: O contrato de seguro formal e emitido, que está em vigor.</p>
+      </li>
+    </ul>
   </li>
 </ul>
+
+<p>Esses termos (Cotação, Proposta, AnáliseDeRisco, Apólice) se tornariam os nomes das classes e entidades principais no código, garantindo que o software modele com precisão o processo de negócio real.</p>
 
           
 

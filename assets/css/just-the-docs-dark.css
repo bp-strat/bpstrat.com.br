@@ -7965,7 +7965,7 @@ h6 {
   overflow: hidden;
   display: block;
 }
-.main-content-wrap code.language-mermaid svg {
+.main-content-wrap .mermaid svg {
   background-color: #ffffff;
   border-radius: 16px;
 }
@@ -8498,6 +8498,26 @@ h6 {
   .bpstrat-logo-img {
     width: 190px;
   }
+}
+.mermaid-wrapper {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mermaid-toggle {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.mermaid-code {
+  margin-top: 0.5rem;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=just-the-docs-dark.css.map */

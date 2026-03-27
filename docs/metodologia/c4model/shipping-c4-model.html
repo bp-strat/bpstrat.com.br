@@ -15,9 +15,11 @@
   
 
     .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a,
     
-    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(1)) > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li:not(:nth-child(2)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li > ul > li a {
       background-image: none;
     }
 
@@ -26,18 +28,22 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(1) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(1) > ul > li:nth-child(2) > a {
       font-weight: 600;
       text-decoration: none;
     }
     .site-nav > ul.nav-category-list > li > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(1) > button svg {
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(1) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(1) > ul > li:nth-child(2) > button svg {
       transform: rotate(-90deg);
     }
     .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
       display: block;
     }
   </style>
@@ -71,20 +77,20 @@
 
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Tags | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<title>Exemplo Shipping | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Tags" />
+<meta property="og:title" content="Exemplo Shipping" />
 <meta property="og:locale" content="pt_BR" />
 <meta name="description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
 <meta property="og:description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
-<link rel="canonical" href="/post/tags.html" />
-<meta property="og:url" content="/post/tags.html" />
+<link rel="canonical" href="/docs/metodologia/c4model/shipping-c4-model.html" />
+<meta property="og:url" content="/docs/metodologia/c4model/shipping-c4-model.html" />
 <meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Tags" />
+<meta property="twitter:title" content="Exemplo Shipping" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional.","headline":"Tags","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/bpstrat-logo-horizontal.svg"}},"url":"/post/tags.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional.","headline":"Exemplo Shipping","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/bpstrat-logo-horizontal.svg"}},"url":"/docs/metodologia/c4model/shipping-c4-model.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -262,8 +268,10 @@
     <div class="main-content-wrap">
       <nav aria-label="Breadcrumb" class="breadcrumb-nav">
   <ol class="breadcrumb-nav-list">
-    <li class="breadcrumb-nav-list-item"><a href="/post/">Posts</a></li>
-    <li class="breadcrumb-nav-list-item"><span>Tags</span></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/metodologia/">Metodologias</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/metodologia/c4model/">C4 Model</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Exemplo Shipping</span></li>
   </ol>
 </nav>
 
@@ -271,106 +279,128 @@
       <div id="main-content" class="main-content">
         <main>
           
-            <h1 id="tags">
+            <h1 class="no_toc" id="exemplo-c4-model-container-diagram-nível-2">
   
   
-    <a href="#tags" class="anchor-heading" aria-labelledby="tags"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tags
+    <a href="#exemplo-c4-model-container-diagram-nível-2" class="anchor-heading" aria-labelledby="exemplo-c4-model-container-diagram-nível-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Exemplo C4 Model Container Diagram (Nível 2)
   
   
 </h1>
     
-<h2 id="agents">
+<h2 class="no_toc text-delta" id="índice">
   
   
-    <a href="#agents" class="anchor-heading" aria-labelledby="agents"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Agents
-  
-  
-</h2>
-    
-
-<p><a id="agents"></a></p>
-
-<ul>
-  <li><a href="/post/rag-md/">Explorando o Potencial da Tecnologia RAG (Retrieval-Augmented Generation) em Modelos de Linguagem</a></li>
-</ul>
-<h2 id="arquitetura">
-  
-  
-    <a href="#arquitetura" class="anchor-heading" aria-labelledby="arquitetura"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Arquitetura
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
   
   
 </h2>
     
 
-<p><a id="arquitetura"></a></p>
+<ol id="markdown-toc">
+  <li><a href="#c4-container-diagram-c4container" id="markdown-toc-c4-container-diagram-c4container">C4 Container diagram (C4Container)</a></li>
+  <li><a href="#nível-2--c4container" id="markdown-toc-nível-2--c4container">Nível 2 — C4Container</a></li>
+  <li><a href="#nível-3--c4component" id="markdown-toc-nível-3--c4component">Nível 3 — C4Component</a></li>
+  <li><a href="#observação" id="markdown-toc-observação">Observação</a></li>
+</ol>
 
-<ul>
-  <li><a href="/post/cognitive-architecture-md/">Arquitetura Cognitiva - A Nova Onda em Aplicações Corporativas</a></li>
-</ul>
-<h2 id="ia">
+<p>Esta página complementa a modelagem apresentada anteriormente (tabela, linguagem ubíqua e diagramas iniciais), elevando a visão para o <strong>nível 2 do modelo C4 (Container)</strong>.</p>
+
+<p>O objetivo é explicitar como o contexto de Shipping é decomposto em containers executáveis e como eles se relacionam entre si e com sistemas externos.</p>
+<h2 id="c4-container-diagram-c4container">
   
   
-    <a href="#ia" class="anchor-heading" aria-labelledby="ia"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Ia
+    <a href="#c4-container-diagram-c4container" class="anchor-heading" aria-labelledby="c4-container-diagram-c4container"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> C4 Container diagram (C4Container)
+  
+  
+</h2>
+    
+<h2 id="nível-2--c4container">
+  
+  
+    <a href="#nível-2--c4container" class="anchor-heading" aria-labelledby="nível-2--c4container"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Nível 2 — C4Container
   
   
 </h2>
     
 
-<p><a id="ia"></a></p>
+<pre><code class="language-mermaid">C4Container
+title Shipping Context — Container Diagram
 
-<ul>
-  <li>
-    <p><a href="/post/adeus-%C3%A0-frustra%C3%A7%C3%A3o-como-a-intelig%C3%AAncia-artificial-est%C3%A1-revolucionando-a-produtividade-no-trabalho/">Adeus à Frustração: Como a Inteligência Artificial Está Revolucionando a Produtividade no Trabalho</a></p>
-  </li>
-  <li>
-    <p><a href="/post/cognitive-architecture-md/">Arquitetura Cognitiva - A Nova Onda em Aplicações Corporativas</a></p>
-  </li>
-  <li>
-    <p><a href="/post/rag-md/">Explorando o Potencial da Tecnologia RAG (Retrieval-Augmented Generation) em Modelos de Linguagem</a></p>
-  </li>
-  <li>
-    <p><a href="/post/longer-context/">Entendendo a Técnica de Longer Contexts em Modelos de Linguagem de Grande Escala (LLMs)</a></p>
-  </li>
-</ul>
-<h2 id="notícias">
+Person(user, "Customer / Backoffice User", "Usuário do sistema")
+
+System_Ext(carrier, "Carrier API", "Provedor logístico externo")
+
+System_Boundary(shipping, "Shipping Context") {
+    Container(api, "Shipping API", "REST (FastAPI)", "Expõe operações do domínio Shipping")
+    Container(app, "Shipping Application", "Application Services", "Orquestra casos de uso e regras")
+    ContainerDb(db, "Shipping DB", "PostgreSQL", "Persistência do aggregate ShippingOrder")
+    Container(worker, "Shipping Worker", "Async Processor", "Processa eventos e integra com carrier")
+    ContainerQueue(queue, "Event Bus", "Queue/Topic", "Transporte de eventos de domínio")
+}
+
+Rel(user, api, "Executa operações de envio", "HTTP/JSON")
+Rel(api, app, "Invoca casos de uso")
+Rel(app, db, "Lê e escreve")
+Rel(app, queue, "Publica eventos de Shipping")
+Rel(worker, queue, "Consome eventos de Shipping")
+Rel(worker, carrier, "Sincroniza tracking", "HTTP/API")
+Rel(worker, db, "Atualiza status e tracking")
+Rel(carrier, api, "Envia atualizações (webhook)", "HTTP")
+</code></pre><hr />
+<h2 id="nível-3--c4component">
   
   
-    <a href="#notícias" class="anchor-heading" aria-labelledby="notícias"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Notícias
+    <a href="#nível-3--c4component" class="anchor-heading" aria-labelledby="nível-3--c4component"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Nível 3 — C4Component
   
   
 </h2>
     
 
-<p><a id="notícias"></a></p>
+<pre><code class="language-mermaid">C4Component
+title Shipping API + Application — Component Diagram
 
-<ul>
-  <li><a href="/post/bp-strat-impulsiona-180-startups-do-nordeste-em-programa-de-acelera%C3%A7%C3%A3o-do-sebrae-em-parceria-com-a/">BP STRAT impulsiona 180 startups do Nordeste em programa de aceleração do SEBRAE, em parceria com a MOA Ventures</a></li>
-</ul>
-<h2 id="produtividade">
+Container_Boundary(api, "Shipping API") {
+    Component(controller, "Shipping Controller", "REST Controller", "Recebe requisições e valida input")
+    Component(mapper, "DTO Mapper", "Mapper", "Converte DTO &lt;-&gt; domínio")
+}
+
+Container_Boundary(app, "Shipping Application") {
+    Component(service, "Shipping Service", "Application Service", "Orquestra casos de uso")
+    Component(domain, "ShippingOrder Aggregate", "Domain Model", "Regras e invariantes do envio")
+    Component(repo, "Shipping Repository", "Port", "Interface de persistência")
+    Component(events, "Domain Events Publisher", "Event Publisher", "Publica eventos de domínio")
+}
+
+Container_Boundary(worker, "Shipping Worker") {
+    Component(handler, "Event Handler", "Consumer", "Consome eventos e executa ações")
+    Component(integration, "Carrier Adapter", "Adapter", "Integra com Carrier API")
+}
+
+ContainerDb(db, "Shipping DB", "PostgreSQL", "Armazena ShippingOrder")
+ContainerQueue(queue, "Event Bus", "Queue/Topic", "Eventos de domínio")
+
+Rel(controller, mapper, "Mapeia requisição")
+Rel(mapper, service, "Invoca")
+Rel(service, domain, "Manipula estado")
+Rel(service, repo, "Persiste via")
+Rel(repo, db, "Lê e escreve")
+Rel(service, events, "Publica eventos")
+
+Rel(events, queue, "Publica Shipping events")
+Rel(handler, queue, "Consome Shipping events")
+Rel(handler, integration, "Chama carrier")
+Rel(handler, repo, "Atualiza aggregate")
+</code></pre>
+<h2 id="observação">
   
   
-    <a href="#produtividade" class="anchor-heading" aria-labelledby="produtividade"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Produtividade
+    <a href="#observação" class="anchor-heading" aria-labelledby="observação"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Observação
   
   
 </h2>
     
 
-<p><a id="produtividade"></a></p>
-
-<ul>
-  <li>
-    <p><a href="/post/o-que-%C3%A9-um-procedimento-operacional-padr%C3%A3o-pop-e-por-que-consider%C3%A1-los-em-projetos-de-tecnologia/">O Que É Um Procedimento Operacional Padrão Pop E Por Que Considerá Los Em Projetos De Tecnologia</a></p>
-  </li>
-  <li>
-    <p><a href="/post/o-custo-invis%C3%ADvel-da-lentid%C3%A3o/">O Custo Invisível da Lentidão</a></p>
-  </li>
-  <li>
-    <p><a href="/post/a-qualidade-como-acelerador/">A Qualidade como Acelerador</a></p>
-  </li>
-  <li>
-    <p><a href="/post/a-velocidade-como-vantagem-competitiva/">A Velocidade como Vantagem Competitiva</a></p>
-  </li>
-</ul>
+<p>Este diagrama mantém o foco didático e deve ser adaptado conforme requisitos reais, como escala, resiliência, multi-tenancy e integração com múltiplos carriers.</p>
 
           
 

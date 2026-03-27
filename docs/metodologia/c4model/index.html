@@ -15,9 +15,10 @@
   
 
     .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
     
-    .site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(1)) > a,
-    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li a {
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
       background-image: none;
     }
 
@@ -26,18 +27,20 @@
       background-image: none;
     }
 
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(1) > a {
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(1) > a {
       font-weight: 600;
       text-decoration: none;
     }
     .site-nav > ul.nav-category-list > li > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > button svg,
-    .site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(1) > button svg {
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(1) > button svg {
       transform: rotate(-90deg);
     }
     .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list,
-    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
       display: block;
     }
   </style>
@@ -71,20 +74,20 @@
 
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Tags | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<title>C4 Model | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Tags" />
+<meta property="og:title" content="C4 Model" />
 <meta property="og:locale" content="pt_BR" />
 <meta name="description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
 <meta property="og:description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
-<link rel="canonical" href="/post/tags.html" />
-<meta property="og:url" content="/post/tags.html" />
+<link rel="canonical" href="/docs/metodologia/c4model/" />
+<meta property="og:url" content="/docs/metodologia/c4model/" />
 <meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Tags" />
+<meta property="twitter:title" content="C4 Model" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional.","headline":"Tags","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/bpstrat-logo-horizontal.svg"}},"url":"/post/tags.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional.","headline":"C4 Model","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/bpstrat-logo-horizontal.svg"}},"url":"/docs/metodologia/c4model/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -262,8 +265,9 @@
     <div class="main-content-wrap">
       <nav aria-label="Breadcrumb" class="breadcrumb-nav">
   <ol class="breadcrumb-nav-list">
-    <li class="breadcrumb-nav-list-item"><a href="/post/">Posts</a></li>
-    <li class="breadcrumb-nav-list-item"><span>Tags</span></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/metodologia/">Metodologias</a></li>
+    <li class="breadcrumb-nav-list-item"><span>C4 Model</span></li>
   </ol>
 </nav>
 
@@ -271,111 +275,31 @@
       <div id="main-content" class="main-content">
         <main>
           
-            <h1 id="tags">
+            <h1 id="diagramas-c4-model">
   
   
-    <a href="#tags" class="anchor-heading" aria-labelledby="tags"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tags
+    <a href="#diagramas-c4-model" class="anchor-heading" aria-labelledby="diagramas-c4-model"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Diagramas C4 Model
   
   
 </h1>
-    
-<h2 id="agents">
-  
-  
-    <a href="#agents" class="anchor-heading" aria-labelledby="agents"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Agents
-  
-  
-</h2>
-    
-
-<p><a id="agents"></a></p>
-
-<ul>
-  <li><a href="/post/rag-md/">Explorando o Potencial da Tecnologia RAG (Retrieval-Augmented Generation) em Modelos de Linguagem</a></li>
-</ul>
-<h2 id="arquitetura">
-  
-  
-    <a href="#arquitetura" class="anchor-heading" aria-labelledby="arquitetura"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Arquitetura
-  
-  
-</h2>
-    
-
-<p><a id="arquitetura"></a></p>
-
-<ul>
-  <li><a href="/post/cognitive-architecture-md/">Arquitetura Cognitiva - A Nova Onda em Aplicações Corporativas</a></li>
-</ul>
-<h2 id="ia">
-  
-  
-    <a href="#ia" class="anchor-heading" aria-labelledby="ia"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Ia
-  
-  
-</h2>
-    
-
-<p><a id="ia"></a></p>
-
-<ul>
-  <li>
-    <p><a href="/post/adeus-%C3%A0-frustra%C3%A7%C3%A3o-como-a-intelig%C3%AAncia-artificial-est%C3%A1-revolucionando-a-produtividade-no-trabalho/">Adeus à Frustração: Como a Inteligência Artificial Está Revolucionando a Produtividade no Trabalho</a></p>
-  </li>
-  <li>
-    <p><a href="/post/cognitive-architecture-md/">Arquitetura Cognitiva - A Nova Onda em Aplicações Corporativas</a></p>
-  </li>
-  <li>
-    <p><a href="/post/rag-md/">Explorando o Potencial da Tecnologia RAG (Retrieval-Augmented Generation) em Modelos de Linguagem</a></p>
-  </li>
-  <li>
-    <p><a href="/post/longer-context/">Entendendo a Técnica de Longer Contexts em Modelos de Linguagem de Grande Escala (LLMs)</a></p>
-  </li>
-</ul>
-<h2 id="notícias">
-  
-  
-    <a href="#notícias" class="anchor-heading" aria-labelledby="notícias"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Notícias
-  
-  
-</h2>
-    
-
-<p><a id="notícias"></a></p>
-
-<ul>
-  <li><a href="/post/bp-strat-impulsiona-180-startups-do-nordeste-em-programa-de-acelera%C3%A7%C3%A3o-do-sebrae-em-parceria-com-a/">BP STRAT impulsiona 180 startups do Nordeste em programa de aceleração do SEBRAE, em parceria com a MOA Ventures</a></li>
-</ul>
-<h2 id="produtividade">
-  
-  
-    <a href="#produtividade" class="anchor-heading" aria-labelledby="produtividade"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Produtividade
-  
-  
-</h2>
-    
-
-<p><a id="produtividade"></a></p>
-
-<ul>
-  <li>
-    <p><a href="/post/o-que-%C3%A9-um-procedimento-operacional-padr%C3%A3o-pop-e-por-que-consider%C3%A1-los-em-projetos-de-tecnologia/">O Que É Um Procedimento Operacional Padrão Pop E Por Que Considerá Los Em Projetos De Tecnologia</a></p>
-  </li>
-  <li>
-    <p><a href="/post/o-custo-invis%C3%ADvel-da-lentid%C3%A3o/">O Custo Invisível da Lentidão</a></p>
-  </li>
-  <li>
-    <p><a href="/post/a-qualidade-como-acelerador/">A Qualidade como Acelerador</a></p>
-  </li>
-  <li>
-    <p><a href="/post/a-velocidade-como-vantagem-competitiva/">A Velocidade como Vantagem Competitiva</a></p>
-  </li>
-</ul>
 
           
 
           
-            
+            <hr>
+<h2 class="text-delta">Sumário</h2>
+
+<ul>
+  
+  <li>
+    <a href="/docs/metodologia/c4model/internet-banking-c4-model.html">Exemplo Internet Banking</a>
+  </li>
+  
+  <li>
+    <a href="/docs/metodologia/c4model/shipping-c4-model.html">Exemplo Shipping</a>
+  </li>
+  
+</ul>
           
         </main>
         

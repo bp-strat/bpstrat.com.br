@@ -1,0 +1,801 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(2)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(2) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(2) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNPEB50SX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'G-MNPEB50SX', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Termos do Kanban | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Termos do Kanban" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
+<meta property="og:description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
+<link rel="canonical" href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" />
+<meta property="og:url" content="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Termos do Kanban" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional.","headline":"Termos do Kanban","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/bpstrat-logo-horizontal.svg"}},"url":"/docs/metodologia/kanban/termos-usados-no-kanban-system.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup dos Workflows</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Run Backfill</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Modern Data Orchestration</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Gestão Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">O Dicionário Ubíquo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/metodologia/">Metodologias</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Termos do Kanban</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="termos-usados-no-kanban-system">
+  
+  
+    <a href="#termos-usados-no-kanban-system" class="anchor-heading" aria-labelledby="termos-usados-no-kanban-system"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Termos usados no Kanban System
+  
+  
+</h1>
+    
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#1-conceitos-de-negócio-e-valor-o-porquê" id="markdown-toc-1-conceitos-de-negócio-e-valor-o-porquê"><strong>1. Conceitos de Negócio e Valor (O “Porquê”)</strong></a></li>
+  <li><a href="#2-itens-de-trabalho-o-quê" id="markdown-toc-2-itens-de-trabalho-o-quê"><strong>2. Itens de Trabalho (O “Quê”)</strong></a></li>
+  <li><a href="#3-o-fluxo-de-trabalho-o-como" id="markdown-toc-3-o-fluxo-de-trabalho-o-como"><strong>3. O Fluxo de Trabalho (O “Como”)</strong></a></li>
+  <li><a href="#4-políticas-do-sistema-as-regras" id="markdown-toc-4-políticas-do-sistema-as-regras"><strong>4. Políticas do Sistema (As “Regras”)</strong></a></li>
+  <li><a href="#5-métricas-de-fluxo-as-medidas" id="markdown-toc-5-métricas-de-fluxo-as-medidas"><strong>5. Métricas de Fluxo (As “Medidas”)</strong></a></li>
+  <li><a href="#6-cadências-as-reuniões" id="markdown-toc-6-cadências-as-reuniões"><strong>6. Cadências (As “Reuniões”)</strong></a></li>
+  <li><a href="#a-diferença-crucial-entre-outputs-entregas-e-outcomes-resultados" id="markdown-toc-a-diferença-crucial-entre-outputs-entregas-e-outcomes-resultados"><strong>A Diferença Crucial entre Outputs (Entregas) e Outcomes (Resultados)</strong></a>    <ol>
+      <li><a href="#1-outputs-o-que-nós-fizemos" id="markdown-toc-1-outputs-o-que-nós-fizemos"><strong>1. Outputs (O Que Nós Fizemos)</strong></a></li>
+      <li><a href="#2-outcomes-a-diferença-que-fizemos" id="markdown-toc-2-outcomes-a-diferença-que-fizemos"><strong>2. Outcomes (A Diferença que Fizemos)</strong></a></li>
+      <li><a href="#tabela-comparativa-rápida" id="markdown-toc-tabela-comparativa-rápida"><strong>Tabela Comparativa Rápida</strong></a></li>
+      <li><a href="#como-isso-se-conecta-ao-seu-kanban-system" id="markdown-toc-como-isso-se-conecta-ao-seu-kanban-system"><strong>Como Isso se Conecta ao seu Kanban System?</strong></a></li>
+    </ol>
+  </li>
+</ol>
+
+<p>Acompanhe conosco o dicionário ubíquo sobre os termos usados no Kanban:</p>
+
+<p><img src="/assets/e979e7da75bc551ae32bffddaf48380e_MD5.jpg" alt="" class="rounded" /></p>
+<h4 id="1-conceitos-de-negócio-e-valor-o-porquê">
+  
+  
+    <a href="#1-conceitos-de-negócio-e-valor-o-porquê" class="anchor-heading" aria-labelledby="1-conceitos-de-negócio-e-valor-o-porquê"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>1. Conceitos de Negócio e Valor (O “Porquê”)</strong>
+  
+  
+</h4>
+    
+
+<ul>
+  <li>
+    <p><strong>Iniciativa Estratégica:</strong> Um objetivo de negócio de alto nível, com duração de meses ou trimestres (ex: “Expandir para o mercado de Fintechs”, “Reduzir o churn de clientes em 15%”). Uma Iniciativa gera um ou mais Projetos.</p>
+  </li>
+  <li>
+    <p><strong>Projeto/Produto:</strong> Um esforço concreto para atender a uma Iniciativa Estratégica ou um contrato de cliente. Possui um escopo e um time associado.</p>
+  </li>
+  <li>
+    <p><strong>Feature (Funcionalidade):</strong> Uma unidade de valor perceptível para o cliente ou usuário final. É grande demais para ser um único card no board de desenvolvimento, sendo quebrada em Itens de Trabalho menores. Ex: “Pagamento via Pix no checkout”.</p>
+  </li>
+  <li>
+    <p><strong>Stakeholder (Parte Interessada):</strong> Qualquer pessoa com interesse no resultado de um Projeto, incluindo o cliente (Product Owner), usuários finais e patrocinadores.</p>
+  </li>
+</ul>
+<h4 id="2-itens-de-trabalho-o-quê">
+  
+  
+    <a href="#2-itens-de-trabalho-o-quê" class="anchor-heading" aria-labelledby="2-itens-de-trabalho-o-quê"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>2. Itens de Trabalho (O “Quê”)</strong>
+  
+  
+</h4>
+    
+
+<ul>
+  <li>
+    <p><strong>Item de Trabalho (Work Item):</strong> A unidade fundamental de entrega que flui pelo nosso Kanban Board. É representado por um card. Existem diferentes tipos de Item de Trabalho:</p>
+  </li>
+  <li>
+    <p><strong>História de Usuário (User Story):</strong> Descreve uma necessidade do usuário, focada em valor. Formato: “Como um [ator], eu quero [ação], para que [benefício]”.</p>
+  </li>
+  <li>
+    <p><strong>Tarefa Técnica (Technical Task):</strong> Uma atividade necessária que não entrega valor direto ao usuário, mas habilita outras funcionalidades (ex: “Configurar pipeline de CI/CD”, “Atualizar biblioteca de segurança”).</p>
+  </li>
+  <li>
+    <p><strong>Bug:</strong> Um comportamento incorreto do software em produção que precisa ser corrigido.</p>
+  </li>
+  <li>
+    <p><strong>Débito Técnico (Tech Debt):</strong> Um Item de Trabalho criado para corrigir atalhos ou design pobre no código, visando melhorar a manutenibilidade e a qualidade a longo prazo.</p>
+  </li>
+  <li>
+    <p><strong>Spike/Estudo:</strong> Um Item de Trabalho com tempo limitado (time-boxed) para pesquisa e prova de conceito, cujo objetivo é reduzir incertezas técnicas ou de negócio.</p>
+  </li>
+</ul>
+<h4 id="3-o-fluxo-de-trabalho-o-como">
+  
+  
+    <a href="#3-o-fluxo-de-trabalho-o-como" class="anchor-heading" aria-labelledby="3-o-fluxo-de-trabalho-o-como"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>3. O Fluxo de Trabalho (O “Como”)</strong>
+  
+  
+</h4>
+    
+
+<p>Nosso fluxo é dividido em dois sistemas principais:</p>
+
+<ul>
+  <li>
+    <p><strong>Upstream Kanban (Fluxo de Descoberta):</strong> O processo de refinar ideias e prepará-las para o desenvolvimento.</p>
+  </li>
+  <li>
+    <p><strong>Funil de Ideias (Ideas Funnel):</strong> Repositório de todas as Features e ideias brutas.</p>
+  </li>
+  <li>
+    <p><strong>Análise (Analysis):</strong> Estágio onde uma Feature é avaliada quanto à sua viabilidade, impacto e risco.</p>
+  </li>
+  <li>
+    <p><strong>Backlog:</strong> Uma lista ordenada de Itens de Trabalho que já foram refinados e atendem à nossa Definição de Pronto. É daqui que o time de desenvolvimento puxa o trabalho.</p>
+  </li>
+  <li>
+    <p><strong>Downstream Kanban (Fluxo de Entrega):</strong> O processo de construir e entregar o Item de Trabalho.</p>
+  </li>
+  <li>
+    <p><strong>Pronto para Dev (Ready for Dev):</strong> Coluna de entrada do time de desenvolvimento. Itens aqui estão prontos para serem puxados.</p>
+  </li>
+  <li>
+    <p><strong>Em Desenvolvimento (In Development):</strong> O Item de Trabalho está sendo ativamente codificado e testes unitários estão sendo criados.</p>
+  </li>
+  <li>
+    <p><strong>Validação (Validation/QA):</strong> O Item de Trabalho está sendo validado pela equipe de qualidade ou por pares (testes de aceitação, testes exploratórios).</p>
+  </li>
+  <li>
+    <p><strong>Pronto para Deploy (Ready to Deploy):</strong> O Item de Trabalho foi integrado à base de código principal e está pronto para ser liberado em produção.</p>
+  </li>
+  <li>
+    <p><strong>Entregue (Done):</strong> O Item de Trabalho está em produção e disponível para os usuários.</p>
+  </li>
+</ul>
+<h4 id="4-políticas-do-sistema-as-regras">
+  
+  
+    <a href="#4-políticas-do-sistema-as-regras" class="anchor-heading" aria-labelledby="4-políticas-do-sistema-as-regras"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>4. Políticas do Sistema (As “Regras”)</strong>
+  
+  
+</h4>
+    
+
+<ul>
+  <li>
+    <p><strong>Limites WIP (WIP Limits):</strong> O número máximo de Itens de Trabalho permitidos em cada coluna do Fluxo de Entrega. É a nossa principal ferramenta para evitar sobrecarga e promover o fluxo.</p>
+  </li>
+  <li>
+    <p><strong>Definição de Pronto (Definition of Ready - DoR):</strong> Um checklist que um Item de Trabalho deve cumprir para ser movido para a coluna Pronto para Dev. Garante que o time não comece a trabalhar em algo mal especificado.</p>
+  </li>
+  <li>
+    <p><strong>Definição de Feito (Definition of Done - DoD):</strong> Um checklist que um Item de Trabalho deve cumprir para ser considerado Entregue. Garante a qualidade e o alinhamento sobre o que significa “terminar”.</p>
+  </li>
+  <li>
+    <p><strong>Classes de Serviço (Classes of Service):</strong> Categorias que usamos para priorizar Itens de Trabalho com base em seu custo de atraso.</p>
+  </li>
+  <li>
+    <p><strong>Urgente (Expedite):</strong> Problema crítico em produção. Passa na frente de tudo. Possui seu próprio limite WIP (geralmente 1).</p>
+  </li>
+  <li>
+    <p><strong>Data Fixa (Fixed Date):</strong> Possui uma data limite inadiável. Requer planejamento para ser entregue a tempo.</p>
+  </li>
+  <li>
+    <p><strong>Padrão (Standard):</strong> Itens de Trabalho normais, que são puxados conforme a capacidade.</p>
+  </li>
+  <li>
+    <p><strong>Intangível (Intangible):</strong> Itens importantes, mas sem um custo de atraso óbvio (ex: a maioria dos Débitos Técnicos).</p>
+  </li>
+</ul>
+<h4 id="5-métricas-de-fluxo-as-medidas">
+  
+  
+    <a href="#5-métricas-de-fluxo-as-medidas" class="anchor-heading" aria-labelledby="5-métricas-de-fluxo-as-medidas"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>5. Métricas de Fluxo (As “Medidas”)</strong>
+  
+  
+</h4>
+    
+
+<ul>
+  <li>
+    <p><strong>Lead Time:</strong> O tempo total desde que um Item de Trabalho é movido para o Backlog até ser Entregue. É a nossa medida de previsibilidade para o cliente.</p>
+  </li>
+  <li>
+    <p><strong>Cycle Time:</strong> O tempo que um Item de Trabalho leva para atravessar o Fluxo de Entrega (de Pronto para Dev até Entregue). Mede a velocidade do nosso processo interno.</p>
+  </li>
+  <li>
+    <p><strong>Throughput (Vazão):</strong> O número de Itens de Trabalho entregues por unidade de tempo (ex: por semana). Mede a nossa capacidade.</p>
+  </li>
+  <li>
+    <p><strong>Idade do Trabalho (Work Item Age):</strong> O tempo que um Item de Trabalho está no seu estágio atual. Usamos para identificar itens bloqueados ou envelhecidos.</p>
+  </li>
+  <li>
+    <p><strong>Diagrama de Fluxo Cumulativo (CFD):</strong> Nosso principal gráfico para visualizar o WIP, o Lead Time aproximado e a Vazão ao longo do tempo, mostrando a saúde do nosso fluxo.</p>
+  </li>
+</ul>
+<h4 id="6-cadências-as-reuniões">
+  
+  
+    <a href="#6-cadências-as-reuniões" class="anchor-heading" aria-labelledby="6-cadências-as-reuniões"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>6. Cadências (As “Reuniões”)</strong>
+  
+  
+</h4>
+    
+
+<ul>
+  <li>
+    <p><strong>Kanban Meeting (Daily):</strong> Reunião diária rápida, focada em gerenciar o fluxo. Caminhamos pelo board (da direita para a esquerda) e perguntamos: “O que podemos fazer para mover estes itens?”, “O que está bloqueando este item?”.</p>
+  </li>
+  <li>
+    <p><strong>Reunião de Reabastecimento (Replenishment Meeting):</strong> Reunião, geralmente semanal, para puxar Itens de Trabalho do Funil de Ideias para o Backlog, garantindo que eles atendam à Definição de Pronto.</p>
+  </li>
+  <li>
+    <p><strong>Revisão de Serviço (Service Delivery Review):</strong> Reunião com os Stakeholders para analisar as métricas de fluxo (Lead Time, Throughput) e discutir se estamos atendendo às suas expectativas. Foco no desempenho do serviço, não apenas na demonstração de Features.</p>
+  </li>
+  <li>
+    <p><strong>Revisão de Risco (Risk Review):</strong> Focada em analisar e mitigar os bloqueadores e dependências que afetam nosso fluxo.</p>
+  </li>
+</ul>
+<h2 id="a-diferença-crucial-entre-outputs-entregas-e-outcomes-resultados">
+  
+  
+    <a href="#a-diferença-crucial-entre-outputs-entregas-e-outcomes-resultados" class="anchor-heading" aria-labelledby="a-diferença-crucial-entre-outputs-entregas-e-outcomes-resultados"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>A Diferença Crucial entre Outputs (Entregas) e Outcomes (Resultados)</strong>
+  
+  
+</h2>
+    
+
+<p>A distinção entre <strong>Outputs (Entregas)</strong> e <strong>Outcomes (Resultados)</strong> é uma das mudanças de mentalidade mais importantes em uma software house moderna e se encaixa perfeitamente na filosofia de entrega de valor do Kanban.</p>
+
+<p>Este documento esclarece dois dos termos mais fundamentais no desenvolvimento de produtos modernos. Compreender essa diferença é o que separa uma “fábrica de funcionalidades” de uma organização que gera impacto real.</p>
+<h4 id="1-outputs-o-que-nós-fizemos">
+  
+  
+    <a href="#1-outputs-o-que-nós-fizemos" class="anchor-heading" aria-labelledby="1-outputs-o-que-nós-fizemos"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>1. Outputs (O Que Nós Fizemos)</strong>
+  
+  
+</h4>
+    
+
+<p>Outputs são as <strong>coisas tangíveis e mensuráveis que produzimos</strong>. São os entregáveis, o resultado direto do nosso trabalho e esforço. Outputs respondem à pergunta: “O que nós construímos?”.</p>
+
+<ul>
+  <li>
+    <p><strong>Foco:</strong> Atividade e entrega.</p>
+  </li>
+  <li>
+    <p><strong>Natureza:</strong> São concretos e fáceis de contar.</p>
+  </li>
+  <li>
+    <p><strong>Exemplos em uma Software House:</strong></p>
+  </li>
+  <li>
+    <p>Uma nova tela de login.</p>
+  </li>
+  <li>
+    <p>Uma API de integração com um parceiro.</p>
+  </li>
+  <li>
+    <p>A correção de 10 bugs.</p>
+  </li>
+  <li>
+    <p>Um relatório de performance em PDF.</p>
+  </li>
+  <li>
+    <p>O deployment de uma nova versão do software.</p>
+  </li>
+  <li>
+    <p>O código escrito e enviado para o repositório.</p>
+  </li>
+</ul>
+
+<p><strong>Como são medidos:</strong> Métricas de processo e fluxo, como Throughput (vazão), Cycle Time, velocidade (velocity) e número de funcionalidades entregues por mês.</p>
+
+<p><strong>O Risco do Foco em Outputs:</strong> Uma equipe pode ter um Throughput altíssimo, entregando dezenas de Itens de Trabalho por semana, e ainda assim não gerar nenhum valor para o cliente ou para o negócio. Estar ocupado não significa ser eficaz.</p>
+<h4 id="2-outcomes-a-diferença-que-fizemos">
+  
+  
+    <a href="#2-outcomes-a-diferença-que-fizemos" class="anchor-heading" aria-labelledby="2-outcomes-a-diferença-que-fizemos"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>2. Outcomes (A Diferença que Fizemos)</strong>
+  
+  
+</h4>
+    
+
+<p>Outcomes são as <strong>mudanças mensuráveis no comportamento do usuário ou em métricas de negócio</strong> que ocorrem como resultado do uso dos nossos outputs. Outcomes respondem à pergunta: “Que impacto nossa entrega causou?”.</p>
+
+<ul>
+  <li>
+    <p><strong>Foco:</strong> Valor e impacto.</p>
+  </li>
+  <li>
+    <p><strong>Natureza:</strong> São consequências, muitas vezes observadas ao longo do tempo.</p>
+  </li>
+  <li>
+    <p><strong>Exemplos (correspondentes aos outputs acima):</strong></p>
+  </li>
+  <li>
+    <p><strong>Outcome:</strong> Redução de 30% nas solicitações de suporte por “esqueci minha senha” (mudança no comportamento do usuário).</p>
+  </li>
+  <li>
+    <p><strong>Outcome:</strong> Aumento de 15% em novos clientes vindos através da integração com o parceiro (métrica de negócio).</p>
+  </li>
+  <li>
+    <p><strong>Outcome:</strong> Aumento da nota de satisfação do cliente (CSAT) de 4.1 para 4.5.</p>
+  </li>
+  <li>
+    <p><strong>Outcome:</strong> Os diretores tomaram uma decisão de investimento mais rápida e informada (mudança de comportamento).</p>
+  </li>
+  <li>
+    <p><strong>Outcome:</strong> Aumento de 10% na taxa de retenção de usuários no primeiro mês.</p>
+  </li>
+</ul>
+
+<p><strong>Como são medidos:</strong> Indicadores Chave de Performance (KPIs), Objetivos e Resultados-Chave (OKRs), métricas de engajamento, taxas de conversão, satisfação do cliente (CSAT/NPS), redução de custos, aumento de receita.</p>
+
+<p><strong>A Meta Principal:</strong> O objetivo de uma equipe de produto/desenvolvimento moderna é gerar <strong>Outcomes</strong>. Os Outputs são apenas as hipóteses de como chegaremos lá.</p>
+<h3 id="tabela-comparativa-rápida">
+  
+  
+    <a href="#tabela-comparativa-rápida" class="anchor-heading" aria-labelledby="tabela-comparativa-rápida"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Tabela Comparativa Rápida</strong>
+  
+  
+</h3>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Característica</td>
+      <td>Outputs (Entregas)</td>
+      <td>Outcomes (Resultados)</td>
+    </tr>
+    <tr>
+      <td><strong>Foco</strong></td>
+      <td>Atividade, “fazer coisas”</td>
+      <td>Impacto, “mudar coisas”</td>
+    </tr>
+    <tr>
+      <td><strong>Responde à Pergunta</strong></td>
+      <td>“O que nós fizemos?”</td>
+      <td>“Que diferença isso fez?”</td>
+    </tr>
+    <tr>
+      <td><strong>Como é Medido</strong></td>
+      <td>Quantidade, velocidade, vazão.</td>
+      <td>KPIs, OKRs, métricas de negócio.</td>
+    </tr>
+    <tr>
+      <td><strong>Exemplo</strong></td>
+      <td>Entregar um novo carrinho de compras.</td>
+      <td>Aumentar a taxa de conversão de vendas em 20%.</td>
+    </tr>
+    <tr>
+      <td><strong>Risco</strong></td>
+      <td>Ser uma “fábrica de funcionalidades”.</td>
+      <td>Requer paciência e boa medição.</td>
+    </tr>
+    <tr>
+      <td><strong>Quem Pede</strong></td>
+      <td>Um stakeholder imaturo.</td>
+      <td>Um parceiro de negócio estratégico.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="como-isso-se-conecta-ao-seu-kanban-system">
+  
+  
+    <a href="#como-isso-se-conecta-ao-seu-kanban-system" class="anchor-heading" aria-labelledby="como-isso-se-conecta-ao-seu-kanban-system"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> <strong>Como Isso se Conecta ao seu Kanban System?</strong>
+  
+  
+</h3>
+    
+
+<p>A integração dessa mentalidade é o que torna um Kanban System verdadeiramente poderoso.</p>
+
+<ol>
+  <li>
+    <p><strong>No Upstream Kanban (Fluxo de Descoberta):</strong></p>
+  </li>
+  <li>
+    <p>Cada Feature ou Iniciativa que entra no sistema não deve ser apenas uma “ideia legal”. Ela deve ser formulada como uma <strong>hipótese de outcome</strong>:”Nós acreditamos que construir <strong>[Output: um dashboard de métricas em tempo real]</strong> para os <strong>[Usuários: gerentes de vendas]</strong> resultará em <strong>[Outcome: redução do tempo gasto para criar relatórios semanais em 3 horas]</strong>.”</p>
+  </li>
+  <li>
+    <p><strong>Na Reunião de Reabastecimento (Replenishment):</strong></p>
+  </li>
+  <li>
+    <p>A priorização dos Itens de Trabalho no Backlog deve ser baseada no <strong>potencial de gerar os outcomes mais valiosos</strong>, e não apenas na facilidade de implementação do output.</p>
+  </li>
+  <li>
+    <p><strong>Na Revisão de Serviço (Service Delivery Review):</strong></p>
+  </li>
+  <li>
+    <p>A conversa com os stakeholders evolui. Em vez de apenas dizer “Nesta semana entregamos 5 Itens de Trabalho”, a conversa passa a ser:”Entregamos a funcionalidade X na semana passada. Já estamos medindo o seu impacto na taxa de engajamento Y. Os resultados iniciais são Z, e nossa próxima ação será…”</p>
+  </li>
+</ol>
+
+<p>O Kanban System é o motor que produz os <strong>outputs</strong> de forma eficiente e previsível. A mentalidade de <strong>outcomes</strong> é o volante que garante que esse motor está nos levando na direção certa, gerando valor real para o negócio.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+  <p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.</p>
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.13.0/dist/mermaid.esm.min.mjs';
+
+var config = {
+startOnLoad: false 
+};
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Show code';
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Show code';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Show diagram';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+
