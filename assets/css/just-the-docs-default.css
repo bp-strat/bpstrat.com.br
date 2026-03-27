@@ -8000,48 +8000,6 @@ h6 {
 .main-content-wrap .table-wrapper table tr:hover td {
   background-color: #404040;
 }
-.main-content-wrap .rouge-code .k {
-  color: #d97706;
-  font-weight: 600;
-}
-.main-content-wrap .rouge-code .nf {
-  color: #2563eb;
-}
-.main-content-wrap .rouge-code .s {
-  color: #059669;
-}
-.main-content-wrap .rouge-code .c {
-  color: #6b7280;
-  font-style: italic;
-}
-.main-content-wrap .rouge-code .nb {
-  color: #7c3aed;
-}
-.main-content-wrap .rouge-code .mi {
-  color: #dc2626;
-}
-.main-content-wrap .rouge-code .o {
-  color: #374151;
-}
-.main-content-wrap .highlight code .k {
-  color: #d97706;
-}
-.main-content-wrap .highlight code .nf {
-  color: #2563eb;
-}
-.main-content-wrap .highlight code .s {
-  color: #059669;
-}
-.main-content-wrap .highlight code .c {
-  color: #6b7280;
-  font-style: italic;
-}
-.main-content-wrap .highlight code .nb {
-  color: #7c3aed;
-}
-.main-content-wrap .highlight code .o {
-  color: #dc2626;
-}
 .main-content-wrap .feature-block {
   background: #e9e3d8;
   border-radius: 16px;
