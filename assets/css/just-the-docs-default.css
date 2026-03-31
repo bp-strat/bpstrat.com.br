@@ -506,7 +506,7 @@ Licensed under the BSD license, see LICENSE for details.
 } /* Literal.Number.Integer.Long */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
-   ========================================================================== */
+   <mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark>==== */
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -517,7 +517,7 @@ html {
 }
 
 /* Sections
-   ========================================================================== */
+   <mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark>==== */
 /**
  * Remove the margin in all browsers.
  */
@@ -542,7 +542,7 @@ h1 {
 }
 
 /* Grouping content
-   ========================================================================== */
+   <mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark>==== */
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -563,7 +563,7 @@ pre {
 }
 
 /* Text-level semantics
-   ========================================================================== */
+   <mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark>==== */
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -628,7 +628,7 @@ sup {
 }
 
 /* Embedded content
-   ========================================================================== */
+   <mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark>==== */
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -637,7 +637,7 @@ img {
 }
 
 /* Forms
-   ========================================================================== */
+   <mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark>==== */
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -784,7 +784,7 @@ textarea {
 }
 
 /* Interactive
-   ========================================================================== */
+   <mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark>==== */
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -800,7 +800,7 @@ summary {
 }
 
 /* Misc
-   ========================================================================== */
+   <mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark><mark class=custom_mark>=</mark>==== */
 /**
  * Add the correct display in IE 10+.
  */
@@ -3839,7 +3839,7 @@ pre.highlight {
   font-weight: 300 !important;
 }
 
-.fw-400 {
+.fw-400, mark.custom_mark {
   font-weight: 400 !important;
 }
 
@@ -8364,7 +8364,7 @@ h6 {
   color: #d7b93e;
 }
 
-.bg-fk-yellow-200,
+.bg-fk-yellow-200, mark.custom_mark,
 .label-fk-yellow-200:not(g) {
   background-color: #d7b93e;
 }
@@ -8582,6 +8582,11 @@ h6 {
 
 .hidden {
   display: none;
+}
+
+mark.custom_mark {
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
 }
 
 /*# sourceMappingURL=just-the-docs-default.css.map */

@@ -309,7 +309,7 @@
   },"44": {
     "doc": "Context Map Patterns",
     "title": "Nomes e abreviações",
-    "content": ". | Open-Host Service (Serviço de Host Aberto): ==OHS== | Anticorruption Layer (Camada Anticorrupção): ==ACL== | Conformist (Conformista): ==CF== | Shared Kernel (Kernel Compartilhado): ==SK== | Customer-Supplier (Cliente-Fornecedor): ==CUS== (Customer / Cliente) and ==SUP== (Supplier / Fornecedor) | Separate Ways (Caminhos Separados): ==SW== | Published Language (Linguagem Publicada): ==PL== | Big Ball Of Mud (Grande Bola de Lama): ==BBoM== | Partnership (Parceria): not abbreviate | . ",
+    "content": ". | Open-Host Service (Serviço de Host Aberto): <mark class=custom_mark>OHS</mark> | Anticorruption Layer (Camada Anticorrupção): <mark class=custom_mark>ACL</mark> | Conformist (Conformista): <mark class=custom_mark>CF</mark> | Shared Kernel (Kernel Compartilhado): <mark class=custom_mark>SK</mark> | Customer-Supplier (Cliente-Fornecedor): <mark class=custom_mark>CUS</mark> (Customer / Cliente) and <mark class=custom_mark>SUP</mark> (Supplier / Fornecedor) | Separate Ways (Caminhos Separados): <mark class=custom_mark>SW</mark> | Published Language (Linguagem Publicada): <mark class=custom_mark>PL</mark> | Big Ball Of Mud (Grande Bola de Lama): <mark class=custom_mark>BBoM</mark> | Partnership (Parceria): not abbreviate | . ",
     "url": "/docs/ddd/context-map-patterns.html#nomes-e-abrevia%C3%A7%C3%B5es",
     
     "relUrl": "/docs/ddd/context-map-patterns.html#nomes-e-abreviações"
