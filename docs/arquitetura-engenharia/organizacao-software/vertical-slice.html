@@ -1,0 +1,690 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=4ed90d3">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li:not(:nth-child(2)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > ul > li:nth-child(4) > ul > li:nth-child(2) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > ul > li:nth-child(4) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > ul > li:nth-child(4) > ul > li:nth-child(2) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Vertical Slice Architecture | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Vertical Slice Architecture" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
+<meta property="og:description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
+<link rel="canonical" href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" />
+<meta property="og:url" content="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Vertical Slice Architecture" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional.","headline":"Vertical Slice Architecture","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/images/bpstrat-logo-horizontal.svg"}},"url":"/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+ <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+ <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+ <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+ <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+   <!-- Copy -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <path fill-rule="evenodd"
+    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+</symbol>
+
+<!-- Copied -->
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <path
+    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+  <path
+    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+</symbol>
+ 
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><a href="/servicos/treinamentos.html" class="nav-list-link">Treinamentos Corporativos</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup dos Workflows</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Run Backfill</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Modern Data Orchestration</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Organização submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/organizacao-software/" class="nav-list-link">Organização</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/layered-architecture.html" class="nav-list-link">Layered Architecture</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" class="nav-list-link">Vertical Slice Architecture</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/context-map-patterns.html" class="nav-list-link">Context Map Patterns</a></li><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Gestão Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">O Dicionário Ubíquo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/arquitetura-engenharia/">Arquitetura</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/">Organização</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Vertical Slice Architecture</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="vertical-slice-architecture">
+  
+  
+    <a href="#vertical-slice-architecture" class="anchor-heading" aria-labelledby="vertical-slice-architecture"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Vertical Slice Architecture
+  
+  
+</h1>
+    
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#estrutura-de-pastas" id="markdown-toc-estrutura-de-pastas">Estrutura de Pastas</a>    <ol>
+      <li><a href="#conceitos-aplicados" id="markdown-toc-conceitos-aplicados">Conceitos Aplicados</a></li>
+    </ol>
+  </li>
+  <li><a href="#fluxo-conceitual" id="markdown-toc-fluxo-conceitual">Fluxo Conceitual</a></li>
+  <li><a href="#comparação-de-abordagens" id="markdown-toc-comparação-de-abordagens">Comparação de Abordagens</a></li>
+  <li><a href="#estrutura-do-projeto" id="markdown-toc-estrutura-do-projeto">Estrutura do Projeto</a></li>
+  <li><a href="#implementação-técnica" id="markdown-toc-implementação-técnica">Implementação Técnica</a></li>
+  <li><a href="#vantagens-da-abordagem" id="markdown-toc-vantagens-da-abordagem">Vantagens da Abordagem</a></li>
+  <li><a href="#desvantagens-do-vertical-slice" id="markdown-toc-desvantagens-do-vertical-slice">Desvantagens do Vertical Slice</a></li>
+  <li><a href="#limite-natural-ainda-estamos-em-um-monolito" id="markdown-toc-limite-natural-ainda-estamos-em-um-monolito">Limite Natural: ainda estamos em um Monolito</a></li>
+</ol>
+
+<p>Aqui vamos tratar de uma forma diferente (não quer dizer que seja adequada ao seu projeto) onde todo o código de cada parte do software é agrupado em um único lugar.
+<img src="/assets/77cdfcae399b9edbc61674034bd574da_MD5.jpg" alt="" /></p>
+
+<p><strong>Vertical Slice</strong> foca em “fatias” completas: cada feature encapsula endpoint, validação, lógica de domínio e persistência, evitando dependências transversais. CQRS separa comandos (mutações) de queries (leituras), otimizando performance e modelagem.</p>
+
+<p>Como <strong>exemplo</strong> de solução técnica, usaremos Vertical Slice Architecture com CQRS e Mediator em <strong>FastAPI</strong>, organizando o software por funcionalidades end-to-end, priorizando coesão por feature sobre camadas genéricas.</p>
+<h2 id="estrutura-de-pastas">
+  
+  
+    <a href="#estrutura-de-pastas" class="anchor-heading" aria-labelledby="estrutura-de-pastas"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Estrutura de Pastas
+  
+  
+</h2>
+    
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre>projeto/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   └── mediator.py
+│   └── features/
+│       └── product/
+│           ├── __init__.py
+│           ├── schemas.py
+│           ├── commands.py
+│           ├── queries.py
+│           ├── handlers.py
+│           └── endpoint.py
+├── alembic/  # Para migrações
+├── pyproject.toml
+└── ...
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+
+<p><img src="/assets/2c00d8f0f25c94f4a5bcae3540a52b62_MD5.jpg" alt="" /></p>
+<h3 id="conceitos-aplicados">
+  
+  
+    <a href="#conceitos-aplicados" class="anchor-heading" aria-labelledby="conceitos-aplicados"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Conceitos Aplicados
+  
+  
+</h3>
+    
+<ul>
+  <li><strong>Vertical Slice Architecture</strong>: Organização do código por funcionalidades (features) em vez de camadas técnicas (controllers, services, repositories). Cada slice contém tudo o que é necessário para realizar uma operação.</li>
+  <li><strong>CQRS (Command Query Responsibility Segregation)</strong>: Separação clara entre operações de escrita (Commands) e operações de leitura (Queries).</li>
+  <li><strong>Mediator Pattern</strong>: Desacopla o remetente da requisição (endpoint) do seu executor (handler), centralizando a lógica de despacho.</li>
+</ul>
+<h2 id="fluxo-conceitual">
+  
+  
+    <a href="#fluxo-conceitual" class="anchor-heading" aria-labelledby="fluxo-conceitual"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Fluxo Conceitual
+  
+  
+</h2>
+    
+<ol>
+  <li><strong>Endpoint</strong> recebe request HTTP e instancia comando/query via schemas Pydantic.</li>
+  <li><strong>Mediator</strong> roteia para handler específico, injetando DB session.</li>
+  <li><strong>Handler</strong> executa domínio/persistência, retorna response serializado. [</li>
+</ol>
+<h2 id="comparação-de-abordagens">
+  
+  
+    <a href="#comparação-de-abordagens" class="anchor-heading" aria-labelledby="comparação-de-abordagens"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Comparação de Abordagens
+  
+  
+</h2>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Conceito</th>
+      <th>Vertical Slice + CQRS</th>
+      <th>Camadas Tradicionais</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Organização</td>
+      <td>Por feature (ex: pasta Product)</td>
+      <td>Por tipo (controllers/services)</td>
+    </tr>
+    <tr>
+      <td>Desacoplamento</td>
+      <td>Alto via Mediator</td>
+      <td>Médio, via DI manual</td>
+    </tr>
+    <tr>
+      <td>Escalabilidade</td>
+      <td>Adicione slices independentes</td>
+      <td>Refatorações globais</td>
+    </tr>
+    <tr>
+      <td>Testes</td>
+      <td>Unitários por handler</td>
+      <td>Integração complexa</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="estrutura-do-projeto">
+  
+  
+    <a href="#estrutura-do-projeto" class="anchor-heading" aria-labelledby="estrutura-do-projeto"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Estrutura do Projeto
+  
+  
+</h2>
+    
+<ul>
+  <li><strong>app/core</strong>: Contém a infraestrutura compartilhada, como o motor do Mediator customizado.</li>
+  <li><strong>app/features</strong>: Diretório raiz das funcionalidades. Cada subpasta (ex: <code class="language-plaintext highlighter-rouge">product</code>) representa um slice vertical completo.</li>
+  <li><strong>Componentes do Slice</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">commands.py</code>/<code class="language-plaintext highlighter-rouge">queries.py</code>: Definição dos DTOs de intenção (Data Classes).</li>
+      <li><code class="language-plaintext highlighter-rouge">handlers.py</code>: Lógica de negócio e persistência.</li>
+      <li><code class="language-plaintext highlighter-rouge">endpoint.py</code>: Pontos de entrada da API específicos da feature.</li>
+      <li><code class="language-plaintext highlighter-rouge">schemas.py</code>: Contratos Pydantic para validação de entrada/saída.</li>
+    </ul>
+  </li>
+</ul>
+<h2 id="implementação-técnica">
+  
+  
+    <a href="#implementação-técnica" class="anchor-heading" aria-labelledby="implementação-técnica"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Implementação Técnica
+  
+  
+</h2>
+    
+<ul>
+  <li><strong>Mediator Custom</strong>: Utiliza um dicionário de mapeamento global para associar tipos de Command/Query aos seus respectivos Handlers.</li>
+  <li><strong>Persistência</strong>: SQLAlchemy com padrão SessionLocal e injeção de dependência via FastAPI (<code class="language-plaintext highlighter-rouge">Depends(get_db)</code>).</li>
+  <li><strong>Configuração</strong>: Uso de <code class="language-plaintext highlighter-rouge">pydantic-settings</code> para gestão de variáveis de ambiente e URL do banco de dados.</li>
+</ul>
+<h2 id="vantagens-da-abordagem">
+  
+  
+    <a href="#vantagens-da-abordagem" class="anchor-heading" aria-labelledby="vantagens-da-abordagem"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Vantagens da Abordagem
+  
+  
+</h2>
+    
+<ul>
+  <li><strong>Baixo Acoplamento</strong>: Mudanças em uma feature (ex: Produto) não afetam outras slices (ex: Pedido).</li>
+  <li><strong>Alta Coesão</strong>: Todo o código relacionado a uma regra de negócio está geograficamente próximo no sistema de arquivos.</li>
+  <li><strong>Escalabilidade de Time</strong>: Diferentes desenvolvedores podem trabalhar em slices distintas sem conflitos de merge constantes em arquivos globais.</li>
+</ul>
+
+<pre><code class="language-mermaid">C4Container
+title Sistema de Catálogo de Produtos — Container (Vertical Slice + CQRS + Mediator)
+
+Person(client, "Cliente API", "Consumidor HTTP que interage com a API")
+
+Enterprise_Boundary(ent, "Organização") {
+
+    System_Boundary(system, "Sistema de Catálogo de Produtos") {
+
+        Container(api, "API (FastAPI)", "Python, FastAPI", "Endpoints por feature; recebe HTTP e cria Commands/Queries")
+
+        Container(mediator, "Mediator", "Python (in-process)", "Despacha requests para handlers e aplica behaviors")
+
+        Container(handler, "Handlers (Features)", "Python", "Regras de negócio e persistência organizadas por slice (product, etc.)")
+
+        ContainerDb(db, "Database", "PostgreSQL", "Persistência via SQLAlchemy ORM")
+
+    }
+
+}
+
+Rel(client, api, "Envia requisições", "HTTPS/JSON")
+Rel(api, mediator, "Envia Command/Query", "in-process")
+Rel(mediator, handler, "Despacha para handler específico", "in-process")
+Rel(handler, db, "Lê e escreve dados", "SQLAlchemy/SQL")
+Rel(handler, mediator, "Retorna resultado", "in-process")
+Rel(mediator, api, "Retorna response", "in-process")
+Rel(api, client, "Resposta HTTP", "JSON")
+
+</code></pre>
+<h2 id="desvantagens-do-vertical-slice">
+  
+  
+    <a href="#desvantagens-do-vertical-slice" class="anchor-heading" aria-labelledby="desvantagens-do-vertical-slice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Desvantagens do Vertical Slice
+  
+  
+</h2>
+    
+
+<p>A metodologia melhora a coesão por feature, mas exige disciplina para evitar divergência estrutural e complexidade desnecessária. Problemas que podem aparecer:</p>
+
+<ul>
+  <li><strong>Duplicação de código</strong>: validações e mapeamentos podem se repetir entre slices.</li>
+  <li><strong>Governança mais difícil</strong>: ausência de camadas rígidas aumenta risco de inconsistência entre features.</li>
+  <li><strong>Curva de aprendizado</strong>: menos intuitivo para quem está acostumado com arquitetura em camadas.</li>
+  <li><strong>Granularidade sensível</strong>: slices mal definidos geram fragmentação ou acoplamento indevido.</li>
+  <li><strong>Regras compartilhadas</strong>: difícil decidir entre duplicar ou extrair lógica comum.</li>
+  <li><strong>Testes transversais</strong>: fluxos que cruzam múltiplas features exigem mais integração.</li>
+  <li><strong>Overhead inicial</strong>: CQRS + Mediator podem ser excessivos em sistemas simples.</li>
+  <li><strong>Debugging indireto</strong>: uso de Mediator e behaviors pode ocultar o fluxo real.</li>
+  <li><strong>Baixa enforceability</strong>: depende mais de convenções do que de restrições técnicas.</li>
+</ul>
+<h2 id="limite-natural-ainda-estamos-em-um-monolito">
+  
+  
+    <a href="#limite-natural-ainda-estamos-em-um-monolito" class="anchor-heading" aria-labelledby="limite-natural-ainda-estamos-em-um-monolito"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Limite Natural: ainda estamos em um Monolito
+  
+  
+</h2>
+    
+
+<p>Até este ponto, toda a abordagem apresentada, mesmo com <strong>Vertical Slice + CQRS + Mediator</strong> ainda assume um único processo, um único deploy e, em geral, um único banco de dados. Em outras palavras, trata-se de um <strong>monolito bem estruturado</strong>.</p>
+
+<p>Essa distinção é importante: organizar o código por features melhora coesão e evolutividade, mas <strong>não resolve, por si só, problemas de escala organizacional ou operacional</strong>.</p>
+
+<p>Características ainda monolíticas:</p>
+
+<ul>
+  <li><strong>Deploy único</strong>: todas as slices são publicadas juntas</li>
+  <li><strong>Acoplamento em runtime</strong>: tudo roda no mesmo processo</li>
+  <li><strong>Banco compartilhado</strong>: modelo de dados centralizado</li>
+  <li><strong>Escala vertical predominante</strong>: aumento de recursos na mesma unidade</li>
+</ul>
+
+<p>À medida que o sistema cresce, surgem pressões que o modelo monolítico (mesmo bem organizado) não endereça completamente:</p>
+
+<ul>
+  <li><strong>Escala independente</strong>: algumas features exigem muito mais carga que outras</li>
+  <li><strong>Times autônomos</strong>: múltiplas equipes precisam evoluir partes do sistema sem coordenação global</li>
+  <li><strong>Deploy desacoplado</strong>: necessidade de liberar funcionalidades sem impactar todo o sistema</li>
+  <li><strong>Isolamento de falhas</strong>: evitar que problemas em uma feature afetem o todo</li>
+</ul>
+
+<p>Nesse ponto, a limitação não é mais estrutural de código, mas <strong>de fronteiras de execução e organização</strong>.</p>
+
+<p>O Vertical Slice pode ser visto como um <strong>passo intermediário natural</strong> para arquiteturas distribuídas:</p>
+
+<ul>
+  <li>Cada slice já define um <strong>boundary funcional claro</strong></li>
+  <li>Commands/Queries já representam <strong>contratos explícitos</strong></li>
+  <li>Handlers encapsulam <strong>lógica isolada por feature</strong></li>
+</ul>
+
+<p>Isso reduz o custo cognitivo de evoluir para:</p>
+
+<ul>
+  <li><strong>Microservices</strong></li>
+  <li><strong>Modular Monolith com boundaries fortes</strong></li>
+  <li><strong>Arquiteturas orientadas a eventos</strong></li>
+</ul>
+
+<p>Sistemas de maior escala exigem mais do que organização de código exigem <strong>separação física, autonomia de deploy e isolamento de contexto</strong>.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+  <p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.</p>
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+  
+  <script src="/assets/js/mermaid.min.js/assets/js/mermaid.min.js"></script>
+  
+
+<script type="module">
+  
+
+var config = {}
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Show code';
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Show code';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Show diagram';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+

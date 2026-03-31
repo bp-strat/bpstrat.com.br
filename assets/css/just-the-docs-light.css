@@ -7639,6 +7639,70 @@ blockquote.warning-title > p:last-child {
   margin-bottom: 0;
 }
 
+.main div.highlighter-rouge .table-wrapper table.rouge-table tr:hover td {
+  background: #1e1e2e;
+  opacity: 1;
+}
+.main div.highlighter-rouge > button {
+  opacity: 1;
+  cursor: default;
+  width: auto;
+  padding: 8px;
+  color: #f9ad4d;
+}
+.main div.highlighter-rouge > button svg {
+  width: 30px;
+  height: 30x;
+  fill: #f9ad4d;
+}
+.main div.highlighter-rouge:hover > button {
+  opacity: 0.6;
+  cursor: default;
+}
+.main div.highlighter-rouge > button:focus {
+  opacity: 0.8;
+  outline: none;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .nc {
+  color: #f9ad4d;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .k,
+.main div.highlighter-rouge div.highlight .rouge-code .kd {
+  color: #cba6f7;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .s {
+  color: #a6e3a1;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .c,
+.main div.highlighter-rouge div.highlight .rouge-code .cm,
+.main div.highlighter-rouge div.highlight .rouge-code .c1 {
+  color: #6c7086;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .o {
+  color: #89dceb;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .nf {
+  color: #89b4fa;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .na {
+  color: #f9e2af;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .nt {
+  color: #f38ba8;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .mi {
+  color: #fab387;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .nb {
+  color: #89dceb;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .kc {
+  color: #fab387;
+}
+.main div.highlighter-rouge div.highlight .rouge-code .err {
+  color: #f38ba8;
+}
+
 .breadcrumb-nav,
 .aux-nav-list-item a,
 h1,
