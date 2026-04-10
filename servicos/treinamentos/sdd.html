@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=7a9f71e">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(5) > ul > li:nth-child(1) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(2) > ul > li:nth-child(5) > ul > li:nth-child(1) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Spec-Driven Development | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Spec-Driven Development" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
+<meta property="og:description" content="Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional." />
+<link rel="canonical" href="https://www.bpstrat.com.br/servicos/treinamentos/sdd.html" />
+<meta property="og:url" content="https://www.bpstrat.com.br/servicos/treinamentos/sdd.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Spec-Driven Development" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional.","headline":"Spec-Driven Development","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"}},"url":"https://www.bpstrat.com.br/servicos/treinamentos/sdd.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+ <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+ <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+ <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+ <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+   <!-- Copy -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <path fill-rule="evenodd"
+    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+</symbol>
+
+<!-- Copied -->
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <path
+    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+  <path
+    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+</symbol>
+ 
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup dos Workflows</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Run Backfill</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Modern Data Orchestration</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Organização submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/organizacao-software/" class="nav-list-link">Organização</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/layered-architecture.html" class="nav-list-link">Layered Architecture</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" class="nav-list-link">Vertical Slice Architecture</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/context-map-patterns.html" class="nav-list-link">Context Map Patterns</a></li><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Gestão Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">O Dicionário Ubíquo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/c4-mermaid.html" class="nav-list-link">Mermaid C4</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="SDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/sdd/" class="nav-list-link">SDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-estrategia.html" class="nav-list-link">SDD Estratégico</a></li><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" class="nav-list-link">SDD Tático</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/servicos/">Serviços</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/servicos/treinamentos/">Treinamentos Corporativos</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Spec-Driven Development</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="sdd-desenvolvimento-orientado-a-especificação-spec-driven-development-com-ia">
+  
+  
+    <a href="#sdd-desenvolvimento-orientado-a-especificação-spec-driven-development-com-ia" class="anchor-heading" aria-labelledby="sdd-desenvolvimento-orientado-a-especificação-spec-driven-development-com-ia"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> SDD: Desenvolvimento Orientado a Especificação (Spec-Driven Development com IA)
+  
+  
+</h1>
+    
+
+<p class="fs-6 fw-300">Treinamento voltado a usar IA como mecanismo de execução, mantendo o controle humano na definição e na qualidade do sistema.</p>
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#objetivo-do-treinamento" id="markdown-toc-objetivo-do-treinamento">Objetivo do treinamento</a></li>
+  <li><a href="#conceitos-centrais" id="markdown-toc-conceitos-centrais">Conceitos centrais</a></li>
+  <li><a href="#ciclo-de-desenvolvimento" id="markdown-toc-ciclo-de-desenvolvimento">Ciclo de desenvolvimento</a></li>
+  <li><a href="#princípios-operacionais" id="markdown-toc-princípios-operacionais">Princípios operacionais</a></li>
+  <li><a href="#quando-faz-sentido" id="markdown-toc-quando-faz-sentido">Quando faz sentido</a></li>
+</ol><hr />
+
+<p>Spec-Driven Development é um paradigma emergente de engenharia de software que coloca <strong>especificações estruturadas e agentes de IA</strong> no centro do ciclo de desenvolvimento. Diferente da abordagem de “prompt-and-patch” (tentativa e erro), comum em usos básicos de IA para programação, o SDD prioriza um levantamento rigoroso de requisitos, design de sistema/arquitetura e planejamento de testes.</p>
+
+<p>Ele incorpora o rigor da fase de design do modelo Waterfall, mas o integra a um ciclo iterativo moderno e ágil por meio de automação. Embora o processo exija planejamento e documentação detalhados antecipadamente, ele é inerentemente iterativo, já que os agentes de IA permitem implementação e testes rápidos. Isso possibilita ciclos de feedback mais curtos, que podem ser utilizados para evoluir e refinar continuamente a documentação.</p>
+<h2 id="objetivo-do-treinamento">
+  
+  
+    <a href="#objetivo-do-treinamento" class="anchor-heading" aria-labelledby="objetivo-do-treinamento"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Objetivo do treinamento
+  
+  
+</h2>
+    
+
+<p>Capacitar engenheiros e líderes a adotarem um fluxo onde:</p>
+
+<ul>
+  <li>especificações estruturadas se tornam a fonte central de verdade (SSOT)</li>
+  <li>IA é usada para gerar e validar código com consistência</li>
+  <li>decisões são tomadas no nível de arquitetura, não apenas de implementação</li>
+</ul>
+<h2 id="conceitos-centrais">
+  
+  
+    <a href="#conceitos-centrais" class="anchor-heading" aria-labelledby="conceitos-centrais"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Conceitos centrais
+  
+  
+</h2>
+    
+
+<ul>
+  <li><strong>Engenheiro como arquiteto de sistema</strong><br />
+  Foco na definição precisa do problema e da solução</li>
+  <li><strong>Especificação como ativo principal</strong><br />
+  Documento estruturado que guia geração e validação</li>
+  <li><strong>Loop iterativo design → geração → validação</strong><br />
+  Feedback rápido sem depender de implementação manual extensa</li>
+</ul>
+<h2 id="ciclo-de-desenvolvimento">
+  
+  
+    <a href="#ciclo-de-desenvolvimento" class="anchor-heading" aria-labelledby="ciclo-de-desenvolvimento"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Ciclo de desenvolvimento
+  
+  
+</h2>
+    
+
+<ol>
+  <li>Levantamento de requisitos (negócio e restrições)</li>
+  <li>Design arquitetural (modelos, integrações)</li>
+  <li>Especificação do sistema e testes</li>
+  <li>Geração automática de código via IA</li>
+  <li>Testes e validação automatizada</li>
+</ol>
+
+<p>O ciclo é contínuo: ajustes são feitos na especificação, não diretamente no código.</p>
+<h2 id="princípios-operacionais">
+  
+  
+    <a href="#princípios-operacionais" class="anchor-heading" aria-labelledby="princípios-operacionais"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Princípios operacionais
+  
+  
+</h2>
+    
+
+<ul>
+  <li><strong>Granularidade modular</strong><br />
+  Aplicação em módulos pequenos e bem definidos</li>
+  <li><strong>Isolamento de falhas</strong><br />
+  Reespecificação localizada sem impacto global</li>
+  <li><strong>Controle de qualidade por testes</strong><br />
+  Testes como critério objetivo de conformidade</li>
+  <li><strong>Integração com CI/CD</strong><br />
+  Geração e validação incorporadas ao pipeline</li>
+</ul>
+<h2 id="quando-faz-sentido">
+  
+  
+    <a href="#quando-faz-sentido" class="anchor-heading" aria-labelledby="quando-faz-sentido"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Quando faz sentido
+  
+  
+</h2>
+    
+
+<ul>
+  <li>Times explorando uso avançado de IA no desenvolvimento</li>
+  <li>Sistemas com alta necessidade de consistência e rastreabilidade</li>
+  <li>Ambientes onde documentação e validação são críticas</li>
+  <li>Busca por aumento de produtividade sem perda de controle</li>
+</ul>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+   
+<p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.<span class="canonical-link fs-1">
+    Canonical:
+    <a href="https://www.bpstrat.com.br/servicos/treinamentos/sdd.html" target="_blank" rel="nofollow">
+      https://www.bpstrat.com.br/servicos/treinamentos/sdd.html
+    </a>
+  </span>
+</p>
+
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+  
+  <script src="/assets/js/mermaid.min.js"></script>
+  
+
+<script type="module">
+  
+
+var config = {}
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Mostrar código';
+
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2 ft-style text-purple-200';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Mostrar código';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Mostrar diagrama';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+

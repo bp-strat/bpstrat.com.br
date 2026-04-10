@@ -7984,220 +7984,6 @@ blockquote.warning-title > p:last-child {
   color: #f38ba8;
 }
 
-.ft-style,
-.breadcrumb-nav,
-.aux-nav-list-item a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Genos", "Inter", sans-serif;
-  letter-spacing: 0.02em;
-}
-
-.main-content-wrap .main-content h1:first-of-type {
-  border-bottom: 2px solid #cb680c;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-.main-content-wrap .main-content {
-  font-size: 1rem;
-}
-.main-content-wrap .main-content h1,
-.main-content-wrap .main-content h1 a {
-  font-size: 2.2rem !important;
-  font-weight: 700;
-}
-.main-content-wrap .main-content h2,
-.main-content-wrap .main-content h2 a {
-  font-size: 1.9rem !important;
-  font-weight: 600;
-}
-.main-content-wrap .main-content h3,
-.main-content-wrap .main-content h3 a {
-  font-size: 1.5rem !important;
-  font-weight: 500;
-}
-.main-content-wrap .main-content h4,
-.main-content-wrap .main-content h4 a {
-  font-size: 1.2rem !important;
-  font-weight: 400;
-}
-.main-content-wrap img.rounded {
-  border-radius: 16px;
-  overflow: hidden;
-  display: block;
-}
-.main-content-wrap code {
-  font-size: 0.85em;
-}
-.main-content-wrap .mermaid svg {
-  background-color: #ffffff;
-  border-radius: 16px;
-}
-.main-content-wrap .table-wrapper table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 1.5rem;
-}
-.main-content-wrap .table-wrapper table th {
-  background-color: rgba(203, 104, 12, 0.2);
-  font-family: "Genos", "Inter", sans-serif;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.6rem 1rem;
-  border: 1px solid #4a4a4a;
-  font-weight: 700;
-}
-.main-content-wrap .table-wrapper table td {
-  padding: 0.55rem 1rem;
-  border: 1px solid #383838;
-  color: #fffaf0;
-}
-.main-content-wrap .table-wrapper table th {
-  font-size: 1.1rem !important;
-}
-.main-content-wrap .table-wrapper table td {
-  font-size: 0.8rem !important;
-}
-.main-content-wrap .table-wrapper table tr:nth-child(even) td {
-  background-color: #383838;
-}
-.main-content-wrap .table-wrapper table tr:hover td {
-  background-color: #404040;
-}
-.main-content-wrap .feature-block {
-  background: #e9e3d8;
-  border-radius: 16px;
-  padding: 3rem 2rem;
-  text-align: center;
-}
-.main-content-wrap .feature-block .feature-title {
-  color: #f97316;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  font-size: 1.8rem;
-}
-.main-content-wrap .feature-block .feature-subtitle {
-  font-style: italic;
-  color: #555;
-  margin-bottom: 2.5rem;
-}
-.main-content-wrap .feature-block .feature-grid {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-.main-content-wrap .feature-block .feature-item {
-  max-width: 260px;
-}
-.main-content-wrap .feature-block .feature-item p {
-  color: #333;
-  line-height: 1.5;
-}
-.main-content-wrap .feature-block .feature-icon {
-  width: 96px;
-  height: 96px;
-  border: 2px solid #c2a96b;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1rem;
-}
-.main-content-wrap .feature-block .feature-icon svg {
-  width: 36px;
-  height: 36px;
-  stroke: #333;
-  stroke-width: 1.5;
-  fill: none;
-}
-
-.bpstrat-logo-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25rem;
-  padding: 1.95rem 0.5rem 0.5rem;
-  text-decoration: none;
-}
-.bpstrat-logo-wrapper:hover .bpstrat-logo-img {
-  opacity: 0.9;
-}
-.bpstrat-logo-wrapper:hover .bpstrat-logo-label {
-  color: #f9ad4d;
-}
-
-.bpstrat-logo-img {
-  width: 280px;
-  object-fit: contain;
-  transition: opacity 0.15s ease;
-}
-
-.bpstrat-logo-label {
-  font-family: "Genos", "Inter", sans-serif;
-  font-size: 0.64rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #cb680c;
-  padding-left: 0.1rem;
-  transition: color 0.15s ease;
-}
-
-.site-header {
-  font-family: "Genos", "Inter", sans-serif;
-  letter-spacing: 0.02em;
-}
-
-.site-header .site-title {
-  height: auto;
-  padding: 0;
-  align-items: flex-start;
-}
-
-.side-bar {
-  font-family: "Genos", "Inter", sans-serif;
-  letter-spacing: 0.02em;
-}
-.side-bar .site-nav .nav-list .nav-list-item .nav-list-expander {
-  color: #969696;
-}
-.side-bar .site-nav .nav-list .nav-list-item .nav-list-expander:hover {
-  color: #cb680c;
-}
-.side-bar .site-nav .nav-list .nav-list-item .nav-list-link {
-  font-size: 1.4rem;
-}
-.side-bar .site-nav .nav-list .nav-list-item .nav-list-link.active {
-  font-weight: 600;
-}
-.side-bar .site-nav .nav-list .nav-list-item .nav-list-link {
-  font-family: inherit;
-}
-.side-bar .site-nav .nav-list .nav-list-item button {
-  font-family: inherit;
-}
-
-.site-nav ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item a {
-  font-size: 1.1rem;
-}
-.site-nav ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li,
-.site-nav ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list a {
-  line-height: 0.6;
-  font-size: 0.8rem;
-  min-height: 0.2rem;
-}
-.site-nav ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li.active,
-.site-nav ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list a.active {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-
 .text-pink-000 {
   color: #f77ef1;
 }
@@ -8244,8 +8030,8 @@ h6 {
   background-color: #ffedd5;
 }
 
-.text-orange-100, .main-content-wrap .main-content h2,
-.main-content-wrap .main-content h2 a, .main-content-wrap .table-wrapper table th {
+.text-orange-100, .main-content-wrap .table-wrapper table th, .main-content-wrap .main-content h2,
+.main-content-wrap .main-content h2 a {
   color: #fdba74;
 }
 
@@ -8560,6 +8346,220 @@ h6 {
 .bg-fk-magenta-300,
 .label-fk-magenta-300:not(g) {
   background-color: #ce5d97;
+}
+
+.ft-style,
+.breadcrumb-nav,
+.aux-nav-list-item a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Genos", "Inter", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.main-content-wrap .main-content h1:first-of-type {
+  border-bottom: 2px solid #cb680c;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.main-content-wrap .main-content {
+  font-size: 1rem;
+}
+.main-content-wrap .main-content h1,
+.main-content-wrap .main-content h1 a {
+  font-size: 2.2rem !important;
+  font-weight: 700;
+}
+.main-content-wrap .main-content h2,
+.main-content-wrap .main-content h2 a {
+  font-size: 1.9rem !important;
+  font-weight: 600;
+}
+.main-content-wrap .main-content h3,
+.main-content-wrap .main-content h3 a {
+  font-size: 1.5rem !important;
+  font-weight: 500;
+}
+.main-content-wrap .main-content h4,
+.main-content-wrap .main-content h4 a {
+  font-size: 1.2rem !important;
+  font-weight: 400;
+}
+.main-content-wrap img.rounded {
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+}
+.main-content-wrap code {
+  font-size: 0.85em;
+}
+.main-content-wrap .mermaid svg {
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+.main-content-wrap .table-wrapper table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.main-content-wrap .table-wrapper table th {
+  background-color: rgba(203, 104, 12, 0.2);
+  font-family: "Genos", "Inter", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  border: 1px solid #4a4a4a;
+  font-weight: 700;
+}
+.main-content-wrap .table-wrapper table td {
+  padding: 0.55rem 1rem;
+  border: 1px solid #383838;
+  color: #fffaf0;
+}
+.main-content-wrap .table-wrapper table th {
+  font-size: 1.1rem !important;
+}
+.main-content-wrap .table-wrapper table td {
+  font-size: 0.8rem !important;
+}
+.main-content-wrap .table-wrapper table tr:nth-child(even) td {
+  background-color: #383838;
+}
+.main-content-wrap .table-wrapper table tr:hover td {
+  background-color: #404040;
+}
+.main-content-wrap .feature-block {
+  background: #e9e3d8;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.main-content-wrap .feature-block .feature-title {
+  color: #f97316;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+.main-content-wrap .feature-block .feature-subtitle {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 2.5rem;
+}
+.main-content-wrap .feature-block .feature-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.main-content-wrap .feature-block .feature-item {
+  max-width: 260px;
+}
+.main-content-wrap .feature-block .feature-item p {
+  color: #333;
+  line-height: 1.5;
+}
+.main-content-wrap .feature-block .feature-icon {
+  width: 96px;
+  height: 96px;
+  border: 2px solid #c2a96b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+.main-content-wrap .feature-block .feature-icon svg {
+  width: 36px;
+  height: 36px;
+  stroke: #333;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.bpstrat-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 1.95rem 0.5rem 0.5rem;
+  text-decoration: none;
+}
+.bpstrat-logo-wrapper:hover .bpstrat-logo-img {
+  opacity: 0.9;
+}
+.bpstrat-logo-wrapper:hover .bpstrat-logo-label {
+  color: #f9ad4d;
+}
+
+.bpstrat-logo-img {
+  width: 280px;
+  object-fit: contain;
+  transition: opacity 0.15s ease;
+}
+
+.bpstrat-logo-label {
+  font-family: "Genos", "Inter", sans-serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #cb680c;
+  padding-left: 0.1rem;
+  transition: color 0.15s ease;
+}
+
+.site-header {
+  font-family: "Genos", "Inter", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.site-header .site-title {
+  height: auto;
+  padding: 0;
+  align-items: flex-start;
+}
+
+.side-bar {
+  font-family: "Genos", "Inter", sans-serif;
+  letter-spacing: 0.02em;
+}
+.side-bar .site-nav .nav-list .nav-list-item .nav-list-expander {
+  color: #969696;
+}
+.side-bar .site-nav .nav-list .nav-list-item .nav-list-expander:hover {
+  color: #cb680c;
+}
+.side-bar .site-nav .nav-list .nav-list-item .nav-list-link {
+  font-size: 1.4rem;
+}
+.side-bar .site-nav .nav-list .nav-list-item .nav-list-link.active {
+  font-weight: 600;
+}
+.side-bar .site-nav .nav-list .nav-list-item .nav-list-link {
+  font-family: inherit;
+}
+.side-bar .site-nav .nav-list .nav-list-item button {
+  font-family: inherit;
+}
+
+.site-nav ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item a {
+  font-size: 1.1rem;
+}
+.site-nav ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li,
+.site-nav ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list a {
+  line-height: 0.6;
+  font-size: 0.8rem;
+  min-height: 0.2rem;
+}
+.site-nav ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li.active,
+.site-nav ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list li.nav-list-item.active ul.nav-list a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 @media (max-width: 800px) {
