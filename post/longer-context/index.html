@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=7a9f71e">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=5bea9f3">
   <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
 
   <style id="jtd-nav-activation">
@@ -44,9 +44,10 @@
 <title>Entendendo a Técnica de Longer Contexts em Modelos de Linguagem de Grande Escala (LLMs) | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Entendendo a Técnica de Longer Contexts em Modelos de Linguagem de Grande Escala (LLMs)" />
+<meta name="author" content="Gilmar Pupo" />
 <meta property="og:locale" content="pt_BR" />
-<meta name="description" content="No avançado mundo da Inteligência Artificial, os Modelos de Linguagem de Grande Escala (LLMs) estão na vanguarda das tecnologias que compreendem e geram texto humano de maneira convincente. Uma das técnicas mais importantes que potencializam esses modelos é conhecida como “longer contexts” ou contextos mais longos. Esta técnica é fundamental para melhorar a compreensão e a geração de texto pelos modelos, permitindo-lhes lidar com informações mais complexas e detalhadas. Vamos explorar como isso funciona e por que é tão importante." />
-<meta property="og:description" content="No avançado mundo da Inteligência Artificial, os Modelos de Linguagem de Grande Escala (LLMs) estão na vanguarda das tecnologias que compreendem e geram texto humano de maneira convincente. Uma das técnicas mais importantes que potencializam esses modelos é conhecida como “longer contexts” ou contextos mais longos. Esta técnica é fundamental para melhorar a compreensão e a geração de texto pelos modelos, permitindo-lhes lidar com informações mais complexas e detalhadas. Vamos explorar como isso funciona e por que é tão importante." />
+<meta name="description" content="Entenda o que são longer contexts em LLMs, por que eles importam e como melhoram coerência, memória e qualidade das respostas." />
+<meta property="og:description" content="Entenda o que são longer contexts em LLMs, por que eles importam e como melhoram coerência, memória e qualidade das respostas." />
 <link rel="canonical" href="https://www.bpstrat.com.br/post/longer-context/" />
 <meta property="og:url" content="https://www.bpstrat.com.br/post/longer-context/" />
 <meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
@@ -55,11 +56,35 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Entendendo a Técnica de Longer Contexts em Modelos de Linguagem de Grande Escala (LLMs)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-15T00:00:00-03:00","datePublished":"2024-05-15T00:00:00-03:00","description":"No avançado mundo da Inteligência Artificial, os Modelos de Linguagem de Grande Escala (LLMs) estão na vanguarda das tecnologias que compreendem e geram texto humano de maneira convincente. Uma das técnicas mais importantes que potencializam esses modelos é conhecida como “longer contexts” ou contextos mais longos. Esta técnica é fundamental para melhorar a compreensão e a geração de texto pelos modelos, permitindo-lhes lidar com informações mais complexas e detalhadas. Vamos explorar como isso funciona e por que é tão importante.","headline":"Entendendo a Técnica de Longer Contexts em Modelos de Linguagem de Grande Escala (LLMs)","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.bpstrat.com.br/post/longer-context/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"}},"url":"https://www.bpstrat.com.br/post/longer-context/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gilmar Pupo"},"dateModified":"2024-05-15T00:00:00-03:00","datePublished":"2024-05-15T00:00:00-03:00","description":"Entenda o que são longer contexts em LLMs, por que eles importam e como melhoram coerência, memória e qualidade das respostas.","headline":"Entendendo a Técnica de Longer Contexts em Modelos de Linguagem de Grande Escala (LLMs)","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.bpstrat.com.br/post/longer-context/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"},"name":"Gilmar Pupo"},"url":"https://www.bpstrat.com.br/post/longer-context/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BP STRAT",
+  "url": "https://www.bpstrat.com.br/",
+  "logo": "https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg",
+  "sameAs": [
+    "https://www.linkedin.com/company/bpstrat/",
+    "https://www.gpupo.com"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+55-41-99715-1336",
+    "email": "info@bpstrat.com.br",
+    "availableLanguage": "pt-BR"
+  }
+}
+</script>
+
+
+
+
+
 
 </head>
 
@@ -139,9 +164,9 @@
   
     <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
-      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/canal-do-produto-ia.html" class="nav-list-link">Canal do Produto com IA</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
-      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li><li class="nav-list-item"><a href="/servicos/bpstack.html" class="nav-list-link">bpStack</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
       </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
@@ -231,7 +256,8 @@
       <div id="main-content" class="main-content">
         <main>
           
-            <h1>
+            <article class="post" itemscope itemtype="https://schema.org/BlogPosting"><header class="post-header">
+<h1 itemprop="headline">
   
   
     Entendendo a Técnica de Longer Contexts em Modelos de Linguagem de Grande Escala (LLMs)
@@ -239,8 +265,22 @@
   
 </h1>
     
+    
+    <p class="text-small text-grey-dk-100">
+      <time datetime="2024-05-15T00:00:00-03:00" itemprop="datePublished">
+        2024-05-15
+      </time>
+      
+      <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+        • <span itemprop="name">Gilmar Pupo</span>
+      </span>
+      
+    </p>
+    
+  </header>
 
-<p>No avançado mundo da Inteligência Artificial, os Modelos de Linguagem de Grande Escala (LLMs) estão na vanguarda das tecnologias que compreendem e geram texto humano de maneira convincente. Uma das técnicas mais importantes que potencializam esses modelos é conhecida como “longer contexts” ou contextos mais longos. Esta técnica é fundamental para melhorar a compreensão e a geração de texto pelos modelos, permitindo-lhes lidar com informações mais complexas e detalhadas. Vamos explorar como isso funciona e por que é tão importante.</p>
+  <div itemprop="articleBody">
+    <p>No avançado mundo da Inteligência Artificial, os Modelos de Linguagem de Grande Escala (LLMs) estão na vanguarda das tecnologias que compreendem e geram texto humano de maneira convincente. Uma das técnicas mais importantes que potencializam esses modelos é conhecida como “longer contexts” ou contextos mais longos. Esta técnica é fundamental para melhorar a compreensão e a geração de texto pelos modelos, permitindo-lhes lidar com informações mais complexas e detalhadas. Vamos explorar como isso funciona e por que é tão importante.</p>
 <h4 id="o-que-são-longer-contexts">
   
   
@@ -298,12 +338,22 @@
 <p>A tendência é que os modelos de LLM continuem a evoluir, oferecendo contextos ainda mais longos com menos recursos computacionais. Isso abrirá novas possibilidades para aplicações ainda mais sofisticadas e precisas em diversos campos.</p>
 
 <p>Em resumo, a técnica de “longer contexts” em LLMs é uma inovação que transforma a forma como as máquinas entendem e interagem com os humanos através da linguagem. À medida que esta tecnologia avança, espera-se que ela desempenhe um papel cada vez mais crucial em diversas aplicações, tornando nossas interações com máquinas mais naturais e intuitivas.</p>
- 
-<div class="post-tags">
-	Tags: 
-	<a href="/post/tags/#ia">IA</a>
-	
-</div>
+
+  </div>
+
+  
+  <footer class="post-tags" aria-label="Tags do post">
+    <p class="text-small mb-1">Tags</p>
+    <ul class="list-style-none pl-0 mt-0 mb-0">
+      
+      <li class="d-inline-block mr-2 mb-1">
+        <a href="/post/tags/#ia" rel="tag">IA</a>
+      </li>
+      
+    </ul>
+  </footer>
+  
+</article>
 
           
 
