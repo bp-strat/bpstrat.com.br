@@ -1,0 +1,906 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=e9bea59">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li:not(:nth-child(3)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > ul > li:nth-child(2) > ul > li:nth-child(3) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > ul > li:nth-child(2) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > ul > li:nth-child(2) > ul > li:nth-child(3) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNPEB50SX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'G-MNPEB50SX', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Melhores Práticas | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Melhores Práticas" />
+<meta name="author" content="Gilmar Pupo" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Critérios para construir DAGs de produção no Airflow com idempotência, retries, timeouts, atomicidade, observabilidade e proteção de credenciais." />
+<meta property="og:description" content="Critérios para construir DAGs de produção no Airflow com idempotência, retries, timeouts, atomicidade, observabilidade e proteção de credenciais." />
+<link rel="canonical" href="https://www.bpstrat.com.br/docs/data-engineering/apache-airflow/best-practices.html" />
+<meta property="og:url" content="https://www.bpstrat.com.br/docs/data-engineering/apache-airflow/best-practices.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Melhores Práticas" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Gilmar Pupo","url":"https://www.gpupo.com"},"description":"Critérios para construir DAGs de produção no Airflow com idempotência, retries, timeouts, atomicidade, observabilidade e proteção de credenciais.","headline":"Melhores Práticas","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"},"name":"Gilmar Pupo"},"url":"https://www.bpstrat.com.br/docs/data-engineering/apache-airflow/best-practices.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BP STRAT",
+  "url": "https://www.bpstrat.com.br/",
+  "logo": "https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg",
+  "sameAs": [
+    "https://www.linkedin.com/company/bpstrat/",
+    "https://www.gpupo.com"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+55-41-99715-1336",
+    "email": "info@bpstrat.com.br",
+    "availableLanguage": "pt-BR"
+  }
+}
+</script>
+
+
+<link rel="alternate" type="text/markdown" href="/docs/data-engineering/apache-airflow/best-practices.md">
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+ <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+ <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+ <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+ <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+   <!-- Copy -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <path fill-rule="evenodd"
+    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+</symbol>
+
+<!-- Copied -->
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <path
+    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+  <path
+    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+</symbol>
+ 
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/canal-do-produto-ia.html" class="nav-list-link">Canal do Produto com IA</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li><li class="nav-list-item"><a href="/servicos/bpstack.html" class="nav-list-link">bpStack</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Backfill no Airflow 3</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup e Restauração do Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" class="nav-list-link">Arquitetura evolutiva com agentes de IA</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/blast-radius-review.html" class="nav-list-link">Blast Radius Review</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/fitness-functions-arquiteturais.html" class="nav-list-link">Fitness functions arquiteturais</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Organização submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/organizacao-software/" class="nav-list-link">Organização</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/layered-architecture.html" class="nav-list-link">Layered Architecture</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" class="nav-list-link">Vertical Slice Architecture</a></li></ul></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Quando Adotar Orquestração de Dados</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/context-map-patterns.html" class="nav-list-link">Context Map Patterns</a></li><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">Linguagem Ubíqua e Glossário do Domínio</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/c4-mermaid.html" class="nav-list-link">Mermaid C4</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="SDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/sdd/" class="nav-list-link">SDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-estrategia.html" class="nav-list-link">SDD Estratégico</a></li><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" class="nav-list-link">SDD Tático</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/data-engineering/">Data Engineering</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/data-engineering/apache-airflow/">Apache Airflow</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Melhores Práticas</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="melhores-práticas-para-dags-em-produção">
+  
+  
+    <a href="#melhores-práticas-para-dags-em-produção" class="anchor-heading" aria-labelledby="melhores-práticas-para-dags-em-produção"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Melhores Práticas para DAGs em Produção
+  
+  
+</h1>
+    
+
+
+
+
+<div class="content-tldr">
+  <em>
+    Se preferir começar por um resumo, peça um TL;DR ao
+    
+
+
+
+
+
+<a href="https://chatgpt.com/?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fdata-engineering%2Fapache-airflow%2Fbest-practices.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">ChatGPT</a> ou ao <a href="https://claude.ai/new?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fdata-engineering%2Fapache-airflow%2Fbest-practices.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">Claude</a>
+
+.
+  </em>
+</div>
+
+
+<p class="fs-6 fw-300">Critérios para reduzir duplicação, saída parcial, espera sem limite e exposição
+de credenciais em DAGs de produção.</p>
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#1-idempotência" id="markdown-toc-1-idempotência">1. Idempotência</a></li>
+  <li><a href="#2-atomicidade" id="markdown-toc-2-atomicidade">2. Atomicidade</a></li>
+  <li><a href="#3-proteja-credenciais-e-secrets" id="markdown-toc-3-proteja-credenciais-e-secrets">3. Proteja credenciais e secrets</a></li>
+  <li><a href="#4-configurar-timeouts-adequados" id="markdown-toc-4-configurar-timeouts-adequados">4. Configurar Timeouts Adequados</a></li>
+  <li><a href="#5-sensores-escolha-o-modo-correto" id="markdown-toc-5-sensores-escolha-o-modo-correto">5. Sensores: Escolha o Modo Correto</a></li>
+  <li><a href="#checklist-de-produção" id="markdown-toc-checklist-de-produção">Checklist de Produção</a></li>
+  <li><a href="#referências" id="markdown-toc-referências">Referências</a></li>
+</ol><hr />
+<h2 id="1-idempotência">
+  
+  
+    <a href="#1-idempotência" class="anchor-heading" aria-labelledby="1-idempotência"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 1. Idempotência
+  
+  
+</h2>
+    
+
+<p>Projete cada task para que repeti-la com a mesma entrada e o mesmo intervalo
+lógico produza o mesmo estado de negócio esperado. Essa propriedade permite que
+retries e reprocessamentos convirjam, em vez de acumularem registros ou efeitos
+laterais.</p>
+
+<blockquote class="important">
+  <p>Idempotência reduz o risco de duplicação durante retries e backfills, mas não
+garante um reprocessamento seguro. Versão do código, dados de entrada,
+concorrência e efeitos em sistemas externos também precisam ser controlados.</p>
+</blockquote>
+
+<p>O exemplo abaixo pressupõe uma restrição <code class="language-plaintext highlighter-rouge">UNIQUE</code> sobre
+<code class="language-plaintext highlighter-rouge">totais_diarios(data_intervalo)</code>. Para a mesma data e o mesmo total, a segunda
+execução mantém o estado de negócio produzido pela primeira:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">carregar_total</span><span class="p">(</span><span class="n">data_intervalo</span><span class="p">,</span> <span class="n">total</span><span class="p">):</span>
+    <span class="n">db</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span>
+        <span class="sh">"""</span><span class="s">
+        INSERT INTO totais_diarios (data_intervalo, total)
+        VALUES (%s, %s)
+        ON CONFLICT (data_intervalo)
+        DO UPDATE SET total = EXCLUDED.total
+        </span><span class="sh">"""</span><span class="p">,</span>
+        <span class="p">(</span><span class="n">data_intervalo</span><span class="p">,</span> <span class="n">total</span><span class="p">),</span>
+    <span class="p">)</span>
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+
+<p>Na prática:</p>
+
+<ul>
+  <li>leia e escreva partições identificadas pelo intervalo da execução, em vez de
+usar implicitamente o dado “mais recente”;</li>
+  <li>use UPSERT, substituição de partição ou escrita atômica quando uma repetição
+não puder criar duplicatas;</li>
+  <li>agrupe alterações dependentes em uma transação quando o destino oferecer esse
+recurso;</li>
+  <li>associe chamadas externas a uma chave de idempotência ou deduplicação;</li>
+  <li>diferencie estado de negócio de metadados operacionais, como horário e número
+da tentativa;</li>
+  <li>teste a task duas vezes para o mesmo intervalo e compare registros, arquivos,
+mensagens e demais efeitos observáveis.</li>
+</ul>
+
+<p>Quando o destino não oferece transações ou deduplicação, documente o modo de
+falha e implemente reconciliação ou compensação. Marcar a task como concluída no
+Airflow não desfaz um efeito externo parcial.</p>
+<h2 id="2-atomicidade">
+  
+  
+    <a href="#2-atomicidade" class="anchor-heading" aria-labelledby="2-atomicidade"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 2. Atomicidade
+  
+  
+</h2>
+    
+
+<p>Uma task é atomicamente publicável quando termina com toda a saída esperada ou
+não deixa uma saída parcial disponível aos consumidores. Fazer “uma coisa” pode
+melhorar a compreensão, mas não garante atomicidade.</p>
+
+<p>Padrões possíveis incluem:</p>
+
+<ul>
+  <li>escrever em staging e promover o resultado depois da validação;</li>
+  <li>usar transação para alterações que precisam ser confirmadas juntas;</li>
+  <li>gravar arquivo temporário e fazer rename ou troca atômica quando o storage
+oferecer essa garantia;</li>
+  <li>publicar marcador ou evento de conclusão somente após validar a saída;</li>
+  <li>remover ou reconciliar artefatos parciais antes de um retry.</li>
+</ul>
+
+<p>Exemplo conceitual para publicar uma partição preparada em staging:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="k">BEGIN</span><span class="p">;</span>
+
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">vendas</span>
+<span class="k">WHERE</span> <span class="n">data_intervalo</span> <span class="o">=</span> <span class="p">:</span><span class="n">data_intervalo</span><span class="p">;</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">vendas</span> <span class="p">(</span><span class="n">data_intervalo</span><span class="p">,</span> <span class="n">pedido_id</span><span class="p">,</span> <span class="n">valor</span><span class="p">)</span>
+<span class="k">SELECT</span> <span class="n">data_intervalo</span><span class="p">,</span> <span class="n">pedido_id</span><span class="p">,</span> <span class="n">valor</span>
+<span class="k">FROM</span> <span class="n">vendas_staging</span>
+<span class="k">WHERE</span> <span class="n">carga_id</span> <span class="o">=</span> <span class="p">:</span><span class="n">carga_id</span><span class="p">;</span>
+
+<span class="k">COMMIT</span><span class="p">;</span>
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+
+<p>O exemplo depende das garantias transacionais do banco e de uma staging já
+validada. Ele não cobre falha durante a extração nem efeitos em outro sistema.</p>
+
+<p>Separar extração, transformação, carga e validação em tasks pode melhorar retry,
+observabilidade e isolamento de recursos quando cada fronteira possui um
+artefato persistido e verificável. Sem essa persistência, a divisão pode apenas
+aumentar transferência de dados e pontos de falha. Escolha a granularidade a
+partir da unidade de recuperação, não de uma regra de quantidade de operações.</p>
+<h2 id="3-proteja-credenciais-e-secrets">
+  
+  
+    <a href="#3-proteja-credenciais-e-secrets" class="anchor-heading" aria-labelledby="3-proteja-credenciais-e-secrets"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 3. Proteja credenciais e secrets
+  
+  
+</h2>
+    
+
+<blockquote class="warning">
+  <p>Não grave credenciais no código da DAG, em parâmetros versionados, logs ou
+XComs. Use uma <strong>Connection</strong> e controle onde seu valor sensível é armazenado e
+quais componentes podem recuperá-lo.</p>
+</blockquote>
+
+<p>Connections são o modelo do Airflow para credenciais e configurações de acesso
+a serviços externos. Elas podem ser obtidas de:</p>
+
+<ul>
+  <li>um secrets backend externo, como Vault ou o gerenciador de secrets da nuvem;</li>
+  <li>variáveis de ambiente no formato <code class="language-plaintext highlighter-rouge">AIRFLOW_CONN_&lt;CONN_ID&gt;</code>;</li>
+  <li>banco de metadados do Airflow.</li>
+</ul>
+
+<p>Um secrets backend é indicado quando a organização precisa centralizar rotação,
+auditoria e controle de acesso. Variáveis de ambiente podem ser adequadas quando
+o mecanismo de implantação as injeta apenas nos componentes que precisam delas.
+O banco de metadados pode ser aceitável em contextos compatíveis com seu modelo
+de ameaça, desde que Fernet, permissões, backup e rotação de chaves estejam
+configurados e testados.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Variable</code> é um armazenamento genérico de configuração. Não a trate como
+equivalente a uma Connection apenas porque o valor pode ser criptografado ou
+resolvido por um secrets backend. Se uma Variable precisar conter informação
+sensível, aplique os mesmos controles de armazenamento, acesso, mascaramento e
+rotação.</p>
+
+<p>No Airflow 3, uma task pode recuperar uma Connection pela API pública:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">airflow.sdk</span> <span class="kn">import</span> <span class="n">Connection</span><span class="p">,</span> <span class="n">task</span>
+
+
+<span class="nd">@task</span>
+<span class="k">def</span> <span class="nf">chamar_servico</span><span class="p">():</span>
+    <span class="n">connection</span> <span class="o">=</span> <span class="n">Connection</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">servico_externo</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">connection</span><span class="p">.</span><span class="n">password</span>
+
+    <span class="c1"># Use o token sem registrá-lo em logs nem retorná-lo por XCom.
+</span>    <span class="nf">chamar_api</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+
+<p>Quando existir um Hook ou Operator para o serviço, prefira informar o <code class="language-plaintext highlighter-rouge">conn_id</code>
+a esse componente. Assim, a integração recupera a Connection sem espalhar a
+manipulação da credencial pelo código da DAG.</p>
+<h2 id="4-configurar-timeouts-adequados">
+  
+  
+    <a href="#4-configurar-timeouts-adequados" class="anchor-heading" aria-labelledby="4-configurar-timeouts-adequados"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 4. Configurar Timeouts Adequados
+  
+  
+</h2>
+    
+
+<p>Timeouts transformam uma execução excessivamente longa em uma falha observável.
+Eles devem refletir o limite operacional do workflow, e não um valor único
+aplicado a todas as tasks.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Parâmetro</th>
+      <th>Escopo</th>
+      <th>Decisão necessária</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">execution_timeout</code></td>
+      <td>Cada tentativa de uma task</td>
+      <td>Quanto tempo uma tentativa pode executar antes de ser interrompida</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">dagrun_timeout</code></td>
+      <td>DAG Run</td>
+      <td>Quanto tempo o workflow completo pode permanecer em execução</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">timeout</code> de sensor</td>
+      <td>Espera total do sensor</td>
+      <td>Quanto tempo a condição externa pode permanecer ausente</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Para definir esses limites:</p>
+
+<ul>
+  <li>use a distribuição histórica de duração, incluindo picos esperados;</li>
+  <li>reserve tempo para retries e recuperação dentro do SLO do workflow;</li>
+  <li>diferencie processamento lento de espera por uma condição externa;</li>
+  <li>confirme se interromper a task deixa efeitos parciais que exigem limpeza ou
+reconciliação;</li>
+  <li>gere alerta com contexto suficiente para distinguir timeout, indisponibilidade
+da dependência e falta de capacidade.</li>
+</ul>
+
+<p>O exemplo abaixo é <strong>hipotético</strong>. Ele supõe que o DAG deva terminar em até seis
+horas e que uma tentativa normalmente conclua em menos de duas horas. Esses
+valores precisam ser substituídos pelos limites observados e acordados para cada
+workflow:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span><span class="p">,</span> <span class="n">timezone</span>
+
+<span class="kn">from</span> <span class="n">airflow.sdk</span> <span class="kn">import</span> <span class="n">DAG</span><span class="p">,</span> <span class="n">task</span>
+
+
+<span class="k">with</span> <span class="nc">DAG</span><span class="p">(</span>
+    <span class="n">dag_id</span><span class="o">=</span><span class="sh">"</span><span class="s">meu_dag</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">schedule</span><span class="o">=</span><span class="sh">"</span><span class="s">@daily</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">start_date</span><span class="o">=</span><span class="nf">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="p">.</span><span class="n">utc</span><span class="p">),</span>
+    <span class="n">catchup</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">dagrun_timeout</span><span class="o">=</span><span class="nf">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">dag</span><span class="p">:</span>
+
+    <span class="nd">@task</span><span class="p">(</span>
+        <span class="n">execution_timeout</span><span class="o">=</span><span class="nf">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+        <span class="n">retries</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">retry_delay</span><span class="o">=</span><span class="nf">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+        <span class="n">retry_exponential_backoff</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">def</span> <span class="nf">processar</span><span class="p">():</span>
+        <span class="bp">...</span>
+
+    <span class="nf">processar</span><span class="p">()</span>
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+
+<p>Retries são apropriados para falhas transitórias, como indisponibilidade
+temporária ou limitação de taxa. Erros de autenticação, entrada inválida e falhas
+determinísticas tendem a repetir o mesmo resultado. Antes de habilitar retries,
+confirme que a task é repetível e que uma tentativa anterior não deixou um efeito
+externo sem deduplicação ou compensação.</p>
+<h2 id="5-sensores-escolha-o-modo-correto">
+  
+  
+    <a href="#5-sensores-escolha-o-modo-correto" class="anchor-heading" aria-labelledby="5-sensores-escolha-o-modo-correto"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 5. Sensores: Escolha o Modo Correto
+  
+  
+</h2>
+    
+
+<p>Não existe um limite universal de minutos que determine a escolha. Considere a
+duração esperada, a latência tolerada, o número de sensores simultâneos e a
+capacidade dos workers, do scheduler e do triggerer.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Contexto</th>
+      <th>Opção a avaliar</th>
+      <th>Limite relevante</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sensor com implementação deferrable e triggerer operacional</td>
+      <td>Deferrable</td>
+      <td>Libera o worker durante a espera, mas transfere trabalho ao triggerer</td>
+    </tr>
+    <tr>
+      <td>Polling periódico sem suporte a deferral</td>
+      <td><code class="language-plaintext highlighter-rouge">reschedule</code></td>
+      <td>Libera o worker entre verificações, com custo de reagendamento</td>
+    </tr>
+    <tr>
+      <td>Espera curta, baixa concorrência e baixa latência necessária</td>
+      <td><code class="language-plaintext highlighter-rouge">poke</code></td>
+      <td>Ocupa um worker slot durante toda a espera</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Para cada sensor:</p>
+
+<ul>
+  <li>verifique primeiro se o provider oferece uma implementação deferrable;</li>
+  <li>confirme que o deployment executa e monitora o triggerer antes de ativar
+deferral;</li>
+  <li>defina <code class="language-plaintext highlighter-rouge">poke_interval</code> conforme a latência aceitável e o custo da consulta ao
+sistema externo;</li>
+  <li>configure <code class="language-plaintext highlighter-rouge">timeout</code> para transformar uma espera excessiva em falha observável;</li>
+  <li>considere backoff quando a frequência de polling puder diminuir ao longo da
+espera;</li>
+  <li>teste a quantidade máxima de sensores simultâneos sem impedir a execução das
+demais tasks.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">deferrable=True</code> não é um comportamento universal de todo sensor: o efeito
+depende da implementação do Operator ou Sensor. Confirme o suporte na versão do
+provider utilizada.</p>
+
+<p>Veja o guia completo: <a href="/docs/data-engineering/apache-airflow/sensor-modes.html">Sensores — Poke, Reschedule e Deferral</a></p><hr />
+<h2 id="checklist-de-produção">
+  
+  
+    <a href="#checklist-de-produção" class="anchor-heading" aria-labelledby="checklist-de-produção"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Checklist de Produção
+  
+  
+</h2>
+    
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Retries para o mesmo intervalo não duplicam registros nem efeitos externos</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Falhas não deixam saída parcial visível aos consumidores</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Timeouts refletem duração observada, SLO e tempo de recuperação</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Retries são usados apenas para falhas recuperáveis em tasks repetíveis</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Sensores não retêm worker slots sem uma decisão explícita</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Sensores têm intervalo, timeout e capacidade validados</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Credenciais não estão no código, nos logs nem em XComs</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Connections sensíveis usam armazenamento e acesso compatíveis com o modelo de ameaça</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Falhas e atrasos críticos produzem alertas testados</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><code class="language-plaintext highlighter-rouge">catchup</code> corresponde à política de processamento histórico do DAG</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Dependências entre DAGs declaram semântica de evento, espera ou disparo</li>
+</ul>
+<h2 id="referências">
+  
+  
+    <a href="#referências" class="anchor-heading" aria-labelledby="referências"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Referências
+  
+  
+</h2>
+    
+
+<p>APACHE AIRFLOW. <em>Best Practices — Airflow 2.10.2</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/2.10.2/best-practices.html">https://airflow.apache.org/docs/apache-airflow/2.10.2/best-practices.html</a></p>
+
+<p>APACHE AIRFLOW. <em>Sensors</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/sensors.html">https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/sensors.html</a></p>
+
+<p>APACHE AIRFLOW. <em>Deferrable Operators &amp; Triggers</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/deferring.html">https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/deferring.html</a></p>
+
+<p>APACHE AIRFLOW. <em>Tasks — Timeouts and Retry Policies</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/tasks.html">https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/tasks.html</a></p>
+
+<p>APACHE AIRFLOW. <em>Managing Connections</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html">https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html</a></p>
+
+<p>APACHE AIRFLOW. <em>Secrets Backend</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/stable/security/secrets/secrets-backend/index.html">https://airflow.apache.org/docs/apache-airflow/stable/security/secrets/secrets-backend/index.html</a></p>
+
+<p>APACHE AIRFLOW. <em>Airflow Security Model</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html">https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html</a></p>
+
+<p>APACHE AIRFLOW. <em>Public Interface for Airflow 3.0+</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/stable/public-airflow-interface.html">https://airflow.apache.org/docs/apache-airflow/stable/public-airflow-interface.html</a></p>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+   
+<p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.<span>
+    <a href="/contact/">Contato</a> ·
+    <a href="/privacy/">Privacidade</a>
+  </span>
+  <span class="canonical-link fs-1">
+    Canonical:
+    <a href="https://www.bpstrat.com.br/docs/data-engineering/apache-airflow/best-practices.html" target="_blank" rel="nofollow">
+      https://www.bpstrat.com.br/docs/data-engineering/apache-airflow/best-practices.html
+    </a>
+  </span>
+</p>
+
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+  
+  <script src="/assets/js/mermaid.min.js"></script>
+  
+
+<script type="module">
+  
+
+var config = {}
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Mostrar código';
+
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2 ft-style text-purple-200';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Mostrar código';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Mostrar diagrama';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+

@@ -1,0 +1,860 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=e9bea59">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(3)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > ul > li:nth-child(3) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > ul > li:nth-child(3) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNPEB50SX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'G-MNPEB50SX', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Blast Radius Review | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Blast Radius Review" />
+<meta name="author" content="Gilmar Pupo" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Revisão arquitetural para mapear até onde um componente comprometido consegue avançar e priorizar barreiras de contenção no Secure SDLC." />
+<meta property="og:description" content="Revisão arquitetural para mapear até onde um componente comprometido consegue avançar e priorizar barreiras de contenção no Secure SDLC." />
+<link rel="canonical" href="https://www.bpstrat.com.br/docs/arquitetura-engenharia/blast-radius-review.html" />
+<meta property="og:url" content="https://www.bpstrat.com.br/docs/arquitetura-engenharia/blast-radius-review.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Blast Radius Review" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Gilmar Pupo","url":"https://www.gpupo.com"},"description":"Revisão arquitetural para mapear até onde um componente comprometido consegue avançar e priorizar barreiras de contenção no Secure SDLC.","headline":"Blast Radius Review","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"},"name":"Gilmar Pupo"},"url":"https://www.bpstrat.com.br/docs/arquitetura-engenharia/blast-radius-review.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BP STRAT",
+  "url": "https://www.bpstrat.com.br/",
+  "logo": "https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg",
+  "sameAs": [
+    "https://www.linkedin.com/company/bpstrat/",
+    "https://www.gpupo.com"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+55-41-99715-1336",
+    "email": "info@bpstrat.com.br",
+    "availableLanguage": "pt-BR"
+  }
+}
+</script>
+
+
+<link rel="alternate" type="text/markdown" href="/docs/arquitetura-engenharia/blast-radius-review.md">
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+ <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+ <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+ <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+ <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+   <!-- Copy -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <path fill-rule="evenodd"
+    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+</symbol>
+
+<!-- Copied -->
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <path
+    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+  <path
+    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+</symbol>
+ 
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/canal-do-produto-ia.html" class="nav-list-link">Canal do Produto com IA</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li><li class="nav-list-item"><a href="/servicos/bpstack.html" class="nav-list-link">bpStack</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Backfill no Airflow 3</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup e Restauração do Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" class="nav-list-link">Arquitetura evolutiva com agentes de IA</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/blast-radius-review.html" class="nav-list-link">Blast Radius Review</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/fitness-functions-arquiteturais.html" class="nav-list-link">Fitness functions arquiteturais</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Organização submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/organizacao-software/" class="nav-list-link">Organização</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/layered-architecture.html" class="nav-list-link">Layered Architecture</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" class="nav-list-link">Vertical Slice Architecture</a></li></ul></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Quando Adotar Orquestração de Dados</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/context-map-patterns.html" class="nav-list-link">Context Map Patterns</a></li><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">Linguagem Ubíqua e Glossário do Domínio</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/c4-mermaid.html" class="nav-list-link">Mermaid C4</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="SDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/sdd/" class="nav-list-link">SDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-estrategia.html" class="nav-list-link">SDD Estratégico</a></li><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" class="nav-list-link">SDD Tático</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/arquitetura-engenharia/">Arquitetura</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Blast Radius Review</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="blast-radius-review-conter-o-incidente-antes-que-ele-se-espalhe">
+  
+  
+    <a href="#blast-radius-review-conter-o-incidente-antes-que-ele-se-espalhe" class="anchor-heading" aria-labelledby="blast-radius-review-conter-o-incidente-antes-que-ele-se-espalhe"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Blast Radius Review: conter o incidente antes que ele se espalhe
+  
+  
+</h1>
+    
+
+
+
+
+<div class="content-tldr">
+  <em>
+    Se preferir começar por um resumo, peça um TL;DR ao
+    
+
+
+
+
+
+<a href="https://chatgpt.com/?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Farquitetura-engenharia%2Fblast-radius-review.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">ChatGPT</a> ou ao <a href="https://claude.ai/new?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Farquitetura-engenharia%2Fblast-radius-review.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">Claude</a>
+
+.
+  </em>
+</div>
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#o-risco-também-depende-do-alcance" id="markdown-toc-o-risco-também-depende-do-alcance">O risco também depende do alcance</a></li>
+  <li><a href="#como-executar-a-revisão" id="markdown-toc-como-executar-a-revisão">Como executar a revisão</a>    <ol>
+      <li><a href="#1-escolha-um-componente-e-uma-fronteira" id="markdown-toc-1-escolha-um-componente-e-uma-fronteira">1. Escolha um componente e uma fronteira</a></li>
+      <li><a href="#2-assuma-o-comprometimento" id="markdown-toc-2-assuma-o-comprometimento">2. Assuma o comprometimento</a></li>
+      <li><a href="#3-levante-as-capacidades-efetivas" id="markdown-toc-3-levante-as-capacidades-efetivas">3. Levante as capacidades efetivas</a></li>
+      <li><a href="#4-siga-cada-próximo-salto" id="markdown-toc-4-siga-cada-próximo-salto">4. Siga cada próximo salto</a></li>
+      <li><a href="#5-registre-barreiras-lacunas-e-decisões" id="markdown-toc-5-registre-barreiras-lacunas-e-decisões">5. Registre barreiras, lacunas e decisões</a></li>
+    </ol>
+  </li>
+  <li><a href="#priorizando-o-que-reduzir-primeiro" id="markdown-toc-priorizando-o-que-reduzir-primeiro">Priorizando o que reduzir primeiro</a></li>
+  <li><a href="#agentes-de-ia-tornam-as-capacidades-parte-do-perímetro" id="markdown-toc-agentes-de-ia-tornam-as-capacidades-parte-do-perímetro">Agentes de IA tornam as capacidades parte do perímetro</a></li>
+  <li><a href="#onde-a-revisão-entra-no-secure-sdlc" id="markdown-toc-onde-a-revisão-entra-no-secure-sdlc">Onde a revisão entra no Secure SDLC</a></li>
+  <li><a href="#uma-versão-de-30-minutos" id="markdown-toc-uma-versão-de-30-minutos">Uma versão de 30 minutos</a></li>
+  <li><a href="#limitações" id="markdown-toc-limitações">Limitações</a></li>
+  <li><a href="#referências" id="markdown-toc-referências">Referências</a></li>
+</ol>
+
+<p>Uma análise de segurança costuma começar pela possibilidade de uma aplicação,
+credencial ou dependência ser comprometida. A <strong>Blast Radius Review</strong> acrescenta
+outra pergunta à revisão arquitetural:</p>
+
+<blockquote>
+  <p>Se este componente for completamente comprometido, até onde o problema
+consegue chegar?</p>
+</blockquote>
+
+<p>A pergunta não substitui prevenção, correção de vulnerabilidades ou detecção.
+Ela expõe uma dimensão diferente do risco: o alcance que a arquitetura concede
+a um componente depois da primeira falha.</p>
+
+<p>Neste documento, <strong>Blast Radius Review</strong> é o nome operacional de uma prática
+proposta. Não se trata de um padrão formal. A prática aplica uma hipótese de
+comprometimento para percorrer identidades, dados, conexões e ações, localizar o
+próximo salto possível e decidir onde a arquitetura precisa de uma barreira.</p>
+<h2 id="o-risco-também-depende-do-alcance">
+  
+  
+    <a href="#o-risco-também-depende-do-alcance" class="anchor-heading" aria-labelledby="o-risco-também-depende-do-alcance"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> O risco também depende do alcance
+  
+  
+</h2>
+    
+
+<p>Considere duas APIs com a mesma vulnerabilidade. A primeira consulta uma tabela
+com uma identidade somente de leitura. A segunda usa uma conta administrativa,
+alcança serviços internos e mantém uma credencial compartilhada com o pipeline
+de implantação.</p>
+
+<p>A vulnerabilidade pode ser igual, mas os incidentes possíveis são diferentes.
+Para estimar o alcance, é necessário observar pelo menos:</p>
+
+<ul>
+  <li>as identidades disponíveis ao componente;</li>
+  <li>os dados que essas identidades podem ler, alterar ou excluir;</li>
+  <li>os sistemas alcançáveis pela rede e pelas integrações;</li>
+  <li>as ações destrutivas, irreversíveis ou externamente visíveis;</li>
+  <li>as credenciais e relações de confiança que permitem um próximo salto.</li>
+</ul>
+
+<p>Essa leitura é compatível com princípios de <em>zero trust</em>. A arquitetura descrita
+no <a href="https://csrc.nist.gov/pubs/sp/800/207/final">NIST SP 800-207</a> não concede
+confiança implícita a uma conta ou ativo apenas por sua localização na rede ou
+por pertencer à organização. Para uma Blast Radius Review, isso significa não
+tratar a rede interna, uma service account ou um serviço conhecido como uma
+barreira suficiente por si só.</p>
+<h2 id="como-executar-a-revisão">
+  
+  
+    <a href="#como-executar-a-revisão" class="anchor-heading" aria-labelledby="como-executar-a-revisão"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Como executar a revisão
+  
+  
+</h2>
+    
+<h3 id="1-escolha-um-componente-e-uma-fronteira">
+  
+  
+    <a href="#1-escolha-um-componente-e-uma-fronteira" class="anchor-heading" aria-labelledby="1-escolha-um-componente-e-uma-fronteira"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 1. Escolha um componente e uma fronteira
+  
+  
+</h3>
+    
+
+<p>Comece por um componente exposto, privilegiado ou difícil de recuperar: uma
+aplicação web, API, worker, pipeline, serviço de identidade, automação ou agente
+de IA.</p>
+
+<p>Defina também a fronteira da análise. Em um sistema menor, ela pode cobrir toda
+a arquitetura. Em uma plataforma extensa, pode ser mais útil revisar um fluxo
+crítico, um domínio ou um ambiente por vez.</p>
+
+<p>O diagrama usado deve representar o estado implantado, não apenas a arquitetura
+pretendida. Uma conexão esquecida ou uma permissão temporária que permaneceu em
+produção faz parte do raio real.</p>
+<h3 id="2-assuma-o-comprometimento">
+  
+  
+    <a href="#2-assuma-o-comprometimento" class="anchor-heading" aria-labelledby="2-assuma-o-comprometimento"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 2. Assuma o comprometimento
+  
+  
+</h3>
+    
+
+<p>Durante a revisão, aceite a hipótese:</p>
+
+<blockquote>
+  <p>O atacante controla o componente e pode usar tudo o que está disponível para
+ele.</p>
+</blockquote>
+
+<p>Não é necessário decidir nesse momento se a entrada seria uma injeção de SQL,
+execução remota de código, dependência comprometida, roubo de credencial, prompt
+injection ou erro operacional. A técnica de entrada volta a importar em outras
+análises. Aqui, o objetivo é descobrir o que acontece depois.</p>
+<h3 id="3-levante-as-capacidades-efetivas">
+  
+  
+    <a href="#3-levante-as-capacidades-efetivas" class="anchor-heading" aria-labelledby="3-levante-as-capacidades-efetivas"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 3. Levante as capacidades efetivas
+  
+  
+</h3>
+    
+
+<p>Registre capacidades verificáveis, não descrições genéricas como “acessa o
+banco” ou “integra com o storage”. Para cada relação, detalhe:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Dimensão</th>
+      <th>Pergunta</th>
+      <th>Evidência útil</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Identidade</td>
+      <td>Quais tokens, chaves, certificados, papéis e service accounts ficam disponíveis?</td>
+      <td>Configuração de workload, cofre de secrets, política IAM, conteúdo efetivo do token</td>
+    </tr>
+    <tr>
+      <td>Dados</td>
+      <td>Quais registros, tenants, arquivos, backups e logs podem ser lidos ou alterados?</td>
+      <td>Grants do banco, políticas por linha, políticas do bucket, teste com a identidade real</td>
+    </tr>
+    <tr>
+      <td>Alcance</td>
+      <td>Quais destinos aceitam conexão a partir desse componente?</td>
+      <td>Política de rede, regras de firewall, rotas, teste de conectividade</td>
+    </tr>
+    <tr>
+      <td>Ações</td>
+      <td>O que pode ser criado, enviado, aprovado, modificado ou excluído?</td>
+      <td>Escopos da API, papéis, allowlists, teste de autorização</td>
+    </tr>
+    <tr>
+      <td>Próximo salto</td>
+      <td>Qual acesso obtido aqui permite comprometer outro sistema?</td>
+      <td>Credencial compartilhada, impersonação, API administrativa, caminho para secrets</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Configuração declarada é um ponto de partida. Quando o risco for relevante, a
+evidência deve incluir um teste de permissão permitida e outro de permissão
+negada.</p>
+<h3 id="4-siga-cada-próximo-salto">
+  
+  
+    <a href="#4-siga-cada-próximo-salto" class="anchor-heading" aria-labelledby="4-siga-cada-próximo-salto"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 4. Siga cada próximo salto
+  
+  
+</h3>
+    
+
+<p>O caminho não termina no primeiro banco ou serviço alcançado. Pergunte o que o
+atacante obtém ali e repita a análise até encontrar uma barreira verificável ou
+chegar ao limite definido para a revisão.</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    internet["Internet"] --&gt; app["Web App comprometida"]
+    app --&gt; db["Banco: leitura e escrita amplas"]
+    app --&gt; storage["Storage: acesso a todo o bucket"]
+    app --&gt; api["API interna"]
+    api --&gt; token["Token administrativo compartilhado"]
+    token --&gt; admin["Serviços administrativos"]
+</code></pre>
+
+<p>Nesse exemplo, corrigir uma vulnerabilidade na Web App continua necessário,
+mas não resolve o privilégio amplo nem a credencial compartilhada. A revisão
+torna visível que uma única entrada pode alcançar serviços administrativos.</p>
+<h3 id="5-registre-barreiras-lacunas-e-decisões">
+  
+  
+    <a href="#5-registre-barreiras-lacunas-e-decisões" class="anchor-heading" aria-labelledby="5-registre-barreiras-lacunas-e-decisões"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 5. Registre barreiras, lacunas e decisões
+  
+  
+</h3>
+    
+
+<p>Para cada caminho, classifique o que interrompe ou reduz a propagação:</p>
+
+<ul>
+  <li>identidade exclusiva e com escopo mínimo;</li>
+  <li>separação entre leitura, escrita e administração;</li>
+  <li>isolamento por tenant ou por conjunto de dados;</li>
+  <li>segmentação de rede com negação por padrão;</li>
+  <li>credenciais curtas e não compartilhadas;</li>
+  <li>aprovação independente para ações irreversíveis;</li>
+  <li>limites de volume, custo, frequência ou duração;</li>
+  <li>logs e alertas que permitam detectar e conter o uso indevido;</li>
+  <li>recuperação testada para o recurso afetado.</li>
+</ul>
+
+<p>Uma barreira não deve ser registrada como eficaz apenas porque existe no
+diagrama. A revisão precisa indicar como ela foi ou será validada.</p>
+<h2 id="priorizando-o-que-reduzir-primeiro">
+  
+  
+    <a href="#priorizando-o-que-reduzir-primeiro" class="anchor-heading" aria-labelledby="priorizando-o-que-reduzir-primeiro"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Priorizando o que reduzir primeiro
+  
+  
+</h2>
+    
+
+<p>Nem todo caminho encontrado exige a mesma resposta. Uma priorização prática
+pode considerar:</p>
+
+<ol>
+  <li>quantidade e sensibilidade dos dados expostos;</li>
+  <li>possibilidade de alteração, exclusão ou ação externa;</li>
+  <li>número e criticidade dos próximos saltos;</li>
+  <li>capacidade de detectar o abuso durante sua execução;</li>
+  <li>tempo e evidência necessários para conter e recuperar;</li>
+  <li>custo e impacto operacional da barreira proposta.</li>
+</ol>
+
+<p>Credenciais compartilhadas, acesso administrativo desnecessário e caminhos que
+atravessam ambientes diferentes merecem atenção porque dificultam atribuição,
+revogação e contenção. A correção, porém, precisa respeitar o contexto. Dividir
+uma identidade pode aumentar a carga operacional; segmentar a rede pode quebrar
+fluxos pouco documentados; exigir aprovação humana em toda ação pode tornar o
+sistema inutilizável.</p>
+
+<p>A decisão deve registrar qual incidente possível será reduzido, como o controle
+será testado e qual risco continuará aceito.</p>
+<h2 id="agentes-de-ia-tornam-as-capacidades-parte-do-perímetro">
+  
+  
+    <a href="#agentes-de-ia-tornam-as-capacidades-parte-do-perímetro" class="anchor-heading" aria-labelledby="agentes-de-ia-tornam-as-capacidades-parte-do-perímetro"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Agentes de IA tornam as capacidades parte do perímetro
+  
+  
+</h2>
+    
+
+<p>Um agente pode receber acesso a documentos, e-mail, CRM, navegador, banco de
+dados e APIs internas para completar uma tarefa. O valor operacional vem dessas
+capacidades; o risco também.</p>
+
+<p>A <a href="https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html">OWASP AI Agent Security Cheat
+Sheet</a>
+recomenda conceder apenas as ferramentas necessárias, separar leitura de
+escrita, limitar recursos acessíveis e exigir autorização explícita para ações
+sensíveis. Ela também orienta tratar documentos, páginas, e-mails e respostas de
+APIs como entradas não confiáveis.</p>
+
+<p>Em uma Blast Radius Review de um agente, não basta revisar o prompt. É preciso
+examinar os controles aplicados fora do modelo:</p>
+
+<ul>
+  <li>o agente que consulta pedidos também pode cancelar ou reembolsar?</li>
+  <li>a ferramenta de banco conecta com uma identidade mais privilegiada que a
+operação pretendida?</li>
+  <li>um documento recuperado pode induzir uma chamada de ferramenta com efeito
+externo?</li>
+  <li>a aprovação está vinculada à ação e aos parâmetros que serão executados?</li>
+  <li>memória e contexto estão isolados entre usuários e tenants?</li>
+  <li>uma falha em um agente pode delegar trabalho ou credenciais a outro?</li>
+</ul>
+
+<p>Prompt injection é uma forma possível de iniciar o abuso, mas o tamanho do
+incidente depende das capacidades que continuarem disponíveis. Instruções no
+prompt podem orientar o comportamento; não devem ser o único mecanismo de
+autorização.</p>
+<h2 id="onde-a-revisão-entra-no-secure-sdlc">
+  
+  
+    <a href="#onde-a-revisão-entra-no-secure-sdlc" class="anchor-heading" aria-labelledby="onde-a-revisão-entra-no-secure-sdlc"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Onde a revisão entra no Secure SDLC
+  
+  
+</h2>
+    
+
+<p>O <a href="https://csrc.nist.gov/pubs/sp/800/218/final">Secure Software Development Framework do
+NIST</a> recomenda integrar práticas
+de segurança ao SDLC e usar modelagem de risco durante o design. A Blast Radius
+Review pode funcionar como uma análise complementar dentro dessa etapa:</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    req["Requisitos e dados"] --&gt; arch["Arquitetura e threat modeling"]
+    arch --&gt; blast["Blast Radius Review"]
+    blast --&gt; controls["Controles e decisões"]
+    controls --&gt; tests["Testes de permissão e contenção"]
+    tests --&gt; deploy["Deploy"]
+    deploy --&gt; observe["Observação e nova revisão"]
+</code></pre>
+
+<p>Além da primeira revisão de arquitetura, vale repeti-la quando houver:</p>
+
+<ul>
+  <li>nova integração, identidade, ferramenta ou fonte de dados;</li>
+  <li>mudança de escopos, papéis ou políticas de rede;</li>
+  <li>inclusão de uma ação irreversível;</li>
+  <li>alteração relevante em um agente, sua memória ou suas ferramentas;</li>
+  <li>incidente que revele um caminho não modelado;</li>
+  <li>divergência entre o diagrama e o ambiente implantado.</li>
+</ul>
+
+<p>O resultado mínimo é um conjunto de caminhos de propagação, as barreiras já
+validadas, as lacunas priorizadas, seus responsáveis e a data de revisão. Sem
+esses artefatos, a conversa pode ser útil, mas será difícil verificar se o raio
+foi reduzido depois.</p>
+<h2 id="uma-versão-de-30-minutos">
+  
+  
+    <a href="#uma-versão-de-30-minutos" class="anchor-heading" aria-labelledby="uma-versão-de-30-minutos"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Uma versão de 30 minutos
+  
+  
+</h2>
+    
+
+<p>Para uma primeira aplicação, reúna o diagrama atual e escolha um componente
+crítico. Diante dele, responda:</p>
+
+<ol>
+  <li>Quais credenciais e identidades ele possui?</li>
+  <li>Quais dados consegue ler, alterar ou excluir?</li>
+  <li>Quais sistemas consegue alcançar?</li>
+  <li>Quais ações destrutivas, irreversíveis ou externas consegue executar?</li>
+  <li>Qual é o próximo sistema que poderia ser comprometido a partir dele?</li>
+  <li>Qual evidência demonstra que cada barreira realmente interrompe o caminho?</li>
+</ol>
+
+<p>Se a análise atravessar vários sistemas sem encontrar uma negação de acesso,
+uma identidade separada, uma aprovação independente ou outro limite testável,
+ela encontrou um candidato concreto para redução de risco.</p>
+<h2 id="limitações">
+  
+  
+    <a href="#limitações" class="anchor-heading" aria-labelledby="limitações"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Limitações
+  
+  
+</h2>
+    
+
+<p>Blast Radius Review não identifica todas as formas de entrada, não calcula a
+probabilidade de exploração e não prova que um sistema é seguro. Ela não
+substitui threat modeling, revisão de código, análise de dependências, testes de
+segurança, observabilidade, resposta a incidentes ou recuperação de desastre.</p>
+
+<p>O resultado também perde validade quando inventários, diagramas e políticas não
+representam a implantação real. A prática é mais útil como revisão repetível de
+contenção do que como checklist executado uma única vez.</p>
+<h2 id="referências">
+  
+  
+    <a href="#referências" class="anchor-heading" aria-labelledby="referências"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Referências
+  
+  
+</h2>
+    
+
+<p>NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY. <em>Zero Trust Architecture</em>.
+NIST SP 800-207, 2020. Disponível em:
+<a href="https://csrc.nist.gov/pubs/sp/800/207/final">https://csrc.nist.gov/pubs/sp/800/207/final</a>.</p>
+
+<p>NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY. <em>Secure Software Development
+Framework (SSDF) Version 1.1</em>. NIST SP 800-218, 2022. Disponível em:
+<a href="https://csrc.nist.gov/pubs/sp/800/218/final">https://csrc.nist.gov/pubs/sp/800/218/final</a>.</p>
+
+<p>OWASP FOUNDATION. <em>AI Agent Security Cheat Sheet</em>. Disponível em:
+<a href="https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html</a>.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+   
+<p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.<span>
+    <a href="/contact/">Contato</a> ·
+    <a href="/privacy/">Privacidade</a>
+  </span>
+  <span class="canonical-link fs-1">
+    Canonical:
+    <a href="https://www.bpstrat.com.br/docs/arquitetura-engenharia/blast-radius-review.html" target="_blank" rel="nofollow">
+      https://www.bpstrat.com.br/docs/arquitetura-engenharia/blast-radius-review.html
+    </a>
+  </span>
+</p>
+
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+  
+  <script src="/assets/js/mermaid.min.js"></script>
+  
+
+<script type="module">
+  
+
+var config = {}
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Mostrar código';
+
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2 ft-style text-purple-200';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Mostrar código';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Mostrar diagrama';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+

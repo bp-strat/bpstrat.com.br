@@ -1,0 +1,753 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=e9bea59">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(2)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > ul > li:nth-child(2) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > ul > li:nth-child(2) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNPEB50SX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'G-MNPEB50SX', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Autenticação e Gestão de Identidade | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Autenticação e Gestão de Identidade" />
+<meta name="author" content="Gilmar Pupo" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Critérios para adotar, operar ou desenvolver autenticação e gestão de identidade conforme risco, domínio e requisitos de autorização." />
+<meta property="og:description" content="Critérios para adotar, operar ou desenvolver autenticação e gestão de identidade conforme risco, domínio e requisitos de autorização." />
+<link rel="canonical" href="https://www.bpstrat.com.br/docs/arquitetura-engenharia/autenticacao.html" />
+<meta property="og:url" content="https://www.bpstrat.com.br/docs/arquitetura-engenharia/autenticacao.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Autenticação e Gestão de Identidade" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Gilmar Pupo","url":"https://www.gpupo.com"},"description":"Critérios para adotar, operar ou desenvolver autenticação e gestão de identidade conforme risco, domínio e requisitos de autorização.","headline":"Autenticação e Gestão de Identidade","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"},"name":"Gilmar Pupo"},"url":"https://www.bpstrat.com.br/docs/arquitetura-engenharia/autenticacao.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BP STRAT",
+  "url": "https://www.bpstrat.com.br/",
+  "logo": "https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg",
+  "sameAs": [
+    "https://www.linkedin.com/company/bpstrat/",
+    "https://www.gpupo.com"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+55-41-99715-1336",
+    "email": "info@bpstrat.com.br",
+    "availableLanguage": "pt-BR"
+  }
+}
+</script>
+
+
+<link rel="alternate" type="text/markdown" href="/docs/arquitetura-engenharia/autenticacao.md">
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+ <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+ <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+ <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+ <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+   <!-- Copy -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <path fill-rule="evenodd"
+    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+</symbol>
+
+<!-- Copied -->
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <path
+    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+  <path
+    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+</symbol>
+ 
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/canal-do-produto-ia.html" class="nav-list-link">Canal do Produto com IA</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li><li class="nav-list-item"><a href="/servicos/bpstack.html" class="nav-list-link">bpStack</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Backfill no Airflow 3</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup e Restauração do Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" class="nav-list-link">Arquitetura evolutiva com agentes de IA</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/blast-radius-review.html" class="nav-list-link">Blast Radius Review</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/fitness-functions-arquiteturais.html" class="nav-list-link">Fitness functions arquiteturais</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Organização submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/organizacao-software/" class="nav-list-link">Organização</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/layered-architecture.html" class="nav-list-link">Layered Architecture</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" class="nav-list-link">Vertical Slice Architecture</a></li></ul></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Quando Adotar Orquestração de Dados</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/context-map-patterns.html" class="nav-list-link">Context Map Patterns</a></li><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">Linguagem Ubíqua e Glossário do Domínio</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/c4-mermaid.html" class="nav-list-link">Mermaid C4</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="SDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/sdd/" class="nav-list-link">SDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-estrategia.html" class="nav-list-link">SDD Estratégico</a></li><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" class="nav-list-link">SDD Tático</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/arquitetura-engenharia/">Arquitetura</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Autenticação e Gestão de Identidade</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="autenticação-e-gestão-de-identidade">
+  
+  
+    <a href="#autenticação-e-gestão-de-identidade" class="anchor-heading" aria-labelledby="autenticação-e-gestão-de-identidade"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Autenticação e Gestão de Identidade
+  
+  
+</h1>
+    
+
+
+
+
+<div class="content-tldr">
+  <em>
+    Se preferir começar por um resumo, peça um TL;DR ao
+    
+
+
+
+
+
+<a href="https://chatgpt.com/?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Farquitetura-engenharia%2Fautenticacao.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">ChatGPT</a> ou ao <a href="https://claude.ai/new?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Farquitetura-engenharia%2Fautenticacao.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">Claude</a>
+
+.
+  </em>
+</div>
+
+
+<p>Autenticação e gestão de identidade são capacidades críticas: uma falha pode
+interromper o acesso a toda a plataforma ou expor dados e operações. Isso não
+significa, porém, que toda organização deva desenvolver seu próprio provedor de
+identidade.</p>
+
+<p>Sob a ótica de Domain-Driven Design, identidade costuma ser um <strong>subdomínio
+genérico</strong> quando apenas sustenta o acesso às aplicações. Ela pode ser parte do
+<strong>core domain</strong> quando o modelo de identidade é uma fonte real de diferenciação,
+como em plataformas cuja proposta depende de identidade regulada, consentimento,
+administração delegada, prevenção de fraude ou relações complexas entre tenants.</p>
+
+<p>Portanto, classificar identidade como genérica é uma decisão de contexto, não
+uma regra universal.</p><hr />
+<h2 id="decisão-adotar-operar-ou-desenvolver">
+  
+  
+    <a href="#decisão-adotar-operar-ou-desenvolver" class="anchor-heading" aria-labelledby="decisão-adotar-operar-ou-desenvolver"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Decisão: adotar, operar ou desenvolver
+  
+  
+</h2>
+    
+
+<p>Para um subdomínio genérico, a recomendação inicial é avaliar uma solução pronta,
+gerenciada ou auto-hospedada. Desenvolver internamente só se justifica quando os
+requisitos diferenciais não puderem ser atendidos com configuração, extensão ou
+integração aceitáveis.</p>
+
+<p>Antes da escolha, registre:</p>
+
+<ul>
+  <li>protocolos e integrações necessários;</li>
+  <li>fontes de identidade e requisitos de federação;</li>
+  <li>modelo de tenants e de administração delegada;</li>
+  <li>requisitos regulatórios, de residência e retenção de dados;</li>
+  <li>ameaças relevantes e níveis de autenticação exigidos;</li>
+  <li>disponibilidade, RTO e RPO esperados;</li>
+  <li>capacidade da equipe para operar, atualizar e recuperar o serviço;</li>
+  <li>custo total, incluindo infraestrutura, suporte, atualização e migração;</li>
+  <li>extensões que podem criar dependência específica da solução.</li>
+</ul>
+
+<p>O uso de OpenID Connect ou SAML reduz o acoplamento das aplicações ao provedor,
+mas não elimina lock-in. Temas, fluxos de autenticação, APIs administrativas,
+políticas e extensões proprietárias continuam gerando custo de migração.</p><hr />
+<h2 id="keycloak-como-candidato">
+  
+  
+    <a href="#keycloak-como-candidato" class="anchor-heading" aria-labelledby="keycloak-como-candidato"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Keycloak como candidato
+  
+  
+</h2>
+    
+
+<p>O Keycloak é uma solução open source de Identity and Access Management (IAM).
+Ele é um candidato coerente quando a organização precisa de controle sobre a
+implantação, integração com diretórios ou provedores existentes e capacidade de
+configurar fluxos de autenticação — e aceita assumir sua operação.</p>
+
+<p>Entre as capacidades documentadas estão:</p>
+
+<ul>
+  <li>Single Sign-On e Single Sign-Out;</li>
+  <li>clientes OpenID Connect e SAML;</li>
+  <li>federação com LDAP e Active Directory;</li>
+  <li>papéis de realm e de cliente;</li>
+  <li>autenticação com OTP e WebAuthn;</li>
+  <li>administração de usuários, grupos, clientes e sessões;</li>
+  <li>customização de temas e fluxos de autenticação;</li>
+  <li>execução em múltiplos nós com caches distribuídos.</li>
+</ul>
+
+<p>Essa lista demonstra cobertura funcional, não adequação automática. A decisão
+deve ser validada contra os requisitos e a capacidade operacional do contexto.</p>
+<h3 id="quando-a-opção-perde-força">
+  
+  
+    <a href="#quando-a-opção-perde-força" class="anchor-heading" aria-labelledby="quando-a-opção-perde-força"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Quando a opção perde força
+  
+  
+</h3>
+    
+
+<p>Keycloak pode não ser a melhor escolha quando:</p>
+
+<ul>
+  <li>a equipe não pode manter banco, proxy, certificados, atualização, backup e
+recuperação do serviço;</li>
+  <li>o prazo favorece um serviço gerenciado e o custo recorrente é aceitável;</li>
+  <li>os requisitos dependem de funcionalidades externas ou regulatórias que
+exigiriam extensões extensas;</li>
+  <li>a organização não consegue sustentar os objetivos de disponibilidade e
+segurança de uma infraestrutura compartilhada.</li>
+</ul><hr />
+<h2 id="segmentação-com-realms">
+  
+  
+    <a href="#segmentação-com-realms" class="anchor-heading" aria-labelledby="segmentação-com-realms"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Segmentação com realms
+  
+  
+</h2>
+    
+
+<p>No Keycloak, um realm isola usuários, credenciais, papéis, grupos, clientes e
+configurações de autenticação. Um usuário pertence e autentica em um realm. Essa
+é uma fronteira forte e deve representar uma necessidade real de isolamento.</p>
+
+<p>Separar um <strong>realm externo</strong> de um <strong>realm interno</strong> é uma opção válida quando
+existem fronteiras independentes de administração, identidade, política,
+auditoria ou ciclo de vida. Por exemplo:</p>
+<h3 id="realm-externo">
+  
+  
+    <a href="#realm-externo" class="anchor-heading" aria-labelledby="realm-externo"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Realm externo
+  
+  
+</h3>
+    
+
+<ul>
+  <li>usuários finais e aplicações públicas;</li>
+  <li>federação com provedores externos;</li>
+  <li>políticas e fluxos próprios para cadastro e recuperação;</li>
+  <li>escala e ciclo de vida distintos dos usuários internos.</li>
+</ul>
+<h3 id="realm-interno">
+  
+  
+    <a href="#realm-interno" class="anchor-heading" aria-labelledby="realm-interno"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Realm interno
+  
+  
+</h3>
+    
+
+<ul>
+  <li>equipes internas e aplicações de back-office;</li>
+  <li>federação com o diretório corporativo;</li>
+  <li>autenticação multifator compatível com o risco;</li>
+  <li>administração, auditoria e recuperação sob controles internos.</li>
+</ul>
+
+<p>Essa divisão não deve ser aplicada apenas porque as aplicações têm públicos
+diferentes. Se as mesmas identidades precisam de SSO, governança e ciclo de vida
+comuns, um único realm com clientes, grupos, papéis e escopos separados pode ser
+mais simples.</p>
+
+<p>Múltiplos realms também têm custos: configuração duplicada, usuários duplicados,
+integrações adicionais e experiência fragmentada entre fronteiras. A decisão
+deve registrar qual risco o isolamento reduz e por que os controles dentro de um
+único realm seriam insuficientes.</p><hr />
+<h2 id="restrição-de-acesso-ao-back-office">
+  
+  
+    <a href="#restrição-de-acesso-ao-back-office" class="anchor-heading" aria-labelledby="restrição-de-acesso-ao-back-office"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Restrição de acesso ao back-office
+  
+  
+</h2>
+    
+
+<p>Um realm não limita acesso por rede de forma automática. Restrições a rede
+corporativa, VPN ou endereços permitidos devem ser aplicadas no proxy reverso,
+ingress, gateway ou firewall.</p>
+
+<p>Em uma implantação exposta à internet:</p>
+
+<ul>
+  <li>publique somente os caminhos necessários para autenticação;</li>
+  <li>mantenha a interface e a API administrativas em acesso interno quando isso for
+compatível com a operação;</li>
+  <li>não exponha endpoints de métricas e saúde ao público;</li>
+  <li>configure hostname, TLS e cabeçalhos de proxy explicitamente;</li>
+  <li>impeça acesso direto ao Keycloak que contorne o proxy;</li>
+  <li>teste os controles a partir das redes permitidas e bloqueadas.</li>
+</ul>
+
+<p>A documentação do Keycloak recomenda restringir no proxy os caminhos
+administrativos e os endpoints de autenticação do realm administrativo. Esses
+controles <strong>reduzem</strong> a superfície exposta, mas não garantem segurança por si
+sós.</p><hr />
+<h2 id="autenticação-e-autorização">
+  
+  
+    <a href="#autenticação-e-autorização" class="anchor-heading" aria-labelledby="autenticação-e-autorização"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Autenticação e autorização
+  
+  
+</h2>
+    
+
+<p>O mecanismo de autenticação deve corresponder ao risco. Back-office e operações
+privilegiadas podem exigir MFA com OTP ou WebAuthn, mas a simples ativação de um
+segundo fator não encerra o trabalho. Também é necessário definir recuperação de
+conta, revogação de credenciais, proteção contra elevação de privilégio e
+procedimentos para perda do autenticador.</p>
+
+<p>Para autorização:</p>
+
+<ul>
+  <li>use escopos e papéis mínimos nos tokens;</li>
+  <li>restrinja URIs de redirecionamento e origens de cada cliente;</li>
+  <li>limite duração de sessões e tokens conforme o risco;</li>
+  <li>revise contas administrativas e permissões delegadas;</li>
+  <li>mantenha decisões voláteis do domínio nos serviços ou em um componente de
+políticas apropriado.</li>
+</ul>
+
+<p>O provedor pode transportar identidade, escopos e papéis. Regras como limite de
+crédito, aprovação de pedido ou acesso condicionado ao estado de uma entidade
+pertencem ao domínio que possui essas informações. Colocá-las no IAM pode
+acoplar a evolução do negócio à infraestrutura de identidade.</p><hr />
+<h2 id="disponibilidade-e-operação">
+  
+  
+    <a href="#disponibilidade-e-operação" class="anchor-heading" aria-labelledby="disponibilidade-e-operação"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Disponibilidade e operação
+  
+  
+</h2>
+    
+
+<p>Executar múltiplas instâncias não garante alta disponibilidade. O resultado
+depende também de banco de dados, caches, balanceador, DNS, certificados,
+capacidade, estratégia de atualização e topologia de falha.</p>
+
+<p>Antes de produção, valide pelo menos:</p>
+
+<ul>
+  <li>falha e substituição de uma instância;</li>
+  <li>indisponibilidade e recuperação do banco;</li>
+  <li>persistência ou encerramento esperado das sessões;</li>
+  <li>rotação de chaves e certificados;</li>
+  <li>backup e restauração de dados e configurações;</li>
+  <li>atualização e rollback de versão;</li>
+  <li>comportamento do proxy e dos health checks;</li>
+  <li>capacidade sob pico e degradação de dependências;</li>
+  <li>emissão de eventos, logs e alertas úteis para investigação.</li>
+</ul>
+
+<p>Os testes devem produzir evidências para os objetivos de disponibilidade, RTO e
+RPO definidos. Sem esses testes, “clustering” descreve uma configuração, não uma
+garantia operacional.</p><hr />
+<h2 id="critérios-de-decisão">
+  
+  
+    <a href="#critérios-de-decisão" class="anchor-heading" aria-labelledby="critérios-de-decisão"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Critérios de decisão
+  
+  
+</h2>
+    
+
+<p>Keycloak pode ser adotado quando um experimento ou avaliação comprovar que:</p>
+
+<ol>
+  <li>os fluxos críticos de login, logout, recuperação e federação funcionam;</li>
+  <li>os limites entre realms, clientes e papéis correspondem ao modelo de acesso;</li>
+  <li>os controles de rede bloqueiam interfaces e caminhos não públicos;</li>
+  <li>aplicações recebem apenas os escopos e papéis necessários;</li>
+  <li>backup, restauração, atualização e falha de instância atendem aos objetivos;</li>
+  <li>a equipe consegue operar e corrigir a plataforma no tempo requerido;</li>
+  <li>o custo total e o custo de saída são aceitáveis.</li>
+</ol>
+
+<p>Se esses critérios não forem atendidos, compare uma oferta gerenciada, outra
+solução ou uma redução de escopo. A escolha deve permanecer reversível na medida
+compatível com o custo do sistema.</p>
+<h2 id="referências">
+  
+  
+    <a href="#referências" class="anchor-heading" aria-labelledby="referências"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Referências
+  
+  
+</h2>
+    
+
+<p>KEYCLOAK TEAM. <em>Server Administration Guide</em>. Disponível em:
+<a href="https://www.keycloak.org/docs/latest/server_admin/">https://www.keycloak.org/docs/latest/server_admin/</a></p>
+
+<p>KEYCLOAK TEAM. <em>Configuring a reverse proxy</em>. Disponível em:
+<a href="https://www.keycloak.org/server/reverseproxy">https://www.keycloak.org/server/reverseproxy</a></p>
+
+<p>KEYCLOAK TEAM. <em>Configuring Keycloak for production</em>. Disponível em:
+<a href="https://www.keycloak.org/server/configuration-production">https://www.keycloak.org/server/configuration-production</a></p>
+
+<p>KEYCLOAK TEAM. <em>High availability overview</em>. Disponível em:
+<a href="https://www.keycloak.org/high-availability/introduction">https://www.keycloak.org/high-availability/introduction</a></p>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+   
+<p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.<span>
+    <a href="/contact/">Contato</a> ·
+    <a href="/privacy/">Privacidade</a>
+  </span>
+  <span class="canonical-link fs-1">
+    Canonical:
+    <a href="https://www.bpstrat.com.br/docs/arquitetura-engenharia/autenticacao.html" target="_blank" rel="nofollow">
+      https://www.bpstrat.com.br/docs/arquitetura-engenharia/autenticacao.html
+    </a>
+  </span>
+</p>
+
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+  
+  <script src="/assets/js/mermaid.min.js"></script>
+  
+
+<script type="module">
+  
+
+var config = {}
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Mostrar código';
+
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2 ft-style text-purple-200';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Mostrar código';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Mostrar diagrama';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+

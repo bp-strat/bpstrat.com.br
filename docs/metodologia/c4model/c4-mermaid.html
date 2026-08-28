@@ -1,0 +1,896 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=e9bea59">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li:not(:nth-child(3)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(1) > ul > li:nth-child(3) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(1) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(1) > ul > li:nth-child(3) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNPEB50SX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'G-MNPEB50SX', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mermaid C4 | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Mermaid C4" />
+<meta name="author" content="Gilmar Pupo" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Convenção para representar diagramas C4 com Mermaid, separando decisões do modelo, sintaxe da ferramenta, escopo e limites de interpretação." />
+<meta property="og:description" content="Convenção para representar diagramas C4 com Mermaid, separando decisões do modelo, sintaxe da ferramenta, escopo e limites de interpretação." />
+<link rel="canonical" href="https://www.bpstrat.com.br/docs/metodologia/c4model/c4-mermaid.html" />
+<meta property="og:url" content="https://www.bpstrat.com.br/docs/metodologia/c4model/c4-mermaid.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Mermaid C4" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Gilmar Pupo","url":"https://www.gpupo.com"},"description":"Convenção para representar diagramas C4 com Mermaid, separando decisões do modelo, sintaxe da ferramenta, escopo e limites de interpretação.","headline":"Mermaid C4","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"},"name":"Gilmar Pupo"},"url":"https://www.bpstrat.com.br/docs/metodologia/c4model/c4-mermaid.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BP STRAT",
+  "url": "https://www.bpstrat.com.br/",
+  "logo": "https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg",
+  "sameAs": [
+    "https://www.linkedin.com/company/bpstrat/",
+    "https://www.gpupo.com"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+55-41-99715-1336",
+    "email": "info@bpstrat.com.br",
+    "availableLanguage": "pt-BR"
+  }
+}
+</script>
+
+
+<link rel="alternate" type="text/markdown" href="/docs/metodologia/c4model/c4-mermaid.md">
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+ <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+ <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+ <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+ <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+   <!-- Copy -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <path fill-rule="evenodd"
+    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+</symbol>
+
+<!-- Copied -->
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <path
+    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+  <path
+    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+</symbol>
+ 
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/canal-do-produto-ia.html" class="nav-list-link">Canal do Produto com IA</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li><li class="nav-list-item"><a href="/servicos/bpstack.html" class="nav-list-link">bpStack</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Backfill no Airflow 3</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup e Restauração do Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" class="nav-list-link">Arquitetura evolutiva com agentes de IA</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/blast-radius-review.html" class="nav-list-link">Blast Radius Review</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/fitness-functions-arquiteturais.html" class="nav-list-link">Fitness functions arquiteturais</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Organização submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/organizacao-software/" class="nav-list-link">Organização</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/layered-architecture.html" class="nav-list-link">Layered Architecture</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" class="nav-list-link">Vertical Slice Architecture</a></li></ul></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Quando Adotar Orquestração de Dados</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/context-map-patterns.html" class="nav-list-link">Context Map Patterns</a></li><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">Linguagem Ubíqua e Glossário do Domínio</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/c4-mermaid.html" class="nav-list-link">Mermaid C4</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="SDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/sdd/" class="nav-list-link">SDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-estrategia.html" class="nav-list-link">SDD Estratégico</a></li><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" class="nav-list-link">SDD Tático</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/metodologia/">Metodologias</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/metodologia/c4model/">C4 Model</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Mermaid C4</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="convenção-para-diagramas-c4-em-mermaid">
+  
+  
+    <a href="#convenção-para-diagramas-c4-em-mermaid" class="anchor-heading" aria-labelledby="convenção-para-diagramas-c4-em-mermaid"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Convenção para diagramas C4 em Mermaid
+  
+  
+</h1>
+    
+
+
+
+
+<div class="content-tldr">
+  <em>
+    Se preferir começar por um resumo, peça um TL;DR ao
+    
+
+
+
+
+
+<a href="https://chatgpt.com/?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fmetodologia%2Fc4model%2Fc4-mermaid.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">ChatGPT</a> ou ao <a href="https://claude.ai/new?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fmetodologia%2Fc4model%2Fc4-mermaid.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">Claude</a>
+
+.
+  </em>
+</div>
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#estado-da-sintaxe-mermaid" id="markdown-toc-estado-da-sintaxe-mermaid">Estado da sintaxe Mermaid</a></li>
+  <li><a href="#tipos-de-diagrama" id="markdown-toc-tipos-de-diagrama">Tipos de diagrama</a>    <ol>
+      <li><a href="#system-context" id="markdown-toc-system-context">System Context</a></li>
+      <li><a href="#container" id="markdown-toc-container">Container</a></li>
+      <li><a href="#component" id="markdown-toc-component">Component</a></li>
+      <li><a href="#dynamic" id="markdown-toc-dynamic">Dynamic</a></li>
+      <li><a href="#deployment" id="markdown-toc-deployment">Deployment</a></li>
+    </ol>
+  </li>
+  <li><a href="#boundaries-compatíveis-com-o-escopo" id="markdown-toc-boundaries-compatíveis-com-o-escopo">Boundaries compatíveis com o escopo</a></li>
+  <li><a href="#bounded-context-não-é-elemento-c4" id="markdown-toc-bounded-context-não-é-elemento-c4">Bounded Context não é elemento C4</a></li>
+  <li><a href="#filas-tópicos-e-brokers" id="markdown-toc-filas-tópicos-e-brokers">Filas, tópicos e brokers</a>    <ol>
+      <li><a href="#direção-dos-eventos" id="markdown-toc-direção-dos-eventos">Direção dos eventos</a></li>
+    </ol>
+  </li>
+  <li><a href="#nomenclatura-e-relacionamentos" id="markdown-toc-nomenclatura-e-relacionamentos">Nomenclatura e relacionamentos</a></li>
+  <li><a href="#limitações-operacionais-do-mermaid" id="markdown-toc-limitações-operacionais-do-mermaid">Limitações operacionais do Mermaid</a></li>
+  <li><a href="#checklist-de-revisão" id="markdown-toc-checklist-de-revisão">Checklist de revisão</a></li>
+  <li><a href="#referências" id="markdown-toc-referências">Referências</a></li>
+</ol>
+
+<p>Esta convenção define como os documentos deste site representam o modelo C4 com Mermaid. A ordem das decisões importa: primeiro se escolhem o tipo, o escopo e as abstrações do diagrama; depois se selecionam as macros que conseguem expressar esse modelo.</p>
+
+<p>A existência de uma macro como <code class="language-plaintext highlighter-rouge">ContainerQueue</code> ou <code class="language-plaintext highlighter-rouge">Container_Boundary</code> não demonstra que o elemento seja um container nem que o agrupamento represente um Bounded Context. A classificação precisa vir da arquitetura descrita.</p>
+<h2 id="estado-da-sintaxe-mermaid">
+  
+  
+    <a href="#estado-da-sintaxe-mermaid" class="anchor-heading" aria-labelledby="estado-da-sintaxe-mermaid"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Estado da sintaxe Mermaid
+  
+  
+</h2>
+    
+
+<p>A documentação do Mermaid classifica os diagramas C4 como experimentais. A sintaxe e as propriedades podem mudar, e alguns recursos compatíveis com C4-PlantUML ainda não estão disponíveis.</p>
+
+<p>Por isso, um diagrama deve continuar compreensível sem depender de cor, posição ou recurso experimental específico. Nos projetos que renderizam Mermaid durante o build, registre a versão do renderizador e revise os diagramas antes de atualizá-la.</p>
+
+<p>Esta página separa duas categorias:</p>
+
+<ul>
+  <li><strong>regra do modelo:</strong> escopo, abstração, responsabilidade e significado das relações;</li>
+  <li><strong>decisão da ferramenta:</strong> macro, ordem das declarações, direção visual e ajuste de layout.</li>
+</ul>
+
+<p>Quando o Mermaid não conseguir expressar o modelo sem ambiguidade, preserve o modelo e use outra notação. Não altere a arquitetura descrita apenas para acomodar uma macro.</p>
+<h2 id="tipos-de-diagrama">
+  
+  
+    <a href="#tipos-de-diagrama" class="anchor-heading" aria-labelledby="tipos-de-diagrama"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tipos de diagrama
+  
+  
+</h2>
+    
+
+<p>Context, Container e Component são níveis de zoom da estrutura estática. Dynamic e Deployment são diagramas de apoio; não são níveis mais profundos da mesma sequência.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Declaração Mermaid</th>
+      <th>Escopo</th>
+      <th>Elementos principais</th>
+      <th>Elementos de apoio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>System Context</td>
+      <td><code class="language-plaintext highlighter-rouge">C4Context</code></td>
+      <td>Um software system</td>
+      <td>O sistema em foco</td>
+      <td>Pessoas e sistemas diretamente relacionados</td>
+    </tr>
+    <tr>
+      <td>Container</td>
+      <td><code class="language-plaintext highlighter-rouge">C4Container</code></td>
+      <td>Um software system</td>
+      <td>Aplicações e data stores internos ao sistema</td>
+      <td>Pessoas e sistemas conectados aos containers</td>
+    </tr>
+    <tr>
+      <td>Component</td>
+      <td><code class="language-plaintext highlighter-rouge">C4Component</code></td>
+      <td>Um único container</td>
+      <td>Componentes internos ao container em foco</td>
+      <td>Containers, pessoas e sistemas diretamente relacionados</td>
+    </tr>
+    <tr>
+      <td>Dynamic</td>
+      <td><code class="language-plaintext highlighter-rouge">C4Dynamic</code></td>
+      <td>Um caso de uso, história ou fluxo</td>
+      <td>Interações em uma abstração escolhida</td>
+      <td>Apenas elementos necessários para explicar o comportamento</td>
+    </tr>
+    <tr>
+      <td>Deployment</td>
+      <td><code class="language-plaintext highlighter-rouge">C4Deployment</code></td>
+      <td>Um ambiente de implantação</td>
+      <td>Nós de implantação e instâncias de sistemas ou containers</td>
+      <td>Infraestrutura necessária ao ambiente</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>O diagrama de código, quarto nível estrutural do C4, não possui um tipo próprio entre os cinco diagramas C4 documentados pelo Mermaid. Quando esse detalhe for necessário, use uma notação adequada ao código, como um diagrama de classes ou de entidades.</p>
+<h3 id="system-context">
+  
+  
+    <a href="#system-context" class="anchor-heading" aria-labelledby="system-context"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> System Context
+  
+  
+</h3>
+    
+
+<p>O System Context mostra o sistema em foco como uma unidade. Tecnologias, protocolos, bancos e componentes internos normalmente não pertencem a esse diagrama.</p>
+
+<p>Use:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Person</code> ou <code class="language-plaintext highlighter-rouge">Person_Ext</code> para pessoas, papéis e personas;</li>
+  <li><code class="language-plaintext highlighter-rouge">System</code> para o software system em foco;</li>
+  <li><code class="language-plaintext highlighter-rouge">System_Ext</code> para sistemas fora de seu escopo ou ownership.</li>
+</ul>
+
+<p>Não use <code class="language-plaintext highlighter-rouge">C4Context</code> como sinônimo automático de visão de negócio ou ecossistema. Um mapa com vários sistemas de uma organização é um <strong>System Landscape</strong>. O Mermaid não oferece uma declaração <code class="language-plaintext highlighter-rouge">C4Landscape</code>; se <code class="language-plaintext highlighter-rouge">C4Context</code> for usado como limitação de renderização, o título deve identificar explicitamente o diagrama como System Landscape.</p>
+<h3 id="container">
+  
+  
+    <a href="#container" class="anchor-heading" aria-labelledby="container"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Container
+  
+  
+</h3>
+    
+
+<p>O Container Diagram abre um único software system e mostra suas aplicações e data stores. No C4, container não significa necessariamente container Docker: é uma fronteira de execução ou armazenamento, como API, aplicação web, Worker, função, schema de banco ou bucket controlado pelo sistema.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">System_Boundary</code> para delimitar o software system em foco. Dentro dele, use <code class="language-plaintext highlighter-rouge">Container</code>, <code class="language-plaintext highlighter-rouge">ContainerDb</code> ou <code class="language-plaintext highlighter-rouge">ContainerQueue</code> somente para unidades compatíveis com essa definição.</p>
+
+<p>Pacotes, camadas, aggregates, services e repositories internos ao mesmo processo não se tornam containers por aparecerem em caixas separadas. Eles podem ser componentes ou detalhes de código.</p>
+<h3 id="component">
+  
+  
+    <a href="#component" class="anchor-heading" aria-labelledby="component"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Component
+  
+  
+</h3>
+    
+
+<p>O Component Diagram abre um único container. Use <code class="language-plaintext highlighter-rouge">Container_Boundary</code> para deixar esse escopo visível e coloque dentro dele somente componentes pertencentes ao container em foco.</p>
+
+<p>Outros containers podem aparecer como elementos de apoio, mas não devem ser decompostos no mesmo diagrama. Se API e Worker precisarem de detalhes internos, crie um Component Diagram para cada um.</p>
+
+<p>Um componente é um agrupamento de funcionalidade encapsulado por uma interface. Ele não é uma unidade de deploy independente no modelo C4. Caso seja executado e implantado separadamente, reavalie se o elemento é um container.</p>
+<h3 id="dynamic">
+  
+  
+    <a href="#dynamic" class="anchor-heading" aria-labelledby="dynamic"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Dynamic
+  
+  
+</h3>
+    
+
+<p>O Dynamic Diagram explica como elementos colaboram em runtime para realizar um comportamento específico. Antes de desenhá-lo, escolha se a interação principal ocorrerá entre sistemas, containers ou componentes e mantenha essa abstração consistente.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">RelIndex</code> para indicar a ordem das interações. Na implementação atual do Mermaid, o parâmetro numérico informado a <code class="language-plaintext highlighter-rouge">RelIndex</code> é ignorado e a sequência é calculada pela ordem das declarações. Portanto, mantenha as relações no arquivo na mesma ordem em que devem ser lidas.</p>
+
+<p>Um Dynamic Diagram não substitui o diagrama estrutural que define os elementos. Ele mostra uma instância de colaboração entre elementos já classificados.</p>
+<h3 id="deployment">
+  
+  
+    <a href="#deployment" class="anchor-heading" aria-labelledby="deployment"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Deployment
+  
+  
+</h3>
+    
+
+<p>O Deployment Diagram mostra como instâncias de software systems e containers são executadas em um ambiente específico, como produção ou homologação.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">Deployment_Node</code> para infraestrutura física, virtualizada, conteinerizada ou para um ambiente de execução. Informe o ambiente no título e não misture configurações de produção e desenvolvimento no mesmo diagrama.</p>
+
+<p>A topologia de deploy não deve ser inferida de um Container Diagram. Réplicas, clusters, balanceadores, regiões e failover pertencem ao Deployment Diagram quando forem relevantes e conhecidos.</p>
+
+<p>Se a versão do renderizador não oferecer uma forma clara de mostrar as instâncias dentro dos nós, use outra notação. Um conjunto de nós sem as instâncias implantadas não cumpre sozinho o propósito de um Deployment Diagram C4.</p>
+<h2 id="boundaries-compatíveis-com-o-escopo">
+  
+  
+    <a href="#boundaries-compatíveis-com-o-escopo" class="anchor-heading" aria-labelledby="boundaries-compatíveis-com-o-escopo"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Boundaries compatíveis com o escopo
+  
+  
+</h2>
+    
+
+<p>Uma boundary comunica ownership ou escopo. Ela não serve apenas para aproximar caixas visualmente.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Boundary</th>
+      <th>Uso nesta convenção</th>
+      <th>Evitar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Enterprise_Boundary</code></td>
+      <td>Delimitar uma organização em um System Landscape quando essa fronteira for relevante</td>
+      <td>Cercar automaticamente todo System Context</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">System_Boundary</code></td>
+      <td>Delimitar os containers do único software system em foco</td>
+      <td>Agrupar componentes, camadas ou Bounded Contexts sem correspondência demonstrada</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Container_Boundary</code></td>
+      <td>Delimitar os componentes do único container em foco</td>
+      <td>Representar qualquer agrupamento lógico ou vários containers simultaneamente</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Boundary</code></td>
+      <td>Agrupamento excepcional, identificado no título ou na legenda textual</td>
+      <td>Criar um novo nível de abstração sem definição</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Um diagrama pode incluir elementos de apoio de outra abstração. Por exemplo, um Container Diagram inclui pessoas e sistemas, e um Component Diagram pode incluir containers vizinhos. Isso não é mistura indevida quando existe um único escopo principal e apenas os elementos desse escopo são decompostos.</p>
+<h2 id="bounded-context-não-é-elemento-c4">
+  
+  
+    <a href="#bounded-context-não-é-elemento-c4" class="anchor-heading" aria-labelledby="bounded-context-não-é-elemento-c4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Bounded Context não é elemento C4
+  
+  
+</h2>
+    
+
+<p>Bounded Context pertence ao Domain-Driven Design: ele delimita onde um modelo é definido e aplicável. Software system, container e component são abstrações do C4. Não existe correspondência obrigatória entre esses conceitos.</p>
+
+<p>Conforme o sistema observado, um Bounded Context pode:</p>
+
+<ul>
+  <li>coincidir com um software system;</li>
+  <li>ser implementado por um ou mais containers;</li>
+  <li>ocupar parte de um container compartilhado;</li>
+  <li>mudar de correspondência durante uma migração.</li>
+</ul>
+
+<p>Antes de representar essa relação, documente qual dessas situações foi observada ou assumida. Não declare que “Bounded Context é <code class="language-plaintext highlighter-rouge">Container_Boundary</code>”.</p>
+
+<p>Quando o objetivo for mostrar relações estratégicas entre Bounded Contexts, use um Context Map separado. Se um diagrama C4 também precisar evidenciar essa informação, trate-a como uma anotação ou agrupamento complementar, explique a convenção ao lado do diagrama e preserve os tipos C4 de cada elemento.</p>
+<h2 id="filas-tópicos-e-brokers">
+  
+  
+    <a href="#filas-tópicos-e-brokers" class="anchor-heading" aria-labelledby="filas-tópicos-e-brokers"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Filas, tópicos e brokers
+  
+  
+</h2>
+    
+
+<p>O sufixo <code class="language-plaintext highlighter-rouge">Queue</code> do Mermaid muda a forma visual, mas não cria uma nova abstração no C4. Primeiro determine o papel e o ownership do elemento.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Situação observada</th>
+      <th>Representação recomendada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Plataforma de mensageria independente, vista de fora do sistema</td>
+      <td><code class="language-plaintext highlighter-rouge">SystemQueue</code> ou <code class="language-plaintext highlighter-rouge">SystemQueue_Ext</code> no nível de sistemas</td>
+    </tr>
+    <tr>
+      <td>Fila, tópico ou data store controlado pelo sistema e relevante em runtime</td>
+      <td><code class="language-plaintext highlighter-rouge">ContainerQueue</code> dentro do <code class="language-plaintext highlighter-rouge">System_Boundary</code></td>
+    </tr>
+    <tr>
+      <td>Container de mensageria vizinho ao container aberto no Component Diagram</td>
+      <td><code class="language-plaintext highlighter-rouge">ContainerQueue</code> como elemento de apoio, fora do <code class="language-plaintext highlighter-rouge">Container_Boundary</code> em foco</td>
+    </tr>
+    <tr>
+      <td>Elemento interno que satisfaz a definição de componente e possui semântica de canal</td>
+      <td><code class="language-plaintext highlighter-rouge">ComponentQueue</code> apenas quando a forma de fila acrescentar informação relevante</td>
+    </tr>
+    <tr>
+      <td>Buffer em memória, client library, mecanismo de retry ou outro detalhe local</td>
+      <td>Omitir do C4 ou representar em um diagrama de código específico</td>
+    </tr>
+    <tr>
+      <td>Serviço administrado por terceiro ou por outra equipe</td>
+      <td>Representar conforme a fronteira de ownership, normalmente como sistema externo</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Não use <code class="language-plaintext highlighter-rouge">ContainerDb</code> como substituto genérico de uma fila apenas porque ambos armazenam dados. Também não transforme cada tópico em container sem demonstrar que ele é uma unidade arquitetural relevante para o escopo.</p>
+
+<p>Broker, fila e tópico não são necessariamente o mesmo elemento. Mostre-os separadamente apenas quando essa distinção afetar ownership, operação, segurança, disponibilidade ou relações relevantes. Caso contrário, escolha o nível de detalhe necessário para a decisão documentada.</p>
+<h3 id="direção-dos-eventos">
+  
+  
+    <a href="#direção-dos-eventos" class="anchor-heading" aria-labelledby="direção-dos-eventos"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Direção dos eventos
+  
+  
+</h3>
+    
+
+<p>Nesta convenção, setas de mensageria representam <strong>fluxo de dados</strong>:</p>
+
+<ul>
+  <li>produtor → canal: “Publica <code class="language-plaintext highlighter-rouge">PedidoCriado</code>”;</li>
+  <li>canal → consumidor: “Entrega <code class="language-plaintext highlighter-rouge">PedidoCriado</code>” ou “Disponibiliza <code class="language-plaintext highlighter-rouge">PedidoCriado</code>”.</li>
+</ul>
+
+<p>Se o objetivo for representar dependência de assinatura, use consumidor → canal com uma ação como “Assina <code class="language-plaintext highlighter-rouge">PedidoCriado</code>” e declare essa semântica no texto. Não misture fluxo de dados e dependência de assinatura no mesmo diagrama sem explicação.</p>
+
+<p>O nome da mensagem comunica melhor a intenção do que o nome do produto. Informe Kafka, AMQP, HTTPS ou outra tecnologia no campo de tecnologia ou protocolo somente quando esse dado for conhecido e relevante.</p>
+<h2 id="nomenclatura-e-relacionamentos">
+  
+  
+    <a href="#nomenclatura-e-relacionamentos" class="anchor-heading" aria-labelledby="nomenclatura-e-relacionamentos"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Nomenclatura e relacionamentos
+  
+  
+</h2>
+    
+
+<p>Todo diagrama deve ter um título com tipo e escopo, por exemplo: “Container Diagram do Sistema de Shipping”.</p>
+
+<p>Para os elementos:</p>
+
+<ul>
+  <li>use nomes reconhecíveis no domínio;</li>
+  <li>identifique o tipo C4 de cada elemento;</li>
+  <li>descreva a responsabilidade em uma ou duas frases curtas;</li>
+  <li>informe tecnologia para containers e componentes quando ela for conhecida;</li>
+  <li>não invente tecnologia para preencher o campo.</li>
+</ul>
+
+<p>Para os relacionamentos:</p>
+
+<ul>
+  <li>use uma seta unidirecional por relação;</li>
+  <li>escreva a ação de acordo com a direção da seta;</li>
+  <li>prefira verbos específicos, como “Consulta saldo” ou “Publica <code class="language-plaintext highlighter-rouge">PedidoCriado</code>”, em vez de “Usa”;</li>
+  <li>informe protocolo ou tecnologia nas relações entre containers quando conhecido;</li>
+  <li>use <code class="language-plaintext highlighter-rouge">Rel</code> como padrão.</li>
+</ul>
+
+<p>As variantes <code class="language-plaintext highlighter-rouge">Rel_D</code>, <code class="language-plaintext highlighter-rouge">Rel_U</code>, <code class="language-plaintext highlighter-rouge">Rel_L</code> e <code class="language-plaintext highlighter-rouge">Rel_R</code> podem melhorar a disposição visual. O sufixo indica uma preferência de layout e não muda o significado arquitetural da relação. Se a direção visual exigir uma seta semanticamente errada, mantenha a semântica e aceite outro layout.</p>
+
+<p>Evite <code class="language-plaintext highlighter-rouge">BiRel</code>. Duas relações unidirecionais, cada uma com seu propósito, deixam dependências e fluxos mais claros.</p>
+<h2 id="limitações-operacionais-do-mermaid">
+  
+  
+    <a href="#limitações-operacionais-do-mermaid" class="anchor-heading" aria-labelledby="limitações-operacionais-do-mermaid"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Limitações operacionais do Mermaid
+  
+  
+</h2>
+    
+
+<p>Na documentação consultada, a implementação C4 do Mermaid possui limitações relevantes:</p>
+
+<ul>
+  <li>a sintaxe permanece experimental;</li>
+  <li>o layout não é totalmente automático e depende da ordem das declarações;</li>
+  <li>comandos <code class="language-plaintext highlighter-rouge">Layout_*</code> de C4-PlantUML não são suportados;</li>
+  <li>legendas, tags, links e alguns recursos de estilo ainda não estão completos;</li>
+  <li><code class="language-plaintext highlighter-rouge">RelIndex</code> usa a ordem das relações, não o índice fornecido.</li>
+</ul>
+
+<p>Quando uma legenda for necessária, inclua uma explicação textual próxima ao diagrama. Não simule tipos arquiteturais diferentes apenas com cores, pois o significado pode desaparecer em outro tema, impressão ou renderizador.</p>
+<h2 id="checklist-de-revisão">
+  
+  
+    <a href="#checklist-de-revisão" class="anchor-heading" aria-labelledby="checklist-de-revisão"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Checklist de revisão
+  
+  
+</h2>
+    
+
+<p>Antes de publicar, confirme:</p>
+
+<ol>
+  <li>O título identifica o tipo e o escopo?</li>
+  <li>Existe um único sistema ou container sendo decomposto?</li>
+  <li>Cada elemento corresponde à abstração C4 declarada?</li>
+  <li>Boundaries representam escopo ou ownership conhecido?</li>
+  <li>Algum Bounded Context foi convertido automaticamente em elemento C4?</li>
+  <li>Filas e tópicos foram classificados por papel e ownership antes da escolha da macro?</li>
+  <li>As setas e seus rótulos expressam a mesma direção?</li>
+  <li>Tecnologias e protocolos apresentados são conhecidos, não presumidos?</li>
+  <li>Hipóteses e arquitetura ilustrativa estão identificadas?</li>
+  <li>O diagrama continua compreensível apesar das limitações do Mermaid?</li>
+</ol>
+<h2 id="referências">
+  
+  
+    <a href="#referências" class="anchor-heading" aria-labelledby="referências"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Referências
+  
+  
+</h2>
+    
+
+<ul>
+  <li><a href="https://c4model.com/abstractions">C4 Model: abstrações</a></li>
+  <li><a href="https://c4model.com/diagrams">C4 Model: tipos de diagrama</a></li>
+  <li><a href="https://c4model.com/diagrams/notation">C4 Model: notação</a></li>
+  <li><a href="https://c4model.com/diagrams/checklist">C4 Model: checklist de revisão</a></li>
+  <li><a href="https://www.domainlanguage.com/ddd/reference/">Domain-Driven Design Reference: Bounded Context</a></li>
+  <li><a href="https://mermaid.js.org/syntax/c4.html">Mermaid: diagramas C4</a></li>
+</ul>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+   
+<p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.<span>
+    <a href="/contact/">Contato</a> ·
+    <a href="/privacy/">Privacidade</a>
+  </span>
+  <span class="canonical-link fs-1">
+    Canonical:
+    <a href="https://www.bpstrat.com.br/docs/metodologia/c4model/c4-mermaid.html" target="_blank" rel="nofollow">
+      https://www.bpstrat.com.br/docs/metodologia/c4model/c4-mermaid.html
+    </a>
+  </span>
+</p>
+
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+  
+  <script src="/assets/js/mermaid.min.js"></script>
+  
+
+<script type="module">
+  
+
+var config = {}
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Mostrar código';
+
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2 ft-style text-purple-200';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Mostrar código';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Mostrar diagrama';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+

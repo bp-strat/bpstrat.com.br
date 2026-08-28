@@ -1,0 +1,1079 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=e9bea59">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(4)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > ul > li:nth-child(4) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > ul > li:nth-child(4) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(4) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNPEB50SX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'G-MNPEB50SX', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Modelagem por exemplo | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Modelagem por exemplo" />
+<meta name="author" content="Gilmar Pupo" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Exemplo de modelagem de domínio Shipping em PostgreSQL com DDD, linguagem ubíqua, ciclo de vida e limites entre contextos." />
+<meta property="og:description" content="Exemplo de modelagem de domínio Shipping em PostgreSQL com DDD, linguagem ubíqua, ciclo de vida e limites entre contextos." />
+<link rel="canonical" href="https://www.bpstrat.com.br/docs/ddd/ddd-modeling-shipping-postgresql.html" />
+<meta property="og:url" content="https://www.bpstrat.com.br/docs/ddd/ddd-modeling-shipping-postgresql.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Modelagem por exemplo" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Gilmar Pupo","url":"https://www.gpupo.com"},"description":"Exemplo de modelagem de domínio Shipping em PostgreSQL com DDD, linguagem ubíqua, ciclo de vida e limites entre contextos.","headline":"Modelagem por exemplo","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"},"name":"Gilmar Pupo"},"url":"https://www.bpstrat.com.br/docs/ddd/ddd-modeling-shipping-postgresql.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BP STRAT",
+  "url": "https://www.bpstrat.com.br/",
+  "logo": "https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg",
+  "sameAs": [
+    "https://www.linkedin.com/company/bpstrat/",
+    "https://www.gpupo.com"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+55-41-99715-1336",
+    "email": "info@bpstrat.com.br",
+    "availableLanguage": "pt-BR"
+  }
+}
+</script>
+
+
+<link rel="alternate" type="text/markdown" href="/docs/ddd/ddd-modeling-shipping-postgresql.md">
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+ <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+ <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+ <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+ <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+   <!-- Copy -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <path fill-rule="evenodd"
+    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+</symbol>
+
+<!-- Copied -->
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <path
+    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+  <path
+    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+</symbol>
+ 
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/canal-do-produto-ia.html" class="nav-list-link">Canal do Produto com IA</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li><li class="nav-list-item"><a href="/servicos/bpstack.html" class="nav-list-link">bpStack</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Backfill no Airflow 3</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup e Restauração do Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" class="nav-list-link">Arquitetura evolutiva com agentes de IA</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/blast-radius-review.html" class="nav-list-link">Blast Radius Review</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/fitness-functions-arquiteturais.html" class="nav-list-link">Fitness functions arquiteturais</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Organização submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/organizacao-software/" class="nav-list-link">Organização</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/layered-architecture.html" class="nav-list-link">Layered Architecture</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" class="nav-list-link">Vertical Slice Architecture</a></li></ul></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Quando Adotar Orquestração de Dados</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/context-map-patterns.html" class="nav-list-link">Context Map Patterns</a></li><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">Linguagem Ubíqua e Glossário do Domínio</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/c4-mermaid.html" class="nav-list-link">Mermaid C4</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="SDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/sdd/" class="nav-list-link">SDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-estrategia.html" class="nav-list-link">SDD Estratégico</a></li><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" class="nav-list-link">SDD Tático</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/ddd/">DDD</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Modelagem por exemplo</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="modelagem-de-domínio-shipping-em-postgresql-ddd">
+  
+  
+    <a href="#modelagem-de-domínio-shipping-em-postgresql-ddd" class="anchor-heading" aria-labelledby="modelagem-de-domínio-shipping-em-postgresql-ddd"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Modelagem de Domínio Shipping em PostgreSQL (DDD)
+  
+  
+</h1>
+    
+
+
+
+
+<div class="content-tldr">
+  <em>
+    Se preferir começar por um resumo, peça um TL;DR ao
+    
+
+
+
+
+
+<a href="https://chatgpt.com/?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fddd%2Fddd-modeling-shipping-postgresql.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">ChatGPT</a> ou ao <a href="https://claude.ai/new?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fddd%2Fddd-modeling-shipping-postgresql.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">Claude</a>
+
+.
+  </em>
+</div>
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#importância-da-modelagem-explícita" id="markdown-toc-importância-da-modelagem-explícita">Importância da Modelagem Explícita</a>    <ol>
+      <li><a href="#estrutura-da-tabela-de-domínio-ddl" id="markdown-toc-estrutura-da-tabela-de-domínio-ddl">Estrutura da Tabela de Domínio (DDL)</a></li>
+      <li><a href="#o-que-o-banco-garante-neste-exemplo" id="markdown-toc-o-que-o-banco-garante-neste-exemplo">O que o banco garante neste exemplo</a></li>
+    </ol>
+  </li>
+  <li><a href="#diagrama-mermaid--shipping-ddd" id="markdown-toc-diagrama-mermaid--shipping-ddd">Diagrama Mermaid — Shipping (DDD)</a>    <ol>
+      <li><a href="#estrutura-da-tabela-er-simplificado" id="markdown-toc-estrutura-da-tabela-er-simplificado">Estrutura da tabela (ER simplificado)</a></li>
+      <li><a href="#ciclo-de-vida-do-envio" id="markdown-toc-ciclo-de-vida-do-envio">Ciclo de vida do envio</a></li>
+      <li><a href="#contexto-ddd-bounded-contexts" id="markdown-toc-contexto-ddd-bounded-contexts">Contexto DDD (Bounded Contexts)</a></li>
+      <li><a href="#eventos-de-domínio" id="markdown-toc-eventos-de-domínio">Eventos de domínio</a></li>
+    </ol>
+  </li>
+  <li><a href="#linguagem-ubíqua" id="markdown-toc-linguagem-ubíqua">Linguagem Ubíqua</a>    <ol>
+      <li><a href="#termos-centrais-aggregate-e-entidades" id="markdown-toc-termos-centrais-aggregate-e-entidades">Termos centrais (Aggregate e entidades)</a></li>
+      <li><a href="#value-objects" id="markdown-toc-value-objects">Value Objects</a></li>
+      <li><a href="#enumerações-conceitos-fechados" id="markdown-toc-enumerações-conceitos-fechados">Enumerações (conceitos fechados)</a></li>
+      <li><a href="#ciclo-de-vida-assumido-pelo-exemplo" id="markdown-toc-ciclo-de-vida-assumido-pelo-exemplo">Ciclo de vida assumido pelo exemplo</a></li>
+      <li><a href="#eventos-de-domínio-1" id="markdown-toc-eventos-de-domínio-1">Eventos de domínio</a></li>
+      <li><a href="#papéis-externos-integrações" id="markdown-toc-papéis-externos-integrações">Papéis externos (integrações)</a></li>
+      <li><a href="#regras-de-modelagem-linguagem-ubíqua" id="markdown-toc-regras-de-modelagem-linguagem-ubíqua">Regras de modelagem (linguagem ubíqua)</a></li>
+      <li><a href="#mapeamento-para-tabela-referência" id="markdown-toc-mapeamento-para-tabela-referência">Mapeamento para tabela (referência)</a></li>
+    </ol>
+  </li>
+  <li><a href="#referências" id="markdown-toc-referências">Referências</a></li>
+</ol>
+
+<p>Apresentamos um exemplo de modelagem de domínio para <code class="language-plaintext highlighter-rouge">Shipping</code>, aplicando princípios de <a href="/docs/ddd/">DDD</a> diretamente no esquema de banco de dados. O objetivo é tornar o modelo explícito, utilizando uma linguagem ubíqua consistente entre código, dados e comunicação entre times.</p>
+
+<p>A abordagem prioriza nomes semânticos, descrições via <code class="language-plaintext highlighter-rouge">COMMENT ON</code> e uma representação explícita do ciclo de vida do envio. Esses elementos oferecem contexto para quem mantém o sistema, mas não substituem constraints, código de domínio ou testes.</p>
+
+<p>A modelagem é estruturada para refletir bounded contexts. Neste exemplo, referências a outros contextos não usam foreign keys; essa é uma decisão de integração, não uma exigência de DDD, e transfere a validação dessas referências para a aplicação ou para outro mecanismo.</p>
+
+<p>O resultado é um schema que persiste dados e documenta parte das regras do domínio. Ele pode oferecer contexto para desenvolvedores e ferramentas automatizadas, mas o estado atual de uma linha não preserva sozinho o histórico das transições nem dos eventos publicados.</p>
+<h2 id="importância-da-modelagem-explícita">
+  
+  
+    <a href="#importância-da-modelagem-explícita" class="anchor-heading" aria-labelledby="importância-da-modelagem-explícita"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Importância da Modelagem Explícita
+  
+  
+</h2>
+    
+<ul>
+  <li>Melhora a compreensão humana durante o onboarding e a manutenção do sistema.</li>
+  <li>Oferece contexto explícito para ferramentas automatizadas por meio de nomes, descrições e constraints; a utilidade desse contexto precisa ser avaliada no fluxo em que será usado.</li>
+  <li>Utiliza o vocabulário do domínio (Ubiquitous Language) diretamente no esquema do banco de dados.</li>
+</ul>
+<h3 id="estrutura-da-tabela-de-domínio-ddl">
+  
+  
+    <a href="#estrutura-da-tabela-de-domínio-ddl" class="anchor-heading" aria-labelledby="estrutura-da-tabela-de-domínio-ddl"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Estrutura da Tabela de Domínio (DDL)
+  
+  
+</h3>
+    
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+</pre></td><td class="rouge-code"><pre>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">shipping_order</span> <span class="p">(</span>
+    <span class="n">id</span> <span class="n">UUID</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">order_id</span> <span class="n">UUID</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">customer_id</span> <span class="n">UUID</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+
+    <span class="n">origin_address</span> <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">destination_address</span> <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+
+    <span class="n">shipping_method</span> <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span>
+        <span class="k">CONSTRAINT</span> <span class="n">shipping_order_method_check</span>
+        <span class="k">CHECK</span> <span class="p">(</span><span class="n">shipping_method</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">'STANDARD'</span><span class="p">,</span> <span class="s1">'EXPRESS'</span><span class="p">,</span> <span class="s1">'SAME_DAY'</span><span class="p">)),</span>
+    <span class="n">shipping_status</span> <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span>
+        <span class="k">CONSTRAINT</span> <span class="n">shipping_order_status_check</span>
+        <span class="k">CHECK</span> <span class="p">(</span>
+            <span class="n">shipping_status</span> <span class="k">IN</span> <span class="p">(</span>
+                <span class="s1">'PENDING'</span><span class="p">,</span>
+                <span class="s1">'SHIPPED'</span><span class="p">,</span>
+                <span class="s1">'IN_TRANSIT'</span><span class="p">,</span>
+                <span class="s1">'DELIVERED'</span><span class="p">,</span>
+                <span class="s1">'FAILED'</span>
+            <span class="p">)</span>
+        <span class="p">),</span>
+
+    <span class="n">tracking_code</span> <span class="nb">TEXT</span><span class="p">,</span>
+
+    <span class="n">shipped_at</span> <span class="n">TIMESTAMPTZ</span><span class="p">,</span>
+    <span class="n">estimated_delivery_at</span> <span class="n">TIMESTAMPTZ</span><span class="p">,</span>
+    <span class="n">delivered_at</span> <span class="n">TIMESTAMPTZ</span><span class="p">,</span>
+
+    <span class="n">created_at</span> <span class="n">TIMESTAMPTZ</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+    <span class="n">updated_at</span> <span class="n">TIMESTAMPTZ</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+
+    <span class="k">CONSTRAINT</span> <span class="n">shipping_order_state_check</span> <span class="k">CHECK</span> <span class="p">(</span>
+        <span class="p">(</span>
+            <span class="n">shipping_status</span> <span class="o">=</span> <span class="s1">'PENDING'</span>
+            <span class="k">AND</span> <span class="n">shipped_at</span> <span class="k">IS</span> <span class="k">NULL</span>
+            <span class="k">AND</span> <span class="n">delivered_at</span> <span class="k">IS</span> <span class="k">NULL</span>
+        <span class="p">)</span>
+        <span class="k">OR</span>
+        <span class="p">(</span>
+            <span class="n">shipping_status</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">'SHIPPED'</span><span class="p">,</span> <span class="s1">'IN_TRANSIT'</span><span class="p">,</span> <span class="s1">'FAILED'</span><span class="p">)</span>
+            <span class="k">AND</span> <span class="n">shipped_at</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">NULL</span>
+            <span class="k">AND</span> <span class="n">tracking_code</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">NULL</span>
+            <span class="k">AND</span> <span class="n">delivered_at</span> <span class="k">IS</span> <span class="k">NULL</span>
+        <span class="p">)</span>
+        <span class="k">OR</span>
+        <span class="p">(</span>
+            <span class="n">shipping_status</span> <span class="o">=</span> <span class="s1">'DELIVERED'</span>
+            <span class="k">AND</span> <span class="n">shipped_at</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">NULL</span>
+            <span class="k">AND</span> <span class="n">tracking_code</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">NULL</span>
+            <span class="k">AND</span> <span class="n">delivered_at</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">NULL</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+
+<span class="k">CREATE</span> <span class="k">FUNCTION</span> <span class="n">set_shipping_order_updated_at</span><span class="p">()</span>
+<span class="k">RETURNS</span> <span class="k">TRIGGER</span>
+<span class="k">LANGUAGE</span> <span class="n">plpgsql</span>
+<span class="k">AS</span> <span class="err">$$</span>
+<span class="k">BEGIN</span>
+    <span class="k">NEW</span><span class="p">.</span><span class="n">updated_at</span> <span class="o">=</span> <span class="k">CURRENT_TIMESTAMP</span><span class="p">;</span>
+    <span class="k">RETURN</span> <span class="k">NEW</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+<span class="err">$$</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">shipping_order_set_updated_at</span>
+<span class="k">BEFORE</span> <span class="k">UPDATE</span> <span class="k">ON</span> <span class="n">shipping_order</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="k">ROW</span>
+<span class="k">EXECUTE</span> <span class="k">FUNCTION</span> <span class="n">set_shipping_order_updated_at</span><span class="p">();</span>
+
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">TABLE</span> <span class="n">shipping_order</span> <span class="k">IS</span>
+<span class="s1">'Aggregate root do contexto de Shipping. Representa o estado atual do processo de envio associado a um pedido, incluindo origem, destino, método e ciclo de vida de entrega.'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">id</span> <span class="k">IS</span>
+<span class="s1">'Identificador único do envio (aggregate id).'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">order_id</span> <span class="k">IS</span>
+<span class="s1">'Referência ao pedido (Order) no contexto de Sales. Neste exemplo, a integridade da referência é validada fora deste schema.'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">customer_id</span> <span class="k">IS</span>
+<span class="s1">'Identificador do cliente associado ao envio. Usado para rastreamento e notificações.'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">origin_address</span> <span class="k">IS</span>
+<span class="s1">'Endereço de origem do envio. Normalmente um warehouse ou seller.'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">destination_address</span> <span class="k">IS</span>
+<span class="s1">'Endereço de destino final do cliente.'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">shipping_method</span> <span class="k">IS</span>
+<span class="s1">'Método de envio escolhido. Enum conceitual do domínio (ex: STANDARD, EXPRESS, SAME_DAY).'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">shipping_status</span> <span class="k">IS</span>
+<span class="s1">'Estado atual do envio dentro do lifecycle: PENDING -&gt; SHIPPED -&gt; IN_TRANSIT -&gt; DELIVERED ou FAILED.'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">tracking_code</span> <span class="k">IS</span>
+<span class="s1">'Código de rastreio fornecido pelo carrier externo (ex: Correios, DHL).'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">shipped_at</span> <span class="k">IS</span>
+<span class="s1">'Timestamp em que o pacote foi despachado.'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">estimated_delivery_at</span> <span class="k">IS</span>
+<span class="s1">'Previsão de entrega baseada no método e carrier.'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">delivered_at</span> <span class="k">IS</span>
+<span class="s1">'Timestamp efetivo de entrega confirmada.'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">created_at</span> <span class="k">IS</span>
+<span class="s1">'Timestamp de criação do registro.'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">COLUMN</span> <span class="n">shipping_order</span><span class="p">.</span><span class="n">updated_at</span> <span class="k">IS</span>
+<span class="s1">'Instante da última atualização da linha, mantido pelo trigger shipping_order_set_updated_at.'</span><span class="p">;</span>
+
+<span class="k">COMMENT</span> <span class="k">ON</span> <span class="k">CONSTRAINT</span> <span class="n">shipping_order_state_check</span> <span class="k">ON</span> <span class="n">shipping_order</span> <span class="k">IS</span>
+<span class="s1">'Valida combinações permitidas entre o estado atual, os instantes do envio e o código de rastreio. Não valida a ordem histórica das transições.'</span><span class="p">;</span>
+
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+<h3 id="o-que-o-banco-garante-neste-exemplo">
+  
+  
+    <a href="#o-que-o-banco-garante-neste-exemplo" class="anchor-heading" aria-labelledby="o-que-o-banco-garante-neste-exemplo"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> O que o banco garante neste exemplo
+  
+  
+</h3>
+    
+
+<p>Os <code class="language-plaintext highlighter-rouge">CHECK</code> constraints rejeitam métodos e estados desconhecidos e validam as combinações de valores da linha atual. Por exemplo, um envio marcado como <code class="language-plaintext highlighter-rouge">DELIVERED</code> precisa ter <code class="language-plaintext highlighter-rouge">shipped_at</code>, <code class="language-plaintext highlighter-rouge">tracking_code</code> e <code class="language-plaintext highlighter-rouge">delivered_at</code>.</p>
+
+<p>Essa validação não comprova que a transição anterior foi válida. Um <code class="language-plaintext highlighter-rouge">CHECK</code> não compara, por si só, o estado anterior com o novo estado. A sequência <code class="language-plaintext highlighter-rouge">PENDING → SHIPPED → IN_TRANSIT</code>, portanto, precisa ser controlada pelo aggregate na aplicação ou por um trigger específico que examine <code class="language-plaintext highlighter-rouge">OLD</code> e <code class="language-plaintext highlighter-rouge">NEW</code>.</p>
+
+<p>O trigger incluído no exemplo tem uma responsabilidade mais simples: atualizar <code class="language-plaintext highlighter-rouge">updated_at</code> sempre que a linha for modificada. Os campos temporais usam <code class="language-plaintext highlighter-rouge">TIMESTAMPTZ</code> porque representam instantes operacionais que podem ser produzidos e consultados em fusos diferentes.</p>
+
+<p>Práticas que ajudam modelos:</p>
+
+<ul>
+  <li>nomes explícitos (<code class="language-plaintext highlighter-rouge">shipping_status</code> &gt; <code class="language-plaintext highlighter-rouge">status</code>)</li>
+  <li>descrições com <strong>vocabulário de domínio</strong></li>
+  <li>lifecycle descrito no comentário</li>
+  <li>exemplos no texto (STANDARD, EXPRESS)</li>
+</ul>
+<h2 id="diagrama-mermaid--shipping-ddd">
+  
+  
+    <a href="#diagrama-mermaid--shipping-ddd" class="anchor-heading" aria-labelledby="diagrama-mermaid--shipping-ddd"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Diagrama Mermaid — Shipping (DDD)
+  
+  
+</h2>
+    
+<h3 id="estrutura-da-tabela-er-simplificado">
+  
+  
+    <a href="#estrutura-da-tabela-er-simplificado" class="anchor-heading" aria-labelledby="estrutura-da-tabela-er-simplificado"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Estrutura da tabela (ER simplificado)
+  
+  
+</h3>
+    
+
+<pre><code class="language-mermaid">erDiagram
+    SHIPPING_ORDER {
+        UUID id PK "Identificador único do envio (aggregate id)"
+        UUID order_id "Referência ao Order (Sales BC), sem FK forte"
+        UUID customer_id "Identificador do cliente para rastreamento/notificações"
+
+        TEXT origin_address "Endereço de origem (warehouse/seller)"
+        TEXT destination_address "Endereço de destino do cliente"
+
+        TEXT shipping_method "Método validado por CHECK: STANDARD, EXPRESS, SAME_DAY"
+        TEXT shipping_status "Estado validado por CHECK: PENDING, SHIPPED, IN_TRANSIT, DELIVERED, FAILED"
+
+        TEXT tracking_code "Código de rastreio do carrier (Correios, DHL, etc.)"
+
+        TIMESTAMPTZ shipped_at "Momento do despacho"
+        TIMESTAMPTZ estimated_delivery_at "Previsão de entrega"
+        TIMESTAMPTZ delivered_at "Entrega confirmada"
+
+        TIMESTAMPTZ created_at "Criação do aggregate"
+        TIMESTAMPTZ updated_at "Última atualização"
+    }
+    
+</code></pre><hr />
+<h3 id="ciclo-de-vida-do-envio">
+  
+  
+    <a href="#ciclo-de-vida-do-envio" class="anchor-heading" aria-labelledby="ciclo-de-vida-do-envio"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Ciclo de vida do envio
+  
+  
+</h3>
+    
+
+<pre><code class="language-mermaid">stateDiagram-v2
+    [*] --&gt; PENDING
+    PENDING --&gt; SHIPPED
+    SHIPPED --&gt; IN_TRANSIT
+    IN_TRANSIT --&gt; DELIVERED
+    IN_TRANSIT --&gt; FAILED
+</code></pre>
+
+<p>O diagrama representa a sequência de transições assumida pelo exemplo. O <code class="language-plaintext highlighter-rouge">CHECK</code> do banco valida o estado resultante, mas não impõe essa ordem histórica.</p><hr />
+<h3 id="contexto-ddd-bounded-contexts">
+  
+  
+    <a href="#contexto-ddd-bounded-contexts" class="anchor-heading" aria-labelledby="contexto-ddd-bounded-contexts"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Contexto DDD (Bounded Contexts)
+  
+  
+</h3>
+    
+
+<pre><code class="language-mermaid">flowchart LR
+    subgraph Sales Context
+        ORDER[Order Aggregate]
+    end
+
+    subgraph Shipping Context
+        SHIPPING[ShippingOrder Aggregate]
+    end
+
+    ORDER -- order_id (reference only) --&gt; SHIPPING
+</code></pre><hr />
+<h3 id="eventos-de-domínio">
+  
+  
+    <a href="#eventos-de-domínio" class="anchor-heading" aria-labelledby="eventos-de-domínio"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Eventos de domínio
+  
+  
+</h3>
+    
+
+<pre><code class="language-mermaid">flowchart LR
+    A[ShippingCreated] --&gt; B[PackageShipped]
+    B --&gt; C[InTransitUpdated]
+    C --&gt; D[Delivered]
+    C --&gt; E[DeliveryFailed]
+</code></pre>
+
+<p>Esses nomes representam eventos que a aplicação pode publicar ao executar as transições. Eles não podem ser reconstruídos de forma confiável apenas a partir de <code class="language-plaintext highlighter-rouge">shipping_status</code>: o estado atual não registra quando cada transição ocorreu, quantas tentativas existiram ou se a publicação foi concluída. Quando esse histórico for necessário, uma tabela de eventos, um log de transições ou um mecanismo de outbox deve ser modelado explicitamente.</p><hr />
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">SHIPPING_ORDER</code> é o aggregate root no contexto de Shipping</li>
+  <li><code class="language-plaintext highlighter-rouge">order_id</code> é referência externa (sem FK forte)</li>
+  <li>constraints validam uma parte das invariantes do estado atual</li>
+  <li>a aplicação ou um trigger específico controla a ordem das transições</li>
+  <li>eventos e histórico precisam de persistência explícita quando forem requisitos</li>
+</ul>
+<h2 id="linguagem-ubíqua">
+  
+  
+    <a href="#linguagem-ubíqua" class="anchor-heading" aria-labelledby="linguagem-ubíqua"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Linguagem Ubíqua
+  
+  
+</h2>
+    
+<h3 id="termos-centrais-aggregate-e-entidades">
+  
+  
+    <a href="#termos-centrais-aggregate-e-entidades" class="anchor-heading" aria-labelledby="termos-centrais-aggregate-e-entidades"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Termos centrais (Aggregate e entidades)
+  
+  
+</h3>
+    
+
+<ul>
+  <li><strong>ShippingOrder</strong><br />
+  Aggregate root que representa um envio associado a um pedido. Controla o lifecycle e as invariantes do processo de entrega.</li>
+  <li><strong>OrderId</strong><br />
+  Identificador do pedido no contexto de Sales. Referência externa (sem FK forte).</li>
+  <li><strong>CustomerId</strong><br />
+  Identificador do cliente. Usado para rastreamento e comunicação.</li>
+  <li><strong>Address</strong><br />
+  Valor (Value Object) que representa origem ou destino do envio.</li>
+</ul><hr />
+<h3 id="value-objects">
+  
+  
+    <a href="#value-objects" class="anchor-heading" aria-labelledby="value-objects"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Value Objects
+  
+  
+</h3>
+    
+
+<ul>
+  <li><strong>OriginAddress</strong><br />
+  Endereço de origem (warehouse/seller).</li>
+  <li><strong>DestinationAddress</strong><br />
+  Endereço de destino do cliente.</li>
+  <li><strong>TrackingCode</strong><br />
+  Código fornecido pelo carrier para rastreamento do pacote.</li>
+</ul><hr />
+<h3 id="enumerações-conceitos-fechados">
+  
+  
+    <a href="#enumerações-conceitos-fechados" class="anchor-heading" aria-labelledby="enumerações-conceitos-fechados"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Enumerações (conceitos fechados)
+  
+  
+</h3>
+    
+
+<ul>
+  <li><strong>ShippingMethod</strong><br />
+  Método de envio disponível.<br />
+  Valores típicos: <code class="language-plaintext highlighter-rouge">STANDARD</code>, <code class="language-plaintext highlighter-rouge">EXPRESS</code>, <code class="language-plaintext highlighter-rouge">SAME_DAY</code>.</li>
+  <li><strong>ShippingStatus</strong><br />
+  Estado atual do envio no lifecycle.<br />
+  Estados:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">PENDING</code> — criado, ainda não despachado</li>
+      <li><code class="language-plaintext highlighter-rouge">SHIPPED</code> — enviado ao carrier</li>
+      <li><code class="language-plaintext highlighter-rouge">IN_TRANSIT</code> — em transporte</li>
+      <li><code class="language-plaintext highlighter-rouge">DELIVERED</code> — entregue com sucesso</li>
+      <li><code class="language-plaintext highlighter-rouge">FAILED</code> — falha na entrega</li>
+    </ul>
+  </li>
+</ul><hr />
+<h3 id="ciclo-de-vida-assumido-pelo-exemplo">
+  
+  
+    <a href="#ciclo-de-vida-assumido-pelo-exemplo" class="anchor-heading" aria-labelledby="ciclo-de-vida-assumido-pelo-exemplo"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Ciclo de vida assumido pelo exemplo
+  
+  
+</h3>
+    
+
+<ul>
+  <li>Transições válidas:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">PENDING → SHIPPED</code></li>
+      <li><code class="language-plaintext highlighter-rouge">SHIPPED → IN_TRANSIT</code></li>
+      <li><code class="language-plaintext highlighter-rouge">IN_TRANSIT → DELIVERED</code></li>
+      <li><code class="language-plaintext highlighter-rouge">IN_TRANSIT → FAILED</code></li>
+    </ul>
+  </li>
+  <li>Invariantes do estado atual aplicadas pelo DDL:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">delivered_at</code> só pode existir se <code class="language-plaintext highlighter-rouge">shipping_status = DELIVERED</code></li>
+      <li><code class="language-plaintext highlighter-rouge">shipped_at</code> deve existir a partir de <code class="language-plaintext highlighter-rouge">SHIPPED</code></li>
+      <li><code class="language-plaintext highlighter-rouge">tracking_code</code> deve existir a partir de <code class="language-plaintext highlighter-rouge">SHIPPED</code></li>
+    </ul>
+  </li>
+  <li>Regra aplicada pela aplicação ou por um trigger de transição:
+    <ul>
+      <li>o novo estado deve ser um sucessor permitido do estado anterior</li>
+    </ul>
+  </li>
+</ul><hr />
+<h3 id="eventos-de-domínio-1">
+  
+  
+    <a href="#eventos-de-domínio-1" class="anchor-heading" aria-labelledby="eventos-de-domínio-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Eventos de domínio
+  
+  
+</h3>
+    
+
+<ul>
+  <li><strong>ShippingCreated</strong><br />
+  Disparado na criação do envio.</li>
+  <li><strong>PackageShipped</strong><br />
+  Indica que o pacote foi despachado.</li>
+  <li><strong>InTransitUpdated</strong><br />
+  Atualizações intermediárias de transporte.</li>
+  <li><strong>Delivered</strong><br />
+  Entrega concluída com sucesso.</li>
+  <li><strong>DeliveryFailed</strong><br />
+  Falha definitiva na entrega.</li>
+</ul><hr />
+<h3 id="papéis-externos-integrações">
+  
+  
+    <a href="#papéis-externos-integrações" class="anchor-heading" aria-labelledby="papéis-externos-integrações"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Papéis externos (integrações)
+  
+  
+</h3>
+    
+
+<ul>
+  <li><strong>Carrier</strong><br />
+  Provedor logístico (ex: Correios, DHL). Responsável pelo transporte físico.</li>
+</ul><hr />
+<h3 id="regras-de-modelagem-linguagem-ubíqua">
+  
+  
+    <a href="#regras-de-modelagem-linguagem-ubíqua" class="anchor-heading" aria-labelledby="regras-de-modelagem-linguagem-ubíqua"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Regras de modelagem (linguagem ubíqua)
+  
+  
+</h3>
+    
+
+<ul>
+  <li>Usar sempre <code class="language-plaintext highlighter-rouge">ShippingOrder</code> (não “shipment”, “delivery”, etc. misturados)</li>
+  <li>Usar <code class="language-plaintext highlighter-rouge">ShippingStatus</code>, não apenas <code class="language-plaintext highlighter-rouge">status</code></li>
+  <li>Diferenciar claramente <code class="language-plaintext highlighter-rouge">Order</code> (Sales) de <code class="language-plaintext highlighter-rouge">ShippingOrder</code> (Shipping)</li>
+  <li>Preferir termos explícitos a abreviações</li>
+</ul><hr />
+<h3 id="mapeamento-para-tabela-referência">
+  
+  
+    <a href="#mapeamento-para-tabela-referência" class="anchor-heading" aria-labelledby="mapeamento-para-tabela-referência"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Mapeamento para tabela (referência)
+  
+  
+</h3>
+    
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ShippingOrder.id</code> → <code class="language-plaintext highlighter-rouge">shipping_order.id</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ShippingStatus</code> → <code class="language-plaintext highlighter-rouge">shipping_order.shipping_status</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ShippingMethod</code> → <code class="language-plaintext highlighter-rouge">shipping_order.shipping_method</code></li>
+  <li><code class="language-plaintext highlighter-rouge">TrackingCode</code> → <code class="language-plaintext highlighter-rouge">shipping_order.tracking_code</code></li>
+</ul>
+
+<p>Este exemplo assume <strong>ShippingOrder</strong> como aggregate root do contexto de Shipping, responsável por controlar o ciclo de vida do envio. O DDL protege as combinações de valores da linha atual; as transições continuam sob responsabilidade do aggregate na aplicação, a menos que um trigger específico seja adotado. Em cenários reais, esse aggregate pode evoluir para incluir outras entidades e value objects, como múltiplos pacotes, eventos de tracking detalhados e integrações com carriers.</p>
+
+<p>O modelo apresentado é intencionalmente <strong>simplificado</strong> para fins didáticos. Ele foca na clareza da <a href="/docs/ddd/o-dicionário-ubíquo-eliminando-a-ambiguidade.html">linguagem ubíqua</a> e na representação dos conceitos principais, sem cobrir todas as variações e complexidades comuns em sistemas de logística em produção.</p>
+
+<p>Na prática, a modelagem deve ser refinada de acordo com as necessidades do domínio, volume de dados, integrações externas e requisitos operacionais.</p>
+<h2 id="referências">
+  
+  
+    <a href="#referências" class="anchor-heading" aria-labelledby="referências"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Referências
+  
+  
+</h2>
+    
+
+<ul>
+  <li><a href="https://www.postgresql.org/docs/current/sql-createtable.html">PostgreSQL: <code class="language-plaintext highlighter-rouge">CREATE TABLE</code> e constraints</a></li>
+  <li><a href="https://www.postgresql.org/docs/current/trigger-definition.html">PostgreSQL: comportamento de triggers</a></li>
+  <li><a href="https://www.postgresql.org/docs/current/datatype-datetime.html">PostgreSQL: tipos de data e hora</a></li>
+</ul>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+   
+<p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.<span>
+    <a href="/contact/">Contato</a> ·
+    <a href="/privacy/">Privacidade</a>
+  </span>
+  <span class="canonical-link fs-1">
+    Canonical:
+    <a href="https://www.bpstrat.com.br/docs/ddd/ddd-modeling-shipping-postgresql.html" target="_blank" rel="nofollow">
+      https://www.bpstrat.com.br/docs/ddd/ddd-modeling-shipping-postgresql.html
+    </a>
+  </span>
+</p>
+
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+  
+  <script src="/assets/js/mermaid.min.js"></script>
+  
+
+<script type="module">
+  
+
+var config = {}
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Mostrar código';
+
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2 ft-style text-purple-200';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Mostrar código';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Mostrar diagrama';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+

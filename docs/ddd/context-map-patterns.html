@@ -1,0 +1,956 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=e9bea59">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > ul > li:nth-child(1) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > ul > li:nth-child(1) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNPEB50SX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'G-MNPEB50SX', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Context Map Patterns | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Context Map Patterns" />
+<meta name="author" content="Gilmar Pupo" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Catálogo de padrões para reconhecer relações organizacionais e semânticas entre Bounded Contexts." />
+<meta property="og:description" content="Catálogo de padrões para reconhecer relações organizacionais e semânticas entre Bounded Contexts." />
+<link rel="canonical" href="https://www.bpstrat.com.br/docs/ddd/context-map-patterns.html" />
+<meta property="og:url" content="https://www.bpstrat.com.br/docs/ddd/context-map-patterns.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Context Map Patterns" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Gilmar Pupo","url":"https://www.gpupo.com"},"description":"Catálogo de padrões para reconhecer relações organizacionais e semânticas entre Bounded Contexts.","headline":"Context Map Patterns","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"},"name":"Gilmar Pupo"},"url":"https://www.bpstrat.com.br/docs/ddd/context-map-patterns.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BP STRAT",
+  "url": "https://www.bpstrat.com.br/",
+  "logo": "https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg",
+  "sameAs": [
+    "https://www.linkedin.com/company/bpstrat/",
+    "https://www.gpupo.com"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+55-41-99715-1336",
+    "email": "info@bpstrat.com.br",
+    "availableLanguage": "pt-BR"
+  }
+}
+</script>
+
+
+<link rel="alternate" type="text/markdown" href="/docs/ddd/context-map-patterns.md">
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+ <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+ <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+ <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+ <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+   <!-- Copy -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <path fill-rule="evenodd"
+    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+</symbol>
+
+<!-- Copied -->
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <path
+    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+  <path
+    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+</symbol>
+ 
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/canal-do-produto-ia.html" class="nav-list-link">Canal do Produto com IA</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li><li class="nav-list-item"><a href="/servicos/bpstack.html" class="nav-list-link">bpStack</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Backfill no Airflow 3</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup e Restauração do Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" class="nav-list-link">Arquitetura evolutiva com agentes de IA</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/blast-radius-review.html" class="nav-list-link">Blast Radius Review</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/fitness-functions-arquiteturais.html" class="nav-list-link">Fitness functions arquiteturais</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Organização submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/organizacao-software/" class="nav-list-link">Organização</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/layered-architecture.html" class="nav-list-link">Layered Architecture</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" class="nav-list-link">Vertical Slice Architecture</a></li></ul></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Quando Adotar Orquestração de Dados</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/context-map-patterns.html" class="nav-list-link">Context Map Patterns</a></li><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">Linguagem Ubíqua e Glossário do Domínio</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/c4-mermaid.html" class="nav-list-link">Mermaid C4</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="SDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/sdd/" class="nav-list-link">SDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-estrategia.html" class="nav-list-link">SDD Estratégico</a></li><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" class="nav-list-link">SDD Tático</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/ddd/">DDD</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Context Map Patterns</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="context-map-patterns-relações-entre-bounded-contexts">
+  
+  
+    <a href="#context-map-patterns-relações-entre-bounded-contexts" class="anchor-heading" aria-labelledby="context-map-patterns-relações-entre-bounded-contexts"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Context Map Patterns: relações entre Bounded Contexts
+  
+  
+</h1>
+    
+
+
+
+
+<div class="content-tldr">
+  <em>
+    Se preferir começar por um resumo, peça um TL;DR ao
+    
+
+
+
+
+
+<a href="https://chatgpt.com/?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fddd%2Fcontext-map-patterns.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">ChatGPT</a> ou ao <a href="https://claude.ai/new?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fddd%2Fcontext-map-patterns.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">Claude</a>
+
+.
+  </em>
+</div>
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#o-que-registrar-no-mapa" id="markdown-toc-o-que-registrar-no-mapa">O que registrar no mapa</a></li>
+  <li><a href="#direção-upstream-e-downstream" id="markdown-toc-direção-upstream-e-downstream">Direção upstream e downstream</a></li>
+  <li><a href="#categorias-de-padrões" id="markdown-toc-categorias-de-padrões">Categorias de padrões</a></li>
+  <li><a href="#organização-e-coordenação" id="markdown-toc-organização-e-coordenação">Organização e coordenação</a>    <ol>
+      <li><a href="#partnership" id="markdown-toc-partnership">Partnership</a></li>
+      <li><a href="#shared-kernel--sk" id="markdown-toc-shared-kernel--sk">Shared Kernel — SK</a></li>
+      <li><a href="#customersupplier--cs" id="markdown-toc-customersupplier--cs">Customer/Supplier — C/S</a></li>
+    </ol>
+  </li>
+  <li><a href="#compartilhamento-e-tradução-de-modelos" id="markdown-toc-compartilhamento-e-tradução-de-modelos">Compartilhamento e tradução de modelos</a>    <ol>
+      <li><a href="#conformist--cf" id="markdown-toc-conformist--cf">Conformist — CF</a></li>
+      <li><a href="#anticorruption-layer--acl" id="markdown-toc-anticorruption-layer--acl">Anticorruption Layer — ACL</a></li>
+    </ol>
+  </li>
+  <li><a href="#publicação-de-contratos" id="markdown-toc-publicação-de-contratos">Publicação de contratos</a>    <ol>
+      <li><a href="#open-host-service--ohs" id="markdown-toc-open-host-service--ohs">Open Host Service — OHS</a></li>
+      <li><a href="#published-language--pl" id="markdown-toc-published-language--pl">Published Language — PL</a></li>
+    </ol>
+  </li>
+  <li><a href="#isolamento-e-legado" id="markdown-toc-isolamento-e-legado">Isolamento e legado</a>    <ol>
+      <li><a href="#separate-ways--sw" id="markdown-toc-separate-ways--sw">Separate Ways — SW</a></li>
+      <li><a href="#big-ball-of-mud--bbom" id="markdown-toc-big-ball-of-mud--bbom">Big Ball of Mud — BBoM</a></li>
+    </ol>
+  </li>
+  <li><a href="#exemplo-hipotético-pricing-e-ordering" id="markdown-toc-exemplo-hipotético-pricing-e-ordering">Exemplo hipotético: Pricing e Ordering</a>    <ol>
+      <li><a href="#modelos-e-responsabilidades" id="markdown-toc-modelos-e-responsabilidades">Modelos e responsabilidades</a></li>
+      <li><a href="#relação-resultante" id="markdown-toc-relação-resultante">Relação resultante</a></li>
+    </ol>
+  </li>
+  <li><a href="#c4-como-visualização-complementar" id="markdown-toc-c4-como-visualização-complementar">C4 como visualização complementar</a></li>
+  <li><a href="#registro-da-relação" id="markdown-toc-registro-da-relação">Registro da relação</a></li>
+  <li><a href="#checklist-de-revisão" id="markdown-toc-checklist-de-revisão">Checklist de revisão</a></li>
+  <li><a href="#referências" id="markdown-toc-referências">Referências</a></li>
+</ol>
+
+<p>Um Context Map descreve os Bounded Contexts relevantes e as relações entre seus modelos, equipes e responsabilidades. Ele não depende de microservices, mensageria ou processos separados.</p>
+
+<p>Dois contextos podem estar no mesmo repositório e no mesmo processo. Também podem ser operados por organizações diferentes. A topologia de deploy informa onde o software executa; o Context Map informa onde modelos são válidos, quem influencia sua evolução e como diferenças semânticas são tratadas.</p>
+
+<p>O primeiro objetivo é mapear a situação existente. Nomear um relacionamento não transforma a organização nem corrige uma integração; torna explícitas as condições que uma estratégia posterior precisará considerar.</p>
+<h2 id="o-que-registrar-no-mapa">
+  
+  
+    <a href="#o-que-registrar-no-mapa" class="anchor-heading" aria-labelledby="o-que-registrar-no-mapa"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> O que registrar no mapa
+  
+  
+</h2>
+    
+
+<p>Para cada Bounded Context, identifique:</p>
+
+<ul>
+  <li>nome e responsabilidade na linguagem do domínio;</li>
+  <li>modelo e termos que lhe pertencem;</li>
+  <li>equipe ou grupo responsável por decisões sobre o modelo;</li>
+  <li>entradas, saídas e pontos de contato com outros contextos;</li>
+  <li>hipóteses ou limites ainda incertos.</li>
+</ul>
+
+<p>Para cada relação, registre:</p>
+
+<ul>
+  <li>quais modelos entram em contato;</li>
+  <li>se existe dependência upstream/downstream ou dependência mútua;</li>
+  <li>quanto o downstream influencia o planejamento do upstream;</li>
+  <li>onde ocorre tradução, compartilhamento ou conformidade de modelos;</li>
+  <li>como o contrato é publicado e alterado;</li>
+  <li>quais equipes coordenam mudanças, testes e releases;</li>
+  <li>custo conhecido e risco aceito da relação.</li>
+</ul>
+
+<p>Uma chamada HTTP, um evento ou uma tabela compartilhada demonstra contato técnico. Esses elementos não bastam para concluir que existe Partnership, Customer/Supplier, Conformist ou qualquer outro padrão.</p>
+<h2 id="direção-upstream-e-downstream">
+  
+  
+    <a href="#direção-upstream-e-downstream" class="anchor-heading" aria-labelledby="direção-upstream-e-downstream"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Direção upstream e downstream
+  
+  
+</h2>
+    
+
+<p>Em uma relação upstream/downstream, mudanças e decisões do upstream afetam o sucesso do downstream de forma mais significativa do que o inverso. O upstream pode conseguir entregar seus objetivos mesmo que o downstream falhe; o downstream depende do que recebe do upstream.</p>
+
+<p>Essa direção expressa influência sobre modelos e planejamento. Ela não é necessariamente a direção da requisição, do evento ou do fluxo de dados. Um contexto pode enviar uma requisição ao upstream e receber a resposta no sentido oposto sem deixar de ser downstream.</p>
+
+<p>Quando os dois contextos precisam ser entregues para que ambos tenham sucesso, a dependência pode ser mútua. Quando o trabalho de um tem pouco efeito sobre o outro, eles podem estar livres para evoluir separadamente.</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">U</code> para upstream e <code class="language-plaintext highlighter-rouge">D</code> para downstream somente depois de descrever a evidência dessa assimetria.</p>
+<h2 id="categorias-de-padrões">
+  
+  
+    <a href="#categorias-de-padrões" class="anchor-heading" aria-labelledby="categorias-de-padrões"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Categorias de padrões
+  
+  
+</h2>
+    
+
+<p>Os padrões respondem a perguntas diferentes e podem ser combinados na mesma relação:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Categoria</th>
+      <th>Pergunta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Organização e coordenação</td>
+      <td>Como as equipes planejam e governam a dependência?</td>
+    </tr>
+    <tr>
+      <td>Compartilhamento e tradução</td>
+      <td>Os contextos compartilham, adotam ou traduzem modelos?</td>
+    </tr>
+    <tr>
+      <td>Publicação de contrato</td>
+      <td>Como uma capacidade ou linguagem de intercâmbio fica disponível aos consumidores?</td>
+    </tr>
+    <tr>
+      <td>Isolamento e legado</td>
+      <td>A integração deve existir? Há um limite de modelo que possa ser descrito?</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p><code class="language-plaintext highlighter-rouge">Open Host Service</code> e <code class="language-plaintext highlighter-rouge">Published Language</code>, por exemplo, não substituem <code class="language-plaintext highlighter-rouge">Customer/Supplier</code>, <code class="language-plaintext highlighter-rouge">Conformist</code> ou <code class="language-plaintext highlighter-rouge">Anticorruption Layer</code>. Um descreve a oferta do upstream, outro o idioma de intercâmbio, e os demais descrevem coordenação ou tratamento do modelo no downstream.</p>
+<h2 id="organização-e-coordenação">
+  
+  
+    <a href="#organização-e-coordenação" class="anchor-heading" aria-labelledby="organização-e-coordenação"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Organização e coordenação
+  
+  
+</h2>
+    
+<h3 id="partnership">
+  
+  
+    <a href="#partnership" class="anchor-heading" aria-labelledby="partnership"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Partnership
+  
+  
+</h3>
+    
+
+<p><strong>Condição:</strong> os dois contextos possuem dependência mútua; uma falha de entrega ou de integração impede o sucesso de ambos.</p>
+
+<p><strong>Evidência:</strong> planejamento coordenado, evolução conjunta da interface, compromissos de release e testes de integração mantidos pelas duas equipes.</p>
+
+<p><strong>Custo:</strong> perda de autonomia de calendário, reuniões de coordenação e necessidade de resolver prioridades em conjunto.</p>
+
+<p>Partnership não é apenas uma relação cordial. Sem dependência mútua e governança conjunta, o nome não descreve a relação observada.</p>
+<h3 id="shared-kernel--sk">
+  
+  
+    <a href="#shared-kernel--sk" class="anchor-heading" aria-labelledby="shared-kernel--sk"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Shared Kernel — SK
+  
+  
+</h3>
+    
+
+<p><strong>Condição:</strong> dois contextos compartilham deliberadamente uma parte pequena e explicitamente delimitada do modelo, acompanhada do código ou desenho de persistência correspondente.</p>
+
+<p><strong>Evidência:</strong> ownership conjunto, mudanças feitas após consulta aos dois lados e integração frequente do kernel compartilhado.</p>
+
+<p><strong>Custo:</strong> coordenação de mudanças, compatibilidade, testes conjuntos e redução de autonomia. Quanto maior o kernel, maior o risco de os limites dos contextos perderem clareza.</p>
+
+<p>Uma biblioteca técnica ou um banco acessado por dois sistemas não constitui Shared Kernel automaticamente. É necessário compartilhar uma parte reconhecida do modelo e governá-la como tal.</p>
+<h3 id="customersupplier--cs">
+  
+  
+    <a href="#customersupplier--cs" class="anchor-heading" aria-labelledby="customersupplier--cs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Customer/Supplier — C/S
+  
+  
+</h3>
+    
+
+<p><strong>Condição:</strong> existe assimetria upstream/downstream, mas o downstream atua como cliente e suas necessidades entram no planejamento do upstream.</p>
+
+<p><strong>Direção:</strong> Supplier é <code class="language-plaintext highlighter-rouge">U</code>; Customer é <code class="language-plaintext highlighter-rouge">D</code>.</p>
+
+<p><strong>Evidência:</strong> compromissos negociados, orçamento ou capacidade reservada para demandas downstream, critérios de aceitação compartilhados e datas conhecidas.</p>
+
+<p><strong>Custo:</strong> o upstream cede parte da autonomia de priorização; o downstream precisa tornar suas necessidades testáveis e participar do planejamento.</p>
+
+<p>Consumir uma API não torna o consumidor Customer nesse padrão. Sem influência verificável sobre prioridades e contrato, pode existir apenas uma dependência técnica.</p>
+<h2 id="compartilhamento-e-tradução-de-modelos">
+  
+  
+    <a href="#compartilhamento-e-tradução-de-modelos" class="anchor-heading" aria-labelledby="compartilhamento-e-tradução-de-modelos"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Compartilhamento e tradução de modelos
+  
+  
+</h2>
+    
+<h3 id="conformist--cf">
+  
+  
+    <a href="#conformist--cf" class="anchor-heading" aria-labelledby="conformist--cf"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Conformist — CF
+  
+  
+</h3>
+    
+
+<p><strong>Condição:</strong> o downstream possui pouca influência sobre o upstream e decide adotar seu modelo sem tradução relevante.</p>
+
+<p><strong>Direção:</strong> upstream <code class="language-plaintext highlighter-rouge">U</code> → downstream <code class="language-plaintext highlighter-rouge">D</code>.</p>
+
+<p><strong>Evidência:</strong> termos, estruturas e regras do upstream aparecem diretamente no modelo downstream; não existe uma camada responsável por preservar significados locais diferentes.</p>
+
+<p><strong>Custo:</strong> integração inicial menor, mas maior acoplamento semântico e menor liberdade para o downstream modelar suas próprias necessidades.</p>
+
+<p>Conformist é uma decisão de aceitar o modelo upstream. Cumprir um contrato de API ou usar o mesmo formato de mensagem não prova conformidade se o downstream traduz esse contrato para seu próprio modelo.</p>
+<h3 id="anticorruption-layer--acl">
+  
+  
+    <a href="#anticorruption-layer--acl" class="anchor-heading" aria-labelledby="anticorruption-layer--acl"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Anticorruption Layer — ACL
+  
+  
+</h3>
+    
+
+<p><strong>Condição:</strong> o downstream precisa integrar uma capacidade upstream, mas quer expressá-la em termos de seu próprio modelo.</p>
+
+<p><strong>Direção:</strong> a ACL pertence ao lado downstream e traduz em uma ou nas duas direções.</p>
+
+<p><strong>Evidência:</strong> adaptadores, tradutores ou fachadas com regras explícitas de correspondência; testes que protegem invariantes e vocabulário downstream; ownership definido para a tradução.</p>
+
+<p><strong>Custo:</strong> código adicional, tratamento de incompatibilidades, testes de contrato e manutenção sempre que um dos modelos mudar.</p>
+
+<p>Antes de escolher uma ACL, avalie:</p>
+
+<ul>
+  <li>O downstream possui invariantes e vocabulário próprios?</li>
+  <li>Os conceitos do upstream conflitam com esse modelo?</li>
+  <li>Os dados participam de decisões do domínio ou apenas de consultas e relatórios?</li>
+  <li>As regras de tradução podem ser testadas e ter um responsável definido?</li>
+  <li>A duração e o valor da integração justificam uma camada adicional?</li>
+</ul>
+
+<p>Uma ACL não é obrigatória em toda integração. Para dados apenas expositivos, contratos estáveis ou relações de baixo valor, uma adaptação mais simples pode ser suficiente. Registre onde a tradução ocorre e quem assume seu custo.</p>
+<h2 id="publicação-de-contratos">
+  
+  
+    <a href="#publicação-de-contratos" class="anchor-heading" aria-labelledby="publicação-de-contratos"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Publicação de contratos
+  
+  
+</h2>
+    
+<h3 id="open-host-service--ohs">
+  
+  
+    <a href="#open-host-service--ohs" class="anchor-heading" aria-labelledby="open-host-service--ohs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Open Host Service — OHS
+  
+  
+</h3>
+    
+
+<p><strong>Condição:</strong> um contexto upstream precisa oferecer um protocolo coerente para vários consumidores, evitando uma interface diferente para cada integração.</p>
+
+<p><strong>Direção:</strong> o contexto que publica o serviço é upstream dos clientes desse serviço.</p>
+
+<p><strong>Evidência:</strong> protocolo acessível aos consumidores previstos, política de evolução, documentação e tratamento separado para necessidades idiossincráticas que não devem deformar o contrato comum.</p>
+
+<p><strong>Custo:</strong> compatibilidade, suporte a consumidores, versionamento e governança do protocolo.</p>
+
+<p>OHS não significa apenas “API pública”. É uma estratégia para manter uma oferta de integração coerente quando há vários consumidores. Um cliente do OHS ainda pode ser Conformist ou proteger seu modelo com uma ACL.</p>
+<h3 id="published-language--pl">
+  
+  
+    <a href="#published-language--pl" class="anchor-heading" aria-labelledby="published-language--pl"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Published Language — PL
+  
+  
+</h3>
+    
+
+<p><strong>Condição:</strong> contextos precisam de uma linguagem de intercâmbio documentada que expresse as informações compartilhadas sem transformar diretamente um dos modelos internos no contrato comum.</p>
+
+<p><strong>Direção:</strong> Published Language não define upstream/downstream por si só.</p>
+
+<p><strong>Evidência:</strong> vocabulário, semântica, schemas e regras de compatibilidade publicados; cada contexto sabe como traduzir entre seu modelo e essa linguagem.</p>
+
+<p><strong>Custo:</strong> documentação, versionamento, compatibilidade e traduções em cada participante.</p>
+
+<p>Um JSON Schema ou arquivo OpenAPI documenta estrutura, mas só funciona como Published Language quando os significados também são estáveis e compreendidos. PL costuma acompanhar OHS, porém nenhum dos dois implica o outro.</p>
+<h2 id="isolamento-e-legado">
+  
+  
+    <a href="#isolamento-e-legado" class="anchor-heading" aria-labelledby="isolamento-e-legado"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Isolamento e legado
+  
+  
+</h2>
+    
+<h3 id="separate-ways--sw">
+  
+  
+    <a href="#separate-ways--sw" class="anchor-heading" aria-labelledby="separate-ways--sw"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Separate Ways — SW
+  
+  
+</h3>
+    
+
+<p><strong>Condição:</strong> o valor da integração é menor que seu custo, ou as funcionalidades não possuem relação significativa.</p>
+
+<p><strong>Direção:</strong> não há relação de integração a classificar.</p>
+
+<p><strong>Evidência:</strong> decisão explícita de manter modelos e soluções independentes, incluindo a duplicação ou o processo manual aceito como consequência.</p>
+
+<p><strong>Custo:</strong> dados ou funcionalidades duplicados, experiência menos integrada e trabalho manual. Esses custos precisam ser menores que os custos e riscos da integração evitada.</p>
+
+<p>Separate Ways não é recomendação automática para MVP. É uma decisão econômica e semântica que deve declarar o que deixa de ser integrado.</p>
+<h3 id="big-ball-of-mud--bbom">
+  
+  
+    <a href="#big-ball-of-mud--bbom" class="anchor-heading" aria-labelledby="big-ball-of-mud--bbom"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Big Ball of Mud — BBoM
+  
+  
+</h3>
+    
+
+<p><strong>Condição:</strong> uma parte do sistema mistura modelos e possui limites inconsistentes, tornando regras e conceitos ambíguos.</p>
+
+<p><strong>Evidência:</strong> vocabulários conflitantes no mesmo espaço, dependências cruzadas e ausência de ownership ou fronteiras que possam ser descritas de maneira confiável.</p>
+
+<p><strong>Custo:</strong> mudanças difíceis de prever, propagação de conceitos inconsistentes e integração defensiva nos contextos vizinhos.</p>
+
+<p>Big Ball of Mud caracteriza um limite existente; não é um estilo desejado de relacionamento. Delimite a área para evitar que suas inconsistências se espalhem. Uma ACL pode proteger um downstream com modelo próprio quando a tradução justificar o custo, mas não é obrigatória para toda leitura ou integração.</p>
+<h2 id="exemplo-hipotético-pricing-e-ordering">
+  
+  
+    <a href="#exemplo-hipotético-pricing-e-ordering" class="anchor-heading" aria-labelledby="exemplo-hipotético-pricing-e-ordering"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Exemplo hipotético: Pricing e Ordering
+  
+  
+</h2>
+    
+
+<p>O cenário abaixo é didático e declara as informações necessárias para reconhecer os padrões. Ele não descreve um sistema observado.</p>
+<h3 id="modelos-e-responsabilidades">
+  
+  
+    <a href="#modelos-e-responsabilidades" class="anchor-heading" aria-labelledby="modelos-e-responsabilidades"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Modelos e responsabilidades
+  
+  
+</h3>
+    
+
+<ul>
+  <li><strong>Pricing Context:</strong> decide regras de preço e possui os conceitos <code class="language-plaintext highlighter-rouge">PriceRule</code>, <code class="language-plaintext highlighter-rouge">PriceQuote</code> e <code class="language-plaintext highlighter-rouge">ValidityWindow</code>.</li>
+  <li><strong>Ordering Context:</strong> aceita pedidos e possui <code class="language-plaintext highlighter-rouge">Order</code>, <code class="language-plaintext highlighter-rouge">OrderLine</code> e <code class="language-plaintext highlighter-rouge">AgreedPrice</code>.</li>
+  <li>Uma mudança em <code class="language-plaintext highlighter-rouge">PriceQuote</code> pode impedir Ordering de confirmar pedidos; Pricing consegue cumprir seus outros objetivos sem uma release de Ordering. Portanto, Pricing é <code class="language-plaintext highlighter-rouge">U</code> e Ordering é <code class="language-plaintext highlighter-rouge">D</code> neste relacionamento.</li>
+  <li>A equipe de Ordering negocia requisitos e testes de aceitação que entram no planejamento de Pricing.</li>
+  <li>Pricing publica o contrato versionado <code class="language-plaintext highlighter-rouge">PriceQuote v1</code>, com significado, schema e política de compatibilidade documentados.</li>
+  <li>Ordering traduz <code class="language-plaintext highlighter-rouge">PriceQuote</code> para <code class="language-plaintext highlighter-rouge">AgreedPrice</code> e valida expiração sem incorporar <code class="language-plaintext highlighter-rouge">PriceRule</code> ao seu modelo.</li>
+</ul>
+<h3 id="relação-resultante">
+  
+  
+    <a href="#relação-resultante" class="anchor-heading" aria-labelledby="relação-resultante"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Relação resultante
+  
+  
+</h3>
+    
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>Pricing [U, Supplier] — PriceQuote v1 [PL] → [ACL] Ordering [D, Customer]
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+
+<p>As evidências sustentam:</p>
+
+<ul>
+  <li><strong>Customer/Supplier:</strong> Ordering influencia o planejamento de Pricing por compromissos e testes negociados;</li>
+  <li><strong>Published Language:</strong> <code class="language-plaintext highlighter-rouge">PriceQuote v1</code> possui semântica e compatibilidade publicadas;</li>
+  <li><strong>Anticorruption Layer:</strong> Ordering traduz o contrato para seu próprio conceito <code class="language-plaintext highlighter-rouge">AgreedPrice</code>.</li>
+</ul>
+
+<p>O cenário não sustenta Conformist porque existe tradução e um modelo downstream próprio. Também não sustenta OHS: há somente um consumidor descrito e nenhuma evidência de um protocolo projetado para vários clientes.</p>
+
+<p>Se os dois contextos estivessem no mesmo processo, essas relações continuariam possíveis. A diferença seria o mecanismo técnico de comunicação, não a semântica nem a influência organizacional.</p>
+<h2 id="c4-como-visualização-complementar">
+  
+  
+    <a href="#c4-como-visualização-complementar" class="anchor-heading" aria-labelledby="c4-como-visualização-complementar"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> C4 como visualização complementar
+  
+  
+</h2>
+    
+
+<p>Um diagrama C4 pode mostrar software systems, containers, componentes e suas comunicações. Ele não demonstra, sozinho, Bounded Contexts ou padrões de Context Map.</p>
+
+<p>Ao usar C4 junto do Context Map:</p>
+
+<ul>
+  <li>documente como cada Bounded Context corresponde aos elementos C4, sem presumir equivalência;</li>
+  <li>mantenha upstream/downstream separado da direção das setas de runtime;</li>
+  <li>não atribua OHS, CF, PL ou ACL apenas pela existência de uma API ou evento;</li>
+  <li>use o Context Map como fonte da relação semântica e o C4 como visão da estrutura de software;</li>
+  <li>siga a <a href="/docs/metodologia/c4model/c4-mermaid.html">convenção C4 em Mermaid</a> para preservar o escopo de cada diagrama.</li>
+</ul>
+
+<p>Se uma anotação do padrão for adicionada ao C4, ela deve apontar para a relação já documentada. A anotação não substitui as evidências, a direção e os custos registrados no Context Map.</p>
+<h2 id="registro-da-relação">
+  
+  
+    <a href="#registro-da-relação" class="anchor-heading" aria-labelledby="registro-da-relação"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Registro da relação
+  
+  
+</h2>
+    
+
+<p>Use um registro curto para impedir que o nome do padrão substitua a análise:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="na">contexts</span><span class="pi">:</span>
+  <span class="na">upstream</span><span class="pi">:</span>
+  <span class="na">downstream</span><span class="pi">:</span>
+<span class="na">models_in_contact</span><span class="pi">:</span>
+<span class="na">organizational_dependency</span><span class="pi">:</span>
+<span class="na">planning_influence</span><span class="pi">:</span>
+<span class="na">translation_or_sharing</span><span class="pi">:</span>
+<span class="na">published_contract</span><span class="pi">:</span>
+<span class="na">patterns</span><span class="pi">:</span>
+<span class="na">evidence</span><span class="pi">:</span>
+<span class="na">costs</span><span class="pi">:</span>
+<span class="na">risks</span><span class="pi">:</span>
+<span class="na">owners</span><span class="pi">:</span>
+<span class="na">open_questions</span><span class="pi">:</span>
+<span class="na">review_signals</span><span class="pi">:</span>
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+
+<p>Se upstream/downstream não se aplicar, registre a dependência como mútua, livre ou ainda desconhecida. Um mapa honesto pode conter relações sem classificação enquanto faltarem evidências.</p>
+<h2 id="checklist-de-revisão">
+  
+  
+    <a href="#checklist-de-revisão" class="anchor-heading" aria-labelledby="checklist-de-revisão"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Checklist de revisão
+  
+  
+</h2>
+    
+
+<ol>
+  <li>Os Bounded Contexts e seus modelos estão nomeados?</li>
+  <li>A topologia de deploy foi tratada separadamente?</li>
+  <li>A direção <code class="language-plaintext highlighter-rouge">U/D</code> deriva de influência e dependência, não da seta técnica?</li>
+  <li>Padrões organizacionais estão apoiados por práticas reais de coordenação?</li>
+  <li>Compartilhamento, conformidade e tradução possuem ownership definido?</li>
+  <li>O contrato publicado inclui semântica, evolução e compatibilidade?</li>
+  <li>Os custos e riscos da relação estão registrados?</li>
+  <li>Algum padrão foi inferido apenas de API, evento, banco ou biblioteca?</li>
+  <li>O mapa descreve a situação atual antes de propor a situação desejada?</li>
+  <li>Hipóteses e relações ainda desconhecidas permanecem visíveis?</li>
+</ol>
+<h2 id="referências">
+  
+  
+    <a href="#referências" class="anchor-heading" aria-labelledby="referências"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Referências
+  
+  
+</h2>
+    
+
+<ul>
+  <li><a href="https://www.domainlanguage.com/ddd/reference/">Eric Evans: Domain-Driven Design Reference — Context Mapping</a></li>
+  <li><a href="https://github.com/ddd-crew/ddd-starter-modelling-process">DDD Crew: Context Mapping</a></li>
+  <li><a href="https://c4model.com/abstractions">C4 Model: abstrações</a></li>
+</ul>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+   
+<p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.<span>
+    <a href="/contact/">Contato</a> ·
+    <a href="/privacy/">Privacidade</a>
+  </span>
+  <span class="canonical-link fs-1">
+    Canonical:
+    <a href="https://www.bpstrat.com.br/docs/ddd/context-map-patterns.html" target="_blank" rel="nofollow">
+      https://www.bpstrat.com.br/docs/ddd/context-map-patterns.html
+    </a>
+  </span>
+</p>
+
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+  
+  <script src="/assets/js/mermaid.min.js"></script>
+  
+
+<script type="module">
+  
+
+var config = {}
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Mostrar código';
+
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2 ft-style text-purple-200';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Mostrar código';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Mostrar diagrama';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+

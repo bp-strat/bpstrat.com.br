@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pt-BR"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.bpstrat.com.br/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.bpstrat.com.br/" rel="alternate" type="text/html" hreflang="pt-BR" /><updated>2026-08-28T10:11:19-03:00</updated><id>https://www.bpstrat.com.br/feed.xml</id><title type="html">BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title><subtitle>Para empresas com software como core: análise técnica em 5 dimensões para escalar com segurança, qualidade e eficiência operacional.</subtitle><author><name>Gilmar Pupo</name></author><entry><title type="html">BP STRAT publica skill aberta para governança de versões em ambientes GitOps</title><link href="https://www.bpstrat.com.br/post/bp-strat-publica-skill-gitops-service-versioning/" rel="alternate" type="text/html" title="BP STRAT publica skill aberta para governança de versões em ambientes GitOps" /><published>2026-07-09T00:00:00-03:00</published><updated>2026-07-09T00:00:00-03:00</updated><id>https://www.bpstrat.com.br/post/bp-strat-publica-skill-gitops-service-versioning</id><content type="html" xml:base="https://www.bpstrat.com.br/post/bp-strat-publica-skill-gitops-service-versioning/"><![CDATA[<p><strong>Press release — 9 de julho de 2026.</strong></p>
+
+<p>A BP STRAT publicou uma nova skill aberta para apoiar equipes técnicas na governança de versões de serviços em ambientes GitOps. A skill, chamada <strong>GitOps Service Versioning</strong>, orienta agentes de IA a auditar tags de imagens, identificar drift entre configuração local e upstream, revisar registros vivos de versões e manter documentação técnica alinhada com a implementação real.</p>
+
+<p>O repositório está disponível em <a href="https://github.com/bp-strat/skills">github.com/bp-strat/skills</a>.</p>
+
+<p>Ambientes modernos de tecnologia combinam múltiplos modelos de execução: containers Docker, jobs Nomad, serviços em LXC, manifestos declarativos, playbooks Ansible e bancos compartilhados. Conforme essa malha cresce, uma pergunta simples fica difícil de responder com confiança: <strong>qual versão está realmente rodando em produção?</strong></p>
+
+<p>A skill GitOps Service Versioning organiza esse problema em quatro camadas:</p>
+
+<ul>
+  <li>estado desejado versionado em Git;</li>
+  <li>motor de auditoria para extrair e comparar versões;</li>
+  <li>registro vivo com versões locais, versões upstream e status de drift;</li>
+  <li>documentação pública e operacional refletindo a realidade.</li>
+</ul>
+
+<p>O objetivo é reduzir o uso de tags móveis como <code class="language-plaintext highlighter-rouge">latest</code>, <code class="language-plaintext highlighter-rouge">main</code> e <code class="language-plaintext highlighter-rouge">stable</code>, melhorar a rastreabilidade de imagens em serviços multi-container e evitar falsos positivos como marcar um serviço como atualizado quando a versão upstream não pode ser descoberta.</p>
+
+<blockquote>
+  <p>“Governança de versões não precisa começar com uma plataforma complexa. Ela pode começar com uma regra simples: o repositório precisa dizer a verdade sobre o que roda, o que deveria rodar e onde existe drift”, afirma Gilmar Pupo, fundador da BP STRAT.</p>
+</blockquote>
+
+<p>A publicação da skill também reforça uma diretriz importante para o uso profissional de agentes de IA: o conhecimento operacional deve ser transformado em instruções reutilizáveis, auditáveis e versionadas. Em vez de depender apenas da memória do time ou de prompts soltos, a skill captura critérios objetivos para avaliar maturidade técnica em repositórios GitOps.</p>
+
+<p>Uma discussão mais ampla desse formato está em <a href="https://www.gpupo.com/posts/ai-skills-como-capacidades-configuradas/">AI Skills são fluxos reutilizáveis, não agentes</a>, que separa contexto, ferramentas, limites e critérios de conclusão.</p>
+
+<p>Entre os critérios cobertos pela skill estão:</p>
+
+<ul>
+  <li>proibição ou justificativa explícita para tags móveis em produção;</li>
+  <li>cobertura completa de imagens em serviços com múltiplas tarefas;</li>
+  <li>diferenciação entre versão desejada no Git e versão observada em runtime;</li>
+  <li>status específico para upstream desconhecido;</li>
+  <li>revisão de dependências de bancos, caches e filas;</li>
+  <li>alinhamento entre whitepapers, runbooks e código.</li>
+</ul>
+
+<p>A BP STRAT pretende evoluir o repositório de skills como uma base aberta de práticas para agentes de IA aplicados a engenharia, operação e governança técnica.</p>
+
+<p>Repositório: <a href="https://github.com/bp-strat/skills">https://github.com/bp-strat/skills</a></p>]]></content><author><name>Gilmar Pupo</name></author><category term="Notícias" /><category term="Engenharia" /><category term="Inteligência Artificial" /><summary type="html"><![CDATA[BP STRAT publica uma skill aberta para apoiar agentes de IA na auditoria de tags, drift upstream e registros vivos de versões de serviços.]]></summary></entry><entry><title type="html">BP STRAT impulsiona 180 startups do Nordeste em programa de aceleração do SEBRAE, em parceria com a MOA Ventures</title><link href="https://www.bpstrat.com.br/post/bp-strat-impulsiona-180-startups-do-nordeste-em-programa-de-acelera%C3%A7%C3%A3o-do-sebrae-em-parceria-com-a/" rel="alternate" type="text/html" title="BP STRAT impulsiona 180 startups do Nordeste em programa de aceleração do SEBRAE, em parceria com a MOA Ventures" /><published>2025-06-28T00:00:00-03:00</published><updated>2025-06-28T00:00:00-03:00</updated><id>https://www.bpstrat.com.br/post/bp-strat-impulsiona-180-startups-do-nordeste-em-programa-de-acelera%C3%A7%C3%A3o-do-sebrae-em-parceria-com-a</id><content type="html" xml:base="https://www.bpstrat.com.br/post/bp-strat-impulsiona-180-startups-do-nordeste-em-programa-de-acelera%C3%A7%C3%A3o-do-sebrae-em-parceria-com-a/"><![CDATA[<p>Temos o prazer de anunciar uma importante iniciativa: um ciclo de mentorias individuais focado na estruturação de produtos para 180 startups dos estados de Alagoas, Maranhão e Pernambuco.</p>
+
+<p><img src="/assets/9824159a2bb2f6fcb351c3234a41b85c_MD5.jpg" alt="Imagem de divulgação da iniciativa da BP STRAT com 180 startups do Nordeste" class="rounded" /></p>
+
+<p>Sabemos que startups frequentemente enfrentam desafios como:</p>
+
+<p>•⁠ ⁠Definição da proposta de valor</p>
+
+<p>•⁠ ⁠Estruturação do produto</p>
+
+<p>•⁠ ⁠Identificação de personas</p>
+
+<p>•⁠ ⁠Comunicação de diferenciais competitivos</p>
+
+<p>Nossa proposta é oferecer orientação prática e estratégica por meio de sessões individuais, onde no final de cada mentoria, as startups receberão:</p>
+
+<p>•⁠ ⁠Um roteiro estruturado com recomendações práticas.</p>
+
+<p>•⁠ ⁠O e-book exclusivo da BP STRAT “Do MVP ao Produto: Escalável Ferramentas para Crescimento Estruturado”.</p>
+
+<p>•⁠ ⁠O registro técnico do atendimento para acompanhamento pelo Sebrae e MOA Ventures.</p>
+
+<p>Este projeto reforça nosso compromisso com o amadurecimento do ecossistema de startups no Brasil e faz parte da estratégia de expansão da BP STRAT para fortalecer nossa presença nacional.</p>]]></content><author><name>Gilmar Pupo</name></author><category term="Notícias" /><summary type="html"><![CDATA[BP STRAT participa de programa de aceleração com mentorias para 180 startups do Nordeste em parceria com Sebrae e MOA Ventures.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.bpstrat.com.br/assets/9824159a2bb2f6fcb351c3234a41b85c_MD5.jpg" /><media:content medium="image" url="https://www.bpstrat.com.br/assets/9824159a2bb2f6fcb351c3234a41b85c_MD5.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">O que é um Procedimento Operacional Padrão (POP) e por que considerá-los em Projetos de Tecnologia?</title><link href="https://www.bpstrat.com.br/post/o-que-%C3%A9-um-procedimento-operacional-padr%C3%A3o-pop-e-por-que-consider%C3%A1-los-em-projetos-de-tecnologia/" rel="alternate" type="text/html" title="O que é um Procedimento Operacional Padrão (POP) e por que considerá-los em Projetos de Tecnologia?" /><published>2025-06-12T00:00:00-03:00</published><updated>2025-06-12T00:00:00-03:00</updated><id>https://www.bpstrat.com.br/post/o-que-%C3%A9-um-procedimento-operacional-padr%C3%A3o-pop-e-por-que-consider%C3%A1-los-em-projetos-de-tecnologia</id><content type="html" xml:base="https://www.bpstrat.com.br/post/o-que-%C3%A9-um-procedimento-operacional-padr%C3%A3o-pop-e-por-que-consider%C3%A1-los-em-projetos-de-tecnologia/"><![CDATA[<p>Se sua operação depende de pessoas fazendo a coisa certa do jeito certo, toda vez, você precisa de POPs.</p>
+
+<p><img src="/assets/fc16a0196e453d2fda3ec0dd6da6cb4c_MD5.jpg" alt="Ilustração sobre procedimentos operacionais padrão em projetos de tecnologia" /></p>
+
+<p>Empresas que escalam de forma saudável não confiam na sorte nem no improviso. Elas operam com clareza. Elas documentam. Elas ensinam. E fazem isso de forma replicável. O Procedimento Operacional Padrão (POP) é a peça-chave dessa engrenagem.</p>
+
+<p>Embora muitas vezes associados a burocracia, em ambientes tech bem estruturados, os POPs atuam como facilitadores — quando aplicados com discernimento.</p>
+
+<p><strong>O desafio está no equilíbrio:</strong> como documentar sem engessar, como padronizar sem perder agilidade?</p>
+
+<h2 id="o-que-é-um-pop"><strong>O que é um POP?</strong></h2>
+
+<p>Um <strong>POP (Procedimento Operacional Padrão)</strong> é uma descrição clara, objetiva e prática de como uma tarefa deve ser executada. É um <strong>manual de execução</strong>, com respostas diretas para:</p>
+
+<ul>
+  <li>
+    <p>O que fazer</p>
+  </li>
+  <li>
+    <p>Como fazer</p>
+  </li>
+  <li>
+    <p>Quem faz</p>
+  </li>
+  <li>
+    <p>Quando fazer</p>
+  </li>
+  <li>
+    <p>E por que isso importa</p>
+  </li>
+  <li></li>
+</ul>
+
+<p><strong>Não é teoria. É operação.</strong></p>
+
+<h2 id="por-que-considerar-pops-em-projetos-de-tecnologia"><strong>Por Que Considerar POPs em Projetos de Tecnologia?</strong></h2>
+
+<p>Em times técnicos e de produto, processos implícitos viram bugs operacionais. O POP traz:</p>
+
+<ul>
+  <li>
+    <p><strong>Consistência nas entregas</strong>, independentemente de quem está na execução</p>
+  </li>
+  <li>
+    <p><strong>Velocidade no onboarding</strong>, com menos curva de aprendizado e mais autonomia</p>
+  </li>
+  <li>
+    <p><strong>Redução de erros e retrabalho</strong>, com decisões operacionais guiadas</p>
+  </li>
+  <li>
+    <p><strong>Base para melhoria contínua</strong>, porque só se otimiza o que está visível</p>
+  </li>
+  <li>
+    <p><strong>Segurança em áreas críticas</strong>, como produção, atendimento e tecnologia</p>
+  </li>
+</ul>
+
+<p>Se você quer escalar sem perder o controle, comece aqui.</p>
+
+<h3 id="1-do-caos-à-consistência"><strong>1. Do Caos à Consistência</strong></h3>
+
+<p>Equipes pequenas (2-5 pessoas) podem operar por entendimento mútuo. Mas quando o time cresce para 10, 20 ou 30 colaboradores, a comunicação informal se torna uma <strong>restrição</strong>, não uma vantagem.</p>
+
+<ul>
+  <li>
+    <p><strong>Projetos Greenfield</strong> (novos) podem abrir mão de documentação pesada.</p>
+  </li>
+  <li>
+    <p><strong>Sistemas legados</strong> exigem POPs para evitar que mudanças quebrem funcionalidades críticas.</p>
+  </li>
+</ul>
+
+<h3 id="2-reduzindo-os-pontos-únicos-de-falha"><strong>2. Reduzindo os “Pontos Únicos de Falha”</strong></h3>
+
+<p>Se apenas uma pessoa sabe como:</p>
+
+<ul>
+  <li>
+    <p>Fazer o deploy em produção</p>
+  </li>
+  <li>
+    <p>Resolver um erro crítico no banco de dados</p>
+  </li>
+  <li>
+    <p>Configurar a pipeline de CI/CD</p>
+  </li>
+</ul>
+
+<p>…a empresa fica refém desse conhecimento. <strong>POPs democratizam a expertise.</strong></p>
+
+<h3 id="3-nem-tudo-precisa-ser-documentado"><strong>3. Nem Tudo Precisa Ser Documentado</strong></h3>
+
+<p>A arte está em <strong>identificar o que merece um POP</strong>:</p>
+
+<p>✅ Processos críticos (ex.: rollback de produção)</p>
+
+<p>✅ Tarefas repetitivas (ex.: onboarding de devs)</p>
+
+<p>✅ Fluxos com alto risco (ex.: migração de dados)</p>
+
+<p>…e deixar espaço para <strong>improvisação criativa</strong> onde faz sentido.</p>
+
+<h2 id="como-implementar-pops-sem-matar-a-agilidade"><strong>Como Implementar POPs Sem Matar a Agilidade</strong></h2>
+
+<ul>
+  <li>
+    <p><strong>Escolha uma tarefa repetitiva e relevante</strong> Foque no que afeta qualidade, velocidade ou segurança.</p>
+  </li>
+  <li>
+    <p><strong>Observe como os melhores fazem</strong> Não crie do zero — modele o que já funciona.</p>
+  </li>
+  <li>
+    <p><strong>Documente em linguagem simples e objetiva</strong> Título, objetivo, responsáveis, materiais, passos e observações.</p>
+  </li>
+  <li>
+    <p><strong>Valide com quem faz na prática</strong> O time precisa reconhecer o POP como ferramenta, não burocracia.</p>
+  </li>
+  <li>
+    <p><strong>Teste em campo</strong> POP bom funciona na vida real, não só no Notion.</p>
+  </li>
+  <li>
+    <p><strong>Aprove e publique</strong> Deixe claro onde está e como acessar. Não esconda o conhecimento.</p>
+  </li>
+  <li>
+    <p><strong>Atualize sempre que o contexto mudar</strong> Versões antigas de POPs geram bugs humanos.</p>
+  </li>
+</ul>
+
+<h3 id="1-adapte-à-maturidade-do-time"><strong>1. Adapte à Maturidade do Time</strong></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Situação</strong></td>
+      <td><strong>Abordagem Recomendada</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Startup pequena (MVP)</strong></td>
+      <td>Checklists informais no Slack/Notion</td>
+    </tr>
+    <tr>
+      <td><strong>Time em crescimento</strong></td>
+      <td>POPs essenciais versionados no Git</td>
+    </tr>
+    <tr>
+      <td><strong>Empresa consolidada</strong></td>
+      <td>Sistema centralizado (ex.: GitBook + integração com DevOps)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-mantenha-os-vivos"><strong>2. Mantenha-os Vivos</strong></h3>
+
+<ul>
+  <li>
+    <p><strong>Revise a cada 3-6 meses</strong> (processos evoluem).</p>
+  </li>
+  <li>
+    <p><strong>Use métricas</strong> (ex.: “Quantos incidentes ocorreram por falta de um POP?”).</p>
+  </li>
+  <li>
+    <p><strong>Incentive contribuições</strong> (qualquer um pode propor melhorias).</p>
+  </li>
+</ul>
+
+<h3 id="3-automatize-onde-possível"><strong>3. Automatize Onde Possível</strong></h3>
+
+<p>Um POP não deve ser um documento estático. Exemplos de automação:</p>
+
+<ul>
+  <li>
+    <p><strong>ChatOps:</strong> Comando /rollback que valida pré-requisitos antes de executar.</p>
+  </li>
+  <li>
+    <p><strong>Gatekeepers automáticos:</strong> Scripts que bloqueiam deploys sem checklist completo.</p>
+  </li>
+</ul>
+
+<h2 id="quando-pops-funcionam-e-quando-não-funcionam"><strong>Quando POPs Funcionam (e Quando Não Funcionam)</strong></h2>
+
+<p>✅ <strong>Funciona bem:</strong></p>
+
+<ul>
+  <li>
+    <p>Times distribuídos (ex.: squads em fusos horários diferentes).</p>
+  </li>
+  <li>
+    <p>Sistemas críticos (ex.: financeiro, saúde).</p>
+  </li>
+  <li>
+    <p>Compliance rígido (ex.: LGPD, SOC 2).</p>
+  </li>
+</ul>
+
+<p>❌ <strong>Pode não valer o esforço:</strong></p>
+
+<ul>
+  <li>
+    <p>Protótipos descartáveis.</p>
+  </li>
+  <li>
+    <p>Equipes tiny (ex.: 2-3 pessoas no mesmo escritório).</p>
+  </li>
+  <li>
+    <p>Ambientes onde a experimentação é mais valiosa que a padronização.</p>
+  </li>
+</ul>
+
+<h2 id="exemplo-simples-e-direto"><strong>Exemplo simples e direto</strong></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><em>Título:</em></strong> <em>Abertura de chamado técnico</em> <strong><em>Objetivo:</em></strong> <em>Garantir registro correto das demandas de TI</em> <strong><em>Responsável:</em></strong> <em>Solicitante / Equipe de TI</em> <strong><em>Materiais:</em></strong> <em>Sistema de chamados + acesso à internet</em> <strong><em>Passos:</em></strong><br /><br />1. <em>Acesse o sistema</em><br />    <br />2. <em>Preencha categoria, descrição, prioridade</em><br />    <br />3. <em>Anexe evidências</em><br />    <br />4. <em>Envie</em><br />    <br />5. <em>Aguarde número de protocolo</em><br />    <br /><br /><strong><em>Nota:</em></strong> <em>Para prioridades críticas, notifique o gestor diretamente.</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="pop-não-anda-sozinho"><strong>POP não anda sozinho</strong></h2>
+
+<ul>
+  <li>
+    <p><strong>Processo</strong> = jornada completa (ex: Recrutamento e Seleção)</p>
+  </li>
+  <li>
+    <p><strong>POP</strong> = tarefa padronizada (ex: Como publicar uma vaga)</p>
+  </li>
+  <li>
+    <p><strong>Instrução de trabalho</strong> = detalhamento técnico (ex: Especificações do job post no sistema)</p>
+  </li>
+</ul>
+
+<p>Esses documentos <strong>se complementam</strong>. Juntos, constroem governança.</p>
+
+<p>Em projetos com agentes, <a href="https://www.gpupo.com/artigos/spec-artefato-duravel-projetos-agentes/">a especificação funciona como um artefato durável</a>: registra intenção, limites e critérios de aceitação entre sessões e mudanças no código.</p>
+
+<p>Você pode ter a melhor estratégia. Mas se o time tropeça no básico, tudo falha em cadeia.</p>
+
+<p><strong>O POP é onde a visão vira execução.</strong></p>
+
+<p> Não espere escalar para estruturar. Estruture para escalar.
+ </p>]]></content><author><name>Gilmar Pupo</name></author><category term="Produtividade" /><summary type="html"><![CDATA[Entenda o papel dos POPs em projetos de tecnologia e como padronizar processos sem perder agilidade, clareza e autonomia.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.bpstrat.com.br/assets/fc16a0196e453d2fda3ec0dd6da6cb4c_MD5.jpg" /><media:content medium="image" url="https://www.bpstrat.com.br/assets/fc16a0196e453d2fda3ec0dd6da6cb4c_MD5.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Quando a Qualidade Melhora a Velocidade de Entrega</title><link href="https://www.bpstrat.com.br/post/a-qualidade-como-acelerador/" rel="alternate" type="text/html" title="Quando a Qualidade Melhora a Velocidade de Entrega" /><published>2025-06-11T00:00:00-03:00</published><updated>2025-06-11T00:00:00-03:00</updated><id>https://www.bpstrat.com.br/post/a-qualidade-como-acelerador</id><content type="html" xml:base="https://www.bpstrat.com.br/post/a-qualidade-como-acelerador/"><![CDATA[<p>Qualidade e velocidade não são necessariamente objetivos opostos. Defeitos, retrabalho e dificuldade para modificar o sistema podem atrasar entregas; por outro lado, testes, refatoração e coordenação também exigem tempo e manutenção.</p>
+
+<p>A questão relevante não é se toda prática de qualidade acelera o desenvolvimento, mas em quais condições o benefício supera seu custo. Essa resposta depende do risco do sistema, da frequência das mudanças, do custo das falhas e da forma como a prática é implementada.</p>
+
+<p>Este artigo examina quatro intervenções — testes automatizados e TDD, código fácil de modificar, coordenação em tempo real e tratamento de gargalos. Para cada uma, é necessário comparar benefícios, custos e resultados observados no fluxo de entrega.</p>
+
+<h2 id="práticas-a-avaliar">Práticas a avaliar</h2>
+
+<h3 id="testes-automatizados-e-tdd">Testes Automatizados e TDD</h3>
+
+<p>Testes automatizados podem reduzir o risco de regressões e tornar alterações mais verificáveis. O resultado depende da qualidade dos testes, do tipo de sistema e do custo de manter a suíte.</p>
+
+<p>Em <a href="https://research.ibm.com/publications/realizing-quality-improvement-through-test-driven-development-results-and-experiences-of-four-industrial-teams">quatro estudos de caso industriais</a>, três equipes da Microsoft e uma da IBM que adotaram TDD apresentaram densidade de defeitos antes da entrega entre 40% e 90% menor que a de projetos comparáveis. As mesmas equipes relataram um aumento inicial de 15% a 35% no tempo de desenvolvimento.</p>
+
+<p>Esse resultado não demonstra que TDD produzirá a mesma redução em qualquer contexto. Eu avaliaria a prática comparando:</p>
+
+<ul>
+  <li>defeitos encontrados antes e depois da entrega;</li>
+  <li>tempo gasto na implementação e manutenção dos testes;</li>
+  <li>duração do ciclo de mudança;</li>
+  <li>regressões detectadas pela suíte;</li>
+  <li>custo de corrigir defeitos que chegaram à produção.</li>
+</ul>
+
+<p>TDD faz mais sentido quando o custo adicional no início é compensado pela redução de regressões e pela capacidade de alterar o sistema com segurança. Quando os testes são frágeis ou reproduzem detalhes de implementação, a manutenção da suíte pode consumir parte desse benefício.</p>
+
+<h3 id="código-fácil-de-modificar">Código Fácil de Modificar</h3>
+
+<p>“Código limpo” é uma expressão ampla. Para este argumento, o critério mais útil é quanto tempo e risco uma mudança exige.</p>
+
+<p>Uma área do sistema tende a ser mais fácil de modificar quando:</p>
+
+<ul>
+  <li>sua responsabilidade está clara;</li>
+  <li>as dependências relevantes podem ser identificadas;</li>
+  <li>o comportamento pode ser verificado por testes;</li>
+  <li>uma alteração permanece concentrada em poucos componentes;</li>
+  <li>falhas podem ser detectadas antes da produção.</li>
+</ul>
+
+<p>Não há base no material disponível para afirmar que essas características tornam toda alteração sete vezes mais rápida. Eu avaliaria o efeito observando:</p>
+
+<ul>
+  <li>tempo entre o início e a conclusão de mudanças comparáveis;</li>
+  <li>duração da revisão;</li>
+  <li>quantidade de componentes alterados;</li>
+  <li>regressões associadas à mudança;</li>
+  <li>retrabalho depois da entrega.</li>
+</ul>
+
+<p>Refatorar também tem custo. Eu priorizaria áreas modificadas com frequência, responsáveis por incidentes ou que concentram atrasos recorrentes. Em componentes estáveis e pouco alterados, uma refatoração ampla pode não compensar o investimento.</p>
+
+<h3 id="coordenação-em-tempo-real-quando-testar-mob-programming">Coordenação em Tempo Real: Quando Testar Mob Programming</h3>
+
+<p>Mob Programming reúne várias pessoas para trabalhar simultaneamente no mesmo item. Essa configuração pode reduzir esperas por revisão, compartilhar contexto e antecipar discussões que ocorreriam depois da implementação.</p>
+
+<p>Os <a href="https://agilealliance.org/resources/experience-reports/growing-the-mob/">relatos da Hunter Industries</a> ajudam a entender como a prática foi adotada, mas não sustentam um ganho universal de três vezes na produtividade. O resultado depende do tipo de trabalho, da experiência da equipe e da forma como produtividade é medida.</p>
+
+<p>Eu consideraria um experimento com prazo definido quando:</p>
+
+<ul>
+  <li>o problema exige conhecimento de várias especialidades;</li>
+  <li>decisões tardias teriam alto custo;</li>
+  <li>revisões e transferências de contexto estão atrasando o fluxo;</li>
+  <li>a equipe precisa distribuir conhecimento sobre uma área crítica.</li>
+</ul>
+
+<p>Durante o experimento, compararia:</p>
+
+<ul>
+  <li>tempo decorrido até a entrega;</li>
+  <li>total de horas das pessoas envolvidas;</li>
+  <li>tempo de espera por revisão ou decisão;</li>
+  <li>defeitos e retrabalho depois da entrega;</li>
+  <li>quantidade de pessoas capazes de manter a solução.</li>
+</ul>
+
+<p>Uma redução no tempo de calendário não significa necessariamente aumento de produtividade, porque várias pessoas trabalharam juntas. Para decidir se a prática compensa, eu observaria o resultado entregue, o esforço total e o conhecimento distribuído.</p>
+
+<p>Em tarefas rotineiras e independentes, manter toda a equipe no mesmo item pode custar mais do que os problemas de coordenação que se pretende resolver.</p>
+
+<h3 id="gargalos-e-qualidade-como-avaliar-o-efeito">Gargalos e qualidade: como avaliar o efeito</h3>
+
+<p>Defeitos, retrabalho, dependências e filas de validação podem consumir capacidade. Antes de intervir, identifique qual etapa limita o fluxo e estabeleça uma linha de base com:</p>
+
+<ul>
+  <li>tempo de espera e tempo de execução em cada etapa;</li>
+  <li>duração total do ciclo;</li>
+  <li>defeitos e retrabalho;</li>
+  <li>frequência de falhas depois da entrega;</li>
+  <li>tempo necessário para recuperar o serviço.</li>
+</ul>
+
+<p>Uma leitura complementar de <a href="https://www.gpupo.com/artigos/dora-e-spaceh-+eficacia-+maturidade-no-desenvolvimento-de-software/">DORA e SPACE</a> ajuda a separar indicadores de entrega, estabilidade e experiência da equipe sem consolidá-los em uma nota única.</p>
+
+<p>Reduzir uma fila não garante melhora no sistema inteiro. O gargalo pode migrar para outra etapa, e uma otimização local pode aumentar defeitos ou carga operacional. Compare os indicadores antes e depois da mudança durante um período definido.</p>
+
+<p>Práticas de qualidade também têm custo. Testes, refatoração e coordenação adicional compensam quando reduzem falhas e retrabalho em valor superior ao esforço de adoção e manutenção. O efeito depende da frequência das mudanças, do risco do componente e da qualidade da implementação.</p>
+
+<p>Portanto, velocidade e qualidade não formam uma equação universal. Para áreas alteradas com frequência ou associadas a incidentes relevantes, investir em qualidade pode melhorar a capacidade de entrega ao longo do tempo. Em áreas estáveis e de baixo risco, o mesmo investimento pode ter retorno menor.</p>
+
+<p>A evidência apresentada neste artigo sustenta a realização de experimentos com métricas explícitas, não a garantia de que toda prática de qualidade acelerará qualquer equipe.</p>]]></content><author><name>Gilmar Pupo</name></author><category term="Produtividade" /><summary type="html"><![CDATA[Como avaliar se testes, código modificável e coordenação reduzem defeitos, retrabalho e tempo de entrega.]]></summary></entry><entry><title type="html">O que uma Pesquisa Patrocinada Sugere sobre IA e Produtividade</title><link href="https://www.bpstrat.com.br/post/adeus-%C3%A0-frustra%C3%A7%C3%A3o-como-a-intelig%C3%AAncia-artificial-est%C3%A1-revolucionando-a-produtividade-no-trabalho/" rel="alternate" type="text/html" title="O que uma Pesquisa Patrocinada Sugere sobre IA e Produtividade" /><published>2025-06-11T00:00:00-03:00</published><updated>2025-06-11T00:00:00-03:00</updated><id>https://www.bpstrat.com.br/post/adeus-%C3%A0-frustra%C3%A7%C3%A3o-como-a-intelig%C3%AAncia-artificial-est%C3%A1-revolucionando-a-produtividade-no-trabalho</id><content type="html" xml:base="https://www.bpstrat.com.br/post/adeus-%C3%A0-frustra%C3%A7%C3%A3o-como-a-intelig%C3%AAncia-artificial-est%C3%A1-revolucionando-a-produtividade-no-trabalho/"><![CDATA[<p>Uma pesquisa da Atlassian relaciona diferentes formas de uso de IA a estimativas de tempo economizado e a mudanças declaradas na rotina de trabalhadores do conhecimento. Esses dados podem orientar hipóteses, mas não demonstram que a ferramenta causou aumento de produtividade.</p>
+
+<p><img src="/assets/f5a0d67abea260ea487fbb091e75b113_MD5.jpg" alt="Ilustração sobre IA colaborativa e produtividade no trabalho" /></p>
+
+<p>Este texto parte do <a href="https://www.atlassian.com/blog/productivity/ai-collaboration-report"><em>AI Collaboration Report</em></a>, uma pesquisa produzida pelo Teamwork Lab da Atlassian com aproximadamente cinco mil trabalhadores do conhecimento na Austrália, nos Estados Unidos, na Índia, na Alemanha e na França. Os resultados também foram apresentados em <a href="https://hbr.org/sponsored/2025/04/ai-can-help-knowledge-workers-fix-these-five-frustrations">conteúdo patrocinado pela Atlassian</a> publicado no site da Harvard Business Review.</p>
+
+<p>Como a pesquisa foi produzida por um fornecedor de ferramentas de colaboração e utiliza estimativas dos participantes, eu trataria seus números como percepções declaradas e associações entre grupos. Eles não demonstram que o uso de IA causou os resultados observados.</p>
+
+<h4 id="1-rascunhos-iniciais">1. Rascunhos iniciais</h4>
+
+<p>Um modelo pode gerar uma primeira versão de um relatório, uma lista de alternativas ou uma estrutura para discussão. Isso reduz o tempo até o primeiro rascunho em alguns fluxos, mas também pode introduzir afirmações sem fonte e exigir edição extensa. O teste precisa comparar tempo até uma versão utilizável, quantidade de revisão e erros encontrados.</p>
+
+<h4 id="2-tarefas-repetitivas">2. Tarefas repetitivas</h4>
+
+<p>Agendamento, classificação e coleta de dados são candidatos à automação quando as entradas e exceções podem ser delimitadas. O ganho depende da integração com os sistemas existentes e do custo das correções. A pesquisa citada não sustenta afirmar que essas automações reduzem esgotamento ou aumentam satisfação; esses efeitos precisariam de medição específica.</p>
+
+<h4 id="3-estimativas-de-tempo-economizado">3. Estimativas de tempo economizado</h4>
+
+<p>Na pesquisa da Atlassian, participantes classificados no nível mais alto de colaboração com IA estimaram economizar 105 minutos por dia. No grupo de uso mais simples, a estimativa foi de 53 minutos. Essa diferença foi declarada pelos participantes e não medida diretamente no trabalho executado.</p>
+
+<h4 id="4-incentivo-da-liderança-e-associação-observada">4. Incentivo da liderança e associação observada</h4>
+
+<p>Participantes que disseram receber incentivo da liderança para experimentar IA estimaram economia diária de 84 minutos, contra 55 minutos entre os demais. Eles também apareceram com frequência 2,5 vezes maior no grupo classificado pela Atlassian como “colaboradores estratégicos de IA”.</p>
+
+<p>A pesquisa mostra uma associação, mas não permite concluir que o incentivo da liderança causou a economia. Equipes que já possuem mais autonomia, treinamento ou acesso a ferramentas também podem apresentar os dois resultados.</p>
+
+<h4 id="5-uso-declarado-do-tempo-para-aprender">5. Uso declarado do tempo para aprender</h4>
+
+<p>Os participantes classificados no nível mais alto de colaboração com IA foram 1,5 vez mais propensos a declarar que usavam o tempo economizado para aprender novas habilidades. O estudo não acompanhou o desenvolvimento dessas habilidades nem mediu seu efeito posterior no trabalho.</p>
+
+<h3 id="como-avaliar-ia-em-um-fluxo-de-trabalho">Como Avaliar IA em um Fluxo de Trabalho</h3>
+
+<p>Eu não começaria pela escolha da ferramenta. Primeiro selecionaria uma tarefa frequente, delimitada e cujo resultado possa ser revisado.</p>
+
+<p>Antes do experimento, registraria:</p>
+
+<ul>
+  <li>tempo necessário para concluir a tarefa;</li>
+  <li>quantidade de revisões;</li>
+  <li>erros encontrados;</li>
+  <li>pessoas envolvidas;</li>
+  <li>dados que a tarefa utiliza;</li>
+  <li>consequência de um resultado incorreto.</li>
+</ul>
+
+<p>O primeiro teste deveria utilizar informações não confidenciais ou um conjunto preparado para o experimento. Também seria necessário definir quem revisa o resultado e quais decisões não podem ser delegadas à IA.</p>
+
+<p>Durante o teste, eu observaria critérios diferentes conforme o problema:</p>
+
+<ul>
+  <li><strong>Rascunhos:</strong> tempo até a primeira versão utilizável, quantidade de edição e afirmações sem fonte.</li>
+  <li><strong>Tarefas repetitivas:</strong> taxa de execução correta, exceções e intervenções manuais.</li>
+  <li><strong>Busca de informações:</strong> cobertura das fontes, atualização e rastreabilidade das respostas.</li>
+  <li><strong>Apoio a decisões:</strong> alternativas relevantes, evidências apresentadas e sugestões rejeitadas.</li>
+  <li><strong>Aprendizado:</strong> capacidade de explicar ou aplicar o conteúdo sem depender da ferramenta.</li>
+</ul>
+
+<p>Depois do período definido, compararia os resultados com a linha de base. Uma redução no tempo só seria útil se não viesse acompanhada de mais erros, revisão excessiva ou exposição inadequada de dados.</p>
+
+<p>Eu ampliaria o uso apenas quando o ganho observado compensasse o custo da ferramenta, da integração e da supervisão. Se o experimento não produzir uma melhoria mensurável, encerrá-lo também é um resultado válido.</p>]]></content><author><name>Gilmar Pupo</name></author><category term="IA" /><summary type="html"><![CDATA[Como interpretar uma pesquisa da Atlassian sobre IA no trabalho e validar seus resultados em um fluxo real.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.bpstrat.com.br/assets/f5a0d67abea260ea487fbb091e75b113_MD5.jpg" /><media:content medium="image" url="https://www.bpstrat.com.br/assets/f5a0d67abea260ea487fbb091e75b113_MD5.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">O Custo Invisível da Lentidão</title><link href="https://www.bpstrat.com.br/post/o-custo-invis%C3%ADvel-da-lentid%C3%A3o/" rel="alternate" type="text/html" title="O Custo Invisível da Lentidão" /><published>2025-06-11T00:00:00-03:00</published><updated>2025-06-11T00:00:00-03:00</updated><id>https://www.bpstrat.com.br/post/o-custo-invis%C3%ADvel-da-lentid%C3%A3o</id><content type="html" xml:base="https://www.bpstrat.com.br/post/o-custo-invis%C3%ADvel-da-lentid%C3%A3o/"><![CDATA[<p>“A lentidão no seu time pode estar custando mais do que qualquer bug.”</p>
+
+<p>Soa como um exagero? Vamos aos fatos.</p>
+
+<p>No <a href="https://www.bpstrat.com.br/post/a-velocidade-como-vantagem-competitiva">post anterior</a>, estabelecemos que velocidade é uma arma competitiva. Agora, vamos aprofundar na outra face dessa moeda: <strong>o custo real e estratégico da lentidão</strong>.</p>
+
+<p>Muitos gestores ainda se apegam à máxima de que “o que importa é o resultado, não a velocidade”. Embora bem-intencionada, essa visão é perigosa porque ignora como a variável tempo destrói valor econômico de formas concretas e, muitas vezes, silenciosas.</p>
+
+<p>A lentidão impõe custos estratégicos tangíveis:</p>
+
+<p><strong>1. Custo de Oportunidade:</strong> Recursos alocados em projetos que se arrastam ficam “presos”, impedindo a empresa de investir em novas oportunidades que surgem e desaparecem rapidamente no mercado. Como documentado em finanças corporativas, investimentos que demoram a gerar retorno não apenas consomem capital, mas também aumentam o risco do negócio.</p>
+
+<p>📉 Enquanto seu produto atrasa uma funcionalidade crítica, outro player lança antes, ganha tração, fideliza os primeiros usuários e se torna referência. Você não perdeu uma entrega — perdeu o mercado.</p>
+
+<p><strong>2. Custo de Retenção:</strong> clientes não observam diretamente o ciclo de desenvolvimento, mas sentem por quanto tempo uma falha permanece sem correção. Quando o problema afeta uma atividade importante e não há alternativa, cada dia adicional pode ampliar contatos de suporte, abandono e perda de confiança.</p>
+
+<p><a href="https://www.zendesk.com/blog/customer-service/satisfaction/customer-service-statistics/">Dados da Zendesk</a> indicam que 73% dos consumidores consideram mudar para um concorrente depois de múltiplas experiências ruins. Esse resultado ajuda a dimensionar o risco de experiências negativas recorrentes, mas não demonstra que uma correção lenta, isoladamente, causará a troca.</p>
+
+<p>Eu avaliaria esse custo observando:</p>
+
+<ul>
+  <li>clientes e transações afetados;</li>
+  <li>duração do problema;</li>
+  <li>contatos de suporte associados;</li>
+  <li>cancelamentos durante e depois do incidente;</li>
+  <li>recuperação do uso após a correção.</li>
+</ul>
+
+<p><strong>3. Custo de Capital:</strong> Quanto mais longo o ciclo de desenvolvimento, maior o investimento necessário antes que qualquer retorno financeiro seja percebido. Isso eleva o “burn rate” (queima de caixa) e o custo do capital empregado no projeto, tornando-o financeiramente menos eficiente.</p>
+
+<p>💸 O impacto se acumula: times ocupados por projetos lentos deixam de atuar em iniciativas mais promissoras. O custo não está só no que se gasta — está no que se deixa de ganhar.</p>
+
+<p>Não aparece no Jira. Não vira alerta no Slack. Mas está lá — minando a competitividade, drenando recursos e sabotando o moral dos times.</p>
+
+<p>Ser lento não é apenas um problema operacional; é uma decisão que corrói o valor do negócio por dentro. A lentidão permite que concorrentes definam o ritmo do mercado , desperdiça recursos valiosos em projetos que perdem o <em>timing</em> e, pior, afasta clientes insatisfeitos.</p>
+
+<p>Revise processos, encurte ciclos, elimine gargalos, reforce a automação e invista em qualidade técnica. A velocidade sustentável nasce disso — não de correria, mas de inteligência operacional.</p>
+
+<p>📢 <strong>No</strong> <a href="https://www.bpstrat.com.br/blog/tags/velocidade-no-desenvolvimento"><strong>próximo post</strong></a><strong>:</strong> Vamos mostrar por que velocidade e qualidade <strong>não são opostos</strong>. Pelo contrário: <strong>qualidade acelera</strong>.</p>]]></content><author><name>Gilmar Pupo</name></author><category term="Produtividade" /><summary type="html"><![CDATA[Como a lentidão em times de software destrói valor econômico, reduz competitividade e amplia custos que nem sempre aparecem no curto prazo.]]></summary></entry><entry><title type="html">A Velocidade como Vantagem Competitiva</title><link href="https://www.bpstrat.com.br/post/a-velocidade-como-vantagem-competitiva/" rel="alternate" type="text/html" title="A Velocidade como Vantagem Competitiva" /><published>2025-06-09T00:00:00-03:00</published><updated>2025-06-09T00:00:00-03:00</updated><id>https://www.bpstrat.com.br/post/a-velocidade-como-vantagem-competitiva</id><content type="html" xml:base="https://www.bpstrat.com.br/post/a-velocidade-como-vantagem-competitiva/"><![CDATA[<p>Falar sobre velocidade no desenvolvimento de software costuma despertar reações polarizadas. Alguns a veem como pressa irresponsável, outros como uma simples obsessão por “fazer mais em menos tempo”. Mas o ponto central costuma ficar obscurecido por esse falso dilema: não estamos falando apenas de agilidade operacional — estamos falando de estratégia.</p>
+
+<p>Neste primeiro post da nossa série sobre “<a href="/post/tags.html#produtividade"><strong>Velocidade no Desenvolvimento</strong></a>”, vamos desmistificar por que a velocidade não é um detalhe tático, mas sim um imperativo estratégico para empresas que querem competir, inovar e capturar valor real no mercado.</p>
+
+<p><img src="/assets/ae91b238aef5c1d34ce5774e0796088b_MD5.jpg" alt="Ilustração sobre velocidade como vantagem competitiva no desenvolvimento de software" /></p>
+
+<h2 id="quando-velocidade-pode-criar-vantagem">Quando Velocidade Pode Criar Vantagem</h2>
+
+<p>Um ciclo de entrega mais curto permite colocar uma hipótese em uso, observar o resultado e decidir o próximo investimento mais cedo. Isso pode ser uma vantagem, mas não equivale automaticamente a dominar um mercado.</p>
+
+<p><a href="https://www.anderson.ucla.edu/faculty_pages/marvin.lieberman/publications/FMA2-SMH1998.pdf">Lieberman e Montgomery</a> descrevem mecanismos que podem favorecer quem entra primeiro, como liderança tecnológica, acesso antecipado a recursos escassos e custos de troca para clientes. Os autores também tratam das desvantagens: o pioneiro absorve incerteza, pode investir na direção errada e permite que seguidores aprendam com seus erros.</p>
+
+<p>Por isso, eu não trataria velocidade como vantagem competitiva sem responder:</p>
+
+<ul>
+  <li>Qual hipótese será validada mais cedo?</li>
+  <li>Qual recurso escasso pode ser capturado?</li>
+  <li>Existe aprendizado que se acumula com o uso?</li>
+  <li>Há um custo real para o cliente trocar de solução?</li>
+  <li>A decisão é reversível se a hipótese estiver errada?</li>
+  <li>Um concorrente pode copiar a entrega sem assumir o mesmo custo?</li>
+</ul>
+
+<p>Eu priorizaria ciclos curtos quando eles reduzissem o custo de aprender ou reagir. Em mercados com alta incerteza, lançar primeiro uma aposta difícil de reverter pode apenas antecipar o custo do erro.</p>
+
+<p>A evidência necessária depende da tese. Se a vantagem esperada for aprender antes, eu mediria tempo até o feedback e decisões alteradas por esse aprendizado. Se for capturar mercado, acompanharia adoção, retenção e participação ao longo do tempo. Se for reduzir risco, compararia o custo de corrigir decisões em ciclos curtos e longos.</p>
+
+<p>Velocidade é um meio para aprender, capturar uma oportunidade ou tornar uma decisão reversível. Sem um desses mecanismos, entregar primeiro é apenas uma diferença de calendário.</p>
+
+<p><img src="/assets/87e00700f58906ade30788a843b2bace_MD5.jpg" alt="" /></p>
+
+<h2 id="ser-lento-custa-caro-muito-caro">Ser Lento Custa Caro (Muito Caro)</h2>
+
+<p>A frase “o que importa é o resultado, não a velocidade” soa sensata, mas ignora o fator tempo como variável estratégica. A lentidão no desenvolvimento não apenas retarda resultados — ela destrói valor econômico, ao gerar custos ocultos e desperdiçar oportunidades.</p>
+
+<p>A lentidão impõe custos estratégicos tangíveis:</p>
+
+<ul>
+  <li>
+    <p>Custo de Oportunidade: Recursos alocados a projetos lentos permanecem improdutivos enquanto oportunidades de mercado desaparecem. Documentado em finanças corporativas, investimentos que demoram para retornar consomem capital e aumentam o risco.</p>
+  </li>
+  <li>
+    <p><strong>Custo de Retenção:</strong> uma falha visível pode continuar afetando clientes enquanto a correção não chega à produção. O impacto depende da quantidade de pessoas afetadas, da existência de alternativas e da importância da funcionalidade. <a href="https://www.zendesk.com/blog/customer-service/satisfaction/customer-service-statistics/">Dados da Zendesk</a> indicam que 73% dos consumidores consideram mudar para um concorrente depois de múltiplas experiências ruins, mas a pesquisa não isola o tempo de correção como causa. Para avaliar esse custo em um produto, eu acompanharia duração do incidente, contatos de suporte, cancelamentos e recuperação do uso depois da correção.</p>
+  </li>
+  <li>
+    <p>Custo de Capital: Quanto maior o tempo de desenvolvimento, maior o investimento necessário antes de qualquer retorno — elevando o custo do capital empregado. Projetos com longos ciclos consomem mais recursos, aumentando o burn rate.</p>
+  </li>
+</ul>
+
+<p>Velocidade não é só sobre chegar antes — é sobre preservar e multiplicar valor.</p>
+
+<p>🎯 Mas por que isso é estratégia, e não só eficiência? Porque velocidade não é um detalhe tático, mas um imperativo estratégico para empresas que querem competir, inovar e capturar valor real no mercado. Em um ambiente onde tempo é um recurso escasso, convertível diretamente em custo e receita, negligenciar a velocidade operacional sustentada (fundamentada na qualidade) não é uma escolha neutra. Ela afeta diretamente a criação e captura de valor econômico de forma sustentável. Quem entrega primeiro, aprende primeiro; quem aprende primeiro, ajusta melhor; e quem ajusta melhor, escala antes. É uma espiral positiva que se retroalimenta — e não há lugar para quem fica parado.</p>
+
+<p><img src="/assets/d41f3645e96ea7d6b8dd75b6a185494e_MD5.jpg" alt="" /></p>
+
+<p>E se você for lento? Você não está neutro; está exposto!</p>
+
+<ul>
+  <li>
+    <p>A perder clientes insatisfeitos com ciclos lentos. Clientes toleram falhas corrigidas rapidamente, mas abandonam produtos com ciclos de correção prolongados — os chamados “bugs glaciais”.</p>
+  </li>
+  <li>
+    <p>A permitir que concorrentes se tornem referência. A velocidade insuficiente compromete diretamente a vantagem competitiva, expondo a empresa à erosão de mercado. Ser lento hoje não é apenas um problema de produtividade — é um risco direto à sobrevivência do negócio.</p>
+  </li>
+  <li>
+    <p><strong>Capacidade consumida por manutenção e dívida técnica:</strong> em uma <a href="https://stripe.com/files/reports/the-developer-coefficient.pdf">pesquisa de 2018 conduzida pela Stripe e pela Harris Poll</a>, os participantes estimaram que um desenvolvedor trabalhava, em média, 41,1 horas por semana e dedicava 13,5 horas a dívida técnica — aproximadamente 33% desse período. O relatório também registrou 17,3 horas semanais com manutenção, categoria mais ampla que incluía erros, depuração, refatoração e modificações.</p>
+
+    <p>Como esses valores vieram de estimativas dos respondentes, eu os trataria como referência externa, não como medida aplicável automaticamente a qualquer equipe. Para avaliar o custo local, acompanharia:</p>
+
+    <ul>
+      <li>tempo dedicado ao roadmap e à manutenção não planejada;</li>
+      <li>horas gastas para compreender ou contornar limitações existentes;</li>
+      <li>incidentes associados a componentes com dívida conhecida;</li>
+      <li>mudanças adiadas ou ampliadas por dependências técnicas;</li>
+      <li>itens de dívida ligados a um efeito operacional concreto.</li>
+    </ul>
+
+    <p>O objetivo não seria eliminar toda dívida técnica, mas identificar quais limitações estão consumindo capacidade ou aumentando o risco das mudanças.</p>
+  </li>
+</ul>
+
+<h3 id="qualidade-e-velocidade-começar-pelo-gargalo">Qualidade e Velocidade: Começar pelo Gargalo</h3>
+
+<p>Práticas de qualidade podem reduzir retrabalho e tornar mudanças mais previsíveis, mas também exigem tempo de adoção e manutenção. O resultado depende do problema que limita o fluxo da equipe.</p>
+
+<p><a href="https://www.gpupo.com/posts/velocidade-e-maturidade-na-engenharia/">Velocidade costuma ser visível; maturidade, nem sempre</a> explora como impacto, reversibilidade, dependências e validação mudam a decisão sobre onde acelerar.</p>
+
+<p>Eu escolheria a intervenção a partir do gargalo observado:</p>
+
+<ul>
+  <li><strong>Regressões frequentes:</strong> avaliar testes automatizados ou TDD. <a href="https://research.ibm.com/publications/realizing-quality-improvement-through-test-driven-development-results-and-experiences-of-four-industrial-teams">Quatro estudos de caso industriais</a> registraram redução de 40% a 90% na densidade de defeitos antes da entrega, acompanhada por um aumento inicial de 15% a 35% no tempo de desenvolvimento. Esses resultados descrevem as equipes estudadas e não constituem uma garantia para outros contextos.</li>
+  <li><strong>Mudanças espalhadas por muitos componentes:</strong> revisar responsabilidades, dependências e limites do código antes de iniciar uma refatoração ampla.</li>
+  <li><strong>Espera por revisão ou transferência de contexto:</strong> testar colaboração em tempo real por um período definido, comparando tempo de calendário com o total de horas das pessoas envolvidas.</li>
+  <li><strong>Filas, aprovações ou dependências externas:</strong> mapear o fluxo e tratar primeiro a restrição que acumula trabalho ou mantém itens parados.</li>
+</ul>
+
+<p>Nenhuma dessas práticas acelera uma equipe por definição. Antes da mudança, eu registraria:</p>
+
+<ul>
+  <li>tempo total entre início e entrega;</li>
+  <li>tempo em execução e tempo em espera;</li>
+  <li>defeitos e retrabalho;</li>
+  <li>horas das pessoas envolvidas;</li>
+  <li>frequência de entrega.</li>
+</ul>
+
+<p>Depois do experimento, manteria a prática somente se a melhoria observada compensasse seu custo operacional.</p>
+
+<h3 id="sempre-foi-assim-é-a-receita-para-ficar-para-trás">“Sempre foi assim” é a receita para ficar para trás</h3>
+
+<p>Rejeitar essas práticas sob alegações como “isso não funciona aqui” pode representar:</p>
+
+<ul>
+  <li>
+    <p>Falha em Inovar Processos: Equivale a ignorar avanços tecnológicos na manufatura. Ignorar avanços comprovados em engenharia e gestão.</p>
+  </li>
+  <li>
+    <p>Rigidez Estratégica: Incapacidade de adaptar a cadeia de valor frente a melhores práticas comprovadas. Ficar preso em processos lentos e ultrapassados - Documentado por autores como Christensen (O Dilema da Inovação) e Kotter.</p>
+  </li>
+  <li>
+    <p>Imposição de Custos Ocultos: Manter métodos ineficientes impõe custos de lentidão e falhas, minando tanto a posição de custo quanto a de diferenciação. Pagar caro em falhas silenciosas: atrasos, retrabalho, baixa moral, churn de clientes</p>
+  </li>
+</ul>
+
+<p>Manter o status quo é uma decisão estratégica — só que negativa. A resistência à mudança não visa preservar o “outcome”; visa evitar o custo (e o risco) da transformação necessária.</p>
+
+<p>🚀 Resumo estratégico A velocidade de entrega não é uma mera métrica operacional; é um ativo competitivo tão relevante quanto preço, marca ou experiência do usuário. Em um mercado onde tempo é dinheiro — literalmente, tratar velocidade como algo “opcional” ou “só técnico” é um erro estratégico. A verdadeira vantagem competitiva nasce da capacidade de entregar rápido, com qualidade, de forma consistente.</p>
+
+<p>Isso não se faz correndo. Se faz com processos modernos, times bem estruturados e foco na eficiência de ponta a ponta. Isso não se trata de hype. Trata-se de sobrevivência, crescimento e liderança. A busca por eficiência radical na cadeia de valor do desenvolvimento não é um exercício acadêmico — é uma necessidade concreta para criar e capturar valor econômico de forma sustentável</p>
+
+<blockquote class="important-title">
+  <p>Nos próximos <a href="/post/tags.html#produtividade">posts</a></p>
+
+  <p>Vamos explorar os custos invisíveis da lentidão, desmistificar a relação entre velocidade e qualidade, e mostrar como modernizar sua cadeia de valor de desenvolvimento sem sacrificar confiabilidade.</p>
+</blockquote>]]></content><author><name>Gilmar Pupo</name></author><category term="Produtividade" /><summary type="html"><![CDATA[Por que velocidade no desenvolvimento de software é uma vantagem competitiva real e não apenas uma questão operacional.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.bpstrat.com.br/assets/ae91b238aef5c1d34ce5774e0796088b_MD5.jpg" /><media:content medium="image" url="https://www.bpstrat.com.br/assets/ae91b238aef5c1d34ce5774e0796088b_MD5.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">CoALA como Referência para Arquiteturas de Agentes</title><link href="https://www.bpstrat.com.br/post/cognitive-architecture-md/" rel="alternate" type="text/html" title="CoALA como Referência para Arquiteturas de Agentes" /><published>2024-10-21T00:00:00-03:00</published><updated>2024-10-21T00:00:00-03:00</updated><id>https://www.bpstrat.com.br/post/cognitive-architecture.md</id><content type="html" xml:base="https://www.bpstrat.com.br/post/cognitive-architecture-md/"><![CDATA[<p>Agentes de linguagem combinam modelos de linguagem com recursos externos, memória, ferramentas e fluxos de controle. Essas combinações criam novas possibilidades de automação, mas também introduzem riscos de respostas incorretas, ações indevidas e uso inadequado de dados.</p>
+
+<p>O artigo <strong>Cognitive Architectures for Language Agents (CoALA)</strong> propõe um framework conceitual para organizar esses sistemas. Ele descreve componentes modulares de memória, um espaço estruturado de ações e um processo de decisão. CoALA não é uma implementação pronta e não demonstra que agentes imitem processos humanos.</p>
+
+<p><img src="/assets/2aadd08ba3a0efe1c332f164d88135fc_MD5.jpg" alt="Ilustração sobre arquitetura cognitiva e aplicações corporativas com IA" /></p>
+
+<p>Usar essa estrutura pode ajudar uma equipe a explicitar onde o agente obtém informações, quais ações pode executar e como decide o próximo passo. O valor empresarial, porém, depende da implementação, das permissões, da qualidade dos dados e dos resultados observados em um caso de uso delimitado.</p>
+
+<p>Uma decomposição mais simples em modelo, estado, ferramentas e limites aparece em <a href="https://www.gpupo.com/posts/agentes-de-ia-alem-dos-copilotos/">Além dos copilotos: como pensar em agentes de IA</a>.</p>
+
+<h2 id="hipótese-de-arquitetura-inspirada-em-coala">Hipótese de arquitetura inspirada em CoALA</h2>
+
+<p>CoALA pode servir como referência conceitual para decompor um agente de atendimento em memória, ações e processo de decisão. Isso não fornece essas capacidades automaticamente: cada componente precisa ser implementado, restringido e avaliado.</p>
+
+<p>Em um experimento de atendimento multicanal, a arquitetura poderia incluir:</p>
+
+<ol>
+  <li><strong>Memória de trabalho:</strong> mantém apenas as informações necessárias para a interação atual.</li>
+  <li><strong>Memória de longo prazo:</strong> recupera dados autorizados do cliente e registros anteriores. Persistência não significa aprendizado automático; atualização, retenção e exclusão precisam de regras explícitas.</li>
+  <li><strong>Ações externas:</strong> consulta pedidos e bases de conhecimento. Operações que alteram estado, como aprovar uma devolução, exigem autorização, validação das regras de negócio e, nos casos de maior risco, revisão humana.</li>
+  <li><strong>Processo de decisão:</strong> seleciona entre responder, consultar uma ferramenta, solicitar informações ou encaminhar o atendimento. As decisões e suas fontes devem ser registradas para auditoria.</li>
+</ol>
+
+<p>Multimodalidade, continuidade entre canais e adaptação do estilo são capacidades adicionais, não consequências de adotar CoALA.</p>
+
+<p>Antes de ampliar o uso, compare o experimento com o fluxo atual usando:</p>
+
+<ul>
+  <li>taxa de resolução corretamente auditada;</li>
+  <li>encaminhamentos necessários e indevidos;</li>
+  <li>ações incorretas ou não autorizadas;</li>
+  <li>satisfação do cliente;</li>
+  <li>latência e custo por atendimento;</li>
+  <li>incidentes de privacidade e segurança.</li>
+</ul>
+
+<p>Os benefícios permanecem como hipóteses até que esses resultados sejam medidos. O experimento deve começar com ações reversíveis, permissões mínimas e critérios de interrupção definidos.</p>]]></content><author><name>Gilmar Pupo</name></author><category term="IA" /><category term="Arquitetura" /><summary type="html"><![CDATA[O que o framework CoALA organiza — memória, ações e decisão — e como avaliar uma hipótese de agente de atendimento.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.bpstrat.com.br/assets/2aadd08ba3a0efe1c332f164d88135fc_MD5.jpg" /><media:content medium="image" url="https://www.bpstrat.com.br/assets/2aadd08ba3a0efe1c332f164d88135fc_MD5.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Inteligência Artificial no Combate à Fraude, Uma Oportunidade Ainda Pouco Explorada</title><link href="https://www.bpstrat.com.br/post/ia-no-combate-fraude-uma-oportunidade-pouco-explorada/" rel="alternate" type="text/html" title="Inteligência Artificial no Combate à Fraude, Uma Oportunidade Ainda Pouco Explorada" /><published>2024-05-16T00:00:00-03:00</published><updated>2024-05-16T00:00:00-03:00</updated><id>https://www.bpstrat.com.br/post/IA-no-Combate-Fraude-uma-oportunidade-pouco-explorada</id><content type="html" xml:base="https://www.bpstrat.com.br/post/ia-no-combate-fraude-uma-oportunidade-pouco-explorada/"><![CDATA[<p>Em uma <a href="https://www.sas.com/pt_br/news/press-releases/2024/february/pesquisa-antifraude-ia-generativa.html">pesquisa realizada no fim de 2023</a> com aproximadamente 1.200 membros da Association of Certified Fraud Examiners, 18% dos respondentes disseram que suas organizações utilizavam inteligência artificial ou machine learning em iniciativas antifraude. Outros 32% declararam que pretendiam adotar essas tecnologias nos dois anos seguintes. Na América Latina, a intenção declarada de adoção chegou a 46%.</p>
+
+<p>A mesma pesquisa registrou que 83% dos profissionais consultados esperavam incorporar inteligência artificial generativa às iniciativas antifraude. Esses percentuais medem uso declarado e intenção de adoção. Eles não demonstram que a tecnologia foi implementada nem que melhorou a detecção de fraude.</p>
+
+<p>Uma <a href="https://cms.acfe.com/about-the-acfe/newsroom-for-media/press-releases/press-release-detail?s=2026-anti-fraud-technology-benchmarking-report-pr">nova edição da pesquisa, publicada em 2026</a>, registrou uso de IA ou ML por 25% das organizações representadas pelos respondentes. Minha interpretação é que o interesse cresceu mais rapidamente que a implementação. Como as duas edições utilizaram amostras diferentes, essa comparação indica uma tendência, mas não permite acompanhar as mesmas organizações ao longo do período.</p>
+
+<p>Os levantamentos também não sustentam promessas de maior precisão, análise em milésimos de segundo ou redução de perdas. Esses resultados dependem dos dados, do modelo, do limite de falsos positivos e da capacidade operacional de cada organização. É nesse nível que um projeto antifraude precisa ser avaliado.</p>
+
+<p>Antes de escolher o modelo ou a infraestrutura, <a href="https://www.gpupo.com/artigos/gestao-de-produto-e-machine-learningh-uma-combinacao-poderosa-para-impulsionar-o-futuro-das-empresas/">formular o problema de produto para machine learning</a> ajuda a explicitar a decisão apoiada, a linha de base e os custos de falsos positivos e negativos.</p>
+
+<h3 id="hipótese-de-sistema-para-fraude-em-seguros-de-saúde">Hipótese de Sistema para Fraude em Seguros de Saúde</h3>
+
+<p>A hipótese é usar dados históricos de solicitações de reembolso para priorizar casos que precisam de revisão. O modelo não determinaria sozinho se houve fraude. Ele atribuiria um indicador de risco para apoiar a análise humana.</p>
+
+<h4 id="fluxo-a-ser-testado">Fluxo a ser testado</h4>
+
+<ol>
+  <li>identificar solicitações anteriores com resultado conhecido;</li>
+  <li>selecionar apenas informações disponíveis no momento da análise;</li>
+  <li>estabelecer o processo atual como linha de base;</li>
+  <li>treinar um modelo inicial e comparar seus alertas com essa linha de base;</li>
+  <li>encaminhar casos de maior risco para revisão;</li>
+  <li>registrar o resultado da revisão para avaliar e ajustar o modelo.</li>
+</ol>
+
+<h4 id="condições-para-o-experimento">Condições para o experimento</h4>
+
+<p>Antes da implementação, seria necessário verificar:</p>
+
+<ul>
+  <li>qualidade e representatividade dos dados históricos;</li>
+  <li>critérios usados para confirmar uma fraude;</li>
+  <li>impacto de falsos positivos sobre segurados e analistas;</li>
+  <li>capacidade da equipe para revisar os alertas;</li>
+  <li>controles de acesso às informações;</li>
+  <li>mudanças de comportamento que possam degradar o modelo.</li>
+</ul>
+
+<p>Python e Scikit-Learn podem ser avaliados durante a prototipação, mas a escolha da infraestrutura depende do volume de dados, dos requisitos de segurança e da capacidade operacional da equipe. O uso de uma plataforma de nuvem, por si só, não garante robustez nem segurança.</p>
+
+<h4 id="critério-de-validação">Critério de Validação</h4>
+
+<p>Sem um conjunto de dados identificado, uma linha de base e um experimento controlado, não é possível estimar quanto esse sistema reduziria as fraudes.</p>
+
+<p>Eu avaliaria o projeto comparando o processo atual com o modelo proposto. A validação deveria registrar:</p>
+
+<ul>
+  <li>fraudes detectadas antes e depois;</li>
+  <li>precisão e recall do modelo;</li>
+  <li>falsos positivos enviados para análise;</li>
+  <li>custo da revisão manual;</li>
+  <li>perdas evitadas no período;</li>
+  <li>comportamento do modelo diante de novos padrões de fraude.</li>
+</ul>
+
+<p>O sistema só deveria avançar para produção se melhorar a detecção sem criar um volume de revisões incompatível com a capacidade operacional da seguradora.</p>]]></content><author><name>Gilmar Pupo</name></author><summary type="html"><![CDATA[Panorama sobre o uso ainda limitado de IA no combate à fraude e o potencial de machine learning e IA generativa na prevenção.]]></summary></entry><entry><title type="html">Contextos Longos em LLMs: Capacidade não é Uso Efetivo</title><link href="https://www.bpstrat.com.br/post/longer-context/" rel="alternate" type="text/html" title="Contextos Longos em LLMs: Capacidade não é Uso Efetivo" /><published>2024-05-15T00:00:00-03:00</published><updated>2024-05-15T00:00:00-03:00</updated><id>https://www.bpstrat.com.br/post/longer_context</id><content type="html" xml:base="https://www.bpstrat.com.br/post/longer-context/"><![CDATA[<p>A janela de contexto define quanto conteúdo tokenizado um modelo pode receber durante uma execução. Uma janela maior permite enviar documentos ou históricos mais extensos, mas não demonstra que o modelo localizará e usará corretamente todas as informações presentes.</p>
+
+<h2 id="o-que-muda-com-uma-janela-maior">O que muda com uma janela maior</h2>
+
+<p>Informações que excedem a janela precisam ser removidas, resumidas ou recuperadas por outro mecanismo. Quando cabem na janela, ficam disponíveis ao modelo durante aquela execução. Isso não equivale a memória persistente: lembrar informações entre sessões exige armazenamento e recuperação externos.</p>
+
+<p>Uma janela maior pode ser útil para analisar um documento completo, comparar vários textos, manter uma conversa extensa ou trabalhar com uma base de código. O benefício depende da tarefa, da distribuição da informação relevante e da capacidade efetiva do modelo.</p>
+
+<h2 id="limite-declarado-e-capacidade-efetiva">Limite declarado e capacidade efetiva</h2>
+
+<p>O estudo <a href="https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00638/119630/Lost-in-the-Middle-How-Language-Models-Use-Long">Lost in the Middle</a> avaliou modelos em perguntas sobre vários documentos e recuperação de pares chave-valor. Nos modelos e tarefas estudados, o desempenho variou conforme a posição da informação: foi frequentemente melhor no início ou no fim e pior quando o conteúdo relevante estava no meio.</p>
+
+<p>Esse resultado não deve ser transferido automaticamente para todo modelo atual, mas demonstra por que o tamanho máximo anunciado não basta como critério de escolha. A aplicação precisa testar a tarefa real nas posições e extensões relevantes.</p>
+
+<h2 id="custos-e-alternativas">Custos e alternativas</h2>
+
+<p>Enviar mais tokens pode aumentar latência, custo e uso de memória. Conteúdo irrelevante também pode competir com as instruções e evidências necessárias. Além disso, incluir documentos completos amplia a quantidade de dados exposta ao provedor ou ao ambiente de inferência.</p>
+
+<p>Uma análise complementar sobre <a href="https://www.gpupo.com/posts/custo-da-janela-de-contexto/">a janela de contexto como variável de custo</a> mostra quais medidas ajudam a tornar esse consumo visível em um fluxo de trabalho.</p>
+
+<p>Antes de usar todo o contexto disponível, eu compararia:</p>
+
+<ul>
+  <li>contexto completo;</li>
+  <li>recuperação dos trechos mais relevantes;</li>
+  <li>resumo estruturado;</li>
+  <li>uma combinação de recuperação e contexto longo.</li>
+</ul>
+
+<p>A melhor opção depende de quanto material precisa ser relacionado, da precisão exigida, das permissões dos dados e do custo aceitável.</p>
+
+<h2 id="como-avaliar">Como avaliar</h2>
+
+<p>Monte um conjunto de casos representativos e varie deliberadamente o tamanho do conteúdo e a posição da evidência. Meça:</p>
+
+<ul>
+  <li>respostas corretas e sustentadas pelo texto;</li>
+  <li>informações relevantes omitidas;</li>
+  <li>afirmações sem suporte;</li>
+  <li>latência;</li>
+  <li>quantidade de tokens e custo;</li>
+  <li>comportamento quando a entrada excede o limite.</li>
+</ul>
+
+<p>Eu escolheria uma janela maior somente quando ela superar alternativas mais simples nessa comparação. Capacidade nominal é um limite de entrada; utilidade depende do desempenho observado na tarefa.</p>]]></content><author><name>Gilmar Pupo</name></author><category term="IA" /><summary type="html"><![CDATA[Como avaliar janelas de contexto longas, seus custos e a capacidade real do modelo de localizar e usar informações relevantes.]]></summary></entry></feed>

@@ -1,0 +1,903 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=e9bea59">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(1)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > ul > li:nth-child(1) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > ul > li:nth-child(1) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNPEB50SX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'G-MNPEB50SX', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Arquitetura evolutiva com agentes de IA | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Arquitetura evolutiva com agentes de IA" />
+<meta name="author" content="Gilmar Pupo" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Como combinar decisões reversíveis, especificações, limites de execução e feedback contínuo para acelerar mudanças assistidas por IA sem tratar geração de código como validação arquitetural." />
+<meta property="og:description" content="Como combinar decisões reversíveis, especificações, limites de execução e feedback contínuo para acelerar mudanças assistidas por IA sem tratar geração de código como validação arquitetural." />
+<link rel="canonical" href="https://www.bpstrat.com.br/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" />
+<meta property="og:url" content="https://www.bpstrat.com.br/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Arquitetura evolutiva com agentes de IA" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Gilmar Pupo","url":"https://www.gpupo.com"},"description":"Como combinar decisões reversíveis, especificações, limites de execução e feedback contínuo para acelerar mudanças assistidas por IA sem tratar geração de código como validação arquitetural.","headline":"Arquitetura evolutiva com agentes de IA","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"},"name":"Gilmar Pupo"},"url":"https://www.bpstrat.com.br/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BP STRAT",
+  "url": "https://www.bpstrat.com.br/",
+  "logo": "https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg",
+  "sameAs": [
+    "https://www.linkedin.com/company/bpstrat/",
+    "https://www.gpupo.com"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+55-41-99715-1336",
+    "email": "info@bpstrat.com.br",
+    "availableLanguage": "pt-BR"
+  }
+}
+</script>
+
+
+<link rel="alternate" type="text/markdown" href="/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.md">
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+ <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+ <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+ <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+ <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+   <!-- Copy -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <path fill-rule="evenodd"
+    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+</symbol>
+
+<!-- Copied -->
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <path
+    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+  <path
+    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+</symbol>
+ 
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/canal-do-produto-ia.html" class="nav-list-link">Canal do Produto com IA</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li><li class="nav-list-item"><a href="/servicos/bpstack.html" class="nav-list-link">bpStack</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Backfill no Airflow 3</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup e Restauração do Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" class="nav-list-link">Arquitetura evolutiva com agentes de IA</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/blast-radius-review.html" class="nav-list-link">Blast Radius Review</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/fitness-functions-arquiteturais.html" class="nav-list-link">Fitness functions arquiteturais</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Organização submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/organizacao-software/" class="nav-list-link">Organização</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/layered-architecture.html" class="nav-list-link">Layered Architecture</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" class="nav-list-link">Vertical Slice Architecture</a></li></ul></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Quando Adotar Orquestração de Dados</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/context-map-patterns.html" class="nav-list-link">Context Map Patterns</a></li><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">Linguagem Ubíqua e Glossário do Domínio</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/c4-mermaid.html" class="nav-list-link">Mermaid C4</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="SDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/sdd/" class="nav-list-link">SDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-estrategia.html" class="nav-list-link">SDD Estratégico</a></li><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" class="nav-list-link">SDD Tático</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/arquitetura-engenharia/">Arquitetura</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Arquitetura evolutiva com agentes de IA</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="arquitetura-evolutiva-com-agentes-de-ia">
+  
+  
+    <a href="#arquitetura-evolutiva-com-agentes-de-ia" class="anchor-heading" aria-labelledby="arquitetura-evolutiva-com-agentes-de-ia"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Arquitetura evolutiva com agentes de IA
+  
+  
+</h1>
+    
+
+
+
+
+<div class="content-tldr">
+  <em>
+    Se preferir começar por um resumo, peça um TL;DR ao
+    
+
+
+
+
+
+<a href="https://chatgpt.com/?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Farquitetura-engenharia%2Farquitetura-evolutiva-com-agentes-de-ia.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">ChatGPT</a> ou ao <a href="https://claude.ai/new?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Farquitetura-engenharia%2Farquitetura-evolutiva-com-agentes-de-ia.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">Claude</a>
+
+.
+  </em>
+</div>
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#arquitetura-não-é-a-árvore-de-diretórios" id="markdown-toc-arquitetura-não-é-a-árvore-de-diretórios">Arquitetura não é a árvore de diretórios</a></li>
+  <li><a href="#evoluir-exige-direção-e-feedback" id="markdown-toc-evoluir-exige-direção-e-feedback">Evoluir exige direção e feedback</a></li>
+  <li><a href="#classifique-a-mudança-antes-de-delegar" id="markdown-toc-classifique-a-mudança-antes-de-delegar">Classifique a mudança antes de delegar</a></li>
+  <li><a href="#o-limite-precisa-existir-fora-do-prompt" id="markdown-toc-o-limite-precisa-existir-fora-do-prompt">O limite precisa existir fora do prompt</a></li>
+  <li><a href="#a-especificação-preserva-intenção-as-verificações-preservam-propriedades" id="markdown-toc-a-especificação-preserva-intenção-as-verificações-preservam-propriedades">A especificação preserva intenção; as verificações preservam propriedades</a></li>
+  <li><a href="#mudanças-pequenas-tornam-a-revisão-possível" id="markdown-toc-mudanças-pequenas-tornam-a-revisão-possível">Mudanças pequenas tornam a revisão possível</a></li>
+  <li><a href="#decisões-reversíveis-não-são-decisões-gratuitas" id="markdown-toc-decisões-reversíveis-não-são-decisões-gratuitas">Decisões reversíveis não são decisões gratuitas</a></li>
+  <li><a href="#o-que-deve-permanecer-na-revisão-humana" id="markdown-toc-o-que-deve-permanecer-na-revisão-humana">O que deve permanecer na revisão humana</a></li>
+  <li><a href="#adoção-incremental" id="markdown-toc-adoção-incremental">Adoção incremental</a></li>
+  <li><a href="#limitações" id="markdown-toc-limitações">Limitações</a></li>
+  <li><a href="#referências" id="markdown-toc-referências">Referências</a></li>
+</ol>
+
+<p>Agentes de código reduzem o tempo necessário para produzir uma alteração. Eles
+não demonstram, por isso, que a alteração preserva os limites do sistema, atende
+ao requisito, pode ser operada ou será simples de reverter.</p>
+
+<p>Quando a geração acelera mais que a capacidade de revisão, o gargalo apenas muda
+de lugar. O time recebe mais código por unidade de tempo e precisa verificar mais
+decisões, dependências e efeitos colaterais. A resposta arquitetural não é tentar
+prever todo o sistema nem aceitar toda mudança que passa nos testes. É reduzir o
+tamanho das decisões, tornar restrições relevantes verificáveis e usar o
+resultado de cada mudança como entrada para a próxima.</p>
+
+<p>Este documento aplica princípios de arquitetura evolutiva ao desenvolvimento
+assistido por IA. Ele não define uma ferramenta obrigatória nem trata autonomia
+como objetivo. O nível de delegação depende do risco, das permissões concedidas,
+da qualidade das verificações e da capacidade de recuperação.</p>
+<h2 id="arquitetura-não-é-a-árvore-de-diretórios">
+  
+  
+    <a href="#arquitetura-não-é-a-árvore-de-diretórios" class="anchor-heading" aria-labelledby="arquitetura-não-é-a-árvore-de-diretórios"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Arquitetura não é a árvore de diretórios
+  
+  
+</h2>
+    
+
+<p>Pastas e nomes podem tornar uma intenção visível, mas não provam que ela está
+sendo respeitada. Um diretório chamado <code class="language-plaintext highlighter-rouge">domain</code> ainda pode depender de detalhes
+de HTTP, banco de dados ou de um SDK externo. Um desenho com módulos separados
+ainda pode esconder uma identidade compartilhada com privilégios amplos.</p>
+
+<p>Para orientar uma mudança, diferencie três visões:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Visão</th>
+      <th>Pergunta</th>
+      <th>Evidência possível</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pretendida</td>
+      <td>Quais limites e propriedades queremos preservar?</td>
+      <td>ADR, especificação, modelo C4, contrato, política</td>
+    </tr>
+    <tr>
+      <td>Observada</td>
+      <td>Como código, dados e componentes estão organizados agora?</td>
+      <td>análise de dependências, configuração, inventário, diagrama conferido</td>
+    </tr>
+    <tr>
+      <td>Efetiva</td>
+      <td>O que o sistema realmente permite em execução?</td>
+      <td>testes, telemetria, políticas aplicadas, permissões e comportamento implantado</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Uma regra arquitetural só é operacional quando o time consegue relacionar a
+intenção com alguma evidência observável. A estrutura de arquivos pode ser parte
+dessa evidência; não deve ser a única.</p>
+<h2 id="evoluir-exige-direção-e-feedback">
+  
+  
+    <a href="#evoluir-exige-direção-e-feedback" class="anchor-heading" aria-labelledby="evoluir-exige-direção-e-feedback"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Evoluir exige direção e feedback
+  
+  
+</h2>
+    
+
+<p>Em <em>Building Evolutionary Architectures</em>, a evolução é guiada por dimensões
+arquiteturais consideradas importantes e por mecanismos que avaliam essas
+características continuamente. Esses mecanismos são chamados de <strong>fitness
+functions</strong>.</p>
+
+<p>A ideia não é congelar uma arquitetura. É permitir mudanças incrementais sem
+perder silenciosamente propriedades como isolamento, desempenho, segurança,
+recuperabilidade ou custo aceitável.</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    intent["Intenção e restrições"] --&gt; slice["Mudança delimitada"]
+    slice --&gt; implement["Implementação isolada"]
+    implement --&gt; checks["Verificações executáveis"]
+    checks --&gt; review["Revisão proporcional ao risco"]
+    review --&gt; release["Liberação controlada"]
+    release --&gt; observe["Evidência em execução"]
+    observe --&gt; decision["Decisão e aprendizado registrados"]
+    decision --&gt; intent
+</code></pre>
+
+<p>O ciclo não garante que cada mudança melhore o sistema. Ele reduz o intervalo
+entre uma decisão e a evidência de que ela preservou ou degradou uma propriedade
+relevante.</p>
+<h2 id="classifique-a-mudança-antes-de-delegar">
+  
+  
+    <a href="#classifique-a-mudança-antes-de-delegar" class="anchor-heading" aria-labelledby="classifique-a-mudança-antes-de-delegar"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Classifique a mudança antes de delegar
+  
+  
+</h2>
+    
+
+<p>O mesmo agente pode ser adequado para uma correção local e inadequado para uma
+migração destrutiva. Antes da implementação, classifique a mudança pelo impacto
+possível e pelo custo de recuperação.</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Classe</th>
+      <th>Exemplos</th>
+      <th>Execução assistida por IA</th>
+      <th>Controle mínimo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Reversível e local</td>
+      <td>texto, teste, refatoração interna delimitada</td>
+      <td>pode avançar com autonomia maior</td>
+      <td>workspace isolado, testes e revisão do diff</td>
+    </tr>
+    <tr>
+      <td>Reversível com efeito compartilhado</td>
+      <td>contrato compatível, nova dependência, configuração de serviço</td>
+      <td>execução delimitada e integração revisada</td>
+      <td>validação de consumidores, rollback e observabilidade</td>
+    </tr>
+    <tr>
+      <td>Difícil de reverter</td>
+      <td>migração de dados, mudança de identidade, exclusão, ação externa</td>
+      <td>preparar plano, simulação e artefatos; não executar por padrão</td>
+      <td>aprovação independente, backup ou estratégia de reversão testada</td>
+    </tr>
+    <tr>
+      <td>Irreversível ou regulada</td>
+      <td>perda de dados, pagamento, comunicação pública, decisão de acesso</td>
+      <td>agente pode analisar e propor; execução deve permanecer separada</td>
+      <td>autorização vinculada aos parâmetros, trilha de auditoria e responsabilidade definida</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>Essa classificação é contextual. Alterar uma página estática pode ser local em
+um repositório e representar uma comunicação regulada em outro. O critério deve
+considerar consequência, não apenas tipo de arquivo ou comando.</p>
+<h2 id="o-limite-precisa-existir-fora-do-prompt">
+  
+  
+    <a href="#o-limite-precisa-existir-fora-do-prompt" class="anchor-heading" aria-labelledby="o-limite-precisa-existir-fora-do-prompt"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> O limite precisa existir fora do prompt
+  
+  
+</h2>
+    
+
+<p>O artigo usado como referência chama de <em>harness</em> a estrutura que envolve o
+agente. Neste documento, o termo descreve apenas um <strong>envelope de execução</strong>. Não
+é um padrão formal nem uma garantia de segurança.</p>
+
+<p>Um envelope útil combina controles que o modelo não pode remover apenas por
+reinterpretar uma instrução:</p>
+
+<ul>
+  <li><strong>escopo de escrita:</strong> caminhos e repositórios que podem ser alterados;</li>
+  <li><strong>ferramentas permitidas:</strong> comandos e APIs disponíveis para a tarefa;</li>
+  <li><strong>identidade própria:</strong> credenciais separadas, temporárias e com privilégio
+mínimo;</li>
+  <li><strong>isolamento:</strong> branch, workspace, container ou ambiente sem dados reais;</li>
+  <li><strong>limites operacionais:</strong> tempo, custo, tentativas, paralelismo e tamanho da
+mudança;</li>
+  <li><strong>verificações externas:</strong> testes, análise estática, contratos, políticas e
+fitness functions executados fora do modelo;</li>
+  <li><strong>gates humanos:</strong> aprovação para ações de alto impacto ou difíceis de
+reverter;</li>
+  <li><strong>evidência:</strong> diff, comandos executados, resultados, versão do artefato e
+pendências registradas.</li>
+</ul>
+
+<p>Um prompt pode explicar o objetivo e orientar o comportamento. Autorização,
+isolamento e bloqueio de uma ação não devem depender somente dele. A <a href="https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html">OWASP AI
+Agent Security Cheat
+Sheet</a>
+recomenda privilégio mínimo para ferramentas, aprovação de ações de alto
+impacto, limites de recursos e separação entre decisão e execução irreversível.</p>
+<h2 id="a-especificação-preserva-intenção-as-verificações-preservam-propriedades">
+  
+  
+    <a href="#a-especificação-preserva-intenção-as-verificações-preservam-propriedades" class="anchor-heading" aria-labelledby="a-especificação-preserva-intenção-as-verificações-preservam-propriedades"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> A especificação preserva intenção; as verificações preservam propriedades
+  
+  
+</h2>
+    
+
+<p>O fluxo de <a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-estrategia.html">Spec-Driven Development
+estratégico</a>
+mantém intenção, critérios e decisões fora da conversa transitória com o
+agente. O <a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html">fluxo tático de
+SDD</a> separa
+especificação, planejamento, tarefas, implementação, validação e preservação dos
+aprendizados.</p>
+
+<p>Esses artefatos cumprem responsabilidades diferentes:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Artefato</th>
+      <th>Responsabilidade</th>
+      <th>Não demonstra sozinho</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Especificação</td>
+      <td>comportamento desejado, escopo, critérios e restrições</td>
+      <td>viabilidade e aderência da implementação</td>
+    </tr>
+    <tr>
+      <td>Plano</td>
+      <td>decisões técnicas, alternativas, migração e rollback</td>
+      <td>que a decisão continua correta após o código</td>
+    </tr>
+    <tr>
+      <td>Tarefas</td>
+      <td>decomposição e dependências do trabalho</td>
+      <td>completude ou qualidade do resultado</td>
+    </tr>
+    <tr>
+      <td>Código e configuração</td>
+      <td>implementação observável</td>
+      <td>intenção original ou comportamento correto</td>
+    </tr>
+    <tr>
+      <td>Testes e fitness functions</td>
+      <td>evidência para propriedades delimitadas</td>
+      <td>ausência de falhas fora do que foi medido</td>
+    </tr>
+    <tr>
+      <td>Telemetria e revisão</td>
+      <td>comportamento implantado e interpretação do risco</td>
+      <td>correção futura sem nova observação</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>A documentação oficial do Spec Kit apresenta o fluxo principal como <strong>Spec →
+Plan → Tasks → Implement</strong>. Esse encadeamento fornece contexto estruturado, mas
+não torna a saída correta automaticamente. Descobertas durante a implementação
+precisam voltar ao artefato que contém a decisão correspondente.</p>
+<h2 id="mudanças-pequenas-tornam-a-revisão-possível">
+  
+  
+    <a href="#mudanças-pequenas-tornam-a-revisão-possível" class="anchor-heading" aria-labelledby="mudanças-pequenas-tornam-a-revisão-possível"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Mudanças pequenas tornam a revisão possível
+  
+  
+</h2>
+    
+
+<p>Uma especificação extensa executada em uma única sessão pode trocar uma revisão
+difícil por outra. Mudanças menores ajudam porque reduzem o número de hipóteses
+avaliadas ao mesmo tempo e limitam o contexto necessário para entender o diff.</p>
+
+<p>Uma fatia deve ter:</p>
+
+<ul>
+  <li>objetivo e exclusões explícitos;</li>
+  <li>critérios de aceitação observáveis;</li>
+  <li>dependências conhecidas;</li>
+  <li>fitness functions aplicáveis;</li>
+  <li>procedimento de validação;</li>
+  <li>caminho de reversão ou justificativa para sua ausência;</li>
+  <li>condição clara de parada.</li>
+</ul>
+
+<p>O tamanho adequado não é medido apenas por linhas. Uma alteração curta em uma
+política IAM pode ter mais impacto que centenas de linhas isoladas. Use a classe
+de risco e o alcance da mudança para decidir onde dividir.</p>
+<h2 id="decisões-reversíveis-não-são-decisões-gratuitas">
+  
+  
+    <a href="#decisões-reversíveis-não-são-decisões-gratuitas" class="anchor-heading" aria-labelledby="decisões-reversíveis-não-são-decisões-gratuitas"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Decisões reversíveis não são decisões gratuitas
+  
+  
+</h2>
+    
+
+<p>Interfaces, filas, feature flags, adaptadores e rollouts graduais podem reduzir
+o custo de algumas mudanças. Eles também acrescentam indireção, estado,
+contratos e operação. Não devem ser introduzidos apenas para manter toda opção
+teórica aberta.</p>
+
+<p>Para cada decisão relevante, registre:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="na">decision</span><span class="pi">:</span> <span class="s2">"</span><span class="s">exemplo</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">decisão"</span>
+<span class="na">reason</span><span class="pi">:</span> <span class="s2">"</span><span class="s">problema</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">requisito</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">exige"</span>
+<span class="na">reversibility</span><span class="pi">:</span> <span class="s">low | medium | high</span>
+<span class="na">reversal_cost</span><span class="pi">:</span> <span class="s2">"</span><span class="s">dados,</span><span class="nv"> </span><span class="s">consumidores,</span><span class="nv"> </span><span class="s">indisponibilidade</span><span class="nv"> </span><span class="s">e</span><span class="nv"> </span><span class="s">trabalho</span><span class="nv"> </span><span class="s">envolvidos"</span>
+<span class="na">evidence</span><span class="pi">:</span> <span class="s2">"</span><span class="s">teste,</span><span class="nv"> </span><span class="s">medição</span><span class="nv"> </span><span class="s">ou</span><span class="nv"> </span><span class="s">restrição</span><span class="nv"> </span><span class="s">observada"</span>
+<span class="na">review_trigger</span><span class="pi">:</span> <span class="s2">"</span><span class="s">evento</span><span class="nv"> </span><span class="s">que</span><span class="nv"> </span><span class="s">exige</span><span class="nv"> </span><span class="s">nova</span><span class="nv"> </span><span class="s">avaliação"</span>
+<span class="na">owner</span><span class="pi">:</span> <span class="s2">"</span><span class="s">papel</span><span class="nv"> </span><span class="s">responsável"</span>
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+
+<p>O campo <code class="language-plaintext highlighter-rouge">reversibility</code> é uma avaliação contextual, não uma escala universal.
+Uma decisão pode ser tecnicamente reversível e contratualmente cara; outra pode
+ser simples no código e difícil de desfazer depois que dados reais forem
+gravados.</p>
+<h2 id="o-que-deve-permanecer-na-revisão-humana">
+  
+  
+    <a href="#o-que-deve-permanecer-na-revisão-humana" class="anchor-heading" aria-labelledby="o-que-deve-permanecer-na-revisão-humana"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> O que deve permanecer na revisão humana
+  
+  
+</h2>
+    
+
+<p>Automação é adequada para regras objetivas e repetíveis. A revisão humana ainda
+precisa avaliar:</p>
+
+<ul>
+  <li>se o problema e o resultado desejado foram compreendidos;</li>
+  <li>se uma regra de negócio foi representada corretamente;</li>
+  <li>se as alternativas e os custos fazem sentido para o contexto;</li>
+  <li>se a mudança cria uma capacidade ou risco não coberto pelos testes;</li>
+  <li>se uma exceção arquitetural é justificável;</li>
+  <li>se a evidência é suficiente para o impacto possível;</li>
+  <li>qual risco residual será aceito e por quem.</li>
+</ul>
+
+<p>O objetivo não é reduzir a revisão humana a uma aprovação simbólica depois do
+pipeline. É retirar dela verificações mecânicas para concentrá-la nas decisões
+que ainda exigem interpretação e responsabilidade.</p>
+<h2 id="adoção-incremental">
+  
+  
+    <a href="#adoção-incremental" class="anchor-heading" aria-labelledby="adoção-incremental"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Adoção incremental
+  
+  
+</h2>
+    
+
+<p>Uma primeira aplicação pode caber em uma única mudança real:</p>
+
+<ol>
+  <li>escolha uma propriedade arquitetural que já causou ou pode causar um problema;</li>
+  <li>registre a intenção e a evidência atual;</li>
+  <li>selecione uma mudança pequena e reversível;</li>
+  <li>implemente uma fitness function que detecte a regressão relevante;</li>
+  <li>execute o agente em ambiente isolado e com permissões mínimas;</li>
+  <li>revise o diff, a saída das verificações e os riscos não medidos;</li>
+  <li>libere de forma controlada e observe o comportamento;</li>
+  <li>atualize a decisão com o que foi aprendido.</li>
+</ol>
+
+<p>Só amplie a autonomia depois de demonstrar que os controles detectam falhas
+reais, que o time consegue interromper a execução e que a recuperação foi
+testada. Mais autonomia sem essa evidência aumenta capacidade de mudança e raio
+de impacto ao mesmo tempo.</p>
+<h2 id="limitações">
+  
+  
+    <a href="#limitações" class="anchor-heading" aria-labelledby="limitações"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Limitações
+  
+  
+</h2>
+    
+
+<p>Arquitetura evolutiva não elimina decisões estruturais, revisão de design,
+threat modeling, testes de segurança, observabilidade ou recuperação. Fitness
+functions verificam apenas as propriedades que foram traduzidas em sinais
+adequados. Uma regra mal escolhida pode bloquear boas mudanças ou permitir uma
+degradação que mede o indicador errado.</p>
+
+<p>Também não há base neste documento para prometer redução fixa de tokens, tempo
+de revisão ou custo. Esses resultados dependem do modelo, do tamanho das
+mudanças, da qualidade das especificações, da suíte de validação e do modo de
+trabalho. Devem ser medidos no fluxo real da equipe.</p>
+<h2 id="referências">
+  
+  
+    <a href="#referências" class="anchor-heading" aria-labelledby="referências"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Referências
+  
+  
+</h2>
+    
+
+<p>DIEGO BORGS. <em>Arquitetura Evolutiva com IA: Como Acelerar em Tempos Ágeis sem
+Corromper o Sistema</em>. 19 ago. 2026. Referência de partida para a relação entre
+arquitetura evolutiva, SDD, limites de execução e fitness functions. Disponível
+em: <a href="https://diegoborgs.com.br/blog/arquitetura-evolutiva-com-ia/">https://diegoborgs.com.br/blog/arquitetura-evolutiva-com-ia/</a>.</p>
+
+<p>FORD, Neal; PARSONS, Rebecca; KUA, Patrick; SUTHERLAND, Pramod. <em>Building
+Evolutionary Architectures</em>. Síntese dos conceitos e das fitness functions.
+Disponível em:
+<a href="https://evolutionaryarchitecture.com/precis.html">https://evolutionaryarchitecture.com/precis.html</a>.</p>
+
+<p>GITHUB. <em>Spec Kit Documentation</em>. Fluxo principal de Spec-Driven Development.
+Disponível em: <a href="https://github.github.com/spec-kit/">https://github.github.com/spec-kit/</a>.</p>
+
+<p>NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY. <em>Secure Software Development
+Framework (SSDF) Version 1.1</em>. NIST SP 800-218, 2022. Disponível em:
+<a href="https://csrc.nist.gov/pubs/sp/800/218/final">https://csrc.nist.gov/pubs/sp/800/218/final</a>.</p>
+
+<p>OWASP FOUNDATION. <em>AI Agent Security Cheat Sheet</em>. Disponível em:
+<a href="https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html</a>.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+   
+<p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.<span>
+    <a href="/contact/">Contato</a> ·
+    <a href="/privacy/">Privacidade</a>
+  </span>
+  <span class="canonical-link fs-1">
+    Canonical:
+    <a href="https://www.bpstrat.com.br/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" target="_blank" rel="nofollow">
+      https://www.bpstrat.com.br/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html
+    </a>
+  </span>
+</p>
+
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+  
+  <script src="/assets/js/mermaid.min.js"></script>
+  
+
+<script type="module">
+  
+
+var config = {}
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Mostrar código';
+
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2 ft-style text-purple-200';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Mostrar código';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Mostrar diagrama';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+

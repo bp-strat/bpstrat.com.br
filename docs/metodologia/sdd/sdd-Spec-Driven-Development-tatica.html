@@ -1,0 +1,628 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=e9bea59">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li:not(:nth-child(2)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(2) > ul > li:nth-child(2) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(2) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(5) > ul > li:nth-child(2) > ul > li:nth-child(2) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNPEB50SX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'G-MNPEB50SX', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SDD Tático | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="SDD Tático" />
+<meta name="author" content="Gilmar Pupo" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Fluxo tático de Spec-Driven Development com pesquisa, especificação, planejamento, tarefas, implementação, validação e arquivamento." />
+<meta property="og:description" content="Fluxo tático de Spec-Driven Development com pesquisa, especificação, planejamento, tarefas, implementação, validação e arquivamento." />
+<link rel="canonical" href="https://www.bpstrat.com.br/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" />
+<meta property="og:url" content="https://www.bpstrat.com.br/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:image" content="https://www.bpstrat.com.br/assets/slides-assets/sdd-diagram.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://www.bpstrat.com.br/assets/slides-assets/sdd-diagram.png" />
+<meta property="twitter:title" content="SDD Tático" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Gilmar Pupo","url":"https://www.gpupo.com"},"description":"Fluxo tático de Spec-Driven Development com pesquisa, especificação, planejamento, tarefas, implementação, validação e arquivamento.","headline":"SDD Tático","image":"https://www.bpstrat.com.br/assets/slides-assets/sdd-diagram.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"},"name":"Gilmar Pupo"},"url":"https://www.bpstrat.com.br/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BP STRAT",
+  "url": "https://www.bpstrat.com.br/",
+  "logo": "https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg",
+  "sameAs": [
+    "https://www.linkedin.com/company/bpstrat/",
+    "https://www.gpupo.com"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+55-41-99715-1336",
+    "email": "info@bpstrat.com.br",
+    "availableLanguage": "pt-BR"
+  }
+}
+</script>
+
+
+<link rel="alternate" type="text/markdown" href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.md">
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+ <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+ <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+ <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+ <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+   <!-- Copy -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <path fill-rule="evenodd"
+    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+</symbol>
+
+<!-- Copied -->
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <path
+    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+  <path
+    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+</symbol>
+ 
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/canal-do-produto-ia.html" class="nav-list-link">Canal do Produto com IA</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li><li class="nav-list-item"><a href="/servicos/bpstack.html" class="nav-list-link">bpStack</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Backfill no Airflow 3</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup e Restauração do Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" class="nav-list-link">Arquitetura evolutiva com agentes de IA</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/blast-radius-review.html" class="nav-list-link">Blast Radius Review</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/fitness-functions-arquiteturais.html" class="nav-list-link">Fitness functions arquiteturais</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Organização submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/organizacao-software/" class="nav-list-link">Organização</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/layered-architecture.html" class="nav-list-link">Layered Architecture</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" class="nav-list-link">Vertical Slice Architecture</a></li></ul></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Quando Adotar Orquestração de Dados</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/context-map-patterns.html" class="nav-list-link">Context Map Patterns</a></li><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">Linguagem Ubíqua e Glossário do Domínio</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/c4-mermaid.html" class="nav-list-link">Mermaid C4</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="SDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/sdd/" class="nav-list-link">SDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-estrategia.html" class="nav-list-link">SDD Estratégico</a></li><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" class="nav-list-link">SDD Tático</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/metodologia/">Metodologias</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/metodologia/sdd/">SDD</a></li>
+    <li class="breadcrumb-nav-list-item"><span>SDD Tático</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="spec-driven-development-tática">
+  
+  
+    <a href="#spec-driven-development-tática" class="anchor-heading" aria-labelledby="spec-driven-development-tática"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Spec-Driven Development: Tática
+  
+  
+</h1>
+    
+
+
+
+
+<div class="content-tldr">
+  <em>
+    Se preferir começar por um resumo, peça um TL;DR ao
+    
+
+
+
+
+
+<a href="https://chatgpt.com/?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fmetodologia%2Fsdd%2Fsdd-Spec-Driven-Development-tatica.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">ChatGPT</a> ou ao <a href="https://claude.ai/new?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fmetodologia%2Fsdd%2Fsdd-Spec-Driven-Development-tatica.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">Claude</a>
+
+.
+  </em>
+</div>
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#escopo-deste-fluxo" id="markdown-toc-escopo-deste-fluxo">Escopo deste fluxo</a></li>
+  <li><a href="#workflow-com-fases-interativas-por-feature" id="markdown-toc-workflow-com-fases-interativas-por-feature">Workflow com fases interativas por feature</a></li>
+  <li><a href="#fase-0-pesquisa-exploração-e-prototipagem" id="markdown-toc-fase-0-pesquisa-exploração-e-prototipagem">Fase 0: Pesquisa, exploração e prototipagem</a></li>
+  <li><a href="#fase-1-especificação-speckitspecify" id="markdown-toc-fase-1-especificação-speckitspecify">Fase 1: Especificação (<code class="language-plaintext highlighter-rouge">/speckit.specify</code>)</a></li>
+  <li><a href="#fase-2-planejamento-técnico-speckitplan" id="markdown-toc-fase-2-planejamento-técnico-speckitplan">Fase 2: Planejamento técnico (<code class="language-plaintext highlighter-rouge">/speckit.plan</code>)</a></li>
+  <li><a href="#fase-3-detalhamento-de-tarefas-speckittasks" id="markdown-toc-fase-3-detalhamento-de-tarefas-speckittasks">Fase 3: Detalhamento de tarefas (<code class="language-plaintext highlighter-rouge">/speckit.tasks</code>)</a></li>
+  <li><a href="#fase-4-implementação-speckitimplement" id="markdown-toc-fase-4-implementação-speckitimplement">Fase 4: Implementação (<code class="language-plaintext highlighter-rouge">/speckit.implement</code>)</a></li>
+  <li><a href="#fase-5-arquivamento-archive--extensão-deste-fluxo" id="markdown-toc-fase-5-arquivamento-archive--extensão-deste-fluxo">Fase 5: Arquivamento (<code class="language-plaintext highlighter-rouge">/archive</code>) — extensão deste fluxo</a></li>
+</ol>
+
+<p><img src="/assets/slides-assets/sdd-diagram.png" alt="Diagrama do fluxo de Spec-Driven Development" class="rounded" /></p>
+<h2 id="escopo-deste-fluxo">
+  
+  
+    <a href="#escopo-deste-fluxo" class="anchor-heading" aria-labelledby="escopo-deste-fluxo"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Escopo deste fluxo
+  
+  
+</h2>
+    
+
+<p>A <a href="https://github.github.com/spec-kit/">documentação oficial do Spec Kit</a> define o fluxo principal como <strong>Spec → Plan → Tasks → Implement</strong>. Os comandos exatos podem variar conforme a versão e a integração com o agente. Verifique a instalação local com <code class="language-plaintext highlighter-rouge">specify integration list</code> antes de tratar este documento como instrução executável.</p>
+
+<p>As etapas de pesquisa anterior à especificação e de preservação de aprendizados depois da entrega são extensões propostas neste documento. Elas não fazem parte do fluxo principal do Spec Kit.</p>
+<h2 id="workflow-com-fases-interativas-por-feature">
+  
+  
+    <a href="#workflow-com-fases-interativas-por-feature" class="anchor-heading" aria-labelledby="workflow-com-fases-interativas-por-feature"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Workflow com fases interativas por feature
+  
+  
+</h2>
+    
+
+<p><img src="/assets/1f45ccbd61aaca931b20da8f35cb8843_MD5.png" alt="Fluxo visual das fases interativas por feature no SDD" class="rounded" /></p>
+<h2 id="fase-0-pesquisa-exploração-e-prototipagem">
+  
+  
+    <a href="#fase-0-pesquisa-exploração-e-prototipagem" class="anchor-heading" aria-labelledby="fase-0-pesquisa-exploração-e-prototipagem"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Fase 0: Pesquisa, exploração e prototipagem
+  
+  
+</h2>
+    
+
+<p>Esta é uma etapa anterior ao Spec Kit. Use-a quando ainda houver incerteza sobre o problema, as necessidades do usuário ou a viabilidade técnica. A pesquisa pode incluir documentação, código existente, alternativas e protótipos descartáveis.</p>
+
+<p>O resultado não é software pronto nem uma especificação validada. É um conjunto rastreável de fatos, hipóteses, restrições e questões abertas que servirá de entrada para a especificação. Um artefato possível é uma <em>feature request</em> ou issue, por exemplo <code class="language-plaintext highlighter-rouge">feature-request-login-social.md</code>.</p>
+
+<p><img src="/assets/slides-assets/sdd-flow.png" alt="Fluxo operacional do processo SDD" class="rounded" /></p>
+<h2 id="fase-1-especificação-speckitspecify">
+  
+  
+    <a href="#fase-1-especificação-speckitspecify" class="anchor-heading" aria-labelledby="fase-1-especificação-speckitspecify"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Fase 1: Especificação (<code class="language-plaintext highlighter-rouge">/speckit.specify</code>)
+  
+  
+</h2>
+    
+
+<p>O comando <code class="language-plaintext highlighter-rouge">/speckit.specify</code> gera uma especificação centrada no que precisa ser construído e por quê. Na configuração padrão descrita pelo projeto, ele cria uma branch e um diretório de feature com <code class="language-plaintext highlighter-rouge">spec.md</code>. Confirme esse comportamento na versão e na integração instaladas.</p>
+
+<p>A especificação deve manter decisões de implementação fora dos requisitos, tornar critérios de sucesso verificáveis e deixar incertezas visíveis. Algumas versões e templates usam <code class="language-plaintext highlighter-rouge">[NEEDS CLARIFICATION: pergunta]</code>; o comando opcional <code class="language-plaintext highlighter-rouge">/speckit.clarify</code> ajuda a resolver áreas subespecificadas antes do planejamento.</p>
+
+<p>Revise o arquivo gerado antes de continuar. A existência de <code class="language-plaintext highlighter-rouge">spec.md</code> não o transforma automaticamente em fonte da verdade: requisitos ainda podem estar incompletos, contraditórios ou diferentes da necessidade real.</p>
+<h2 id="fase-2-planejamento-técnico-speckitplan">
+  
+  
+    <a href="#fase-2-planejamento-técnico-speckitplan" class="anchor-heading" aria-labelledby="fase-2-planejamento-técnico-speckitplan"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Fase 2: Planejamento técnico (<code class="language-plaintext highlighter-rouge">/speckit.plan</code>)
+  
+  
+</h2>
+    
+
+<p>O comando <code class="language-plaintext highlighter-rouge">/speckit.plan</code> transforma a especificação em uma proposta de implementação. Dependendo do template e das necessidades da feature, os artefatos podem incluir <code class="language-plaintext highlighter-rouge">plan.md</code>, <code class="language-plaintext highlighter-rouge">research.md</code>, <code class="language-plaintext highlighter-rouge">data-model.md</code>, <code class="language-plaintext highlighter-rouge">quickstart.md</code> e arquivos em <code class="language-plaintext highlighter-rouge">contracts/</code>.</p>
+
+<p>A constituição do projeto fornece critérios para avaliar o plano, mas não garante simplicidade, modularidade ou ausência de duplicação. Antes de aprovar, verifique:</p>
+
+<ul>
+  <li>se cada decisão responde a um requisito;</li>
+  <li>quais alternativas foram rejeitadas e por quê;</li>
+  <li>se contratos e modelos são compatíveis com o sistema existente;</li>
+  <li>quais riscos de segurança, migração e operação permanecem;</li>
+  <li>como a implementação será testada e revertida.</li>
+</ul>
+<h2 id="fase-3-detalhamento-de-tarefas-speckittasks">
+  
+  
+    <a href="#fase-3-detalhamento-de-tarefas-speckittasks" class="anchor-heading" aria-labelledby="fase-3-detalhamento-de-tarefas-speckittasks"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Fase 3: Detalhamento de tarefas (<code class="language-plaintext highlighter-rouge">/speckit.tasks</code>)
+  
+  
+</h2>
+    
+
+<p>O comando <code class="language-plaintext highlighter-rouge">/speckit.tasks</code> decompõe o plano em <code class="language-plaintext highlighter-rouge">tasks.md</code>. Esta fase prepara o trabalho; ela não implementa a funcionalidade.</p>
+
+<p>No formato padrão, <code class="language-plaintext highlighter-rouge">[P]</code> indica tarefas que podem ser executadas em paralelo porque não possuem dependência direta. Isso não significa que subagentes serão usados automaticamente nem que o paralelismo reduzirá tempo ou tokens. Confirme dependências, caminhos de arquivo, critérios de conclusão e pontos de integração antes de executar.</p>
+
+<p>Quando disponíveis, <code class="language-plaintext highlighter-rouge">/speckit.checklist</code> pode apoiar a revisão dos requisitos e <code class="language-plaintext highlighter-rouge">/speckit.analyze</code> pode procurar inconsistências entre <code class="language-plaintext highlighter-rouge">spec.md</code>, <code class="language-plaintext highlighter-rouge">plan.md</code> e <code class="language-plaintext highlighter-rouge">tasks.md</code>. A análise também precisa ser revisada; ela não substitui os testes da implementação.</p>
+<h2 id="fase-4-implementação-speckitimplement">
+  
+  
+    <a href="#fase-4-implementação-speckitimplement" class="anchor-heading" aria-labelledby="fase-4-implementação-speckitimplement"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Fase 4: Implementação (<code class="language-plaintext highlighter-rouge">/speckit.implement</code>)
+  
+  
+</h2>
+    
+
+<p>O comando <code class="language-plaintext highlighter-rouge">/speckit.implement</code> orienta o agente a executar as tarefas. Para features grandes, limite cada execução a um subconjunto explícito de tarefas e revise o estado antes de continuar. A própria <a href="https://github.github.com/spec-kit/concepts/complex-features.html">documentação sobre features complexas</a> alerta que agentes podem perder o plano ou ignorar tarefas quando uma implementação longa esgota o contexto.</p>
+
+<p>O comando não garante aderência à especificação, segurança ou qualidade. Antes do merge, valide no mínimo:</p>
+
+<ul>
+  <li>critérios de aceitação e testes automatizados relevantes;</li>
+  <li>mudanças não previstas no plano;</li>
+  <li>tratamento de dados, permissões e segredos;</li>
+  <li>compatibilidade e migração;</li>
+  <li>observabilidade e procedimento de rollback;</li>
+  <li>revisão humana proporcional ao impacto da mudança.</li>
+</ul>
+<h2 id="fase-5-arquivamento-archive--extensão-deste-fluxo">
+  
+  
+    <a href="#fase-5-arquivamento-archive--extensão-deste-fluxo" class="anchor-heading" aria-labelledby="fase-5-arquivamento-archive--extensão-deste-fluxo"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Fase 5: Arquivamento (<code class="language-plaintext highlighter-rouge">/archive</code>) — extensão deste fluxo
+  
+  
+</h2>
+    
+
+<p>O arquivamento é uma etapa autoral deste modelo de SDD, posterior ao fluxo principal do Spec Kit. O comando customizado <code class="language-plaintext highlighter-rouge">speckit.archive.run</code> consolida os artefatos da feature e os aprendizados que devem permanecer disponíveis depois do merge. Ele não deve ser confundido com um comando padrão distribuído pelo Spec Kit.</p>
+
+<p>O objetivo é reduzir a divergência entre a memória canônica do projeto e o que foi implementado. Para isso, a etapa deve:</p>
+
+<ul>
+  <li>comparar <code class="language-plaintext highlighter-rouge">spec.md</code>, <code class="language-plaintext highlighter-rouge">plan.md</code> e <code class="language-plaintext highlighter-rouge">tasks.md</code> com a alteração integrada;</li>
+  <li>registrar decisões que continuem válidas, desvios e limitações;</li>
+  <li>preservar lições relevantes para manutenção ou reconstrução;</li>
+  <li>atualizar os arquivos aplicáveis em <code class="language-plaintext highlighter-rouge">.specify/memory/</code>;</li>
+  <li>vincular os registros ao pull request, aos testes e à especificação de origem;</li>
+  <li>produzir um relatório com os caminhos alterados e pendências encontradas.</li>
+</ul>
+
+<p>Antes de arquivar, confirme que o merge ocorreu e que as validações exigidas pelo projeto passaram. Depois, revise o relatório e o diff da memória. O comando melhora a rastreabilidade, mas não garante sozinho que a memória permaneça fiel ao código; mudanças futuras ainda precisam atualizar os artefatos correspondentes.</p>
+
+<p><img src="/assets/slides-assets/sdd-rpi.png" alt="Diagrama de referência sobre papéis e interações no SDD" class="rounded" /></p>
+
+<p><img src="/assets/slides-assets/sdd-diagram.png" alt="Diagrama resumido do ciclo de Spec-Driven Development" class="rounded" /></p>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+   
+<p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.<span>
+    <a href="/contact/">Contato</a> ·
+    <a href="/privacy/">Privacidade</a>
+  </span>
+  <span class="canonical-link fs-1">
+    Canonical:
+    <a href="https://www.bpstrat.com.br/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" target="_blank" rel="nofollow">
+      https://www.bpstrat.com.br/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html
+    </a>
+  </span>
+</p>
+
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+  
+  <script src="/assets/js/mermaid.min.js"></script>
+  
+
+<script type="module">
+  
+
+var config = {}
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Mostrar código';
+
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2 ft-style text-purple-200';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Mostrar código';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Mostrar diagrama';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+

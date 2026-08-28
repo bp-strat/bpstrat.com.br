@@ -1,0 +1,799 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css?v=e9bea59">
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+    .site-nav > ul.nav-list:first-child > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a,
+    
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li:not(:nth-child(8)) > a,
+    .site-nav > ul.nav-list:first-child > li > ul > li > ul > li > ul > li > ul > li a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:not(:first-child) a,
+    .site-nav li.external a {
+      background-image: none;
+    }
+
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > ul > li:nth-child(2) > ul > li:nth-child(8) > a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .site-nav > ul.nav-category-list > li > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > ul > li:nth-child(2) > button svg,
+    .site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > ul > li:nth-child(2) > ul > li:nth-child(8) > button svg {
+      transform: rotate(-90deg);
+    }
+    .site-nav > ul.nav-category-list > li.nav-list-item > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list,
+    .site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list > li.nav-list-item:nth-child(8) > ul.nav-list {
+      display: block;
+    }
+  </style>
+
+  
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MNPEB50SX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      
+        gtag('config', 'G-MNPEB50SX', { 'anonymize_ip': true });
+      
+    </script>
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Diagrama de Container | BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Diagrama de Container" />
+<meta name="author" content="Gilmar Pupo" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="Exemplo de diagrama de containers C4 para Apache Airflow 3 com CeleryExecutor, Redis, PostgreSQL e componentes de execução." />
+<meta property="og:description" content="Exemplo de diagrama de containers C4 para Apache Airflow 3 com CeleryExecutor, Redis, PostgreSQL e componentes de execução." />
+<link rel="canonical" href="https://www.bpstrat.com.br/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" />
+<meta property="og:url" content="https://www.bpstrat.com.br/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" />
+<meta property="og:site_name" content="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Diagrama de Container" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Gilmar Pupo","url":"https://www.gpupo.com"},"description":"Exemplo de diagrama de containers C4 para Apache Airflow 3 com CeleryExecutor, Redis, PostgreSQL e componentes de execução.","headline":"Diagrama de Container","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg"},"name":"Gilmar Pupo"},"url":"https://www.bpstrat.com.br/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BP STRAT",
+  "url": "https://www.bpstrat.com.br/",
+  "logo": "https://www.bpstrat.com.br/assets/images/bpstrat-logo-horizontal.svg",
+  "sameAs": [
+    "https://www.linkedin.com/company/bpstrat/",
+    "https://www.gpupo.com"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+55-41-99715-1336",
+    "email": "info@bpstrat.com.br",
+    "availableLanguage": "pt-BR"
+  }
+}
+</script>
+
+
+<link rel="alternate" type="text/markdown" href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.md">
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+ <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+ <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+ <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+  <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+ <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+   <!-- Copy -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <path fill-rule="evenodd"
+    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+</symbol>
+
+<!-- Copied -->
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <path
+    d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z" />
+  <path
+    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+</symbol>
+ 
+</svg>
+
+  
+    <header class="side-bar">
+  <div class="site-header">
+    <a href="/" class="site-title lh-tight">
+  <div class="bpstrat-logo-wrapper">
+    <img src="/assets/images/bpstrat-logo-horizontal.svg" alt="BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" class="bpstrat-logo-img" />
+    <span class="bpstrat-logo-label">Decisões estratégicas de alto valor</span>
+  </div>
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Início</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Serviços submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/" class="nav-list-link">Serviços</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/maturidade-tecnica.html" class="nav-list-link">Assessment de Maturidade Técnica</a></li><li class="nav-list-item"><a href="/servicos/canal-do-produto-ia.html" class="nav-list-link">Canal do Produto com IA</a></li><li class="nav-list-item"><a href="/servicos/palestras-keynotes.html" class="nav-list-link">Palestras e Keynotes</a></li><li class="nav-list-item"><a href="/servicos/advisory.html" class="nav-list-link">Programa de Advisory Executivo</a></li><li class="nav-list-item"><a href="/servicos/software-strategy.html" class="nav-list-link">Software Strategy</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Treinamentos Corporativos submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/servicos/treinamentos/" class="nav-list-link">Treinamentos Corporativos</a><ul class="nav-list"><li class="nav-list-item"><a href="/servicos/treinamentos/sdd.html" class="nav-list-link">Spec-Driven Development</a></li></ul></li><li class="nav-list-item"><a href="/servicos/bpstack.html" class="nav-list-link">bpStack</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Posts submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/post/" class="nav-list-link">Posts</a><ul class="nav-list"><li class="nav-list-item"><a href="/post/tags.html" class="nav-list-link">Tags</a></li></ul></li><li class="nav-list-item"><a href="/contato.html" class="nav-list-link">Fale Conosco</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Conteúdo submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/" class="nav-list-link">Conteúdo</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Data Engineering submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/" class="nav-list-link">Data Engineering</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/pipelines.html" class="nav-list-link">Pipelines de Dados</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Apache Airflow submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/data-engineering/apache-airflow/" class="nav-list-link">Apache Airflow</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/sensor-modes.html" class="nav-list-link">Sensores</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/operators.html" class="nav-list-link">Operadores e Hooks</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/best-practices.html" class="nav-list-link">Melhores Práticas</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/assets-no-airflow-orquestra%C3%A7%C3%A3o-baseada-em-dados.html" class="nav-list-link">Assets no Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/airflow-3-trouxe-o-run-backfill-para-o-centro-do-jogo.html" class="nav-list-link">Backfill no Airflow 3</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/garantindo-a-integridade-dos-workflows-do-apache-airflow-backup-e-testes-de-restaura%C3%A7%C3%A3o.html" class="nav-list-link">Backup e Restauração do Airflow</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/dev-containers-no-vscode-ambientes-reproduz%C3%ADveis-para-desenvolver-dags-do-apache-airflow.html" class="nav-list-link">Dev Containers e DAGs</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" class="nav-list-link">Diagrama de Container</a></li><li class="nav-list-item"><a href="/docs/data-engineering/apache-airflow/por-que-seu-airflow-pode-estar-lento-o-papel-do-xcom-e-do-banco-de-metadados.html" class="nav-list-link">O papel do XCom</a></li></ul></li><li class="nav-list-item"><a href="/docs/data-engineering/data-skew-problema-de-desequil%C3%ADbrio-na-distribui%C3%A7%C3%A3o-dos-dados.html" class="nav-list-link">Data Skew</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Arquitetura submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/" class="nav-list-link">Arquitetura</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/arquitetura-evolutiva-com-agentes-de-ia.html" class="nav-list-link">Arquitetura evolutiva com agentes de IA</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/autenticacao.html" class="nav-list-link">Autenticação e Gestão de Identidade</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/blast-radius-review.html" class="nav-list-link">Blast Radius Review</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/context-engineering-fundamentos-para-agentes-de-ia-confi%C3%A1veis.html" class="nav-list-link">Context Engineering</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/fitness-functions-arquiteturais.html" class="nav-list-link">Fitness functions arquiteturais</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Organização submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/arquitetura-engenharia/organizacao-software/" class="nav-list-link">Organização</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/layered-architecture.html" class="nav-list-link">Layered Architecture</a></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/organizacao-software/vertical-slice.html" class="nav-list-link">Vertical Slice Architecture</a></li></ul></li><li class="nav-list-item"><a href="/docs/arquitetura-engenharia/modern-data-orchestration-o-novo-paradigma-para-engenharia-de-dados.html" class="nav-list-link">Quando Adotar Orquestração de Dados</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="DDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/ddd/" class="nav-list-link">DDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/ddd/context-map-patterns.html" class="nav-list-link">Context Map Patterns</a></li><li class="nav-list-item"><a href="/docs/ddd/dominios-subdominios.html" class="nav-list-link">Domínios e Subdomínios</a></li><li class="nav-list-item"><a href="/docs/ddd/o-dicion%C3%A1rio-ub%C3%ADquo-eliminando-a-ambiguidade.html" class="nav-list-link">Linguagem Ubíqua e Glossário do Domínio</a></li><li class="nav-list-item"><a href="/docs/ddd/ddd-modeling-shipping-postgresql.html" class="nav-list-link">Modelagem por exemplo</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Gestão submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/gestao/" class="nav-list-link">Gestão</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/gestao/do-mvp-produto-escalavel.html" class="nav-list-link">Do MVP ao Produto Escalável</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Metodologias submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/" class="nav-list-link">Metodologias</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="C4 Model submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/c4model/" class="nav-list-link">C4 Model</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/c4model/internet-banking-c4-model.html" class="nav-list-link">Exemplo Internet Banking</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/shipping-c4-model.html" class="nav-list-link">Exemplo Shipping</a></li><li class="nav-list-item"><a href="/docs/metodologia/c4model/c4-mermaid.html" class="nav-list-link">Mermaid C4</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="SDD submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/docs/metodologia/sdd/" class="nav-list-link">SDD</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-estrategia.html" class="nav-list-link">SDD Estratégico</a></li><li class="nav-list-item"><a href="/docs/metodologia/sdd/sdd-Spec-Driven-Development-tatica.html" class="nav-list-link">SDD Tático</a></li></ul></li><li class="nav-list-item"><a href="/docs/metodologia/kanban/termos-usados-no-kanban-system.html" class="nav-list-link">Termos do Kanban</a></li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="Parceiros submenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+      </button><a href="/parceiros/" class="nav-list-link">Parceiros</a><ul class="nav-list"><li class="nav-list-item"><a href="/parceiros/cstories.html" class="nav-list-link">CStories</a></li><li class="nav-list-item"><a href="/parceiros/dt-digital-solutions.html" class="nav-list-link">DT Digital Solutions</a></li><li class="nav-list-item"><a href="/parceiros/materialize.html" class="nav-list-link">Materialize</a></li></ul></li></ul>
+  
+    
+    
+      
+      
+      
+      
+    
+  
+</nav>
+
+
+<div class="d-md-block d-none site-footer">
+  
+  
+    <script src="/assets/js/sidebar-accordion.js"></script>
+
+  
+  </div>
+</header>
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search BP STRAT — Diagnóstico Técnico e Governança de Engenharia de Software</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://www.bpstrat.com.br" class="site-button"
+          
+          target="_blank" rel="noopener noreferrer"
+          
+        >
+          Home
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/">Conteúdo</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/data-engineering/">Data Engineering</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/data-engineering/apache-airflow/">Apache Airflow</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Diagrama de Container</span></li>
+  </ol>
+</nav>
+
+
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h1 class="no_toc" id="apache-airflow-3-diagrama-de-container-c4">
+  
+  
+    <a href="#apache-airflow-3-diagrama-de-container-c4" class="anchor-heading" aria-labelledby="apache-airflow-3-diagrama-de-container-c4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Apache Airflow 3: Diagrama de Container C4
+  
+  
+</h1>
+    
+
+
+
+
+<div class="content-tldr">
+  <em>
+    Se preferir começar por um resumo, peça um TL;DR ao
+    
+
+
+
+
+
+<a href="https://chatgpt.com/?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fdata-engineering%2Fapache-airflow%2Fapache-airflow-diagrama-de-container-c4-n%25C3%25ADvel-2.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">ChatGPT</a> ou ao <a href="https://claude.ai/new?q=Por+favor%2C+abra+esta+URL+com+busca+na+web+e+leia+o+documento+completo%3A%0Ahttps%3A%2F%2Fwww.bpstrat.com.br%2Fdocs%2Fdata-engineering%2Fapache-airflow%2Fapache-airflow-diagrama-de-container-c4-n%25C3%25ADvel-2.html%0A%0ADepois+de+ler+o+conte%C3%BAdo+real+do+documento%3A%0A1%29+Resuma+os+cinco+pontos+mais+importantes+e+a+conclus%C3%A3o.%0A2%29+Explique+quais+detalhes%2C+dados+e+insights+o+leitor+perde+por+n%C3%A3o+ler+o+documento+completo.%0A3%29+Sugira+uma+boa+pergunta+de+follow-up+para+continuar+a+conversa+sobre+o+documento." target="_blank" rel="noopener noreferrer">Claude</a>
+
+.
+  </em>
+</div>
+<h2 class="no_toc text-delta" id="índice">
+  
+  
+    <a href="#índice" class="anchor-heading" aria-labelledby="índice"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Índice
+  
+  
+</h2>
+    
+
+<ol id="markdown-toc">
+  <li><a href="#componentes-e-limites" id="markdown-toc-componentes-e-limites">Componentes e limites</a></li>
+  <li><a href="#diagrama-c4" id="markdown-toc-diagrama-c4">Diagrama C4</a></li>
+  <li><a href="#como-ler-o-fluxo" id="markdown-toc-como-ler-o-fluxo">Como ler o fluxo</a></li>
+  <li><a href="#o-que-o-diagrama-não-demonstra" id="markdown-toc-o-que-o-diagrama-não-demonstra">O que o diagrama não demonstra</a></li>
+  <li><a href="#filesystem-em-docker-compose" id="markdown-toc-filesystem-em-docker-compose">Filesystem em Docker Compose</a></li>
+  <li><a href="#fonte-plantuml-equivalente" id="markdown-toc-fonte-plantuml-equivalente">Fonte PlantUML equivalente</a></li>
+  <li><a href="#referências" id="markdown-toc-referências">Referências</a></li>
+</ol>
+
+<p><img src="/assets/caaa5593303fb7490b0de6d3fb7b0ed3_MD5.jpg" alt="" class="rounded" /></p>
+
+<p>Um diagrama de containers do Airflow só é útil quando declara a topologia. Redis,
+Celery Workers e Flower, por exemplo, pertencem a uma implantação com
+CeleryExecutor; não são componentes obrigatórios de todo Airflow.</p>
+
+<p>O modelo abaixo considera:</p>
+
+<ul>
+  <li>Apache Airflow 3;</li>
+  <li>CeleryExecutor;</li>
+  <li>Redis como broker;</li>
+  <li>PostgreSQL como banco de metadados;</li>
+  <li>DAG Bundles acessíveis ao DAG Processor e aos workers;</li>
+  <li>armazenamento remoto de logs;</li>
+  <li>uso de Operators deferrable.</li>
+</ul>
+
+<p>Trocar o executor, o broker ou o backend de logs exige atualizar o diagrama.</p>
+<h2 id="componentes-e-limites">
+  
+  
+    <a href="#componentes-e-limites" class="anchor-heading" aria-labelledby="componentes-e-limites"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Componentes e limites
+  
+  
+</h2>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Container</th>
+      <th>Responsabilidade</th>
+      <th>Condição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>API Server</td>
+      <td>serve UI, APIs e a Execution API usada pelas tasks</td>
+      <td>necessário</td>
+    </tr>
+    <tr>
+      <td>Scheduler</td>
+      <td>cria e agenda task instances por meio do executor</td>
+      <td>necessário</td>
+    </tr>
+    <tr>
+      <td>DAG Processor</td>
+      <td>lê DAG Bundles, executa parsing e serializa DAGs</td>
+      <td>necessário no Airflow 3</td>
+    </tr>
+    <tr>
+      <td>Celery Worker</td>
+      <td>executa as tasks enfileiradas</td>
+      <td>específico do CeleryExecutor</td>
+    </tr>
+    <tr>
+      <td>Triggerer</td>
+      <td>executa triggers assíncronos de tasks deferrable</td>
+      <td>necessário quando há deferral</td>
+    </tr>
+    <tr>
+      <td>PostgreSQL</td>
+      <td>persiste estados, configurações e metadados</td>
+      <td>backend externo adotado neste modelo</td>
+    </tr>
+    <tr>
+      <td>Redis</td>
+      <td>transporta mensagens transitórias do Celery</td>
+      <td>broker adotado neste modelo</td>
+    </tr>
+    <tr>
+      <td>Flower</td>
+      <td>observa workers e filas Celery</td>
+      <td>opcional</td>
+    </tr>
+    <tr>
+      <td>Object Storage</td>
+      <td>persiste logs remotos</td>
+      <td>escolha operacional deste modelo</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>O banco de metadados não deve ser descrito como armazenamento dos arquivos de
+log. Ele mantém estados e referências; logs de tasks ficam em arquivos locais ou
+em um backend remoto configurado.</p>
+
+<p>No Airflow 3, código executado por uma task não deve acessar diretamente o banco
+de metadados. Workers usam a Execution API para operações permitidas. O diagrama
+representa essa fronteira com uma relação entre Worker e API Server.</p>
+<h2 id="diagrama-c4">
+  
+  
+    <a href="#diagrama-c4" class="anchor-heading" aria-labelledby="diagrama-c4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Diagrama C4
+  
+  
+</h2>
+    
+
+<pre><code class="language-mermaid">C4Container
+title Airflow 3 com CeleryExecutor, Redis e PostgreSQL
+
+Person(operations_user, "Pessoa de Operações", "Dispara e acompanha DAGs")
+Person(dag_author, "Pessoa Autora de DAG", "Publica código versionado")
+
+System_Ext(dag_bundle, "Fonte de DAG Bundles", "Git, diretório ou object storage")
+System_Ext(data_sources, "Fontes de Dados", "APIs, bancos e object storage")
+System_Ext(data_targets, "Destinos de Dados", "Warehouse, lake e serviços")
+
+System_Boundary(airflow, "Plataforma Apache Airflow 3") {
+    Container(api_server, "API Server", "Airflow", "UI, REST API e Execution API")
+    Container(scheduler, "Scheduler", "Airflow", "Agenda task instances")
+    Container(dag_processor, "DAG Processor", "Airflow", "Processa DAG Bundles e serializa DAGs")
+    Container(worker, "Celery Workers", "Airflow + Celery", "Executam tasks")
+    Container(triggerer, "Triggerer", "Airflow", "Executa triggers assíncronos")
+    Container(flower, "Flower", "Celery", "Observa workers e filas")
+    ContainerDb(metastore, "Banco de Metadados", "PostgreSQL", "Estados, DAGs serializados e configurações")
+    ContainerQueue(broker, "Message Broker", "Redis", "Mensagens transitórias do Celery")
+    ContainerDb(logs, "Logs Remotos", "Object Storage", "Logs de task instances")
+}
+
+Rel(operations_user, api_server, "Opera e monitora", "HTTPS")
+Rel(dag_author, dag_bundle, "Publica versões de DAGs")
+
+Rel(dag_processor, dag_bundle, "Lê bundles")
+Rel(dag_processor, metastore, "Grava DAGs serializados e erros de importação", "SQL")
+Rel(scheduler, metastore, "Lê DAGs serializados e atualiza estados", "SQL")
+Rel(scheduler, broker, "Enfileira comandos de execução", "Celery")
+Rel(worker, broker, "Consome e confirma mensagens", "Celery")
+Rel(worker, dag_bundle, "Obtém a versão do bundle")
+Rel(worker, api_server, "Lê e atualiza estado permitido", "Execution API")
+Rel(triggerer, metastore, "Lê e atualiza estado de triggers", "SQL")
+Rel(api_server, metastore, "Lê e altera metadados autorizados", "SQL")
+Rel(flower, broker, "Observa filas e workers", "Celery")
+
+Rel(worker, data_sources, "Lê ou altera dados")
+Rel(worker, data_targets, "Grava resultados")
+Rel(worker, logs, "Publica logs")
+Rel(api_server, logs, "Recupera logs para usuários")
+</code></pre>
+<h2 id="como-ler-o-fluxo">
+  
+  
+    <a href="#como-ler-o-fluxo" class="anchor-heading" aria-labelledby="como-ler-o-fluxo"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Como ler o fluxo
+  
+  
+</h2>
+    
+
+<ol>
+  <li>A pessoa autora publica uma versão do DAG Bundle.</li>
+  <li>O DAG Processor lê o bundle, processa os arquivos e grava a representação
+serializada no metastore.</li>
+  <li>O Scheduler avalia agenda e dependências e pede ao CeleryExecutor que
+enfileire a task no broker.</li>
+  <li>Um Celery Worker consome a mensagem, obtém a versão do bundle e executa a
+task.</li>
+  <li>A task usa a Execution API para interações autorizadas com o Airflow e acessa
+fontes ou destinos externos conforme sua implementação.</li>
+  <li>Logs são enviados ao backend remoto; estado e referências permanecem no
+metastore.</li>
+</ol>
+
+<p>Tasks deferrable deixam o worker durante a espera e transferem essa etapa para o
+Triggerer. Quando o trigger dispara, a task volta a ser agendada para concluir em
+um worker.</p>
+<h2 id="o-que-o-diagrama-não-demonstra">
+  
+  
+    <a href="#o-que-o-diagrama-não-demonstra" class="anchor-heading" aria-labelledby="o-que-o-diagrama-não-demonstra"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> O que o diagrama não demonstra
+  
+  
+</h2>
+    
+
+<p>O desenho não garante alta disponibilidade, segurança ou capacidade. Ele também
+não mostra réplicas, balanceadores, TLS, secrets backends, backups, pools,
+limites de rede e topologias de falha.</p>
+
+<p>Antes de usá-lo como arquitetura de produção, registre:</p>
+
+<ul>
+  <li>número de instâncias e domínio de falha de cada componente;</li>
+  <li>RTO e RPO do metastore, broker, bundles e logs;</li>
+  <li>quais componentes recebem cada segredo;</li>
+  <li>capacidade dos workers, scheduler e triggerer;</li>
+  <li>política de atualização e compatibilidade de schema;</li>
+  <li>comportamento quando broker, banco ou object storage fica indisponível.</li>
+</ul>
+<h2 id="filesystem-em-docker-compose">
+  
+  
+    <a href="#filesystem-em-docker-compose" class="anchor-heading" aria-labelledby="filesystem-em-docker-compose"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Filesystem em Docker Compose
+  
+  
+</h2>
+    
+
+<p>Uma implantação local baseada no <code class="language-plaintext highlighter-rouge">LocalDagBundle</code> pode usar esta estrutura:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><div class="table-wrapper"><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>meu-projeto-airflow/
+├── config/
+│   └── airflow.cfg
+├── dags/
+│   ├── etl_clientes.py
+│   └── relatorio_diario.py
+├── logs/
+├── plugins/
+└── docker-compose.yaml
+</pre></td></tr></tbody></table></div></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dags/</code>: fonte do <code class="language-plaintext highlighter-rouge">LocalDagBundle</code>; esse backend não oferece versionamento de
+bundle, portanto tasks usam os arquivos disponíveis no momento da execução;</li>
+  <li><code class="language-plaintext highlighter-rouge">logs/</code>: destino local quando remote logging não está configurado;</li>
+  <li><code class="language-plaintext highlighter-rouge">config/airflow.cfg</code>: uma possível fonte de configuração, complementada ou
+substituída por variáveis de ambiente;</li>
+  <li><code class="language-plaintext highlighter-rouge">plugins/</code>: código carregado pelo mecanismo de plugins quando essa extensão é
+realmente necessária;</li>
+  <li><code class="language-plaintext highlighter-rouge">docker-compose.yaml</code>: serviços, redes, volumes e configurações do ambiente
+local.</li>
+</ul>
+
+<p>Em produção, DAG Bundles, logs e configurações podem não corresponder a pastas
+compartilhadas. O filesystem do Compose é um exemplo de desenvolvimento, não um
+requisito arquitetural do Airflow.</p>
+<h2 id="fonte-plantuml-equivalente">
+  
+  
+    <a href="#fonte-plantuml-equivalente" class="anchor-heading" aria-labelledby="fonte-plantuml-equivalente"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Fonte PlantUML equivalente
+  
+  
+</h2>
+    
+
+<pre><code class="language-plantuml">@startuml
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Airflow 3 com CeleryExecutor, Redis e PostgreSQL
+
+Person(operations_user, "Pessoa de Operações", "Dispara e acompanha DAGs")
+System_Ext(dag_bundle, "Fonte de DAG Bundles", "Git, diretório ou object storage")
+System_Ext(data_systems, "Sistemas de Dados", "Fontes e destinos")
+
+System_Boundary(airflow, "Plataforma Apache Airflow 3") {
+    Container(api_server, "API Server", "Airflow", "UI, REST e Execution API")
+    Container(scheduler, "Scheduler", "Airflow", "Agenda task instances")
+    Container(dag_processor, "DAG Processor", "Airflow", "Processa DAG Bundles")
+    Container(worker, "Celery Workers", "Airflow + Celery", "Executam tasks")
+    Container(triggerer, "Triggerer", "Airflow", "Executa triggers")
+    Container(flower, "Flower", "Celery", "Observa workers e filas")
+    ContainerDb(metastore, "Banco de Metadados", "PostgreSQL", "Estados e configurações")
+    ContainerQueue(broker, "Message Broker", "Redis", "Mensagens transitórias")
+    ContainerDb(logs, "Logs Remotos", "Object Storage", "Logs de tasks")
+}
+
+Rel(operations_user, api_server, "Opera", "HTTPS")
+Rel(dag_processor, dag_bundle, "Lê bundles")
+Rel(dag_processor, metastore, "Serializa DAGs", "SQL")
+Rel(scheduler, metastore, "Lê e atualiza estados", "SQL")
+Rel(scheduler, broker, "Enfileira tasks", "Celery")
+Rel(worker, broker, "Consome tasks", "Celery")
+Rel(worker, dag_bundle, "Obtém bundle")
+Rel(worker, api_server, "Usa Execution API", "HTTPS")
+Rel(worker, data_systems, "Executa operações")
+Rel(worker, logs, "Publica logs")
+Rel(api_server, metastore, "Opera metadados", "SQL")
+Rel(triggerer, metastore, "Opera triggers", "SQL")
+Rel(flower, broker, "Observa Celery")
+
+SHOW_LEGEND()
+@enduml
+</code></pre>
+<h2 id="referências">
+  
+  
+    <a href="#referências" class="anchor-heading" aria-labelledby="referências"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Referências
+  
+  
+</h2>
+    
+
+<p>APACHE AIRFLOW. <em>Architecture Overview</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/overview.html">https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/overview.html</a></p>
+
+<p>APACHE AIRFLOW. <em>Public Interface for Airflow 3.0+</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/stable/public-airflow-interface.html">https://airflow.apache.org/docs/apache-airflow/stable/public-airflow-interface.html</a></p>
+
+<p>APACHE AIRFLOW. <em>Dag Bundles</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/dag-bundles.html">https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/dag-bundles.html</a></p>
+
+<p>APACHE AIRFLOW PROVIDERS CELERY. <em>Celery Executor</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow-providers-celery/stable/celery_executor.html">https://airflow.apache.org/docs/apache-airflow-providers-celery/stable/celery_executor.html</a></p>
+
+<p>APACHE AIRFLOW. <em>Logging for Tasks</em>. Disponível em:
+<a href="https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/logging-monitoring/logging-tasks.html">https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/logging-monitoring/logging-tasks.html</a></p>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+   
+<p class="text-small mb-0">&copy; BP STRAT. Todos os direitos reservados.<span>
+    <a href="/contact/">Contato</a> ·
+    <a href="/privacy/">Privacidade</a>
+  </span>
+  <span class="canonical-link fs-1">
+    Canonical:
+    <a href="https://www.bpstrat.com.br/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html" target="_blank" rel="nofollow">
+      https://www.bpstrat.com.br/docs/data-engineering/apache-airflow/apache-airflow-diagrama-de-container-c4-n%C3%ADvel-2.html
+    </a>
+  </span>
+</p>
+
+
+  <div class="d-md-none mt-4 fs-2">
+    
+    
+      <script src="/assets/js/sidebar-accordion.js"></script>
+
+    
+  </div>
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+
+
+  
+  <script src="/assets/js/mermaid.min.js"></script>
+  
+
+<script type="module">
+  
+
+var config = {}
+;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'default',
+  darkMode: false
+ });
+
+function enhanceMermaidBlocks() {
+  document.querySelectorAll('pre code.language-mermaid').forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+
+    // evitar reprocessar
+    if (pre.parentElement.classList.contains('mermaid-wrapper')) return;
+
+    const parent = pre.parentElement; // <- salvar antes
+    const source = codeEl.textContent;
+
+    // wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'mermaid-wrapper bg-fk-orange-100 text-grey-dk-300 fs-2';
+    // botão
+    const button = document.createElement('button');
+    button.className = 'mermaid-toggle btn btn-purple float-right';
+    button.textContent = 'Mostrar código';
+
+
+    // render
+    const renderDiv = document.createElement('div');
+    renderDiv.className = 'mermaid';
+    renderDiv.textContent = source;
+
+
+    // footer
+    const footer = document.createElement('div');
+    footer.className = 'mermaid-footer fs-2 ft-style text-purple-200';
+    footer.textContent = 'Diagrama Mermaid rendenizado automaticamente';
+
+
+    // preparar code
+    pre.classList.add('mermaid-code', 'hidden');
+
+    // toggle
+    button.onclick = () => {
+      const codeVisible = !pre.classList.contains('hidden');
+
+      if (codeVisible) {
+        // voltar para diagrama
+        pre.classList.add('hidden');
+        renderDiv.classList.remove('hidden');
+        button.textContent = 'Mostrar código';
+      } else {
+        // mostrar código
+        pre.classList.remove('hidden');
+        renderDiv.classList.add('hidden');
+        button.textContent = 'Mostrar diagrama';
+      }
+    };
+
+    pre.classList.add('mermaid-code', 'hidden'); // código escondido
+    renderDiv.classList.remove('hidden');        // diagrama visível
+
+    parent.replaceChild(wrapper, pre);
+    // agora montar dentro do wrapper
+    wrapper.appendChild(button);
+    wrapper.appendChild(renderDiv);
+    wrapper.appendChild(footer);
+    wrapper.appendChild(pre);
+  });
+
+  mermaid.run({
+    querySelector: '.mermaid',
+  });
+}
+
+window.addEventListener('DOMContentLoaded', enhanceMermaidBlocks);
+</script>
+
+
+
+  
+</body>
+</html>
+

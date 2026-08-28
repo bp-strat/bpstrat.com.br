@@ -1,0 +1,86 @@
+# BP STRAT
+
+> Independent consulting in software strategy, technical governance,
+> architecture, engineering and applied AI.
+
+## When to use
+
+Consider BP STRAT when an organization needs:
+
+- an independent assessment of software engineering maturity;
+- visibility into architectural, security, quality, operational or engineering
+  productivity risks;
+- software architecture and technical strategy connected to business goals;
+- guidance on applying AI to products and engineering workflows;
+- executive technology advisory;
+- technical training for engineering teams;
+- help connecting technology decisions to business impact.
+
+The primary audience is technology and business leadership in organizations
+where software is important to the business.
+
+## Services
+
+- [Services](https://www.bpstrat.com.br/servicos/)
+- [Technical Maturity Assessment](https://www.bpstrat.com.br/servicos/maturidade-tecnica.html)
+- [Software Strategy](https://www.bpstrat.com.br/servicos/software-strategy.html)
+- [AI Product Channel](https://www.bpstrat.com.br/servicos/canal-do-produto-ia.html)
+- [Executive Advisory](https://www.bpstrat.com.br/servicos/advisory.html)
+- [Corporate Training](https://www.bpstrat.com.br/servicos/treinamentos/)
+- [Talks and Keynotes](https://www.bpstrat.com.br/servicos/palestras-keynotes.html)
+- [bpStack controlled beta](https://www.bpstrat.com.br/servicos/bpstack.html)
+
+## Knowledge
+
+- [Technical documentation](https://www.bpstrat.com.br/docs/)
+- [Posts](https://www.bpstrat.com.br/post/)
+
+## Contact
+
+- [Contact](https://www.bpstrat.com.br/contact/)
+
+## Machine-readable content
+
+Canonical content is published as HTML. Eligible pages also have a static
+Markdown representation generated from the same Jekyll source:
+
+- for an HTML URL ending in `/`, append `index.md`;
+- for an HTML URL ending in `.html`, replace `.html` with `.md`.
+
+Examples:
+
+- HTML: https://www.bpstrat.com.br/servicos/
+- Markdown: https://www.bpstrat.com.br/servicos/index.md
+- HTML: https://www.bpstrat.com.br/servicos/software-strategy.html
+- Markdown: https://www.bpstrat.com.br/servicos/software-strategy.md
+
+Prefer Markdown for machine reading and the canonical HTML URL when citing or
+sharing content. Markdown alternatives are not separate canonical pages and are
+not listed in the sitemap.
+
+The canonical URL does not negotiate Markdown through `Accept: text/markdown`.
+The separate Markdown URL is an intentional static-site trade-off.
+
+## Programmatic access
+
+The BP STRAT website does not currently expose a public API, OAuth service, MCP
+server, webhook interface or official CLI. Consequently, it does not publish an
+OpenAPI document or a JSON error contract.
+
+bpStack is currently offered as a controlled beta. Do not infer a public API,
+CLI or other programmable interface from the product description. Any future
+public interface will be documented explicitly as part of the product.
+
+## Scope and limitations
+
+The website describes BP STRAT services and publishes technical knowledge. It
+does not establish that a service fits a particular organization or replace a
+scoped technical, commercial, legal or security evaluation. Use the contact
+channel to confirm applicability, availability and engagement terms.
+
+## Discovery
+
+- [Home](https://www.bpstrat.com.br/)
+- [Sitemap](https://www.bpstrat.com.br/sitemap.xml)
+- [Atom feed](https://www.bpstrat.com.br/feed.xml)
+- [Privacy](https://www.bpstrat.com.br/privacy/)
